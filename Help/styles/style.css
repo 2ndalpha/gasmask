@@ -1,0 +1,33 @@
+body {
+	font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#header {
+	clear: both;
+	margin-top: 46px;
+	margin-bottom: 28px;
+}
+
+h1 {
+	color: #000000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 0;
+	text-align: left;
+}
+
+#appicon {
+	float: left;
+}
+
+
+#pagetitle {
+	padding-left: 38px;
+	padding-top: 1px;
+}

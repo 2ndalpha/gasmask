@@ -1,0 +1,15 @@
+# Invalid
+11.22.33		toofewgroups
+11.22.33.44.55	toomanygroups
+245.143.332.11	toolargevalue
+245.1.1.257		toolargevalue
+245.1555.3.4	toolargevalue
+44.55.6A.77		badcharacher
+33.44.55.3F		badcharacter
+4..5.6			emptygroup
+5.6..4			emptygroup
+.43.54.65		emptygroup
+217.16.67.1111	toolargevalue
+
+# Valid
+217.146.67.51	clockwise.ee

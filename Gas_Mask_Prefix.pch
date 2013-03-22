@@ -1,0 +1,82 @@
+/***************************************************************************
+ *   Copyright (C) 2009-2012 by Clockwise   *
+ *   copyright@clockwise.ee   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+
+    #ifndef NSAppKitVersionNumber10_8
+        #define NSAppKitVersionNumber10_8 1187
+    #endif
+
+	#define ApplicationID @"dmks"
+	#define HostsFileExtension @"hst"
+	#define HostsFileLocation @"/etc/hosts"
+	#define ThreadBusyNotification @"ThreadBusyNotification"
+	#define ThreadNotBusyNotification @"ThreadNotBusyNotification"
+	#define HostsFileShouldBeSelectedNotification @"HostsFileShouldBeSelectedNotification"
+
+    #define HostsFileCreatedNotification @"HostsFileCreatedNotification"
+	#define HostsFileRemovedNotification @"HostsFileRemovedNotification"
+    #define HostsFileRenamedNotification @"HostsFileRenamedNotification"
+    #define HostsFileSavedNotification @"HostsFileSavedNotification"
+
+	// Notifications from hotkeys
+	#define ActivatePreviousFileNotification @"activatePreviousFileNotification"
+	#define ActivateNextFileNotification @"activateNextFileNotification"
+	#define UpdateAndSynchronizeNotification @"updateAndSynchronizeNotification"
+
+    // Misc notifications
+    #define RestoredHostsFileNotification @"restoredHostsFileNotification"
+
+	// Hosts node should be redrawn
+	#define HostsNodeNeedsUpdateNotification @"HostsNodeNeedsUpdateNotification"
+
+	// File was dragged into the Trash
+	#define DraggedFileShouldBeRemovedNotification @"DraggedFileShouldBeRemovedNotification"
+
+	// Network status changed
+	#define NetworkStatusChangedNotification @"NetworkStatusChangedNotification"
+
+	#define AllHostsFilesLoadedFromDiskNotification @"AllHostsFilesLoadedFromDiskNotification"
+	#define IssueTrackerURL @"http://code.google.com/p/gmask/issues/entry"
+	#define DonateURL @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=98JFC3MUF5Q44&lc=EE&item_name=Gas%20Mask%20Support&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest"
+
+	// Logger
+	#define kLogFile @"Gas Mask.log"
+	#import "Logger.h"
+	#define logDebug(message, ...) privateLogDebug(message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+	#define logInfo(message, ...) privateLogInfo(message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+	#define logWarn(message, ...) privateLogWarn(message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+	#define logError(message, ...) privateLogError(message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+
+	#import "DebugUtil.h"
+
+	BOOL openedAtLogin();
+	BOOL reopened();
+
+    #define SuppressPerformSelectorLeakWarning(Stuff) \
+        do { \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+        Stuff; \
+        _Pragma("clang diagnostic pop") \
+        } while (0)
+
+#endif

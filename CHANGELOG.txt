@@ -1,0 +1,7 @@
+
+
+                         0.7
+----------------------------------------------------
+- Stability Improvements
+- Native notifications on Mountain Lion
+- HTTPS support for remote files
