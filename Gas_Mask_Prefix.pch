@@ -55,7 +55,7 @@
 	#define NetworkStatusChangedNotification @"NetworkStatusChangedNotification"
 
 	#define AllHostsFilesLoadedFromDiskNotification @"AllHostsFilesLoadedFromDiskNotification"
-	#define IssueTrackerURL @"http://code.google.com/p/gmask/issues/entry"
+	#define IssueTrackerURL @"https://github.com/2ndalpha/gasmask/issues"
 	#define DonateURL @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=98JFC3MUF5Q44&lc=EE&item_name=Gas%20Mask%20Support&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest"
 
 	// Logger
