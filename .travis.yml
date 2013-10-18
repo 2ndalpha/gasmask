@@ -1,2 +1,2 @@
 language: objective-c
-script: xcodebuild
+script: xcodebuild ARCHS="i386 x86_64"
