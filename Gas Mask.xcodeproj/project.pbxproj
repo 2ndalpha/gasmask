@@ -1087,6 +1087,7 @@
 				);
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -1111,6 +1112,7 @@
 				);
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				ZERO_LINK = NO;
 			};
 			name = Release;
