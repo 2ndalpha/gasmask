@@ -98,6 +98,7 @@
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
 		356712D51132F80600DF30E0 /* URLSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356712D41132F80600DF30E0 /* URLSheet.xib */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
+		356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */; };
 		35730FCF113424C100066B68 /* RemoteHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35730FCE113424C100066B68 /* RemoteHosts.m */; };
 		35730FDD1134291300066B68 /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35730FDC1134291300066B68 /* Remote.png */; };
 		35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 35730FE811342C6E00066B68 /* Remote_disabled.png */; };
@@ -302,6 +303,8 @@
 		356712D41132F80600DF30E0 /* URLSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLSheet.xib; sourceTree = "<group>"; };
 		3569AEBD12303479007DF95F /* Preferences+Remote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Preferences+Remote.h"; path = "Source/Preferences+Remote.h"; sourceTree = "<group>"; };
 		3569AEBE12303479007DF95F /* Preferences+Remote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Preferences+Remote.m"; path = "Source/Preferences+Remote.m"; sourceTree = "<group>"; };
+		356DB7681824EAFD0020CEA0 /* ExtendedNSSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSSplitView.h; path = Source/ExtendedNSSplitView.h; sourceTree = "<group>"; };
+		356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSSplitView.m; path = Source/ExtendedNSSplitView.m; sourceTree = "<group>"; };
 		35730FCD113424C100066B68 /* RemoteHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHosts.h; path = Source/RemoteHosts.h; sourceTree = "<group>"; };
 		35730FCE113424C100066B68 /* RemoteHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteHosts.m; path = Source/RemoteHosts.m; sourceTree = "<group>"; };
 		35730FDC1134291300066B68 /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Remote.png; sourceTree = "<group>"; };
@@ -788,6 +791,8 @@
 				3522BEDF153316AA00035B90 /* ExtendedNSArray.m */,
 				3522BEE11533552200035B90 /* ExtendedNSPredicate.h */,
 				3522BEE21533552200035B90 /* ExtendedNSPredicate.m */,
+				356DB7681824EAFD0020CEA0 /* ExtendedNSSplitView.h */,
+				356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */,
 			);
 			name = "Extended Next Step";
 			sourceTree = "<group>";
@@ -1006,6 +1011,7 @@
 				35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */,
 				3513A61C11390B7900AD789D /* Error.m in Sources */,
 				35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */,
+				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				35E900BF1147FCAD00851A25 /* InfoBubble.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
