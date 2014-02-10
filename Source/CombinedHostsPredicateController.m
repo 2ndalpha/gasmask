@@ -54,10 +54,11 @@
 
 - (IBAction)predicateEditorChanged:(id)sender
 {    
+    [self updateHostsFileContents];
+
     NSInteger newRowCount = [predicateEditor numberOfRows];
     
     if (newRowCount == rowCount) {
-        [self updateHostsFileContents];
         return;
     }
     
