@@ -2,6 +2,7 @@
                          0.9
 ----------------------------------------------------
 - Enabled horizontal scroll of the textarea
+- Confirming removal of a file
 
 
                          0.7.1
