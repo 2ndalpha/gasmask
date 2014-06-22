@@ -4,6 +4,9 @@
 Gas Mask is simple hosts file manager for Mac OS X.
 It allows to edit hosts files and switch between them.
 
+## Download
+[Download latest version (0.8)](http://gmask.clockwise.ee/files/gas_mask_0.8.zip)
+
 ## Building Gas Mask
 Gas Mask can be built with Xcode 4.6.2 and Xcode 5.
 
