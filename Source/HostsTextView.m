@@ -55,12 +55,12 @@
 {
 	[[super textStorage] setDelegate:self];
 	
-	// Disables wrapping
-	NSTextContainer *textContainer = [self textContainer];
-	NSSize size = [textContainer containerSize];
-	size.width = 1.0e7;
-	[textContainer setContainerSize:size];
-	[textContainer setWidthTracksTextView:NO];
+    // Enable horizontal scroll
+    [[self enclosingScrollView] setHasHorizontalScroller:YES];
+    [self setHorizontallyResizable:YES];
+    [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
+    [[self textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
+    [[self textContainer] setWidthTracksTextView:NO];
 }
 
 /*
