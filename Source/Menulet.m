@@ -39,6 +39,7 @@
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 	NSString *path = [bundle pathForResource:@"menuIcon" ofType:@"tiff"];
 	NSImage *icon = [[NSImage alloc] initWithContentsOfFile:path];
+    [icon setTemplate:YES];
 	
 	[statusItem setImage:icon];
 }
