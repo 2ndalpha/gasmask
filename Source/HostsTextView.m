@@ -73,7 +73,7 @@
                                               granularity:granularity];
     
     NSEvent *event = [NSApp currentEvent];
-	if ([event clickCount] == 2) {
+	if ([event type] == NSLeftMouseUp && [event clickCount] == 2) {
         return [self selectRangeFromDoubleClick:proposedSelRange.location range:range];
     }
     
