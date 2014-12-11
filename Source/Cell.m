@@ -88,7 +88,14 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	localFileIcon = [NSImage imageNamed: @"Local File.png"];
 	remoteFileIcon = [NSImage imageNamed: @"Remote.png"];
 	remoteDisabledFileIcon = [NSImage imageNamed: @"Remote_disabled.png"];
-    combinedFileIcon = [NSImage imageNamed: @"Combined File.png"];
+    
+    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9) {
+        combinedFileIcon = [NSImage imageNamed: @"Combined_File.png"];
+    }
+    else {
+        combinedFileIcon = [NSImage imageNamed: @"Combined_File_yosemite.tiff"];
+    }
+
 	activeIcon = [NSImage imageNamed: @"Activated.png"];
 	unsavedIcon = [NSImage imageNamed: @"Blue Dot.png"];
 	

@@ -103,7 +103,13 @@
 	}
 	else if ([ident isEqualTo:TOOLBAR_EDITOR]) {
 		[item setLabel: @"Editor"];
-		[item setImage: [NSImage imageNamed: @"Editor.png"]];
+        
+        if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9) {
+            [item setImage: [NSImage imageNamed: @"Editor.png"]];
+        }
+        else {
+            [item setImage: [NSImage imageNamed: @"Editor_yosemite.tiff"]];
+        }
 	}
 	else if ([ident isEqualTo:TOOLBAR_REMOTE]) {
 		[item setLabel: @"Remote"];
