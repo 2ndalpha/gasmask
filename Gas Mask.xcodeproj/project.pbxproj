@@ -112,6 +112,8 @@
 		358C36E51A0D6F2E00161C98 /* Combined_File_yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */; };
 		358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E41A0D6F2E00161C98 /* Combined_File.png */; };
 		358C36E81A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */; };
+		358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */; };
+		358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */; };
 		359289AB1659222E00492494 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 359289AA1659222E00492494 /* CHANGELOG.txt */; };
 		3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597135C110DED0F00C7ECAF /* HostsMenu.m */; };
 		359967541656B52500BCF16D /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359967531656B52500BCF16D /* NotificationHelper.m */; };
@@ -325,6 +327,8 @@
 		358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Combined_File_yosemite.tiff; path = Resources/Images/Combined_File_yosemite.tiff; sourceTree = "<group>"; };
 		358C36E41A0D6F2E00161C98 /* Combined_File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Combined_File.png; path = Resources/Images/Combined_File.png; sourceTree = "<group>"; };
 		358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Combined_File_yosemite@2x.tiff"; path = "Resources/Images/Combined_File_yosemite@2x.tiff"; sourceTree = "<group>"; };
+		358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Local File yosemite.tiff"; path = "Resources/Images/Local File yosemite.tiff"; sourceTree = "<group>"; };
+		358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Local File yosemite@2x.tiff"; path = "Resources/Images/Local File yosemite@2x.tiff"; sourceTree = "<group>"; };
 		359289AA1659222E00492494 /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		3597135B110DED0F00C7ECAF /* HostsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsMenu.h; path = Source/HostsMenu.h; sourceTree = "<group>"; };
 		3597135C110DED0F00C7ECAF /* HostsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsMenu.m; path = Source/HostsMenu.m; sourceTree = "<group>"; };
@@ -678,6 +682,8 @@
 				3556CF0D10D6B7AA00C7301E /* Hotkeys.png */,
 				3556CF0E10D6B7AA00C7301E /* Update.png */,
 				352E05D910628E400071E25B /* Local File.png */,
+				358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */,
+				358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */,
 				352E05B310628D790071E25B /* Activated.png */,
 				352E05B410628D790071E25B /* Blue Dot.png */,
 				352E04F8106281940071E25B /* Activate.png */,
@@ -942,6 +948,7 @@
 				3556CF1210D6B7AA00C7301E /* Update.png in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
+				358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */,
 				3528ECE910E3F87E003C8CB9 /* Syncing_arrows1.png in Resources */,
 				3528ECEA10E3F87E003C8CB9 /* Syncing_arrows2.png in Resources */,
 				3528ECEB10E3F87E003C8CB9 /* Syncing_arrows3.png in Resources */,
@@ -969,6 +976,7 @@
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
 				359289AB1659222E00492494 /* CHANGELOG.txt in Resources */,
+				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
 				358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
