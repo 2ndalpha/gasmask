@@ -114,6 +114,8 @@
 		358C36E81A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */; };
 		358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */; };
 		358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */; };
+		358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A861A3A1E1A004521D1 /* Remote yosemite.tiff */; };
+		358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358E0A871A3A1E1A004521D1 /* Remote yosemite@2x.tiff */; };
 		359289AB1659222E00492494 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 359289AA1659222E00492494 /* CHANGELOG.txt */; };
 		3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597135C110DED0F00C7ECAF /* HostsMenu.m */; };
 		359967541656B52500BCF16D /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359967531656B52500BCF16D /* NotificationHelper.m */; };
@@ -329,6 +331,8 @@
 		358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Combined_File_yosemite@2x.tiff"; path = "Resources/Images/Combined_File_yosemite@2x.tiff"; sourceTree = "<group>"; };
 		358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Local File yosemite.tiff"; path = "Resources/Images/Local File yosemite.tiff"; sourceTree = "<group>"; };
 		358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Local File yosemite@2x.tiff"; path = "Resources/Images/Local File yosemite@2x.tiff"; sourceTree = "<group>"; };
+		358E0A861A3A1E1A004521D1 /* Remote yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Remote yosemite.tiff"; path = "Resources/Images/Remote yosemite.tiff"; sourceTree = "<group>"; };
+		358E0A871A3A1E1A004521D1 /* Remote yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Remote yosemite@2x.tiff"; path = "Resources/Images/Remote yosemite@2x.tiff"; sourceTree = "<group>"; };
 		359289AA1659222E00492494 /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		3597135B110DED0F00C7ECAF /* HostsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsMenu.h; path = Source/HostsMenu.h; sourceTree = "<group>"; };
 		3597135C110DED0F00C7ECAF /* HostsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsMenu.m; path = Source/HostsMenu.m; sourceTree = "<group>"; };
@@ -669,6 +673,8 @@
 				3530F7EA1135536100E591BA /* Warning.png */,
 				35730FE811342C6E00066B68 /* Remote_disabled.png */,
 				35730FDC1134291300066B68 /* Remote.png */,
+				358E0A861A3A1E1A004521D1 /* Remote yosemite.tiff */,
+				358E0A871A3A1E1A004521D1 /* Remote yosemite@2x.tiff */,
 				3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */,
 				3528ECE410E3F87E003C8CB9 /* Syncing_arrows2.png */,
 				3528ECE510E3F87E003C8CB9 /* Syncing_arrows3.png */,
@@ -935,11 +941,13 @@
 				352E04FD106281940071E25B /* Create.png in Resources */,
 				352E04FE106281940071E25B /* Remove.png in Resources */,
 				352E04FF106281940071E25B /* Save.png in Resources */,
+				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
 				352E05B610628D790071E25B /* Activated.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
 				352E05DA10628E400071E25B /* Local File.png in Resources */,
 				354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
+				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
 				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
 				35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */,
 				3556CF0F10D6B7AA00C7301E /* Editor.png in Resources */,

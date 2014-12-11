@@ -86,15 +86,16 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
     [self setTruncatesLastVisibleLine:YES];
 	[self setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]]];
     
-	remoteFileIcon = [NSImage imageNamed: @"Remote.png"];
-	remoteDisabledFileIcon = [NSImage imageNamed: @"Remote_disabled.png"];
-    
     if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9) {
         localFileIcon = [NSImage imageNamed: @"Local File.png"];
+        remoteFileIcon = [NSImage imageNamed: @"Remote.png"];
+        remoteDisabledFileIcon = [NSImage imageNamed: @"Remote_disabled.png"];
         combinedFileIcon = [NSImage imageNamed: @"Combined_File.png"];
     }
     else {
         localFileIcon = [NSImage imageNamed: @"Local File yosemite.tiff"];
+        remoteFileIcon = [NSImage imageNamed: @"Remote yosemite.tiff"];
+        remoteDisabledFileIcon = [NSImage imageNamed: @"Remote yosemite.tiff"];
         combinedFileIcon = [NSImage imageNamed: @"Combined_File_yosemite.tiff"];
     }
 
