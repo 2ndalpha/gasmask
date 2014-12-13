@@ -11,6 +11,7 @@
 		350920B51226EB9F00ACA0F4 /* HostsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 350920B41226EB9F00ACA0F4 /* HostsDownloader.m */; };
 		350920C11226ED5100ACA0F4 /* LocalHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350920C01226ED5100ACA0F4 /* LocalHostsManager.m */; };
 		350920C51226EDD600ACA0F4 /* AbstractHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350920C41226EDD600ACA0F4 /* AbstractHostsManager.m */; };
+		350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 350C7F381A3C55B000B46B09 /* Create@2x.png */; };
 		350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D3D121093E400D2F5F5 /* AlertBadge.m */; };
 		350E7D7E12111B2300D2F5F5 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D7D12111B2300D2F5F5 /* Badge.m */; };
 		350E7D941211A7AE00D2F5F5 /* BadgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D931211A7AE00D2F5F5 /* BadgeManager.m */; };
@@ -188,6 +189,7 @@
 		350920C01226ED5100ACA0F4 /* LocalHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalHostsManager.m; path = Source/LocalHostsManager.m; sourceTree = "<group>"; };
 		350920C31226EDD600ACA0F4 /* AbstractHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractHostsManager.h; path = Source/AbstractHostsManager.h; sourceTree = "<group>"; };
 		350920C41226EDD600ACA0F4 /* AbstractHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractHostsManager.m; path = Source/AbstractHostsManager.m; sourceTree = "<group>"; };
+		350C7F381A3C55B000B46B09 /* Create@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Create@2x.png"; path = "Resources/Images/Create@2x.png"; sourceTree = "<group>"; };
 		350E7D3C121093E400D2F5F5 /* AlertBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertBadge.h; path = Source/AlertBadge.h; sourceTree = "<group>"; };
 		350E7D3D121093E400D2F5F5 /* AlertBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertBadge.m; path = Source/AlertBadge.m; sourceTree = "<group>"; };
 		350E7D7C12111B2300D2F5F5 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Source/Badge.h; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 				352E05B410628D790071E25B /* Blue Dot.png */,
 				352E04F8106281940071E25B /* Activate.png */,
 				352E04F9106281940071E25B /* Create.png */,
+				350C7F381A3C55B000B46B09 /* Create@2x.png */,
 				352E04FA106281940071E25B /* Remove.png */,
 				352E04FB106281940071E25B /* Save.png */,
 				354E80A010AF33C100FC4757 /* applicationIcon.icns */,
@@ -945,6 +948,7 @@
 				352E05B610628D790071E25B /* Activated.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
 				352E05DA10628E400071E25B /* Local File.png in Resources */,
+				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
 				354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
