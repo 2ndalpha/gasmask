@@ -12,6 +12,7 @@
 		350920C11226ED5100ACA0F4 /* LocalHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350920C01226ED5100ACA0F4 /* LocalHostsManager.m */; };
 		350920C51226EDD600ACA0F4 /* AbstractHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350920C41226EDD600ACA0F4 /* AbstractHostsManager.m */; };
 		350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 350C7F381A3C55B000B46B09 /* Create@2x.png */; };
+		350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 350C7F3A1A3C56BB00B46B09 /* Read Only@2x.png */; };
 		350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D3D121093E400D2F5F5 /* AlertBadge.m */; };
 		350E7D7E12111B2300D2F5F5 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D7D12111B2300D2F5F5 /* Badge.m */; };
 		350E7D941211A7AE00D2F5F5 /* BadgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 350E7D931211A7AE00D2F5F5 /* BadgeManager.m */; };
@@ -190,6 +191,7 @@
 		350920C31226EDD600ACA0F4 /* AbstractHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractHostsManager.h; path = Source/AbstractHostsManager.h; sourceTree = "<group>"; };
 		350920C41226EDD600ACA0F4 /* AbstractHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractHostsManager.m; path = Source/AbstractHostsManager.m; sourceTree = "<group>"; };
 		350C7F381A3C55B000B46B09 /* Create@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Create@2x.png"; path = "Resources/Images/Create@2x.png"; sourceTree = "<group>"; };
+		350C7F3A1A3C56BB00B46B09 /* Read Only@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Read Only@2x.png"; path = "Resources/Images/Read Only@2x.png"; sourceTree = "<group>"; };
 		350E7D3C121093E400D2F5F5 /* AlertBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertBadge.h; path = Source/AlertBadge.h; sourceTree = "<group>"; };
 		350E7D3D121093E400D2F5F5 /* AlertBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertBadge.m; path = Source/AlertBadge.m; sourceTree = "<group>"; };
 		350E7D7C12111B2300D2F5F5 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Source/Badge.h; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 				35498EDA12187F5D00E46952 /* Offline_rollover.png */,
 				351FC1BC113FE64200F3D875 /* Remote_large.png */,
 				3513A5FF113908A900AD789D /* Read Only.png */,
+				350C7F3A1A3C56BB00B46B09 /* Read Only@2x.png */,
 				3530F93A113598A800E591BA /* Alert_rollover.png */,
 				3530F93B113598A800E591BA /* Alert.png */,
 				3530F7EA1135536100E591BA /* Warning.png */,
@@ -946,6 +949,7 @@
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
 				352E05B610628D790071E25B /* Activated.png in Resources */,
+				350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
 				352E05DA10628E400071E25B /* Local File.png in Resources */,
 				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
