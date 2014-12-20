@@ -122,6 +122,7 @@
 		35B049931A46234100EB89CA /* Hotkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498F1A46234100EB89CA /* Hotkeys.png */; };
 		35B049941A46234100EB89CA /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049901A46234100EB89CA /* Remote.png */; };
 		35B049951A46234100EB89CA /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049911A46234100EB89CA /* Update.png */; };
+		35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499A1A462AE900EB89CA /* Activated@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
 		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
@@ -342,6 +343,7 @@
 		35B0498F1A46234100EB89CA /* Hotkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hotkeys.png; path = Resources/Images/Preferences/Hotkeys.png; sourceTree = "<group>"; };
 		35B049901A46234100EB89CA /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Preferences/Remote.png; sourceTree = "<group>"; };
 		35B049911A46234100EB89CA /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Preferences/Update.png; sourceTree = "<group>"; };
+		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
 		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				352E05B310628D790071E25B /* Activated.png */,
 				352E05B410628D790071E25B /* Blue Dot.png */,
 				352E04F8106281940071E25B /* Activate.png */,
+				35B0499A1A462AE900EB89CA /* Activated@2x.png */,
 				352E04F9106281940071E25B /* Create.png */,
 				350C7F381A3C55B000B46B09 /* Create@2x.png */,
 				352E04FA106281940071E25B /* Remove.png */,
@@ -973,6 +976,7 @@
 				3528ECED10E3F87E003C8CB9 /* Syncing_arrows5.png in Resources */,
 				3528ECEE10E3F87E003C8CB9 /* Syncing_arrows6.png in Resources */,
 				35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */,
+				35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */,
 				356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */,
 				3562197910E52E8E00772473 /* AboutBox.xib in Resources */,
 				35D4CB0D10E651CD00B9F63A /* About Box Image.png in Resources */,
