@@ -123,6 +123,7 @@
 		35B049941A46234100EB89CA /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049901A46234100EB89CA /* Remote.png */; };
 		35B049951A46234100EB89CA /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049911A46234100EB89CA /* Update.png */; };
 		35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499A1A462AE900EB89CA /* Activated@2x.png */; };
+		35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
 		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
@@ -344,6 +345,7 @@
 		35B049901A46234100EB89CA /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Preferences/Remote.png; sourceTree = "<group>"; };
 		35B049911A46234100EB89CA /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Preferences/Update.png; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
+		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
 		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */,
 				352E05B310628D790071E25B /* Activated.png */,
 				352E05B410628D790071E25B /* Blue Dot.png */,
+				35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */,
 				352E04F8106281940071E25B /* Activate.png */,
 				35B0499A1A462AE900EB89CA /* Activated@2x.png */,
 				352E04F9106281940071E25B /* Create.png */,
@@ -970,6 +973,7 @@
 				358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */,
 				3528ECE910E3F87E003C8CB9 /* Syncing_arrows1.png in Resources */,
 				3528ECEA10E3F87E003C8CB9 /* Syncing_arrows2.png in Resources */,
+				35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */,
 				3528ECEB10E3F87E003C8CB9 /* Syncing_arrows3.png in Resources */,
 				358C36E81A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff in Resources */,
 				3528ECEC10E3F87E003C8CB9 /* Syncing_arrows4.png in Resources */,

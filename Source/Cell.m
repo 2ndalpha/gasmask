@@ -100,7 +100,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
     }
 
 	activeIcon = [NSImage imageNamed: @"Activated"];
-	unsavedIcon = [NSImage imageNamed: @"Blue Dot.png"];
+	unsavedIcon = [NSImage imageNamed: @"Blue Dot"];
 	
 	syncingArrowsBadgeManager = [BadgeManager badgeManagerWithCreator:@selector(createSyncArrowsBadge) target:self];
 	alertBadgeManager = [BadgeManager badgeManagerWithCreator:@selector(createAlertBadge) target:self];
