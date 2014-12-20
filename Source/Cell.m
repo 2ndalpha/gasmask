@@ -88,7 +88,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
     
     if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9) {
         localFileIcon = [NSImage imageNamed: @"Local File.png"];
-        remoteFileIcon = [NSImage imageNamed: @"Remote.png"];
+        remoteFileIcon = [NSImage imageNamed: @"Remote old.png"];
         remoteDisabledFileIcon = [NSImage imageNamed: @"Remote_disabled.png"];
         combinedFileIcon = [NSImage imageNamed: @"Combined_File.png"];
     }

@@ -28,7 +28,6 @@
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
-		351FC1BD113FE64200F3D875 /* Remote_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 351FC1BC113FE64200F3D875 /* Remote_large.png */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
 		3522BEE31533552200035B90 /* ExtendedNSPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEE21533552200035B90 /* ExtendedNSPredicate.m */; };
 		3528ECE910E3F87E003C8CB9 /* Syncing_arrows1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */; };
@@ -85,10 +84,6 @@
 		3556CEE010D6B68C00C7301E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CEDF10D6B68C00C7301E /* Sparkle.framework */; };
 		3556CEE910D6B6BF00C7301E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEDF10D6B68C00C7301E /* Sparkle.framework */; };
 		3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */; };
-		3556CF0F10D6B7AA00C7301E /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3556CF0B10D6B7AA00C7301E /* Editor.png */; };
-		3556CF1010D6B7AA00C7301E /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 3556CF0C10D6B7AA00C7301E /* General.png */; };
-		3556CF1110D6B7AA00C7301E /* Hotkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 3556CF0D10D6B7AA00C7301E /* Hotkeys.png */; };
-		3556CF1210D6B7AA00C7301E /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 3556CF0E10D6B7AA00C7301E /* Update.png */; };
 		355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5C5A12244B67006C2884 /* LocalHostsController.m */; };
 		355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CA412244F28006C2884 /* RemoteHostsController.m */; };
 		355F5CDF122452BE006C2884 /* AbstractHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CDE122452BE006C2884 /* AbstractHostsController.m */; };
@@ -102,7 +97,7 @@
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
 		356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */; };
 		35730FCF113424C100066B68 /* RemoteHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35730FCE113424C100066B68 /* RemoteHosts.m */; };
-		35730FDD1134291300066B68 /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35730FDC1134291300066B68 /* Remote.png */; };
+		35730FDD1134291300066B68 /* Remote old.png in Resources */ = {isa = PBXBuildFile; fileRef = 35730FDC1134291300066B68 /* Remote old.png */; };
 		35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 35730FE811342C6E00066B68 /* Remote_disabled.png */; };
 		35738409110209AB00E8DB54 /* HostsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35738408110209AB00E8DB54 /* HostsListView.m */; };
 		3579F0EA1114B7E700123416 /* launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FC65991114B12600BD18C3 /* launcher.m */; };
@@ -110,7 +105,6 @@
 		3579F1181114B95300123416 /* Launcher.app in Resources */ = {isa = PBXBuildFile; fileRef = 3579F0CD1114B7B900123416 /* Launcher.app */; };
 		358448B310DFE283002E6A9B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 358448B210DFE283002E6A9B /* Util.m */; };
 		3589A5631225C0C200687660 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 3589A5621225C0C200687660 /* Pair.m */; };
-		358C36E21A0D6B6A00161C98 /* Editor_yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E11A0D6B6A00161C98 /* Editor_yosemite.tiff */; };
 		358C36E51A0D6F2E00161C98 /* Combined_File_yosemite.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */; };
 		358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E41A0D6F2E00161C98 /* Combined_File.png */; };
 		358C36E81A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */; };
@@ -124,6 +118,10 @@
 		35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A053AA113AE1F4004FE36F /* URLWindowController.m */; };
 		35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */; };
 		35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */; };
+		35B049921A46234100EB89CA /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498E1A46234100EB89CA /* Editor.png */; };
+		35B049931A46234100EB89CA /* Hotkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498F1A46234100EB89CA /* Hotkeys.png */; };
+		35B049941A46234100EB89CA /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049901A46234100EB89CA /* Remote.png */; };
+		35B049951A46234100EB89CA /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049911A46234100EB89CA /* Update.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
 		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
@@ -218,7 +216,6 @@
 		3516864911187EDE00314609 /* HostsTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsTextController.h; path = Source/HostsTextController.h; sourceTree = "<group>"; };
 		3516864A11187EDE00314609 /* HostsTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsTextController.m; path = Source/HostsTextController.m; sourceTree = "<group>"; };
 		351D904110E76F7100CA6B5E /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Help; sourceTree = "<group>"; };
-		351FC1BC113FE64200F3D875 /* Remote_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote_large.png; path = Resources/Images/Remote_large.png; sourceTree = "<group>"; };
 		3522BEDE153316AA00035B90 /* ExtendedNSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSArray.h; path = Source/ExtendedNSArray.h; sourceTree = "<group>"; };
 		3522BEDF153316AA00035B90 /* ExtendedNSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSArray.m; path = Source/ExtendedNSArray.m; sourceTree = "<group>"; };
 		3522BEE11533552200035B90 /* ExtendedNSPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSPredicate.h; path = Source/ExtendedNSPredicate.h; sourceTree = "<group>"; };
@@ -295,10 +292,6 @@
 		3556CEDF10D6B68C00C7301E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateDateTransformer.h; path = Source/UpdateDateTransformer.h; sourceTree = "<group>"; };
 		3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateDateTransformer.m; path = Source/UpdateDateTransformer.m; sourceTree = "<group>"; };
-		3556CF0B10D6B7AA00C7301E /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Editor.png; sourceTree = "<group>"; };
-		3556CF0C10D6B7AA00C7301E /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = General.png; path = Resources/Images/General.png; sourceTree = "<group>"; };
-		3556CF0D10D6B7AA00C7301E /* Hotkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hotkeys.png; path = Resources/Images/Hotkeys.png; sourceTree = "<group>"; };
-		3556CF0E10D6B7AA00C7301E /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Update.png; sourceTree = "<group>"; };
 		355F5C5912244B67006C2884 /* LocalHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHostsController.h; path = Source/LocalHostsController.h; sourceTree = "<group>"; };
 		355F5C5A12244B67006C2884 /* LocalHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalHostsController.m; path = Source/LocalHostsController.m; sourceTree = "<group>"; };
 		355F5CA312244F28006C2884 /* RemoteHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsController.h; path = Source/RemoteHostsController.h; sourceTree = "<group>"; };
@@ -319,7 +312,7 @@
 		356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSSplitView.m; path = Source/ExtendedNSSplitView.m; sourceTree = "<group>"; };
 		35730FCD113424C100066B68 /* RemoteHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHosts.h; path = Source/RemoteHosts.h; sourceTree = "<group>"; };
 		35730FCE113424C100066B68 /* RemoteHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteHosts.m; path = Source/RemoteHosts.m; sourceTree = "<group>"; };
-		35730FDC1134291300066B68 /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Remote.png; sourceTree = "<group>"; };
+		35730FDC1134291300066B68 /* Remote old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Remote old.png"; path = "Resources/Images/Remote old.png"; sourceTree = "<group>"; };
 		35730FE811342C6E00066B68 /* Remote_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote_disabled.png; path = Resources/Images/Remote_disabled.png; sourceTree = "<group>"; };
 		35738407110209AB00E8DB54 /* HostsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsListView.h; path = Source/HostsListView.h; sourceTree = "<group>"; };
 		35738408110209AB00E8DB54 /* HostsListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsListView.m; path = Source/HostsListView.m; sourceTree = "<group>"; };
@@ -329,7 +322,6 @@
 		358448B210DFE283002E6A9B /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = Source/Util.m; sourceTree = "<group>"; };
 		3589A5611225C0C200687660 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pair.h; path = Source/Pair.h; sourceTree = "<group>"; };
 		3589A5621225C0C200687660 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pair.m; path = Source/Pair.m; sourceTree = "<group>"; };
-		358C36E11A0D6B6A00161C98 /* Editor_yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Editor_yosemite.tiff; path = Resources/Images/Editor_yosemite.tiff; sourceTree = "<group>"; };
 		358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Combined_File_yosemite.tiff; path = Resources/Images/Combined_File_yosemite.tiff; sourceTree = "<group>"; };
 		358C36E41A0D6F2E00161C98 /* Combined_File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Combined_File.png; path = Resources/Images/Combined_File.png; sourceTree = "<group>"; };
 		358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Combined_File_yosemite@2x.tiff"; path = "Resources/Images/Combined_File_yosemite@2x.tiff"; sourceTree = "<group>"; };
@@ -346,6 +338,10 @@
 		35A053AA113AE1F4004FE36F /* URLWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLWindowController.m; path = Source/URLWindowController.m; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
+		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
+		35B0498F1A46234100EB89CA /* Hotkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hotkeys.png; path = Resources/Images/Preferences/Hotkeys.png; sourceTree = "<group>"; };
+		35B049901A46234100EB89CA /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Preferences/Remote.png; sourceTree = "<group>"; };
+		35B049911A46234100EB89CA /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Preferences/Update.png; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
 		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
@@ -665,19 +661,19 @@
 		3545DC8E10E38F1800EBA66D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				35B0498D1A46233600EB89CA /* Preferences */,
 				35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */,
 				358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */,
 				358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */,
 				358C36E41A0D6F2E00161C98 /* Combined_File.png */,
 				35498EDA12187F5D00E46952 /* Offline_rollover.png */,
-				351FC1BC113FE64200F3D875 /* Remote_large.png */,
 				3513A5FF113908A900AD789D /* Read Only.png */,
 				350C7F3A1A3C56BB00B46B09 /* Read Only@2x.png */,
 				3530F93A113598A800E591BA /* Alert_rollover.png */,
 				3530F93B113598A800E591BA /* Alert.png */,
 				3530F7EA1135536100E591BA /* Warning.png */,
 				35730FE811342C6E00066B68 /* Remote_disabled.png */,
-				35730FDC1134291300066B68 /* Remote.png */,
+				35730FDC1134291300066B68 /* Remote old.png */,
 				358E0A861A3A1E1A004521D1 /* Remote yosemite.tiff */,
 				358E0A871A3A1E1A004521D1 /* Remote yosemite@2x.tiff */,
 				3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */,
@@ -687,11 +683,6 @@
 				3528ECE710E3F87E003C8CB9 /* Syncing_arrows5.png */,
 				3528ECE810E3F87E003C8CB9 /* Syncing_arrows6.png */,
 				3545DC7210E38DDE00EBA66D /* Offline.png */,
-				3556CF0B10D6B7AA00C7301E /* Editor.png */,
-				358C36E11A0D6B6A00161C98 /* Editor_yosemite.tiff */,
-				3556CF0C10D6B7AA00C7301E /* General.png */,
-				3556CF0D10D6B7AA00C7301E /* Hotkeys.png */,
-				3556CF0E10D6B7AA00C7301E /* Update.png */,
 				352E05D910628E400071E25B /* Local File.png */,
 				358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */,
 				358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */,
@@ -777,6 +768,17 @@
 				35A053AA113AE1F4004FE36F /* URLWindowController.m */,
 			);
 			name = "URL Sheet";
+			sourceTree = "<group>";
+		};
+		35B0498D1A46233600EB89CA /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				35B0498E1A46234100EB89CA /* Editor.png */,
+				35B0498F1A46234100EB89CA /* Hotkeys.png */,
+				35B049901A46234100EB89CA /* Remote.png */,
+				35B049911A46234100EB89CA /* Update.png */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		35C8D58011144E8300B4242D /* Hotkeys */ = {
@@ -938,7 +940,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				358C36E21A0D6B6A00161C98 /* Editor_yosemite.tiff in Resources */,
+				35B049921A46234100EB89CA /* Editor.png in Resources */,
+				35B049931A46234100EB89CA /* Hotkeys.png in Resources */,
 				3579F1181114B95300123416 /* Launcher.app in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
@@ -948,6 +951,7 @@
 				352E04FE106281940071E25B /* Remove.png in Resources */,
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
+				35B049941A46234100EB89CA /* Remote.png in Resources */,
 				352E05B610628D790071E25B /* Activated.png in Resources */,
 				350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
@@ -958,10 +962,6 @@
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
 				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
 				35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */,
-				3556CF0F10D6B7AA00C7301E /* Editor.png in Resources */,
-				3556CF1010D6B7AA00C7301E /* General.png in Resources */,
-				3556CF1110D6B7AA00C7301E /* Hotkeys.png in Resources */,
-				3556CF1210D6B7AA00C7301E /* Update.png in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
 				358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */,
@@ -980,19 +980,19 @@
 				351D904510E76F7100CA6B5E /* Help in Resources */,
 				354C0BC510E782A5005B9A33 /* hosts.icns in Resources */,
 				356712D51132F80600DF30E0 /* URLSheet.xib in Resources */,
-				35730FDD1134291300066B68 /* Remote.png in Resources */,
+				35730FDD1134291300066B68 /* Remote old.png in Resources */,
 				35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */,
 				3530F7EB1135536100E591BA /* Warning.png in Resources */,
 				3530F93D113598A800E591BA /* Alert_rollover.png in Resources */,
 				3530F93E113598A800E591BA /* Alert.png in Resources */,
 				3513A600113908A900AD789D /* Read Only.png in Resources */,
-				351FC1BD113FE64200F3D875 /* Remote_large.png in Resources */,
 				35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */,
 				35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */,
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
 				359289AB1659222E00492494 /* CHANGELOG.txt in Resources */,
 				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
+				35B049951A46234100EB89CA /* Update.png in Resources */,
 				358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
