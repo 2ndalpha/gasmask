@@ -130,7 +130,7 @@
 	[item setTarget:controller];
 	[self addItem:item];
 	
-	item = [[NSMenuItem alloc] initWithTitle:@"Preferences" action:NULL keyEquivalent:@""];
+	item = [[NSMenuItem alloc] initWithTitle:@"Preferences..." action:NULL keyEquivalent:@""];
 	[item setAction:@selector(openPreferencesWindow:)];
 	[item setTarget:controller];
 	[self addItem:item];
