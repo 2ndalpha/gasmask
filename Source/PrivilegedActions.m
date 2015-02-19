@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Clockwise   *
+ *   Copyright (C) 2009-2013 by Clockwise   *
  *   copyright@clockwise.ee   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -58,8 +58,9 @@ static AuthorizationRef authorizationRef;
 	logDebug(@"Making %@ writable for user %@", path, NSUserName());
 	
 	NSMutableString *arg = [NSMutableString new];
+    [arg appendString:@"user:"];
 	[arg appendString:NSUserName()];
-	[arg appendString:@" allow write"];
+	[arg appendString:@":allow write"];
 	
 	const char * arguments[] = {"+a", [arg UTF8String], [path UTF8String], NULL};
 	return [self execute:"/bin/chmod" withArguments: (char **)arguments];

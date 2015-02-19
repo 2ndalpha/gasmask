@@ -20,9 +20,11 @@
 
 #import "EditorController.h"
 #import "Preferences.h"
+#import "ExtendedNSSplitView.h"
 
 #define SplitViewMinWidth 140
 #define SplitViewMaxWidth 300
+#define SplitViewDefaultWidth 160
 
 
 @implementation EditorController
@@ -33,6 +35,12 @@
 	[[filesCountTextField cell] setBackgroundStyle: NSBackgroundStyleRaised];
 
 	[readOnlyIconView setToolTip:@"Hosts file can not be modified"];
+    
+    int dividerIndex = 0;
+    CGFloat position = [splitView positionOfDividerAtIndex:dividerIndex];
+    if (position > SplitViewMaxWidth) {
+        [splitView setPosition:SplitViewDefaultWidth ofDividerAtIndex:dividerIndex];
+    }
 }
 
 #pragma mark - Split View Delegate

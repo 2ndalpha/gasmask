@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Clockwise   *
+ *   Copyright (C) 2009-2013 by Clockwise   *
  *   copyright@clockwise.ee   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -32,7 +32,11 @@
 -(void)markInvalid: (NSTextStorage*)textStorage range:(NSRange)range;
 -(NSRange)changedLinesRange: (NSTextStorage*)textStorage;
 -(BOOL)validName:(NSString*)contents range:(NSRange)nameRange;
-@end 
+@end
+
+@interface HostsTextView (Selection)
+-(NSRange)selectRangeFromDoubleClick:(NSUInteger)location range:(NSRange)range;
+@end
 
 @implementation HostsTextView
 
@@ -51,12 +55,29 @@
 {
 	[[super textStorage] setDelegate:self];
 	
-	// Disables wrapping
-	NSTextContainer *textContainer = [self textContainer];
-	NSSize size = [textContainer containerSize];
-	size.width = 1.0e7;
-	[textContainer setContainerSize:size];
-	[textContainer setWidthTracksTextView:NO];
+    // Enable horizontal scroll
+    [[self enclosingScrollView] setHasHorizontalScroller:YES];
+    [self setHorizontallyResizable:YES];
+    [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
+    [[self textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
+    [[self textContainer] setWidthTracksTextView:NO];
+}
+
+/*
+ Overrides proposed selection range for double clicks.
+ */
+- (NSRange)selectionRangeForProposedRange:(NSRange)proposedSelRange
+                              granularity:(NSSelectionGranularity)granularity
+{
+    NSRange range = [super selectionRangeForProposedRange:proposedSelRange
+                                              granularity:granularity];
+    
+    NSEvent *event = [NSApp currentEvent];
+	if ([event type] == NSLeftMouseUp && [event clickCount] == 2) {
+        return [self selectRangeFromDoubleClick:proposedSelRange.location range:range];
+    }
+    
+    return range;
 }
 
 -(void)setSyntaxHighlighting:(BOOL)value
@@ -286,6 +307,40 @@
 	if (syntaxHighlighting && [[self textStorage] editedMask] != NSTextStorageEditedAttributes) {
 		[self colorText:[notification object]];
 	}
+}
+
+@end
+
+@implementation HostsTextView (Selection)
+
+/*
+ Selects token between two dots.
+ Example: instead of selecting "www.goo|gle.com" it selects "google". Note: "|" represents
+ cursor location.
+*/
+-(NSRange)selectRangeFromDoubleClick:(NSUInteger)location range:(NSRange)range
+{
+    NSString *selectedString = [[self string] substringWithRange:range];
+    NSInteger clickPosition = location - range.location;
+    
+    NSInteger length = [selectedString length];
+    for (int i=clickPosition; i<length; i++) {
+        unichar character = [selectedString characterAtIndex:i];
+        if (character == '.') {
+            range.length = i;
+            break;
+        }
+    }
+    for (int i=clickPosition; i>0; i--) {
+        unichar character = [selectedString characterAtIndex:i];
+        if (character == '.') {
+            range.location += i + 1;
+            range.length -= i + 1;
+            break;
+        }
+    }
+    
+    return range;
 }
 
 @end

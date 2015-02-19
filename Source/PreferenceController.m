@@ -103,11 +103,11 @@
 	}
 	else if ([ident isEqualTo:TOOLBAR_EDITOR]) {
 		[item setLabel: @"Editor"];
-		[item setImage: [NSImage imageNamed: @"Editor.png"]];
+        [item setImage: [NSImage imageNamed: @"Editor.png"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_REMOTE]) {
 		[item setLabel: @"Remote"];
-		[item setImage: [NSImage imageNamed: @"Remote_large.png"]];
+		[item setImage: [NSImage imageNamed: @"Remote.png"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_HOTKEYS]) {
 		[item setLabel: @"Hotkeys"];

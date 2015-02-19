@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Clockwise   *
+ *   Copyright (C) 2009-2013 by Clockwise   *
  *   copyright@clockwise.ee   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,36 +18,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import "Menulet.h"
-#import "Hosts.h"
-#import "HostsMainController.h"
-#import "HostsMenu.h"
-
-
-@implementation Menulet
-
-- (void)awakeFromNib
-{	
-	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-	[statusItem setHighlightMode:YES];
-	[statusItem setEnabled:YES];
-	[statusItem setToolTip:@"Gas Mask"];
-	[statusItem setTitle:@""];
-	[statusItem setAction:@selector(showMenu:)];
-	[statusItem setTarget:self];
-	
-	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-	NSString *path = [bundle pathForResource:@"menuIcon" ofType:@"tiff"];
-	NSImage *icon = [[NSImage alloc] initWithContentsOfFile:path];
-    [icon setTemplate:YES];
-	
-	[statusItem setImage:icon];
-}
-
--(IBAction)showMenu:(id)sender
-{	
-	HostsMenu *menu = [[HostsMenu alloc] initWithExtras];
-	[statusItem popUpStatusItemMenu:menu];
-}
-
+@interface NSSplitView (Extended)
+- (CGFloat)positionOfDividerAtIndex:(NSInteger)dividerIndex;
 @end

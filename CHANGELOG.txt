@@ -1,4 +1,15 @@
 
+                         0.8.1
+----------------------------------------------------
+- Enabled horizontal scroll of the textarea
+- Confirming removal of a file
+- Support for dark mode in Yosemite
+- Bugfix for text selection
+
+
+                         0.7.1
+----------------------------------------------------
+- Fixed a bug when username contains spaces
 
                          0.7
 ----------------------------------------------------
