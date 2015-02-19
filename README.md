@@ -7,7 +7,7 @@ It allows editing of host files and switching between them.
 Runs on Lion, Mountain Lion, Mavericks and Yosemite.
 
 ## Download
-[Download latest version (0.8)](http://gmask.clockwise.ee/files/gas_mask_0.8.zip)
+[Download latest version (0.8.1)](http://gmask.clockwise.ee/files/gas_mask_0.8.1.zip)
 
 ## Building Gas Mask
 Gas Mask can be built with Xcode 4.6.2, Xcode 5 and XCode 6.
