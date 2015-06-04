@@ -213,7 +213,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	return newFrame;
 }
 
-- (NSUInteger) hitTestForEvent: (NSEvent *) event inRect: (NSRect) cellFrame ofView: (NSView *) controlView
+- (NSCellHitResult) hitTestForEvent: (NSEvent *) event inRect: (NSRect) cellFrame ofView: (NSView *) controlView
 {
 	NSPoint point = [controlView convertPoint:[event locationInWindow] fromView:nil];
 	
