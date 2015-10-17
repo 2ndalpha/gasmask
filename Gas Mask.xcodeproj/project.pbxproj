@@ -257,7 +257,7 @@
 		353A80BA10B01C050005CAD1 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = Source/Preferences.m; sourceTree = "<group>"; };
 		353A80C810B01F320005CAD1 /* ExtendedNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSString.h; path = Source/ExtendedNSString.h; sourceTree = "<group>"; };
 		353A80C910B01F320005CAD1 /* ExtendedNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSString.m; path = Source/ExtendedNSString.m; sourceTree = "<group>"; };
-		353A80FB10B020B10005CAD1 /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = UserDefaults.plist; path = Resources/UserDefaults.plist; sourceTree = "<group>"; };
+		353A80FB10B020B10005CAD1 /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = UserDefaults.plist; path = Resources/UserDefaults.plist; sourceTree = "<group>"; };
 		3541CE0310E4AF9B00FA00CB /* SyncingArrowsBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncingArrowsBadge.h; path = Source/SyncingArrowsBadge.h; sourceTree = "<group>"; };
 		3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncingArrowsBadge.m; path = Source/SyncingArrowsBadge.m; sourceTree = "<group>"; };
 		3541CEA810E4B8F800FA00CB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 		35FBCA501223181000860FDA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		35FC65991114B12600BD18C3 /* launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = launcher.m; path = Source/launcher.m; sourceTree = "<group>"; };
 		35FC65A71114B29A00BD18C3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Gas Mask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Mask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
