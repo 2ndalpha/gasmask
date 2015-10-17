@@ -38,6 +38,11 @@ static Preferences *sharedInstance = nil;
 	return [[[self instance] defaults] boolForKey:UseGrowlPrefKey];
 }
 
++(BOOL)showNameInStatusBar
+{
+    return [[[self instance] defaults] boolForKey:ShowNameInStatusBarKey];
+}
+
 + (BOOL)overrideExternalModifications
 {
     return [[[self instance] defaults] boolForKey:OverrideExternalModificationsPrefKey];
