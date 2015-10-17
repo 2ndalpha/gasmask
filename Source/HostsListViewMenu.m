@@ -92,7 +92,7 @@
 {
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 	NSString *path = [[sender representedObject] path];
-	[workspace selectFile: path inFileViewerRootedAtPath:nil];
+	[workspace selectFile: path inFileViewerRootedAtPath:@""];
 }
 
 - (IBAction)moveToLocal:(id)sender
