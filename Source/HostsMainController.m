@@ -35,8 +35,6 @@
 - (NSObject<HostsControllerProtocol>*) hostsControllerForFile:(Hosts*)hosts;
 - (NSIndexPath*)hostsIndexPath:(Hosts*)hosts;
 
-- (void)startListeningFileChanges;
-
 - (Hosts*)previousHostsFile:(Hosts*)hosts;
 - (Hosts*)nextHostsFile:(Hosts*)hosts;
 
@@ -61,6 +59,7 @@
 
 @implementation HostsMainController
 
+static VDKQueue* queue = nil;
 static HostsMainController *sharedInstance = nil;
 
 + (HostsMainController*)defaultInstance
@@ -85,12 +84,13 @@ static HostsMainController *sharedInstance = nil;
 		for (int i=0; i<[controllers count]; i++) {
 			[[controllers objectAtIndex:i] setDelegate:self];
 		}
-        
-        trackFileChange = YES;
-		filesCount = 0;
-        
-        [self startListeningFileChanges];
-		
+
+        queue = [[VDKQueue alloc] init];
+        [queue setDelegate:self];
+        [self startTrackingFileChanges];
+
+        filesCount = 0;
+
 		sharedInstance = self;
 		return self;
 	}
@@ -240,12 +240,12 @@ static HostsMainController *sharedInstance = nil;
 
 - (void)saveHosts:(Hosts*)hosts
 {
-    trackFileChange = NO;
+    [self stopTrackingFileChanges];
 	NSObject<HostsControllerProtocol> *controller = [self hostsControllerForFile:hosts];
 	[controller saveHosts:hosts];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:HostsFileSavedNotification object:hosts];
-    trackFileChange = YES;
+    [self startTrackingFileChanges];
 }
 
 #pragma mark -
@@ -352,6 +352,7 @@ static HostsMainController *sharedInstance = nil;
 - (void)activateHostsFile:(Hosts*)hosts
 {
 	logDebug(@"Activating: \"%@\"", [hosts name]);
+    [self stopTrackingFileChanges];
 	
 	Hosts *activeHostsFile = [self activeHostsFile];
 	
@@ -361,6 +362,7 @@ static HostsMainController *sharedInstance = nil;
 	if (newActivated) {
 		[activeHostsFile setActive:NO];
 	}
+    [self startTrackingFileChanges];
 }
 
 #pragma mark -
@@ -399,12 +401,17 @@ static HostsMainController *sharedInstance = nil;
 
 - (void)startTrackingFileChanges
 {
-    trackFileChange = YES;
+    // Listening for writes only doesn't cover when the file
+    // gets moved and relinked, so we need to listen for
+    // VDKQueueNotifyDefault.  It also doesn't cover when the
+    // file gets replaced by tools like Junos PulseVPN which restores
+    // the file upon VPN connection close.
+    [queue addPath:HostsFileLocation notifyingAbout:(VDKQueueNotifyAboutWrite | VDKQueueNotifyAboutDelete)];
 }
 
 - (void)stopTrackingFileChanges
 {
-    trackFileChange = NO;
+    [queue removePath:HostsFileLocation];
 }
 
 #pragma mark -
@@ -515,7 +522,8 @@ static HostsMainController *sharedInstance = nil;
 
 -(void) VDKQueue:(VDKQueue *)queue receivedNotification:(NSString*)noteName forPath:(NSString*)fpath
 {
-    if (!trackFileChange) {
+    // VDKQueue is notifying me too often, so filter out what we really want
+    if (!([noteName isEqualToString:VDKQueueDeleteNotification] || ( [noteName isEqualTo:VDKQueueWriteNotification]) )) {
         return;
     }
     logDebug(@"External application has changed the hosts file, restoring file");
@@ -530,17 +538,12 @@ static HostsMainController *sharedInstance = nil;
         logDebug(@"No active hosts file, can't restore");
         return;
     }
-    
-    trackFileChange = NO;
+
+    [self stopTrackingFileChanges];
     NSObject<HostsControllerProtocol> *controller = [self hostsControllerForFile:activeHosts];
 	BOOL success = [controller restoreHostsToOriginalLocation:activeHosts];
-    
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(startTrackingFileChanges)
-                                   userInfo:nil
-                                    repeats:NO];
-    
+    [self startTrackingFileChanges];
+
     if (!success) {
         logWarn(@"Failed to restore file");
         return;
@@ -646,19 +649,10 @@ static HostsMainController *sharedInstance = nil;
 #pragma mark -
 #pragma mark File change listener
 
-- (void)startListeningFileChanges
-{
-    logDebug(@"Starting listening for changes in /etc/hosts");
-    
-    VDKQueue *queue = [VDKQueue new];
-    [queue addPath:@"/etc/hosts" notifyingAbout:VDKQueueNotifyAboutWrite];
-    [queue setDelegate:self];
-}
-
 - (Hosts*)previousHostsFile:(Hosts*)hosts
 {
 	NSArray *hostsFiles = [self allHostsFiles];
-	
+
 	for (int i=0; i<[hostsFiles count]; i++) {
 		Hosts *hosts2 = [hostsFiles objectAtIndex:i];
 		if ([hosts2 isEqual:hosts]) {

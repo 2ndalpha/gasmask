@@ -74,8 +74,6 @@
 @interface HostsMainController : NSTreeController<HostsControllerDelegateProtocol, VDKQueueDelegate> {
 	@private
 	NSArray *controllers;
-    BOOL trackFileChange;
-	
 	int filesCount;
 }
 
