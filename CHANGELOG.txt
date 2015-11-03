@@ -1,4 +1,10 @@
 
+                         0.8.2
+----------------------------------------------------
+- Bugfixes
+- Optionally displaying active hosts file name in the menu bar
+- Partial support for Retina
+
                          0.8.1
 ----------------------------------------------------
 - Enabled horizontal scroll of the textarea
