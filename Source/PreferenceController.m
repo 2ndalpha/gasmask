@@ -143,7 +143,7 @@
 	
 	NSWindow * window = [self window];
 	NSRect windowRect = [window frame];
-    float difference = ([view frame].size.height - [[window contentView] frame].size.height) * [window userSpaceScaleFactor];
+    float difference = ([view frame].size.height - [[window contentView] frame].size.height);
     windowRect.origin.y -= difference;
     windowRect.size.height += difference;
 	

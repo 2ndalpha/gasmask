@@ -44,7 +44,7 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
 	if (activeIcon != nil) {
-		[activeIcon compositeToPoint:[self bounds].origin operation:NSCompositeSourceOver];
+        [activeIcon drawAtPoint:[self bounds].origin fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 	}
 }
 
