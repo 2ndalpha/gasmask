@@ -114,8 +114,8 @@ static HostsMainController *sharedInstance = nil;
 	}
 	
 	[self updateFilesCount];
-	
 	logInfo(@"All hosts files are loaded");
+    [[NSNotificationCenter defaultCenter] postNotificationName:ActivateFileNotification object:NULL];
 }
 
 #pragma mark -
@@ -361,6 +361,7 @@ static HostsMainController *sharedInstance = nil;
 	
 	if (newActivated) {
 		[activeHostsFile setActive:NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ActivateFileNotification object:NULL];
 	}
     [self startTrackingFileChanges];
 }

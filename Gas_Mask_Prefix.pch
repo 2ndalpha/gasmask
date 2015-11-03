@@ -38,6 +38,7 @@
     #define HostsFileSavedNotification @"HostsFileSavedNotification"
 
 	// Notifications from hotkeys
+    #define ActivateFileNotification @"activateFileNotification" // sent when any given host file is activated.
 	#define ActivatePreviousFileNotification @"activatePreviousFileNotification"
 	#define ActivateNextFileNotification @"activateNextFileNotification"
 	#define UpdateAndSynchronizeNotification @"updateAndSynchronizeNotification"

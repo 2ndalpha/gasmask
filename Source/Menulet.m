@@ -22,27 +22,86 @@
 #import "Hosts.h"
 #import "HostsMainController.h"
 #import "HostsMenu.h"
-
+#import "Preferences.h"
 
 @implementation Menulet
 
 - (void)awakeFromNib
 {	
-	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-	[statusItem setHighlightMode:YES];
-	[statusItem setEnabled:YES];
-	[statusItem setToolTip:@"Gas Mask"];
-	[statusItem setTitle:@""];
-	[statusItem setAction:@selector(showMenu:)];
-	[statusItem setTarget:self];
-	
+    
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 	NSString *path = [bundle pathForResource:@"menuIcon" ofType:@"tiff"];
 	NSImage *icon = [[NSImage alloc] initWithContentsOfFile:path];
     [icon setTemplate:YES];
-	
-	[statusItem setImage:icon];
+
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    [[statusItem button] setEnabled:true];
+    [[statusItem button] setTarget:self];
+    [[statusItem button] setAction:@selector(showMenu:)];
+    [[statusItem button] setImage:icon];
+    [[statusItem button] setTitle:@""];
+    [[statusItem button] setToolTip:@"Gas Mask"];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults addObserver:self
+               forKeyPath:ShowNameInStatusBarKey
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+    
+    [defaults addObserver:self
+               forKeyPath:ActiveHostsFilePrefKey
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateName) name:ActivateFileNotification object:NULL];
+    
+    if ([Preferences showNameInStatusBar]) {
+        [self initTitleInBar];
+    }
 }
+
+-(void) initTitleInBar {
+    [statusItem setLength:NSVariableStatusItemLength];
+    [[statusItem button] setImagePosition:NSImageLeft];
+}
+
+-(void)updateName {
+    if (![Preferences showNameInStatusBar]) {
+        return;
+    }
+    NSString *name = [[[HostsMainController defaultInstance] activeHostsFile] name];
+    [[statusItem button] setTitle:name];
+}
+
+-(void) removeTitleFromBar {
+    [statusItem setLength:NSSquareStatusItemLength];
+    [[statusItem button] setImagePosition:NSImageOnly];
+    [[statusItem button] setTitle:@""];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary *)change
+                      context:(void *)context
+{
+    if ([ShowNameInStatusBarKey isEqualToString:keyPath]) {
+        if ([Preferences showNameInStatusBar]) {
+            [self initTitleInBar];
+            [self updateName];
+        } else {
+            [self removeTitleFromBar];
+        }
+    } else if ([ActiveHostsFilePrefKey isEqualToString:keyPath]) {
+        [self updateName];
+    }
+}
+
+-(void)dealloc {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObserver:self forKeyPath:ActiveHostsFilePrefKey];
+    [defaults removeObserver:self forKeyPath:ShowNameInStatusBarKey];
+}
+
 
 -(IBAction)showMenu:(id)sender
 {	
