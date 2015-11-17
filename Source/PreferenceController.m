@@ -25,6 +25,7 @@
 #import "Preferences+Remote.h"
 #import "LoginItem.h"
 #import "Hotkey.h"
+#import "Util.h"
 
 #define TOOLBAR_GENERAL @"TOOLBAR_GENERAL"
 #define TOOLBAR_EDITOR @"TOOLBAR_EDITOR"
@@ -40,6 +41,10 @@
 
 @interface PreferenceController (Hotkeys)
 - (void)initHotkeys;
+@end
+
+@interface PreferenceController (General)
+- (void)initGeneral;
 @end
 
 @implementation PreferenceController
@@ -69,6 +74,7 @@
 	loginItem = [LoginItem new];
 	[loginItem bind:@"enabled" toObject:[Preferences instance] withKeyPath:@"values.openAtLogin" options:nil];
 		
+	[self initGeneral];
 	[self initRemote];
 	[self initHotkeys];
 }
@@ -151,6 +157,18 @@
 	[window setFrame: windowRect display: YES animate: YES];
 }
 
+@end
+
+@implementation PreferenceController (General)
+/**
+ * OS X 10.10 and later support the NSStatusItemBar button which is what the
+ * "Show Host File Name in Status Bar" feature is built upon.  So if we're
+ * not 10.10 or above, then we need to disable the preference selection.
+ */
+- (void) initGeneral
+{
+    showHostFileNameButton.enabled = ![Util isPre10_10];
+}
 @end
 
 @implementation PreferenceController (Remote)

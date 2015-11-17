@@ -26,6 +26,8 @@
 	IBOutlet NSView *generalView, *editorView, *hotkeysView, *updateView, *remoteView;
     LoginItem *loginItem;
 	
+    __unsafe_unretained IBOutlet NSButton *showHostFileNameButton;
+    
 	// Remote
 	IBOutlet NSSlider *remoteIntervalSlider;
 	NSDictionary *remoteIntervals;
