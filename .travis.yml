@@ -1,2 +1,3 @@
 language: objective-c
 script: xcodebuild ARCHS="i386 x86_64"
+osx_image: xcode7.1
