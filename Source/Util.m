@@ -32,4 +32,8 @@
 	return [task terminationStatus] == 0;
 }
 
++ (BOOL) isPre10_10
+{
+    return ( NSAppKitVersionNumber < NSAppKitVersionNumber10_10 );
+}
 @end
