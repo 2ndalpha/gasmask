@@ -34,7 +34,7 @@
 	<key>CFBundleIconFile</key>
 	<string>applicationIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>ee.clockwise.gmask</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
