@@ -1,6 +1,8 @@
 # Gas Mask
 [![Build Status](https://travis-ci.org/2ndalpha/gasmask.png?branch=master)](https://travis-ci.org/2ndalpha/gasmask)
 
+## fixed: Gas Mask on macOS Sierra NSNull Exception
+
 Gas Mask is simple hosts file manager for Mac OS X.
 It allows editing of host files and switching between them.
 
