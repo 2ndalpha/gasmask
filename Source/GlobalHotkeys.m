@@ -119,19 +119,22 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	id old = [change objectForKey:@"old"];
-	int oldKeyCode = [[old objectForKey:@"keyCode"] intValue];
-	int oldModifiers = [[old objectForKey:@"modifiers"] intValue];
-	
-	id new = [change objectForKey:@"new"];
-	int keyCode = [[new objectForKey:@"keyCode"] intValue];
-	int modifiers = [[new objectForKey:@"modifiers"] intValue];
-	
-	if (oldKeyCode != keyCode || oldModifiers != modifiers) {
-		
-		[self unregisterHotkey:context];
-		[self registerHotkeyWithID:[[ids objectForKey:keyPath] intValue] preferenceKey:keyPath];
-	}
+    id old = [change objectForKey:@"old"];
+    if (old != nil && ![old isKindOfClass:[NSNull class]] ) { //TODO: check nil or NSNull
+        int oldKeyCode = [[old objectForKey:@"keyCode"] intValue];
+        int oldModifiers = [[old objectForKey:@"modifiers"] intValue];
+        
+        id new = [change objectForKey:@"new"];
+        int keyCode = [[new objectForKey:@"keyCode"] intValue];
+        int modifiers = [[new objectForKey:@"modifiers"] intValue];
+        
+        if (oldKeyCode != keyCode || oldModifiers != modifiers) {
+            
+            [self unregisterHotkey:context];
+            [self registerHotkeyWithID:[[ids objectForKey:keyPath] intValue] preferenceKey:keyPath];
+        }
+    }
+
 }
 
 - (void)unregisterHotkey:(EventHotKeyRef)hotkeyRef
