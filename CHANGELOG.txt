@@ -1,5 +1,5 @@
 
-                     0.8.2, 0.8.3
+                     0.8.2, 0.8.3, 0.8.4
 ----------------------------------------------------
 - Bugfixes
 - Optionally displaying active hosts file name in the menu bar
