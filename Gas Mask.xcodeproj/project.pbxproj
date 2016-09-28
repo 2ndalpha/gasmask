@@ -60,7 +60,7 @@
 		353D18BC1114C0C1005C4E54 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */; };
 		3541CEA910E4B8F800FA00CB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; };
-		3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; };
+		3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3544E2D310E4CCB1009AC525 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3544E2D210E4CCB1009AC525 /* Map.m */; };
 		3545DC7310E38DDE00EBA66D /* Offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3545DC7210E38DDE00EBA66D /* Offline.png */; };
 		3545DCA910E396CF00EBA66D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 3545DCA810E396CF00EBA66D /* Network.m */; };
@@ -70,7 +70,7 @@
 		35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */ = {isa = PBXBuildFile; fileRef = 35498EDA12187F5D00E46952 /* Offline_rollover.png */; };
 		354C0BC510E782A5005B9A33 /* hosts.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354C0BC410E782A5005B9A33 /* hosts.icns */; };
 		354CCF811117285300EB6948 /* HostsListViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 354CCF801117285300EB6948 /* HostsListViewMenu.m */; };
-		354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */; };
+		354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		354E7E4010AEB09D00FC4757 /* HostsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7E3F10AEB09D00FC4757 /* HostsMainController.m */; };
 		354E7E7410AEB25100FC4757 /* Hosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7E7310AEB25100FC4757 /* Hosts.m */; };
 		354E7EB110AEEF3D00FC4757 /* StructureConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7EB010AEEF3D00FC4757 /* StructureConverter.m */; };
@@ -79,8 +79,8 @@
 		354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		354E80B510AF383C00FC4757 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E80B410AF383C00FC4757 /* FileUtil.m */; };
 		3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */; };
-		3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */; };
-		3556CEE010D6B68C00C7301E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CEDF10D6B68C00C7301E /* Sparkle.framework */; };
+		3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3556CEE010D6B68C00C7301E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CEDF10D6B68C00C7301E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3556CEE910D6B6BF00C7301E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEDF10D6B68C00C7301E /* Sparkle.framework */; };
 		3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */; };
 		355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5C5A12244B67006C2884 /* LocalHostsController.m */; };
@@ -90,7 +90,7 @@
 		3562197910E52E8E00772473 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562197810E52E8E00772473 /* AboutBox.xib */; };
 		35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35621A3010E52F6C00772473 /* AboutBoxController.m */; };
 		3564D78F11480CFC00F7EF4D /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; };
-		3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; };
+		3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
 		356712D51132F80600DF30E0 /* URLSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356712D41132F80600DF30E0 /* URLSheet.xib */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
@@ -913,14 +913,16 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Clockwise;
 				TargetAttributes = {
 					3579F0CC1114B7B900123416 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = F377YS9A4R;
+						ProvisioningStyle = Automatic;
 					};
 					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = F377YS9A4R;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1131,9 +1133,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = F377YS9A4R;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1149,6 +1152,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1159,10 +1163,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F377YS9A4R;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1176,6 +1181,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1188,9 +1194,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = F377YS9A4R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1204,6 +1211,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1215,9 +1223,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F377YS9A4R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1229,6 +1238,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1238,12 +1248,28 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -1252,8 +1278,23 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
