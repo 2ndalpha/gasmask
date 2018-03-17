@@ -1,2 +1,4 @@
 *.xcworkspace
 xcuserdata
+Pods
+build
