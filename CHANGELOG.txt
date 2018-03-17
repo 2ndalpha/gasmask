@@ -1,3 +1,6 @@
+                         0.8.6
+----------------------------------------------------
+- Changed how the hide editor window logic works so that relaunching is not necessary (by Andrew Muraco)
 
                      0.8.2, 0.8.3, 0.8.4
 ----------------------------------------------------
