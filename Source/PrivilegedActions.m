@@ -90,19 +90,15 @@ static AuthorizationRef authorizationRef;
 	AuthorizationItem items = {kAuthorizationRightExecute, 0, NULL, 0};
 	AuthorizationRights rights = {1, &items};
 	
-	AuthorizationEnvironment *environment = NULL;
-	if (prompt != nil) {
-		AuthorizationItem auth_prompt = {kAuthorizationEnvironmentPrompt, [prompt length], (void *)[prompt UTF8String], 0};
-		AuthorizationEnvironment auth_env = { 1, &auth_prompt };
-		environment = &auth_env;
-	}
+    AuthorizationItem authPrompt = {kAuthorizationEnvironmentPrompt, [prompt length], (void *)[prompt UTF8String], 0};
+	AuthorizationEnvironment environment = { 1, &authPrompt };
 	
 	flags = kAuthorizationFlagDefaults |
 	kAuthorizationFlagInteractionAllowed |
 	kAuthorizationFlagPreAuthorize |
 	kAuthorizationFlagExtendRights;
 	
-	status = AuthorizationCopyRights (authorizationRef, &rights, environment, flags, NULL);
+	status = AuthorizationCopyRights (authorizationRef, &rights, &environment, flags, NULL);
 	
 	if (status != errAuthorizationSuccess) {
 		logDebug(@"Failed to Authorize");
