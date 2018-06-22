@@ -61,6 +61,10 @@
     [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
     [[self textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [[self textContainer] setWidthTracksTextView:NO];
+    
+    if (@available(macOS 10_13, *)) {
+        [self setBackgroundColor:[NSColor colorNamed:@"BackgroundColor"]];
+    }
 }
 
 /*
