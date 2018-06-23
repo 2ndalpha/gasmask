@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Gas Mask" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" frameAutosaveName="editor_window" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -244,14 +244,14 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="27DCCCF7-20C3-4CFC-8999-B22C53F5240A" displayMode="iconAndLabel" sizeMode="regular" id="8">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="FA447B91-2033-482B-B2AC-22D2E54C120D" label="Remove" paletteLabel="Remove" image="Remove" id="20">
+                    <toolbarItem implicitItemIdentifier="FA447B91-2033-482B-B2AC-22D2E54C120D" label="Remove" paletteLabel="Remove" image="RemoveImage" id="20">
                         <nil key="toolTip"/>
                         <size key="minSize" width="35" height="25"/>
                         <size key="maxSize" width="35" height="25"/>
                         <button key="view" verticalHuggingPriority="750" id="21">
                             <rect key="frame" x="7" y="14" width="35" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="roundTextured" title="Create" bezelStyle="texturedRounded" image="Remove" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="22">
+                            <buttonCell key="cell" type="roundTextured" title="Create" bezelStyle="texturedRounded" image="RemoveImage" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="22">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <string key="keyEquivalent"></string>
@@ -286,20 +286,25 @@
                             </binding>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="DC8A19D6-1424-49DF-B7DB-CD4077AB727F" label="Activate" paletteLabel="Activate" image="Activate" id="28">
+                    <toolbarItem implicitItemIdentifier="DC8A19D6-1424-49DF-B7DB-CD4077AB727F" label="Activate" paletteLabel="Activate" image="ActivateImage" id="28">
                         <nil key="toolTip"/>
                         <size key="minSize" width="35" height="25"/>
                         <size key="maxSize" width="35" height="25"/>
                         <button key="view" verticalHuggingPriority="750" id="29">
                             <rect key="frame" x="8" y="14" width="35" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="roundTextured" title="Create" bezelStyle="texturedRounded" image="Activate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="30">
+                            <buttonCell key="cell" type="roundTextured" title="Create" bezelStyle="texturedRounded" image="ActivateImage" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="30">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
                         <connections>
                             <action selector="activateSelected:" target="64" id="93"/>
+                            <binding destination="64" name="enabled" keyPath="selection.active" id="84">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                             <binding destination="64" name="enabled2" keyPath="selection.exists" previousBinding="84" id="164">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -308,23 +313,18 @@
                                     <integer key="NSNullPlaceholder" value="-1"/>
                                 </dictionary>
                             </binding>
-                            <binding destination="64" name="enabled" keyPath="selection.active" id="84">
-                                <dictionary key="options">
-                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                </dictionary>
-                            </binding>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="A785E813-1925-4743-94B3-4126D3BF10CF" label="Create" paletteLabel="Create" image="Create" id="306">
                         <nil key="toolTip"/>
                         <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="25"/>
+                        <size key="maxSize" width="52" height="25"/>
                         <popUpButton key="view" verticalHuggingPriority="750" id="300">
                             <rect key="frame" x="0.0" y="14" width="52" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Create" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" pullsDown="YES" selectedItem="303" id="301">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
+                                <font key="font" metaFont="menu"/>
                                 <menu key="menu" title="OtherViews" id="302">
                                     <items>
                                         <menuItem state="on" image="Create" hidden="YES" id="303"/>
@@ -506,10 +506,10 @@
         </scrollView>
     </objects>
     <resources>
-        <image name="Activate" width="12" height="12"/>
+        <image name="ActivateImage" width="56" height="44"/>
         <image name="Create" width="15.5" height="16"/>
         <image name="Read Only" width="16" height="16"/>
-        <image name="Remove" width="16" height="16"/>
+        <image name="RemoveImage" width="32" height="44"/>
         <image name="Save" width="16" height="16"/>
     </resources>
 </document>
