@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Clockwise   *
- *   copyright@clockwise.ee   *
+ *   Copyright (C) 2009-2018 by Siim Raud   *
+ *   siim@clockwise.ee   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -73,6 +73,7 @@ static ApplicationController *sharedInstance = nil;
 		preferenceController = [[PreferenceController alloc] init];
 	}
 	
+    [self showApplicationInDock];
 	[preferenceController showWindow:self];
 }
 
