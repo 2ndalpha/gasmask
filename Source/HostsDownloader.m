@@ -81,7 +81,7 @@
     NSURLSessionDataTask *task = [
           NSURLSession.sharedSession dataTaskWithURL:url
           completionHandler:^(NSData *data, NSURLResponse *urlResponse, NSError *taskError) {
-              if (error || data.length == 0) {
+              if (taskError || !data || data.length == 0) {
                   error = [[Error alloc] initWithType:FailedToDownload];
                   NSString *description = @"Failed to download the hosts file";
                   [error setDescription:description];
