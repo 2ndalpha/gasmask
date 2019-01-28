@@ -39,7 +39,6 @@
 		352E048D106279F50071E25B /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E048C106279F50071E25B /* ListController.m */; };
 		352E049F10627A830071E25B /* Editor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 352E049E10627A830071E25B /* Editor.xib */; };
 		352E04BA10627C1D0071E25B /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E04B910627C1D0071E25B /* ApplicationController.m */; };
-		352E04FC106281940071E25B /* Activate.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E04F8106281940071E25B /* Activate.png */; };
 		352E04FD106281940071E25B /* Create.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E04F9106281940071E25B /* Create.png */; };
 		352E04FF106281940071E25B /* Save.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E04FB106281940071E25B /* Save.png */; };
 		352E050E106283630071E25B /* EditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E050D106283630071E25B /* EditorController.m */; };
@@ -130,8 +129,8 @@
 		35D4CACB10E64DDD00B9F63A /* ExtendedNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */; };
 		35D4CB0D10E651CD00B9F63A /* About Box Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D4CB0C10E651CD00B9F63A /* About Box Image.png */; };
 		35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */; };
+		35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D83BEE20DD97CF00169358 /* Assets.xcassets */; };
 		35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */; };
-		35E210801A86A19C00737C00 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35E2107F1A86A19C00737C00 /* Remove.tiff */; };
 		35E32D841211D52F00B2C631 /* OfflineBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32D831211D52F00B2C631 /* OfflineBadge.m */; };
 		35E32EDC12145CF900B2C631 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32EDB12145CF900B2C631 /* Logger.m */; };
 		35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E33074121490B100B2C631 /* ExtendedNSThread.m */; };
@@ -233,7 +232,6 @@
 		352E049E10627A830071E25B /* Editor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor.xib; sourceTree = "<group>"; };
 		352E04B810627C1D0071E25B /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = Source/ApplicationController.h; sourceTree = "<group>"; };
 		352E04B910627C1D0071E25B /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationController.m; path = Source/ApplicationController.m; sourceTree = "<group>"; };
-		352E04F8106281940071E25B /* Activate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Activate.png; path = Resources/Images/Activate.png; sourceTree = "<group>"; };
 		352E04F9106281940071E25B /* Create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Create.png; path = Resources/Images/Create.png; sourceTree = "<group>"; };
 		352E04FB106281940071E25B /* Save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Save.png; path = Resources/Images/Save.png; sourceTree = "<group>"; };
 		352E050C106283630071E25B /* EditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorController.h; path = Source/EditorController.h; sourceTree = "<group>"; };
@@ -361,8 +359,8 @@
 		35D4CB0C10E651CD00B9F63A /* About Box Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "About Box Image.png"; path = "Resources/Images/About Box Image.png"; sourceTree = "<group>"; };
 		35D4CBF910E6934700B9F63A /* ExtendedNSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSTextView.h; path = Source/ExtendedNSTextView.h; sourceTree = "<group>"; };
 		35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSTextView.m; path = Source/ExtendedNSTextView.m; sourceTree = "<group>"; };
+		35D83BEE20DD97CF00169358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sparkle_dsa_pub.pem; path = Resources/sparkle_dsa_pub.pem; sourceTree = "<group>"; };
-		35E2107F1A86A19C00737C00 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Remove.tiff; path = Resources/Images/Remove.tiff; sourceTree = "<group>"; };
 		35E32D821211D52F00B2C631 /* OfflineBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfflineBadge.h; path = Source/OfflineBadge.h; sourceTree = "<group>"; };
 		35E32D831211D52F00B2C631 /* OfflineBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfflineBadge.m; path = Source/OfflineBadge.m; sourceTree = "<group>"; };
 		35E32EDA12145CF900B2C631 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = Source/Logger.h; sourceTree = "<group>"; };
@@ -502,6 +500,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				35D83BEE20DD97CF00169358 /* Assets.xcassets */,
 				35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */,
 				354C0BC410E782A5005B9A33 /* hosts.icns */,
 				351D904110E76F7100CA6B5E /* Help */,
@@ -693,11 +692,9 @@
 				352E05D910628E400071E25B /* Local File.png */,
 				358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */,
 				358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */,
-				35E2107F1A86A19C00737C00 /* Remove.tiff */,
 				352E05B310628D790071E25B /* Activated.png */,
 				352E05B410628D790071E25B /* Blue Dot.png */,
 				35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */,
-				352E04F8106281940071E25B /* Activate.png */,
 				35B0499A1A462AE900EB89CA /* Activated@2x.png */,
 				352E04F9106281940071E25B /* Create.png */,
 				350C7F381A3C55B000B46B09 /* Create@2x.png */,
@@ -971,14 +968,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35E210801A86A19C00737C00 /* Remove.tiff in Resources */,
 				35B049921A46234100EB89CA /* Editor.png in Resources */,
 				35B049931A46234100EB89CA /* Hotkeys.png in Resources */,
 				3579F1181114B95300123416 /* Launcher.app in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				352E049F10627A830071E25B /* Editor.xib in Resources */,
-				352E04FC106281940071E25B /* Activate.png in Resources */,
 				352E04FD106281940071E25B /* Create.png in Resources */,
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
@@ -993,6 +988,7 @@
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
 				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
 				35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */,
+				35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
 				358E0A851A3A1C54004521D1 /* Local File yosemite@2x.tiff in Resources */,
