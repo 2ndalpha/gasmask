@@ -1,3 +1,7 @@
+                         0.8.7
+----------------------------------------------------
+- Support for the Dark Mode in macOS Mojave
+
                          0.8.6
 ----------------------------------------------------
 - Changed how the hide editor window logic works so that relaunching is not necessary (by Andrew Muraco)
