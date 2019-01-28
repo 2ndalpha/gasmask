@@ -463,7 +463,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* Gas Mask */ = {
 			isa = PBXGroup;
 			children = (
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
@@ -909,7 +909,6 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				3556CEA010D6B43300C7301E /* CopyFiles */,
 				C0252417B854601DA8668E22 /* [CP] Embed Pods Frameworks */,
-				FA20A26807D56A50E8468057 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -928,7 +927,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Clockwise;
 				TargetAttributes = {
 					3579F0CC1114B7B900123416 = {
@@ -948,7 +947,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1070,21 +1069,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gas Mask/Pods-Gas Mask-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA20A26807D56A50E8468057 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gas Mask/Pods-Gas Mask-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
