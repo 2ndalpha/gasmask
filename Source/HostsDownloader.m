@@ -20,21 +20,13 @@
 
 #import "HostsDownloader.h"
 #import "RemoteHosts.h"
-#import "ExtendedNSString.h"
 #import "Error.h"
-#import "ExtendedNSApplication.h"
 
-#define kBufferSize 1024
 #define kHeaderLastModified @"Last-Modified"
 #define kHeaderContentType @"Content-Type"
 #define kContentTypeHtml @"text/html"
 #define kContentTypeImage @"image"
 #define kContentTypeText @"text/plain"
-#define kDefaultPort [NSNumber numberWithInt:80]
-
-#define HTTP_1_0 @"HTTP/1.0 "
-#define HTTP_1_1 @"HTTP/1.1 "
-#define LINE_END @"\r\n"
 
 @interface HostsDownloader (Private)
 
