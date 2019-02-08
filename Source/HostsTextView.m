@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Clockwise   *
- *   copyright@clockwise.ee   *
+ *   Copyright (C) 2009-2018 by Siim Raud   *
+ *   siim@clockwise.ee   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -46,6 +46,15 @@
 	
 	ipv4Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.61 alpha:1];
 	ipv6Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.8 alpha:1];
+    
+    if (@available(macOS 10_13, *)) {
+        textColor = [NSColor colorNamed:@"TextColor"];
+        commentColor = [NSColor colorNamed:@"CommentColor"];
+    } else {
+        textColor = [NSColor blackColor];
+        commentColor = [NSColor grayColor];
+    }
+    
 	nameCharacterSet = [NSCharacterSet characterSetWithCharactersInString: @"abcdefghijklmnopqrstuvwxyz0123456789.-"];
 	
 	return self;
@@ -61,6 +70,11 @@
     [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
     [[self textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [[self textContainer] setWidthTracksTextView:NO];
+    
+    if (@available(macOS 10_13, *)) {
+        [self setBackgroundColor:[NSColor colorNamed:@"BackgroundColor"]];
+        [self setTextColor:[NSColor colorNamed:@"TextColor"]];
+    }
 }
 
 /*
@@ -232,11 +246,13 @@
 	[textStorage removeAttribute:NSForegroundColorAttributeName range:range];
 	[textStorage removeAttribute:NSUnderlineStyleAttributeName range:range];
 	[textStorage removeAttribute:NSUnderlineColorAttributeName range:range];
+    
+    [textStorage addAttribute:NSForegroundColorAttributeName value:textColor range:range];
 }
 
 -(void)markComment: (NSTextStorage*)textStorage range: (NSRange)range
 {
-	[textStorage addAttribute:NSForegroundColorAttributeName value:[NSColor grayColor] range:range];
+	[textStorage addAttribute:NSForegroundColorAttributeName value:commentColor range:range];
 }
 
 -(void)markIPv4: (NSTextStorage*)textStorage range:(NSRange)range

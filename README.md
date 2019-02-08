@@ -46,7 +46,7 @@ This is where Gas Mask shines compared to other hosts managers for MacOS. A comb
 A great source of curated hosts files can be found at https://github.com/StevenBlack/hosts
 
 ## Building Gas Mask
-Gas Mask can be built with XCode 9.4.1
+Gas Mask can be built with XCode 10.1
 
 ## Donating
 If you like Gas Mask, you can show your appreciation by donating via PayPal.
