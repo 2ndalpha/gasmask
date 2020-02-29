@@ -30,6 +30,10 @@
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
 		3522BEE31533552200035B90 /* ExtendedNSPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEE21533552200035B90 /* ExtendedNSPredicate.m */; };
+		35242BC9240A8C00001FF7AD /* Activated Dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BC8240A8BFF001FF7AD /* Activated Dark@2x.png */; };
+		35242BCB240A8E7A001FF7AD /* Activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BCA240A8E7A001FF7AD /* Activated.png */; };
+		35242BCD240A8E84001FF7AD /* Activated Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BCC240A8E84001FF7AD /* Activated Dark.png */; };
+		35242BCF240A9179001FF7AD /* Activate Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BCE240A9178001FF7AD /* Activate Dark.png */; };
 		3528ECE910E3F87E003C8CB9 /* Syncing_arrows1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */; };
 		3528ECEA10E3F87E003C8CB9 /* Syncing_arrows2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE410E3F87E003C8CB9 /* Syncing_arrows2.png */; };
 		3528ECEB10E3F87E003C8CB9 /* Syncing_arrows3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE510E3F87E003C8CB9 /* Syncing_arrows3.png */; };
@@ -44,7 +48,6 @@
 		352E050E106283630071E25B /* EditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E050D106283630071E25B /* EditorController.m */; };
 		352E0556106288400071E25B /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E0555106288400071E25B /* Node.m */; };
 		352E059310628A2F0071E25B /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 352E059210628A2F0071E25B /* Cell.m */; };
-		352E05B610628D790071E25B /* Activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E05B310628D790071E25B /* Activated.png */; };
 		352E05B710628D790071E25B /* Blue Dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E05B410628D790071E25B /* Blue Dot.png */; };
 		352E05DA10628E400071E25B /* Local File.png in Resources */ = {isa = PBXBuildFile; fileRef = 352E05D910628E400071E25B /* Local File.png */; };
 		352F48D210DA90FE000003BE /* default.hst in Resources */ = {isa = PBXBuildFile; fileRef = 352F48D110DA90FE000003BE /* default.hst */; };
@@ -221,6 +224,10 @@
 		3522BEDF153316AA00035B90 /* ExtendedNSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSArray.m; path = Source/ExtendedNSArray.m; sourceTree = "<group>"; };
 		3522BEE11533552200035B90 /* ExtendedNSPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSPredicate.h; path = Source/ExtendedNSPredicate.h; sourceTree = "<group>"; };
 		3522BEE21533552200035B90 /* ExtendedNSPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSPredicate.m; path = Source/ExtendedNSPredicate.m; sourceTree = "<group>"; };
+		35242BC8240A8BFF001FF7AD /* Activated Dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated Dark@2x.png"; path = "Resources/Images/Activated Dark@2x.png"; sourceTree = "<group>"; };
+		35242BCA240A8E7A001FF7AD /* Activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Activated.png; path = Resources/Images/Activated.png; sourceTree = "<group>"; };
+		35242BCC240A8E84001FF7AD /* Activated Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated Dark.png"; path = "Resources/Images/Activated Dark.png"; sourceTree = "<group>"; };
+		35242BCE240A9178001FF7AD /* Activate Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activate Dark.png"; path = "Resources/Images/Activate Dark.png"; sourceTree = "<group>"; };
 		3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows1.png; path = Resources/Images/Syncing_arrows1.png; sourceTree = "<group>"; };
 		3528ECE410E3F87E003C8CB9 /* Syncing_arrows2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows2.png; path = Resources/Images/Syncing_arrows2.png; sourceTree = "<group>"; };
 		3528ECE510E3F87E003C8CB9 /* Syncing_arrows3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows3.png; path = Resources/Images/Syncing_arrows3.png; sourceTree = "<group>"; };
@@ -240,7 +247,6 @@
 		352E0555106288400071E25B /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Source/Node.m; sourceTree = "<group>"; };
 		352E059110628A2F0071E25B /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = Source/Cell.h; sourceTree = "<group>"; };
 		352E059210628A2F0071E25B /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = Source/Cell.m; sourceTree = "<group>"; };
-		352E05B310628D790071E25B /* Activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Activated.png; path = Resources/Images/Activated.png; sourceTree = "<group>"; };
 		352E05B410628D790071E25B /* Blue Dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot.png"; path = "Resources/Images/Blue Dot.png"; sourceTree = "<group>"; };
 		352E05D910628E400071E25B /* Local File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Local File.png"; path = "Resources/Images/Local File.png"; sourceTree = "<group>"; };
 		352F48D110DA90FE000003BE /* default.hst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = default.hst; path = Resources/default.hst; sourceTree = "<group>"; };
@@ -692,10 +698,13 @@
 				352E05D910628E400071E25B /* Local File.png */,
 				358E0A821A3A1C54004521D1 /* Local File yosemite.tiff */,
 				358E0A831A3A1C54004521D1 /* Local File yosemite@2x.tiff */,
-				352E05B310628D790071E25B /* Activated.png */,
+				35242BCE240A9178001FF7AD /* Activate Dark.png */,
+				35242BCA240A8E7A001FF7AD /* Activated.png */,
+				35B0499A1A462AE900EB89CA /* Activated@2x.png */,
+				35242BCC240A8E84001FF7AD /* Activated Dark.png */,
+				35242BC8240A8BFF001FF7AD /* Activated Dark@2x.png */,
 				352E05B410628D790071E25B /* Blue Dot.png */,
 				35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */,
-				35B0499A1A462AE900EB89CA /* Activated@2x.png */,
 				352E04F9106281940071E25B /* Create.png */,
 				350C7F381A3C55B000B46B09 /* Create@2x.png */,
 				352E04FB106281940071E25B /* Save.png */,
@@ -979,10 +988,10 @@
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
 				35B049941A46234100EB89CA /* Remote.png in Resources */,
-				352E05B610628D790071E25B /* Activated.png in Resources */,
 				350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
 				352E05DA10628E400071E25B /* Local File.png in Resources */,
+				35242BCB240A8E7A001FF7AD /* Activated.png in Resources */,
 				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
 				354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
@@ -1001,6 +1010,7 @@
 				3528ECEC10E3F87E003C8CB9 /* Syncing_arrows4.png in Resources */,
 				3528ECED10E3F87E003C8CB9 /* Syncing_arrows5.png in Resources */,
 				3528ECEE10E3F87E003C8CB9 /* Syncing_arrows6.png in Resources */,
+				35242BC9240A8C00001FF7AD /* Activated Dark@2x.png in Resources */,
 				35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */,
 				35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */,
 				356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */,
@@ -1012,10 +1022,12 @@
 				356712D51132F80600DF30E0 /* URLSheet.xib in Resources */,
 				35730FDD1134291300066B68 /* Remote old.png in Resources */,
 				35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */,
+				35242BCD240A8E84001FF7AD /* Activated Dark.png in Resources */,
 				3530F7EB1135536100E591BA /* Warning.png in Resources */,
 				3530F93D113598A800E591BA /* Alert_rollover.png in Resources */,
 				3530F93E113598A800E591BA /* Alert.png in Resources */,
 				3513A600113908A900AD789D /* Read Only.png in Resources */,
+				35242BCF240A9179001FF7AD /* Activate Dark.png in Resources */,
 				35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */,
 				35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */,
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
@@ -1198,7 +1210,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1228,7 +1240,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1250,7 +1262,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = P92T7G45SR;
@@ -1265,7 +1277,7 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
@@ -1280,7 +1292,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = P92T7G45SR;
@@ -1293,7 +1305,7 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";

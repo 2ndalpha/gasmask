@@ -99,7 +99,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
         combinedFileIcon = [NSImage imageNamed: @"Combined_File_yosemite.tiff"];
     }
 
-	activeIcon = [NSImage imageNamed: @"Activated"];
+	activeIcon = [NSImage imageNamed: @"ActivatedFile"];
 	unsavedIcon = [NSImage imageNamed: @"Blue Dot"];
 	
 	syncingArrowsBadgeManager = [BadgeManager badgeManagerWithCreator:@selector(createSyncArrowsBadge) target:self];
