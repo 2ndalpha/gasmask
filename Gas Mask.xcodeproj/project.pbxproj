@@ -35,6 +35,8 @@
 		35242BCD240A8E84001FF7AD /* Activated Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BCC240A8E84001FF7AD /* Activated Dark.png */; };
 		35242BCF240A9179001FF7AD /* Activate Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BCE240A9178001FF7AD /* Activate Dark.png */; };
 		35242BD1240A9B91001FF7AD /* Save Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BD0240A9B91001FF7AD /* Save Dark.png */; };
+		35242BD4240A9CA0001FF7AD /* Create Dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BD2240A9CA0001FF7AD /* Create Dark@2x.png */; };
+		35242BD5240A9CA0001FF7AD /* Create Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35242BD3240A9CA0001FF7AD /* Create Dark.png */; };
 		3528ECE910E3F87E003C8CB9 /* Syncing_arrows1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */; };
 		3528ECEA10E3F87E003C8CB9 /* Syncing_arrows2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE410E3F87E003C8CB9 /* Syncing_arrows2.png */; };
 		3528ECEB10E3F87E003C8CB9 /* Syncing_arrows3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3528ECE510E3F87E003C8CB9 /* Syncing_arrows3.png */; };
@@ -230,6 +232,8 @@
 		35242BCC240A8E84001FF7AD /* Activated Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated Dark.png"; path = "Resources/Images/Activated Dark.png"; sourceTree = "<group>"; };
 		35242BCE240A9178001FF7AD /* Activate Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activate Dark.png"; path = "Resources/Images/Activate Dark.png"; sourceTree = "<group>"; };
 		35242BD0240A9B91001FF7AD /* Save Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Save Dark.png"; path = "Resources/Images/Save Dark.png"; sourceTree = "<group>"; };
+		35242BD2240A9CA0001FF7AD /* Create Dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Create Dark@2x.png"; path = "Resources/Images/Create Dark@2x.png"; sourceTree = "<group>"; };
+		35242BD3240A9CA0001FF7AD /* Create Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Create Dark.png"; path = "Resources/Images/Create Dark.png"; sourceTree = "<group>"; };
 		3528ECE310E3F87E003C8CB9 /* Syncing_arrows1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows1.png; path = Resources/Images/Syncing_arrows1.png; sourceTree = "<group>"; };
 		3528ECE410E3F87E003C8CB9 /* Syncing_arrows2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows2.png; path = Resources/Images/Syncing_arrows2.png; sourceTree = "<group>"; };
 		3528ECE510E3F87E003C8CB9 /* Syncing_arrows3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Syncing_arrows3.png; path = Resources/Images/Syncing_arrows3.png; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */,
 				352E04F9106281940071E25B /* Create.png */,
 				350C7F381A3C55B000B46B09 /* Create@2x.png */,
+				35242BD3240A9CA0001FF7AD /* Create Dark.png */,
+				35242BD2240A9CA0001FF7AD /* Create Dark@2x.png */,
 				352E04FB106281940071E25B /* Save.png */,
 				35242BD0240A9B91001FF7AD /* Save Dark.png */,
 				354E80A010AF33C100FC4757 /* applicationIcon.icns */,
@@ -1026,6 +1032,7 @@
 				35730FDD1134291300066B68 /* Remote old.png in Resources */,
 				35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */,
 				35242BCD240A8E84001FF7AD /* Activated Dark.png in Resources */,
+				35242BD4240A9CA0001FF7AD /* Create Dark@2x.png in Resources */,
 				3530F7EB1135536100E591BA /* Warning.png in Resources */,
 				3530F93D113598A800E591BA /* Alert_rollover.png in Resources */,
 				3530F93E113598A800E591BA /* Alert.png in Resources */,
@@ -1035,6 +1042,7 @@
 				35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */,
 				35242BD1240A9B91001FF7AD /* Save Dark.png in Resources */,
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
+				35242BD5240A9CA0001FF7AD /* Create Dark.png in Resources */,
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
 				359289AB1659222E00492494 /* CHANGELOG.txt in Resources */,
 				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
