@@ -1,0 +1,12 @@
+name: "on-push"
+on:
+  - push
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Build
+      run: ./build.sh
