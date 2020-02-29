@@ -31,15 +31,12 @@
 @end
 
 
-@interface HostsDownloader : NSObject<NSStreamDelegate> {
+@interface HostsDownloader : NSObject {
 	@private
 	BOOL initialLoad;
 	Hosts *hosts;
 	NSURL *url;
-	NSInputStream *inputStream;
-	NSOutputStream *outputStream;
 	NSMutableString *response;
-	BOOL headerRead;
 	NSString *lastModified;
 	NSString *contentType;
 	Error *error;
