@@ -1,5 +1,5 @@
 # Gas Mask
-[![Build Status](https://travis-ci.org/2ndalpha/gasmask.png?branch=master)](https://travis-ci.org/2ndalpha/gasmask)
+[![Build Status](https://travis-ci.org/2ndalpha/gasmask.svg?branch=master)](https://travis-ci.org/2ndalpha/gasmask)
 
 Gas Mask is simple hosts file manager for macOS.
 It allows editing of host files and switching between them.
