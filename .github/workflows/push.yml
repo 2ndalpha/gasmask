@@ -4,7 +4,9 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macOS-latest
+    runs-on:
+      - macos-11
+      - macos-12
     steps:
     - uses: actions/checkout@master
 
