@@ -86,8 +86,6 @@
 		356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 356218B410E52CD600772473 /* Growl Registration Ticket.growlRegDict */; };
 		3562197910E52E8E00772473 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562197810E52E8E00772473 /* AboutBox.xib */; };
 		35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35621A3010E52F6C00772473 /* AboutBoxController.m */; };
-		3564D78F11480CFC00F7EF4D /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; };
-		3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
 		356712D51132F80600DF30E0 /* URLSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356712D41132F80600DF30E0 /* URLSheet.xib */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
@@ -135,8 +133,6 @@
 		35E32EDC12145CF900B2C631 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32EDB12145CF900B2C631 /* Logger.m */; };
 		35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E33074121490B100B2C631 /* ExtendedNSThread.m */; };
 		35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900891147F42900851A25 /* MAAttachedWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E900B81147FC5D00851A25 /* InfoBubbleView.xib */; };
-		35E900BF1147FCAD00851A25 /* InfoBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900BE1147FCAD00851A25 /* InfoBubble.m */; };
 		35F414F4152E1B7800B99583 /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F414F3152E1B7800B99583 /* VDKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBCA3A1223172300860FDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBCA501223181000860FDA /* libicucore.dylib */; };
@@ -164,7 +160,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */,
-				3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */,
 				3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */,
 				3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */,
 			);
@@ -301,7 +296,6 @@
 		3562197810E52E8E00772473 /* AboutBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutBox.xib; sourceTree = "<group>"; };
 		35621A2F10E52F6C00772473 /* AboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutBoxController.h; path = Source/AboutBoxController.h; sourceTree = "<group>"; };
 		35621A3010E52F6C00772473 /* AboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutBoxController.m; path = Source/AboutBoxController.m; sourceTree = "<group>"; };
-		3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = Frameworks/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		3567121E1132E2A700DF30E0 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkStatus.h; path = Source/NetworkStatus.h; sourceTree = "<group>"; };
 		3567121F1132E2A700DF30E0 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkStatus.m; path = Source/NetworkStatus.m; sourceTree = "<group>"; };
 		356712D41132F80600DF30E0 /* URLSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLSheet.xib; sourceTree = "<group>"; };
@@ -369,9 +363,6 @@
 		35E33074121490B100B2C631 /* ExtendedNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSThread.m; path = Source/ExtendedNSThread.m; sourceTree = "<group>"; };
 		35E900881147F42900851A25 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAAttachedWindow.h; path = "Source/3rd Party/MAAttachedWindow.h"; sourceTree = "<group>"; };
 		35E900891147F42900851A25 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAAttachedWindow.m; path = "Source/3rd Party/MAAttachedWindow.m"; sourceTree = "<group>"; };
-		35E900B81147FC5D00851A25 /* InfoBubbleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoBubbleView.xib; sourceTree = "<group>"; };
-		35E900BD1147FCAD00851A25 /* InfoBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoBubble.h; path = Source/InfoBubble.h; sourceTree = "<group>"; };
-		35E900BE1147FCAD00851A25 /* InfoBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoBubble.m; path = Source/InfoBubble.m; sourceTree = "<group>"; };
 		35F414F2152E1B7800B99583 /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VDKQueue.h; path = "Source/3rd Party/VDKQueue.h"; sourceTree = "<group>"; };
 		35F414F3152E1B7800B99583 /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VDKQueue.m; path = "Source/3rd Party/VDKQueue.m"; sourceTree = "<group>"; };
 		35FBCA391223172300860FDA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = "Source/3rd Party/RegexKitLite.h"; sourceTree = "<group>"; };
@@ -397,7 +388,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3564D78F11480CFC00F7EF4D /* BGHUDAppKit.framework in Frameworks */,
 				3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
@@ -430,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */,
-				3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */,
 				35C8D5A811144F7000B4242D /* Carbon.framework */,
 				3541CEA810E4B8F800FA00CB /* Growl.framework */,
 				3545DCE310E3997200EBA66D /* SystemConfiguration.framework */,
@@ -632,7 +621,6 @@
 			isa = PBXGroup;
 			children = (
 				350E7D3A121093B400D2F5F5 /* Cell Badges */,
-				35E900B71147FC0F00851A25 /* Info Bubble */,
 				352E048B106279F50071E25B /* ListController.h */,
 				352E048C106279F50071E25B /* ListController.m */,
 				35738407110209AB00E8DB54 /* HostsListView.h */,
@@ -857,16 +845,6 @@
 			name = "3rd Party";
 			sourceTree = "<group>";
 		};
-		35E900B71147FC0F00851A25 /* Info Bubble */ = {
-			isa = PBXGroup;
-			children = (
-				35E900B81147FC5D00851A25 /* InfoBubbleView.xib */,
-				35E900BD1147FCAD00851A25 /* InfoBubble.h */,
-				35E900BE1147FCAD00851A25 /* InfoBubble.m */,
-			);
-			name = "Info Bubble";
-			sourceTree = "<group>";
-		};
 		39AC0F52B80D0197BF0D7C38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,15 +902,15 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Clockwise;
 				TargetAttributes = {
 					3579F0CC1114B7B900123416 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = D5473R5948;
 						ProvisioningStyle = Automatic;
 					};
 					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = D5473R5948;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1016,7 +994,6 @@
 				3530F93D113598A800E591BA /* Alert_rollover.png in Resources */,
 				3530F93E113598A800E591BA /* Alert.png in Resources */,
 				3513A600113908A900AD789D /* Read Only.png in Resources */,
-				35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */,
 				35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */,
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
@@ -1056,12 +1033,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Gas Mask/Pods-Gas Mask-frameworks.sh",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1124,7 +1099,6 @@
 				35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
-				35E900BF1147FCAD00851A25 /* InfoBubble.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
 				350E7D7E12111B2300D2F5F5 /* Badge.m in Sources */,
 				350E7D941211A7AE00D2F5F5 /* BadgeManager.m in Sources */,
@@ -1190,7 +1164,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1222,7 +1196,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1253,7 +1227,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1283,7 +1257,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
