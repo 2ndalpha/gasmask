@@ -33,11 +33,6 @@ static Preferences *sharedInstance = nil;
 	return sharedInstance;
 }
 
-+ (BOOL) useGrowl
-{
-	return [[[self instance] defaults] boolForKey:UseGrowlPrefKey];
-}
-
 +(BOOL)showNameInStatusBar
 {
     return [[[self instance] defaults] boolForKey:ShowNameInStatusBarKey];

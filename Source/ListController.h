@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 
-@class HostsMainController, Hosts, HostsListView, InfoBubble;
+@class HostsMainController, Hosts, HostsListView;
 
 @interface ListController : NSObject {
 	@private
@@ -31,6 +31,5 @@
 + (ListController*)defaultInstance;
 
 - (Hosts*)selectedHosts;
-- (void)showInfoBubble:(InfoBubble*)infoBubble forHosts:(Hosts*)hosts;
 
 @end
