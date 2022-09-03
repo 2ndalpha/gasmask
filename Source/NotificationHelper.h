@@ -6,9 +6,7 @@
 //  Copyright (c) 2012 Clockwise. All rights reserved.
 //
 
-#import <Growl/Growl.h>
-
-@interface NotificationHelper : NSObject<GrowlApplicationBridgeDelegate>
+@interface NotificationHelper : NSObject
 
 + (void)notify:(NSString*)title message:(NSString*)message;
 
