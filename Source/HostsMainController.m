@@ -69,31 +69,24 @@ static HostsMainController *sharedInstance = nil;
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if (sharedInstance) {
-        return sharedInstance;
+    self = [super initWithCoder:decoder];
+    controllers = [NSArray arrayWithObjects:
+                   [LocalHostsController new],
+                   [RemoteHostsController new],
+                   [CombinedHostsController new],
+                   nil];
+    
+    for (int i=0; i<[controllers count]; i++) {
+        [[controllers objectAtIndex:i] setDelegate:self];
     }
-	if (self = [super initWithCoder:decoder]) {
-		logDebug(@"Creating Hosts Controller");
-		
-		controllers = [NSArray arrayWithObjects:
-					   [LocalHostsController new],
-					   [RemoteHostsController new],
-                       [CombinedHostsController new],
-					   nil];
-		
-		for (int i=0; i<[controllers count]; i++) {
-			[[controllers objectAtIndex:i] setDelegate:self];
-		}
 
-        queue = [[VDKQueue alloc] init];
-        [queue setDelegate:self];
-        [self startTrackingFileChanges];
+    queue = [[VDKQueue alloc] init];
+    [queue setDelegate:self];
+    [self startTrackingFileChanges];
 
-        filesCount = 0;
+    filesCount = 0;
 
-		sharedInstance = self;
-		return self;
-	}
+    sharedInstance = self;
 	
     return sharedInstance;	
 }
