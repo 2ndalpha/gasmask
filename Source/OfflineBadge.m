@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #import "OfflineBadge.h"
-#import "InfoBubble.h"
 #import "ListController.h"
 #import "Hosts.h"
 
@@ -51,14 +50,6 @@
 - (void)mouseExited:(NSEvent *)theEvent
 {
 	[self setActiveIcon:icon];
-}
-
-- (void)mouseDown:(NSEvent *)theEvent
-{
-	InfoBubble *infoBubble = [InfoBubble new];
-	[infoBubble setTitle:@"No Internet connection"];
-	[infoBubble setDescription:@"Can't update hosts files because you are not connected to the Internet."];
-	[[ListController defaultInstance] showInfoBubble:infoBubble forHosts:hosts];
 }
 
 @end
