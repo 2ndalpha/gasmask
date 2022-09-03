@@ -58,8 +58,6 @@
 		353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 353A80FB10B020B10005CAD1 /* UserDefaults.plist */; };
 		353D18BC1114C0C1005C4E54 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */; };
-		3541CEA910E4B8F800FA00CB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; };
-		3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3544E2D310E4CCB1009AC525 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3544E2D210E4CCB1009AC525 /* Map.m */; };
 		3545DC7310E38DDE00EBA66D /* Offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3545DC7210E38DDE00EBA66D /* Offline.png */; };
 		3545DCA910E396CF00EBA66D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 3545DCA810E396CF00EBA66D /* Network.m */; };
@@ -160,7 +158,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */,
-				3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */,
 				3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +250,6 @@
 		353A80FB10B020B10005CAD1 /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = UserDefaults.plist; path = Resources/UserDefaults.plist; sourceTree = "<group>"; };
 		3541CE0310E4AF9B00FA00CB /* SyncingArrowsBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncingArrowsBadge.h; path = Source/SyncingArrowsBadge.h; sourceTree = "<group>"; };
 		3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncingArrowsBadge.m; path = Source/SyncingArrowsBadge.m; sourceTree = "<group>"; };
-		3541CEA810E4B8F800FA00CB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		3544E2D110E4CCB1009AC525 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map.h; path = Source/Map.h; sourceTree = "<group>"; };
 		3544E2D210E4CCB1009AC525 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map.m; path = Source/Map.m; sourceTree = "<group>"; };
 		3545DC7210E38DDE00EBA66D /* Offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Offline.png; path = Resources/Images/Offline.png; sourceTree = "<group>"; };
@@ -392,7 +388,6 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
-				3541CEA910E4B8F800FA00CB /* Growl.framework in Frameworks */,
 				35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */,
 				35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */,
 				E99AD9A05BDE6D9CFA6F6C05 /* libPods-Gas Mask.a in Frameworks */,
@@ -421,7 +416,6 @@
 			children = (
 				354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */,
 				35C8D5A811144F7000B4242D /* Carbon.framework */,
-				3541CEA810E4B8F800FA00CB /* Growl.framework */,
 				3545DCE310E3997200EBA66D /* SystemConfiguration.framework */,
 				3556CEDF10D6B68C00C7301E /* Sparkle.framework */,
 				3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */,
