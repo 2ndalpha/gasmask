@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
+		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
@@ -380,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351416CF28C3A7B80093A452 /* Sparkle in Frameworks */,
 				3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
@@ -439,7 +441,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* Gas Mask */ = {
 			isa = PBXGroup;
 			children = (
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
@@ -867,6 +869,9 @@
 				353D18A11114C067005C4E54 /* PBXTargetDependency */,
 			);
 			name = "Gas Mask";
+			packageProductDependencies = (
+				351416CE28C3A7B80093A452 /* Sparkle */,
+			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Gas Mask";
 			productReference = 8D1107320486CEB800E47090 /* Gas Mask.app */;
@@ -899,7 +904,10 @@
 				English,
 				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
+			packageReferences = (
+				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1312,6 +1320,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		351416CE28C3A7B80093A452 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
