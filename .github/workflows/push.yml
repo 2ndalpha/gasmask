@@ -4,7 +4,13 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macOS-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-10.15
+          - macos-11
+          - macos-12
     steps:
     - uses: actions/checkout@master
 
