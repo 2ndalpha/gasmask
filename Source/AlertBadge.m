@@ -20,7 +20,6 @@
 
 #import "AlertBadge.h"
 #import "Error.h"
-#import "InfoBubble.h"
 #import "RemoteHosts.h"
 #import "ListController.h"
 
@@ -54,43 +53,6 @@
 - (void)mouseExited:(NSEvent *)theEvent
 {
 	[self setActiveIcon:icon];
-}
-
-- (void)mouseDown:(NSEvent *)theEvent
-{
-	NSString *title;
-	
-	Error *error = [hosts error];
-	switch ([error type]) {
-		case NetworkOffline:
-			title = @"No Internet connection";
-			break;
-		case FileNotFound:
-			title = @"Hosts file not found";
-			break;
-		case ServerNotFound:
-			title = @"Server not found";
-			break;
-		case BadContentType:
-			title = @"Bad content";
-			break;
-		case InvalidMobileMeAccount:
-			title = @"Invalid Mobile Me account";
-			break;
-		default:
-			title = @"Warning";
-			break;
-	}
-	
-    infoBubble = [InfoBubble new];
-	[infoBubble setTitle:title];
-	if ([error description]) {
-		[infoBubble setDescription:[error description]];
-	}
-	if ([error url]) {
-		[infoBubble setURL:[error url]];
-    }
-	[[ListController defaultInstance] showInfoBubble:infoBubble forHosts:hosts];
 }
 	
 @end

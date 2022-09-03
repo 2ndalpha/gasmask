@@ -28,7 +28,6 @@
 #import "HostsGroup.h"
 #import "RemoteHosts.h"
 #import "HostsMainController.h"
-#import "InfoBubble.h"
 
 #define kFileURLType @"public.file-url"
 #define kTextType @"public.utf8-plain-text"
@@ -94,12 +93,6 @@ static ListController *sharedInstance = nil;
 	return [[list itemAtRow:[list selectedRow]] representedObject];
 }
 
-- (void)showInfoBubble:(InfoBubble*)infoBubble forHosts:(Hosts*)hosts
-{
-	NSPoint point = [self rightCenterLocationOfHosts:hosts];
-	[infoBubble show:point];
-}
-
 @end
 
 @implementation ListController (Private)
@@ -156,16 +149,6 @@ static ListController *sharedInstance = nil;
 	for (int i=0; i<[list numberOfRows]; i++) {
 		[list expandItem:[list itemAtRow:i]];
 	}
-}
-
--(void)showEditError:(NSString*)message
-{
-	NSPoint point = [self rightCenterLocationOfHosts:[self selectedHosts]];
-	
-	InfoBubble *infoBubble = [InfoBubble new];
-	[infoBubble setTitle:@"Unable to Rename"];
-	[infoBubble setDescription:message];
-	[infoBubble show:point];
 }
 
 
