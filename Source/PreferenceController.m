@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #import <ShortcutRecorder/SRRecorderControl.h>
+#import <ShortcutRecorder/SRShortcut.h>
 
 #import "PreferenceController.h"
 #import "Preferences.h"
@@ -32,6 +33,11 @@
 #define TOOLBAR_REMOTE @"TOOLBAR_REMOTE"
 #define TOOLBAR_HOTKEYS @"TOOLBAR_HOTKEYS"
 #define TOOLBAR_UPDATE @"TOOLBAR_UPDATE"
+
+NS_INLINE NSDictionary *SRShortcutWithCocoaModifierFlagsAndKeyCode(NSEventModifierFlags aModifierFlags, SRKeyCode aKeyCode)
+{
+    return @{SRShortcutKeyKeyCode: @(aKeyCode), SRShortcutKeyModifierFlags: @(aModifierFlags)};
+}
 
 @interface PreferenceController (Remote)
 - (void)initRemote;
@@ -231,18 +237,24 @@
 {
 	id plist = [[[Preferences instance] defaults] valueForKey:ActivatePreviousFilePrefKey];
 	Hotkey *hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[activatePreviousHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activatePreviousHotkey carbonToCocoaFlags:[hotkey modifiers]])];
+    SRShortcut *shortcut = [SRShortcut
+                            shortcutWithCode: [hotkey keyCode]
+                            modifierFlags: [hotkey modifiers]
+                            characters:nil
+                            charactersIgnoringModifiers:nil];
+    [activatePreviousHotkey setObjectValue:shortcut];
+// [activatePreviousHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activatePreviousHotkey carbonToCocoaFlags:[hotkey modifiers]])];
 	
-	plist = [[[Preferences instance] defaults] valueForKey:ActivateNextFilePrefKey];
+	/*plist = [[[Preferences instance] defaults] valueForKey:ActivateNextFilePrefKey];
 	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
 	[activateNextHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
 	
 	plist = [[[Preferences instance] defaults] valueForKey:UpdateAndSynchronizePrefKey];
 	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[updateHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
+	[updateHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])]; */
 }
 
-- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
+/*- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
 {
 	Hotkey *hotkey = [[Hotkey alloc] initWithKeyCode:[aRecorder keyCombo].code
 										   modifiers:[aRecorder cocoaToCarbonFlags:[aRecorder keyCombo].flags]];
@@ -258,7 +270,7 @@
 	}
 	
 	[[[Preferences instance] defaults] setValue:[hotkey plistRepresentation] forKey:prefKey];
-}
+}*/
 
 
 @end

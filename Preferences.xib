@@ -164,20 +164,6 @@
                     <rect key="frame" x="233" y="50" width="147" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <actionCell key="cell" alignment="left" id="125" customClass="SRRecorderCell"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowsKeyOnly">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowedFlags">
-                            <integer key="value" value="10354688"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="escapeKeysRecord">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="style">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="-2" id="128"/>
                     </connections>
@@ -186,20 +172,6 @@
                     <rect key="frame" x="233" y="20" width="147" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <actionCell key="cell" alignment="left" id="171" customClass="SRRecorderCell"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowsKeyOnly">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowedFlags">
-                            <integer key="value" value="10354688"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="escapeKeysRecord">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="style">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="-2" id="172"/>
                     </connections>
@@ -217,20 +189,6 @@
                     <rect key="frame" x="233" y="80" width="147" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <actionCell key="cell" continuous="YES" alignment="left" id="124" customClass="SRRecorderCell"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowsKeyOnly">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="allowedFlags">
-                            <integer key="value" value="10354688"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="escapeKeysRecord">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="style">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="-2" id="127"/>
                     </connections>
