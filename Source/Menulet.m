@@ -19,9 +19,6 @@
  ***************************************************************************/
 
 #import "Menulet.h"
-#import "Hosts.h"
-#import "HostsMainController.h"
-#import "HostsMenu.h"
 #import "Preferences.h"
 #import "Util.h"
 
@@ -29,57 +26,19 @@
 
 - (void)awakeFromNib
 {
-    if ([Util isPre10_10]) {
-        logDebug(@"Initializing Status Bar with pre-Yosemite options");
-        [self awakeFromNibPre10_10];
-    } else {
-        logDebug(@"Initializing Status Bar with Yosemite and later options");
-        [self awakeFromNib10_10AndAfter];
-    }
-}
-/**
- * OS X 10.10 and later support the NSStatusItemBar button which is what the
- * "Show Host File Name in Status Bar" feature is built upon.  So if we're
- * not 10.10 or above, then we need to build the status bar button in the
- * legacy (pre 10.10) way adn not support the file name in the bar.
- */
-- (void)awakeFromNibPre10_10
-{
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [statusItem setHighlightMode:YES];
-    [statusItem setEnabled:YES];
-    [statusItem setToolTip:@"Gas Mask"];
-    [statusItem setTitle:@""];
-    [statusItem setAction:@selector(showMenu:)];
-    [statusItem setTarget:self];
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *path = [bundle pathForResource:@"menuIcon" ofType:@"tiff"];
-    NSImage *icon = [[NSImage alloc] initWithContentsOfFile:path];
+    NSImage *icon = [NSImage imageNamed:@"menuIcon"];
     [icon setTemplate:YES];
-    [statusItem setImage:icon];
-}
-/**
- * Build the status bar using 10.10+ compatible NSStatusBar's button
- * member.  We also need to add some observers to the preferences so that
- * we can tear down or re initialize the button if someone changes their
- * preferences.  
- */
-- (void)awakeFromNib10_10AndAfter
-{	
     
-	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-	NSString *path = [bundle pathForResource:@"menuIcon" ofType:@"tiff"];
-	NSImage *icon = [[NSImage alloc] initWithContentsOfFile:path];
-    [icon setTemplate:YES];
-
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-    [[statusItem button] setEnabled:true];
-    [[statusItem button] setTarget:self];
-    [[statusItem button] setAction:@selector(showMenu:)];
-    [[statusItem button] setImage:icon];
-    [[statusItem button] setTitle:@""];
-    [[statusItem button] setToolTip:@"Gas Mask"];
-
+    statusItem.button.enabled = YES;
+    statusItem.button.toolTip = @"Gas Mask";
+    statusItem.button.title = @"";
+    statusItem.button.image = icon;
+    
+    statusMenu = [[HostsMenu alloc] init];
+    [statusMenu setDelegate:self];
+    [self updateMenu];
+        
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults addObserver:self
                forKeyPath:ShowNameInStatusBarKey
@@ -98,13 +57,21 @@
     }
 }
 
-// Only used in 10.10 and above
+-(void)menuNeedsUpdate:(NSMenu *)menu
+{
+    [self updateMenu];
+}
+
+-(void) updateMenu {
+    [statusMenu removeAllItems];
+    [statusItem setMenu:[statusMenu hostsMenuItems]];
+}
+
 -(void) initTitleInBar {
     [statusItem setLength:NSVariableStatusItemLength];
     [[statusItem button] setImagePosition:NSImageLeft];
 }
 
-// Only used in 10.10 and above
 -(void)updateName {
     if (![Preferences showNameInStatusBar]) {
         return;
@@ -113,14 +80,12 @@
     [[statusItem button] setTitle:name];
 }
 
-// Only used in 10.10 and above
 -(void) removeTitleFromBar {
     [statusItem setLength:NSSquareStatusItemLength];
     [[statusItem button] setImagePosition:NSImageOnly];
     [[statusItem button] setTitle:@""];
 }
 
-// Only used in 10.10 and above
 -(void)observeValueForKeyPath:(NSString *)keyPath
                      ofObject:(id)object
                        change:(NSDictionary *)change
@@ -139,18 +104,9 @@
 }
 
 -(void)dealloc {
-    // we only need clean up if we're 10.10 and above.
-    if (![Util isPre10_10]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults removeObserver:self forKeyPath:ActiveHostsFilePrefKey];
-        [defaults removeObserver:self forKeyPath:ShowNameInStatusBarKey];
-    }
-}
-
--(IBAction)showMenu:(id)sender
-{	
-	HostsMenu *menu = [[HostsMenu alloc] initWithExtras];
-	[statusItem popUpStatusItemMenu:menu];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObserver:self forKeyPath:ActiveHostsFilePrefKey];
+    [defaults removeObserver:self forKeyPath:ShowNameInStatusBarKey];
 }
 
 @end

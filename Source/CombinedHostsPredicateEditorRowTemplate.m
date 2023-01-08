@@ -92,8 +92,8 @@
         [textField setSelectable:NO];
         [textField setBordered:NO];
         [textField setDrawsBackground:NO];
-        [textField setAlignment:NSCenterTextAlignment];
-        [textField setTitleWithMnemonic:@"Hosts File:"];
+        [textField setAlignment:NSTextAlignmentCenter];
+        [textField.cell setTitle:@"Hosts File:"];
     }
     return textField;
 }

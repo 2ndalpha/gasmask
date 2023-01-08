@@ -40,7 +40,7 @@
 
 - (void)awakeFromNib
 {    
-	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSStringPboardType, NSFilenamesPboardType, nil]];
+    [self registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, NSFilenamesPboardType, nil]];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
 
@@ -57,7 +57,7 @@
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent
 {
 	NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-    int row = [self rowAtPoint:point];
+    NSUInteger row = [self rowAtPoint:point];
 	
 	if (row == -1) {
 		return nil;

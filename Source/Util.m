@@ -20,7 +20,6 @@
 
 #import "Util.h"
 
-
 @implementation Util
 
 + (BOOL) flushDirectoryServiceCache
@@ -32,8 +31,31 @@
 	return [task terminationStatus] == 0;
 }
 
-+ (BOOL) isPre10_10
++ (BOOL) restartDNSResponder
 {
-    return ( NSAppKitVersionNumber < NSAppKitVersionNumber10_10 );
+    logDebug(@"Restarting mDNSResponder");
+    __block BOOL completed;
+    
+    NSURL* scriptURL = [[NSBundle mainBundle] URLForResource:@"RestartDNSResponder" withExtension:@"scpt"];
+    NSError* error;
+    NSUserAppleScriptTask* task = [[NSUserAppleScriptTask alloc] initWithURL:scriptURL error:&error];
+        [task executeWithAppleEvent:nil completionHandler:^(NSAppleEventDescriptor *result, NSError *error) {
+            if (task) {
+                completed = YES;
+                logDebug(@"Restarted mDNSResponder");
+            } else {
+                completed = NO;
+                logDebug(@"Restarting mDNSResponder failed");
+            }
+        }];
+    
+    return completed;
 }
+
++ (BOOL) isDarkMode
+{
+    NSAppearance *appearance = NSAppearance.currentAppearance;
+    return appearance.name == NSAppearanceNameDarkAqua;
+}
+
 @end

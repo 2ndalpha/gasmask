@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #import "ExtendedNSThread.h"
-#import "RegexKitLite.h"
 #import "Logger.h"
 
 void privateLogDebug(NSString *format, const char *method, ...)
@@ -121,8 +120,16 @@ void privateLogError(NSString *format, const char *method, ...)
 	
 	NSArray *parts = [[NSString stringWithCString:method encoding:NSUTF8StringEncoding] componentsSeparatedByString:@" "];
 	NSString *className = [[[parts objectAtIndex:0] componentsSeparatedByString:@"("] objectAtIndex:0];
-	NSRange range = [className rangeOfRegex:@"(\\-|\\+)\\["];
-	
+    
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\-|\\+)\\[" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSArray *matchResults = [regex matchesInString:className options:0 range:NSMakeRange(0, className.length)];
+    if ([matchResults count] == 0)
+        return;
+        
+    NSTextCheckingResult *result = matchResults[0];
+    NSRange range = result.range;
 	if (range.location != NSNotFound) {
 		className = [className substringFromIndex:NSMaxRange(range)];
 	}
@@ -134,7 +141,7 @@ void privateLogError(NSString *format, const char *method, ...)
 			thread = @"main";
 		}
 		else {
-			thread = [NSString stringWithFormat:@"thread-%d", [[NSThread currentThread] number]];
+            thread = [NSString stringWithFormat:@"thread-%lu", (unsigned long)[[NSThread currentThread] number]];
 		}
 	}
 	
@@ -142,7 +149,6 @@ void privateLogError(NSString *format, const char *method, ...)
 	
 	fprintf(stderr, "%-7s %-8s - %-25s - %s", [level UTF8String], [thread UTF8String], [className UTF8String], [message UTF8String]);
 	fflush(stderr);
-	
 }
 
 @end

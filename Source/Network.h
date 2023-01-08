@@ -18,18 +18,19 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
 
 @interface Network : NSObject {
 	@private
 	BOOL online;
+    Reachability *internetReachability;
 }
 
 @property BOOL online;
+@property (strong, readwrite) Reachability *internetReachability;
 
 + (Network*)defaultInstance;
 - (void)startListeningForChanges;
-
-static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info);
+- (void)stopListenening;
 
 @end

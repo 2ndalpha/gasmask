@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #import "Badge.h"
+#import "NSImage+Additions.h"
 
 
 @implementation Badge
@@ -33,9 +34,6 @@
 
 - (void)setActiveIcon:(NSImage*)icon
 {
-	if (activeIcon == icon) {
-		return;
-	}
 	activeIcon = icon;
 	
 	[self setNeedsDisplay:YES];
@@ -44,7 +42,8 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
 	if (activeIcon != nil) {
-        [activeIcon drawAtPoint:[self bounds].origin fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+        [activeIcon convertToTemplateIcon];
+        [activeIcon drawAtPoint:[self bounds].origin fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	}
 }
 

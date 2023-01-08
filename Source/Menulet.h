@@ -18,9 +18,14 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-@interface Menulet : NSObject {
+#import "Hosts.h"
+#import "HostsMainController.h"
+#import "HostsMenu.h"
+
+@interface Menulet : NSObject<NSMenuDelegate> {
 	@private
 	NSStatusItem *statusItem;
+    HostsMenu *statusMenu;
 }
 
 @end

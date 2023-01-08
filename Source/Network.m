@@ -25,27 +25,19 @@
 #import <SystemConfiguration/SCNetworkReachability.h>
 
 #import "Network.h"
-#import "NetworkStatus.h"
 
 @interface Network (Private)
 
+- (BOOL)networkSatatus;
 - (void)findOnlineStatus;
 
 @end
-
-
-BOOL reachable(SCNetworkReachabilityFlags flags)
-{
-	BOOL isReachable = flags & kSCNetworkFlagsReachable;
-	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
-	return (isReachable && !needsConnection) ? YES : NO;
-}
 
 static Network *sharedInstance = nil;
 
 @implementation Network
 
-@synthesize online;
+@synthesize online, internetReachability;
 
 - (id)init
 {
@@ -55,13 +47,15 @@ static Network *sharedInstance = nil;
 	if (self = [super init]) {
 		sharedInstance = self;
 	}
+    
+    internetReachability = [Reachability reachabilityForInternetConnection];
     return sharedInstance;	
 }
 
 + (Network*)defaultInstance
 {
 	if (!sharedInstance) {
-		sharedInstance = [Network new];
+		sharedInstance = [[Network alloc] init];
 	}
 	return sharedInstance;
 }
@@ -69,67 +63,68 @@ static Network *sharedInstance = nil;
 - (void)startListeningForChanges
 {
 	logDebug(@"Starting listening for network changes");
-	[self findOnlineStatus];
 	
-	SCNetworkReachabilityContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
-	
-	struct sockaddr_in zeroAddress;
-	bzero(&zeroAddress, sizeof(zeroAddress));
-	zeroAddress.sin_len = sizeof(zeroAddress);
-	zeroAddress.sin_family = AF_INET;
-	
-	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
-	SCNetworkReachabilitySetCallback(reachability, ReachabilityCallback, &context);
-	SCNetworkReachabilityScheduleWithRunLoop(reachability, [[NSRunLoop currentRunLoop] getCFRunLoop], kCFRunLoopDefaultMode);
+    [internetReachability startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    
+    [self findOnlineStatus];
 }
 
-static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info)
+- (void)stopListenening
 {
-	BOOL online;
-	if (reachable(flags)) {
-		logDebug(@"Network came up");
-		online = YES;
-	}
-	else {
-		logDebug(@"Network went down");
-		online = NO;
-	}
-	
-	if ([[Network defaultInstance] online] == online) {
-		return;
-	}
-	[[Network defaultInstance] setOnline:online];
-	
-	NetworkStatus *status = [NetworkStatus new];
-	[status setReachable:online];
-	
-	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	[nc postNotificationName:NetworkStatusChangedNotification object:status];
+    [internetReachability stopNotifier];
+    logDebug(@"stopped listening for network changes");
+}
+
+- (void) reachabilityChanged:(NSNotification *)note {
+    Reachability* reachability = [note object];
+    NetworkStatus netStatus = [reachability currentReachabilityStatus];
+
+    BOOL isOnline = YES;
+    if (netStatus == NotReachable) {
+        logDebug(@"Network went down");
+        isOnline = NO;
+    }
+    else {
+        logDebug(@"Network came up");
+        isOnline = YES;
+    }
+    
+    if (isOnline == online) {
+        return;
+    }
+
+    [self setOnline:isOnline];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:NetworkStatusChangedNotification object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:self.online] forKey:@"reachable"]];
 }
 
 @end
 
 @implementation Network (Private)
 
+-(BOOL)networkSatatus
+{
+    NetworkStatus networkStatus = [internetReachability currentReachabilityStatus];
+    
+    BOOL isOnline = YES;
+    if (networkStatus == NotReachable) {
+        isOnline = NO;
+    }
+    return isOnline;
+}
+
 - (void)findOnlineStatus
 {
-	struct sockaddr_in zeroAddress;
-	bzero(&zeroAddress, sizeof(zeroAddress));
-	zeroAddress.sin_len = sizeof(zeroAddress);
-	zeroAddress.sin_family = AF_INET;
-	
-	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
-	SCNetworkReachabilityFlags flags;
-	
-	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
-	CFRelease(defaultRouteReachability);
-	
-	if (!didRetrieveFlags)
-	{
-		online = NO;
-	}
-	
-	online = reachable(flags);
+    BOOL isOnline = [self networkSatatus];
+    if (isOnline == NO) {
+        logDebug(@"Network is not reachable");
+    }
+    else {
+        logDebug(@"Network is reachable");
+    }
+    [self setOnline:isOnline];
 }
 
 @end

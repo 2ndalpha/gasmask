@@ -32,7 +32,7 @@
 	<key>CFBundleHelpBookName</key>
 	<string>Gas Mask Help</string>
 	<key>CFBundleIconFile</key>
-	<string>applicationIcon</string>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>

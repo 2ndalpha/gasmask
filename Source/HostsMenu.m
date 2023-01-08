@@ -28,7 +28,7 @@
 - (void)createItems;
 - (void)createItemsFromHosts:(NSArray*)hostsArray indentation:(BOOL)indentation;
 - (void)createItemsFromHosts:(NSArray*)hostsArray withTitle:(NSString*)title;
-- (void)createExtraItems;
+- (NSMenu *)hostsMenu;
 - (BOOL)haveItemsInOneGroup:(NSArray*)goupPairs;
 @end
 
@@ -37,18 +37,12 @@
 - (id)init
 {
 	self = [super init];
-	
-	[self createItems];
-	
 	return self;
 }
 
-- (id)initWithExtras
+- (NSMenu *)hostsMenuItems
 {
-	self = [self init];
-	[self createExtraItems];
-	
-	return self;
+    return [self hostsMenu];
 }
 
 @end
@@ -95,7 +89,7 @@
 		}
 		
 		if ([hosts active]) {
-			[item setState:NSOnState];
+            [item setState:NSControlStateValueOn];
 		}
 		
 		[self addItem:item];
@@ -112,8 +106,9 @@
 	[self createItemsFromHosts:hostsArray indentation:YES];
 }
 
-- (void)createExtraItems
-{	
+- (NSMenu *)hostsMenu
+{
+    [self createItems];
 	[self addItem:[NSMenuItem separatorItem]];
 	
 	ApplicationController *controller = [ApplicationController defaultInstance];
@@ -130,7 +125,7 @@
 	[item setTarget:controller];
 	[self addItem:item];
 	
-	item = [[NSMenuItem alloc] initWithTitle:@"Preferences..." action:NULL keyEquivalent:@""];
+	item = [[NSMenuItem alloc] initWithTitle:@"Settings..." action:NULL keyEquivalent:@""];
 	[item setAction:@selector(openPreferencesWindow:)];
 	[item setTarget:controller];
 	[self addItem:item];
@@ -150,6 +145,8 @@
 	[item setAction:@selector(quit:)];
 	[item setTarget:controller];
 	[self addItem:item];
+    
+    return self;
 }
 
 - (BOOL)haveItemsInOneGroup:(NSArray*)goupPairs

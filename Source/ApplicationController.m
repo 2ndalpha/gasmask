@@ -27,6 +27,7 @@
 #import "LocalHostsController.h"
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
+#import "Network.h"
 
 @interface ApplicationController(Private)
 - (void)initStructure;
@@ -35,6 +36,10 @@
 - (void)showApplicationInDock;
 - (void)hideApplicationFromDock;
 - (void)createHostsFileFromLocalURL:(NSURL*)url;
+
+- (void)activatePreviousFile:(NSNotification *)note;
+- (void)activateNextFile:(NSNotification *)note;
+- (void)notifyOfFileRestored:(NSNotification *)note;
 @end
 
 @implementation ApplicationController
@@ -60,6 +65,8 @@ static ApplicationController *sharedInstance = nil;
 		[nc addObserver:self selector:@selector(activatePreviousFile:) name:ActivatePreviousFileNotification object:nil];
 		[nc addObserver:self selector:@selector(activateNextFile:) name:ActivateNextFileNotification object:nil];
         [nc addObserver:self selector:@selector(notifyOfFileRestored:) name:RestoredHostsFileNotification object:nil];
+        
+        [NotificationHelper initNotificationCenter];
 		
 		sharedInstance = self;
 		return self;
@@ -102,11 +109,12 @@ static ApplicationController *sharedInstance = nil;
 
 - (IBAction)openEditorWindow:(id)sender
 {
-	if (!editorWindowOpened) {
+	if (![window isVisible]) {
 		[self initEditorWindow];
 	}
 	
 	[self showApplicationInDock];
+    [window makeKeyWindow];
 }
 
 - (IBAction)closeEditorWindow:(id)sender
@@ -117,11 +125,7 @@ static ApplicationController *sharedInstance = nil;
 - (IBAction)addFromURL:(id)sender
 {
 	URLWindowController * controller = [URLWindowController new];
-	[NSApp beginSheet: [controller window]
-	   modalForWindow: [NSApp mainWindow]
-		modalDelegate: self
-	   didEndSelector: nil
-		  contextInfo: nil];
+    [[NSApp mainWindow] beginSheet:[controller window] completionHandler:nil];
 }
 
 - (IBAction)openHostsFile:(id)sender
@@ -130,8 +134,7 @@ static ApplicationController *sharedInstance = nil;
 	
     NSArray *fileTypes = [NSArray arrayWithObject:HostsFileExtension];
     [panel setAllowedFileTypes:fileTypes];
-    int result = [panel runModal];
-    if (result == NSOKButton) {
+    if ([panel runModal] == NSModalResponseOK) {
 		[self createHostsFileFromLocalURL:[[panel URLs] lastObject]];
 	}
 }
@@ -145,7 +148,7 @@ static ApplicationController *sharedInstance = nil;
 
 - (BOOL)editorWindowOpened
 {
-	return editorWindowOpened;
+	return [window isVisible];
 }
 
 - (void)increaseBusyThreadsCount:(NSNotification *)notification
@@ -168,16 +171,21 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+    [Logger setup];
+
+    logDebug(@"Starting Gas Mask %@", [NSApplication version]);
+
+    [[Network defaultInstance] startListeningForChanges];
+    
 	[NSApp setServicesProvider:self];
 	
 	[self initStructure];
+    [hostsController load];
 	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self selector:@selector(increaseBusyThreadsCount:) name:ThreadBusyNotification object:nil];
 	[nc addObserver:self selector:@selector(decreaseBusyThreadsCount:) name:ThreadNotBusyNotification object:nil];
 	
-	[hostsController load];
-
 	if (!openedAtLogin() && [Preferences showEditorWindow]) {
 		[self openEditorWindow:nil];
 	}
@@ -209,6 +217,8 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
+    [[Network defaultInstance] stopListenening];
+    
 	if (!shouldQuit) {
 		[self hideApplicationFromDock];
 	}
@@ -234,7 +244,7 @@ static ApplicationController *sharedInstance = nil;
 -(void)createNewHostsFile:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error
 {
 	logDebug(@"Creating new hosts file from dropped data");
-    NSString * data = [pboard stringForType:NSStringPboardType];
+    NSString * data = [pboard stringForType:NSPasteboardTypeString];
     
 	NSURL *url = [NSURL URLWithString:data];
 	if (url == nil) {
@@ -262,8 +272,7 @@ static ApplicationController *sharedInstance = nil;
 - (void)initEditorWindow
 {
     logDebug(@"Initializing editor window");
-	[NSBundle loadNibNamed:@"Editor" owner:self];
-	editorWindowOpened = YES;
+    [[NSBundle mainBundle] loadNibNamed:@"Editor" owner:self topLevelObjects:nil];
 }
 
 - (void)activatePreviousFile:(NSNotification *)note
@@ -289,44 +298,17 @@ static ApplicationController *sharedInstance = nil;
     [NotificationHelper notify:@"Hosts File Activated" message:[hosts name]];
 }
 
-BOOL tranformAppToState(ProcessApplicationTransformState newState)
-{
-	ProcessSerialNumber psn = { 0, kCurrentProcess };
-	OSStatus transformStatus = TransformProcessType(&psn, newState);
-	if((transformStatus != 0))
-	{
-		NSError *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:transformStatus userInfo:nil];
-		NSLog(@"TranformAppToState: Unable to transform App state. Error - %@",error);
-	}
-
-	return (transformStatus == 0);
-}
-
 - (void)showApplicationInDock
 {
-	BOOL bSuccess = tranformAppToState(kProcessTransformToForegroundApplication);
-	if(bSuccess)
-	{
-		[NSApp activateIgnoringOtherApps:YES];
-		ProcessSerialNumber psnx = {0, kNoProcess};
-		GetNextProcess(&psnx);
-		SetFrontProcess(&psnx);
-		[self performSelector:@selector(setFront) withObject:nil afterDelay:0.5];
-	}
-
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 - (void)hideApplicationFromDock
 {
-	tranformAppToState(kProcessTransformToBackgroundApplication);
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
 	[Preferences setShowEditorWindow:NO];
-	editorWindowOpened = NO;
-}
-
-- (void)setFront
-{
-	ProcessSerialNumber psn = {0, kCurrentProcess};
-	SetFrontProcess(&psn);	
+    [window close];
 }
 
 - (void)createHostsFileFromLocalURL:(NSURL*)url

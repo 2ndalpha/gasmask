@@ -74,14 +74,14 @@
 	
 	NSCharacterSet *validCharacters = [NSCharacterSet decimalDigitCharacterSet];
 	
-	int groups = 0;
+    NSUInteger groups = 0;
 	BOOL groupContainsInvalidCharacters = NO;
-	int groupValue = 0;
-	int lastSeparatorLocation = ipRange.location-1;
-	int end = NSMaxRange(ipRange);
-	int difference;
+    NSUInteger groupValue = 0;
+    NSUInteger lastSeparatorLocation = ipRange.location-1;
+    NSUInteger end = NSMaxRange(ipRange);
+    NSUInteger difference;
 	
-	for (int i=ipRange.location; i<end; i++) {
+	for (NSUInteger i=ipRange.location; i<end; i++) {
 		unichar characher = [contents characterAtIndex:i];
 		
 		if (characher == '.' || i == end-1) {
@@ -115,7 +115,7 @@
 			
 			difference = i-lastSeparatorLocation;
 			if (groupContainsInvalidCharacters || difference > 4) {
-				int length;
+                NSUInteger length;
 				if (i == end-1) {
 					length = difference;
 				}
@@ -134,7 +134,7 @@
 		// Calculate value of the group
 		else if (i-lastSeparatorLocation <= 3) {
 			int multiplier = 1;
-			int position = i-lastSeparatorLocation;
+            NSUInteger position = i-lastSeparatorLocation;
 			if (position == 1) {
 				multiplier = 100;
 			} else if (position == 2) {
@@ -160,7 +160,7 @@
 -(NSRange) invalidVersion6Range:(NSRange)ipRange
 {
 	NSString *ip = [contents substringWithRange:ipRange];
-	int textLength = [ip length];
+    NSUInteger textLength = [ip length];
 	
 	NSRange fullRange = NSMakeRange(0, textLength);
 	if (textLength > 39) {
@@ -191,7 +191,7 @@
 				return fullRange;
 			}
 			
-			int groupLength = [group length];
+            NSUInteger groupLength = [group length];
 			if (![group holdsHexadecimalValue] || groupLength > 4) {
 				if (range.length == 0) {
 					range = NSMakeRange(pos, groupLength);

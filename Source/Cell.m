@@ -29,6 +29,8 @@
 #import "BadgeManager.h"
 #import "ListController.h"
 #import "HostsListView.h"
+#import "NSImage+Additions.h"
+#import "Util.h"
 
 #define kIconImageSize		16.0
 #define kImageOriginXOffset 3
@@ -47,6 +49,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 
 @interface Cell(Private)
 
+- (NSColor *)itemColor;
 - (void)drawActiveIconWithFrame:(NSRect)cellFrame;
 - (void)drawUnsavedIconWithFrame:(NSRect)cellFrame;
 
@@ -84,23 +87,14 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	self = [super init];
 	
     [self setTruncatesLastVisibleLine:YES];
-	[self setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]]];
-    
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9) {
-        localFileIcon = [NSImage imageNamed: @"Local File.png"];
-        remoteFileIcon = [NSImage imageNamed: @"Remote old.png"];
-        remoteDisabledFileIcon = [NSImage imageNamed: @"Remote_disabled.png"];
-        combinedFileIcon = [NSImage imageNamed: @"Combined_File.png"];
-    }
-    else {
-        localFileIcon = [NSImage imageNamed: @"Local File yosemite.tiff"];
-        remoteFileIcon = [NSImage imageNamed: @"Remote yosemite.tiff"];
-        remoteDisabledFileIcon = [NSImage imageNamed: @"Remote yosemite.tiff"];
-        combinedFileIcon = [NSImage imageNamed: @"Combined_File_yosemite.tiff"];
-    }
+        
+    localFileIcon = [NSImage imageWithSystemSymbolName:@"doc" accessibilityDescription:@"Local File"];
+    remoteFileIcon = [NSImage imageWithSystemSymbolName:@"antenna.radiowaves.left.and.right" accessibilityDescription:@"Remote File"];
+    remoteDisabledFileIcon = [NSImage imageWithSystemSymbolName:@"antenna.radiowaves.left.and.right.slash" accessibilityDescription:@"Remote File Disabled"];
+    combinedFileIcon = [NSImage imageWithSystemSymbolName:@"doc.on.doc" accessibilityDescription:@"Combined File"];
 
-	activeIcon = [NSImage imageNamed: @"Activated"];
-	unsavedIcon = [NSImage imageNamed: @"Blue Dot"];
+	activeIcon = [NSImage imageWithSystemSymbolName:@"checkmark.circle" accessibilityDescription:@"Active"];
+    unsavedIcon = [NSImage imageWithSystemSymbolName:@"square.and.pencil" accessibilityDescription:@"Unsaved"];
 	
 	syncingArrowsBadgeManager = [BadgeManager badgeManagerWithCreator:@selector(createSyncArrowsBadge) target:self];
 	alertBadgeManager = [BadgeManager badgeManagerWithCreator:@selector(createAlertBadge) target:self];
@@ -108,7 +102,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self selector:@selector(cleanUpForHosts:) name:HostsFileRemovedNotification object:nil];
-	
+    	
 	return self;
 }
 
@@ -144,7 +138,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 			[self placeSyncArrowsBadgeInFrame:cellFrame view:controlView];
 		}
 		else {
-			[self removeSyncArrowsBadge];
+            [self removeSyncArrowsBadge];
 		}
 		
 		if ([item error] != nil) {
@@ -174,12 +168,14 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	else {
 		image = localFileIcon;
 	}
+    
+    [image applyTint:[self itemColor]];
 	
-	NSRect frame = [self fileIconFrame:cellFrame icon:image];
-	[image drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
-	
-	[super drawWithFrame:[self textFrame:cellFrame] inView:controlView];
-	
+    NSRect frame = [self fileIconFrame:cellFrame icon:image];
+    [image drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+		
+    [super drawWithFrame:[self textFrame:cellFrame] inView:controlView];
+    
 	if ([item active]) {
 		[self drawActiveIconWithFrame:cellFrame];
 	}
@@ -194,6 +190,22 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	else {
 		[self removeAlertBadge];
 	}
+}
+
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
+{
+    if ([item isGroup]) {
+        cellFrame.origin.x -= kIconImageSize + 4;
+        cellFrame.size.width += kIconImageSize + 4;
+        
+        [self setTitle:[item name]];
+        [self setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize] weight:NSFontWeightSemibold]];
+        [self setTextColor:NSColor.tertiaryLabelColor];
+    }
+    else {
+        [self setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]]];
+    }
+    [super drawInteriorWithFrame:cellFrame inView:controlView];
 }
 
 - (NSRect)titleRectForBounds:(NSRect)cellRect
@@ -232,7 +244,6 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	return YES;
 }
 
-
 - (void)editWithFrame:(NSRect)aRect inView:(NSView*)controlView editor:(NSText*)textObj delegate:(id)anObject event:(NSEvent*)theEvent
 {
 	NSRect textFrame = [self titleRectForBounds:aRect];
@@ -249,28 +260,42 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 
 @implementation Cell(Private)
 
+- (NSColor *)itemColor
+{
+    BOOL isDarkMode = [Util isDarkMode];
+        
+    NSColor *color = isDarkMode ? NSColor.highlightColor : NSColor.darkGrayColor;
+    NSColor *highlightColor = isDarkMode ? NSColor.controlTextColor : NSColor.highlightColor;
+        
+    NSColor *finalColor = self.isHighlighted ? highlightColor : color;
+    return finalColor;
+}
+
+- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle
+{
+    self.textColor = [self itemColor];
+}
+
 - (void)drawActiveIconWithFrame:(NSRect)cellFrame
 {
-	NSSize imageSize = [activeIcon size];
-	NSRect frame;
-	NSDivideRect(cellFrame, &frame, &cellFrame, imageSize.width, NSMinXEdge);
-	
-	frame.size = imageSize;
-	frame.origin.x -= imageSize.width + 1;
-	frame.origin.y += ceil((cellFrame.size.height - imageSize.height) / 2);
-	
-	[activeIcon drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+    [activeIcon applyTint:[self itemColor]];
+    [self drawIconRight:activeIcon withFrame:cellFrame];
 }
 
 - (void)drawUnsavedIconWithFrame:(NSRect)cellFrame
 {
-	[self drawIconRight:unsavedIcon withFrame:cellFrame];
+    [unsavedIcon applyTint:[self itemColor]];
+    
+    NSRect frame = [self rightIconFrame:cellFrame];
+    frame.origin.x -= kIconImageSize;
+        
+    [unsavedIcon drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 }
 
 - (void)drawIconRight:(NSImage*)icon withFrame:(NSRect)cellFrame
 {
 	NSRect frame = [self rightIconFrame:cellFrame];
-	[icon drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+    [icon drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 }
 
 - (NSRect)textFrame:(NSRect)cellFrame
@@ -303,7 +328,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	NSRect frame;
 	NSDivideRect(cellFrame, &frame, &cellFrame, iconSize.width, NSMaxXEdge);
 	frame.size = iconSize;
-	frame.origin.y += ceil((cellFrame.size.height - iconSize.height) / 2);
+	frame.origin.y += ceil((cellFrame.size.height - iconSize.height) / 2) - 1;
 	
 	return frame;
 }
@@ -333,7 +358,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	frame.size = size;
 	
 	[badge setFrame:frame];
-	[controlView addSubview:badge];
+	[controlView.superview addSubview:badge];
 }
 
 #pragma mark Alert

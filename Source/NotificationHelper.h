@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 Clockwise. All rights reserved.
 //
 
-@interface NotificationHelper : NSObject
+#import <UserNotifications/UserNotifications.h>
 
+@interface NotificationHelper : NSObject<NSUserNotificationCenterDelegate>
+
++ (void) initNotificationCenter;
 + (void)notify:(NSString*)title message:(NSString*)message;
 
 @end

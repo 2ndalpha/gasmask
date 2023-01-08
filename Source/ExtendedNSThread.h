@@ -21,6 +21,6 @@
 
 @interface NSThread (Extended)
 
-- (int)number;
+- (NSUInteger)number;
 
 @end

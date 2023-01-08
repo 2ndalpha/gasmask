@@ -35,8 +35,8 @@
 														  owner:self
 													   userInfo:nil]];
 
-	icon = [NSImage imageNamed: @"Alert.png"];
-	rolloverIcon = [NSImage imageNamed: @"Alert_rollover.png"];
+    icon = [NSImage imageWithSystemSymbolName:@"exclamationmark.triangle" accessibilityDescription:@"Alert"];
+    rolloverIcon = [NSImage imageWithSystemSymbolName:@"exclamationmark.triangle.fill" accessibilityDescription:@"Alert Rollover"];
 	
 	[self setActiveIcon:icon];
 	

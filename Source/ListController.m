@@ -38,13 +38,17 @@
 @interface ListController (Private)
 - (void)selectActiveHostsFile;
 - (void)expandAllItems;
-- (void)showEditError:(NSString*)message;
 - (NSString*)urlFromPasteBoard:(NSPasteboard*)pasteboard;
 - (BOOL)allowToDropTo:(Hosts*)target;
 - (int)indexOfHosts:(Hosts*)hosts;
 - (NSPoint)locationOfHosts:(Hosts*)hosts;
 - (NSPoint)rightCenterLocationOfHosts:(Hosts*)hosts;
 - (NSPoint)centerLocationOfHostsOnScreen:(Hosts*)hosts;
+
+- (void)renameHostsFile:(NSNotification *)notification;
+- (void)selectHostsFile:(NSNotification *)notification;
+- (void)deleteDraggedHostsFile:(NSNotification *)notification;
+- (void)handleHostsFileRemoval:(NSNotification *)notification;
 @end
 
 @implementation ListController
@@ -77,7 +81,8 @@ static ListController *sharedInstance = nil;
 }
 
 - (void)awakeFromNib
-{	
+{
+    [hostsController load];
 	[self expandAllItems];
 	[self selectActiveHostsFile];
 }
@@ -195,7 +200,7 @@ static ListController *sharedInstance = nil;
 		return NO;
 	}
 	
-	[pboard setString:[hosts contents] forType:NSStringPboardType];
+    [pboard setString:[hosts contents] forType:NSPasteboardTypeString];
 	draggedHosts = hosts;
 	
 	return YES;
@@ -402,7 +407,6 @@ static ListController *sharedInstance = nil;
 	
 	NSRange range = [[fieldEditor string] rangeOfString:@"/"];
 	if (range.location != NSNotFound) {
-		[self showEditError:@"File Name Can Not Contain Forward Slash."];
 		[fieldEditor setString:[selectedHosts name]];
 		return YES;		
 	}
@@ -413,7 +417,6 @@ static ListController *sharedInstance = nil;
         [nc postNotificationName:HostsFileRenamedNotification object:selectedHosts];
     }
     else {
-		[self showEditError:@"File With Specified Name Already Exists."];
 		[fieldEditor setString:[selectedHosts name]];
 		return YES;
 	}

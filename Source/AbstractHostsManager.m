@@ -135,7 +135,7 @@
 
 - (int)numberOfDownloaders
 {
-    return [hostsDownloaders count];
+    return (int)[hostsDownloaders count];
 }
 
 - (void)increaseActiveDownloadsCount

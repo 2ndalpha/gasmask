@@ -40,6 +40,7 @@
 	enabled = YES;
 	editable = YES;
 	exists = YES;
+    contents = [self contents];
 	return self;
 }
 

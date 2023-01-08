@@ -21,6 +21,6 @@
 @interface HostsMenu : NSMenu
 
 - (id)init;
-- (id)initWithExtras;
+- (NSMenu *)hostsMenuItems;
 
 @end

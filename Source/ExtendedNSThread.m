@@ -23,11 +23,11 @@
 
 @implementation NSThread (Extended)
 
-- (int)number
+- (NSUInteger)number
 {
 	NSString *description = [[NSThread currentThread] description];
 	NSRange range = [description rangeOfString:@"num = "];
-	int numLength = [description length] - range.location - range.length;
+    NSUInteger numLength = [description length] - range.location - range.length;
     range.location = range.location + range.length;
     range.length   = numLength - 1;
 	

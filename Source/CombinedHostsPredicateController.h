@@ -26,7 +26,7 @@
     IBOutlet NSScrollView *lowerScrollView;
     IBOutlet NSView *parentView;
     @private
-    int rowCount;
+    NSUInteger rowCount;
     CombinedHosts *selectedHostsFile;
     NSImageView *hintView;
 }

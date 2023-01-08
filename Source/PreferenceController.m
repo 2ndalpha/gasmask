@@ -18,13 +18,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import <ShortcutRecorder/SRRecorderControl.h>
-
 #import "PreferenceController.h"
 #import "Preferences.h"
 #import "Preferences+Remote.h"
 #import "LoginItem.h"
-#import "Hotkey.h"
 #import "Util.h"
 
 #define TOOLBAR_GENERAL @"TOOLBAR_GENERAL"
@@ -35,7 +32,7 @@
 
 @interface PreferenceController (Remote)
 - (void)initRemote;
-- (int)remoteInterval;
+- (NSUInteger)remoteInterval;
 - (void)setRemoteInterval:(int)interval;
 @end
 
@@ -63,6 +60,7 @@
     [toolbar setSizeMode: NSToolbarSizeModeRegular];
     [toolbar setSelectedItemIdentifier: TOOLBAR_GENERAL];
 	[[self window] setToolbar: toolbar];
+    [[self window] setToolbarStyle:NSWindowToolbarStylePreference];
 	
 	return self;
 }
@@ -76,7 +74,7 @@
 		
 	[self initGeneral];
 	[self initRemote];
-	[self initHotkeys];
+	[self initHotkeys];    
 }
 
 - (NSArray *) toolbarSelectableItemIdentifiers: (NSToolbar *) toolbar
@@ -105,23 +103,23 @@
 	
 	if ([ident isEqualTo:TOOLBAR_GENERAL]) {
 		[item setLabel: @"General"];
-		[item setImage: [NSImage imageNamed: NSImageNamePreferencesGeneral]];
+        [item setImage: [NSImage imageWithSystemSymbolName:@"gearshape" accessibilityDescription:@"General"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_EDITOR]) {
 		[item setLabel: @"Editor"];
-        [item setImage: [NSImage imageNamed: @"Editor.png"]];
+        [item setImage: [NSImage imageWithSystemSymbolName:@"square.and.pencil" accessibilityDescription:@"Editor"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_REMOTE]) {
 		[item setLabel: @"Remote"];
-		[item setImage: [NSImage imageNamed: @"Remote.png"]];
+        [item setImage: [NSImage imageWithSystemSymbolName:@"globe" accessibilityDescription:@"Remote"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_HOTKEYS]) {
 		[item setLabel: @"Hotkeys"];
-		[item setImage: [NSImage imageNamed: @"Hotkeys.png"]];
+        [item setImage: [NSImage imageWithSystemSymbolName:@"command.square.fill" accessibilityDescription:@"Hotkeys"]];
 	}
 	else if ([ident isEqualTo:TOOLBAR_UPDATE]) {
 		[item setLabel: @"Update"];
-		[item setImage: [NSImage imageNamed: @"Update.png"]];
+        [item setImage: [NSImage imageWithSystemSymbolName:@"arrow.triangle.2.circlepath" accessibilityDescription:@"Update"]];
 	}
 	[item setTarget: self];
 	[item setAction: @selector(setPreferenceView:)];
@@ -152,22 +150,24 @@
     float difference = ([view frame].size.height - [[window contentView] frame].size.height);
     windowRect.origin.y -= difference;
     windowRect.size.height += difference;
+    
+    //center view
+    float horizontalOffset = (NSWidth([window frame]) - NSWidth([view frame])) / 2;
+    NSView *subView = [[NSView alloc] initWithFrame:[[window contentView] frame]];
+    [subView addSubview:view];
+    [view setFrame:NSMakeRect(horizontalOffset, 0, NSWidth(view.frame), NSHeight(view.frame))];
 	
-	[window setContentView: view];
+	[window setContentView: subView];
 	[window setFrame: windowRect display: YES animate: YES];
 }
 
 @end
 
 @implementation PreferenceController (General)
-/**
- * OS X 10.10 and later support the NSStatusItemBar button which is what the
- * "Show Host File Name in Status Bar" feature is built upon.  So if we're
- * not 10.10 or above, then we need to disable the preference selection.
- */
+
 - (void) initGeneral
 {
-    showHostFileNameButton.enabled = ![Util isPre10_10];
+    showHostFileNameButton.enabled = YES;
 }
 @end
 
@@ -203,9 +203,9 @@
 	[remoteIntervalSlider bind:@"value" toObject:self withKeyPath:@"remoteInterval" options:nil];
 }
 
-- (int)remoteInterval
+- (NSUInteger)remoteInterval
 {
-	NSNumber *interval = [NSNumber numberWithInt:[Preferences remoteHostsUpdateInterval]];
+	NSNumber *interval = [NSNumber numberWithInteger:[Preferences remoteHostsUpdateInterval]];
 	
 	for (NSNumber *key in remoteIntervals) {
 		if ([[remoteIntervals objectForKey:key] isEqual:interval]) {
@@ -229,35 +229,29 @@
 
 - (void)initHotkeys
 {
-	id plist = [[[Preferences instance] defaults] valueForKey:ActivatePreviousFilePrefKey];
-	Hotkey *hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[activatePreviousHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activatePreviousHotkey carbonToCocoaFlags:[hotkey modifiers]])];
-	
-	plist = [[[Preferences instance] defaults] valueForKey:ActivateNextFilePrefKey];
-	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[activateNextHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
-	
-	plist = [[[Preferences instance] defaults] valueForKey:UpdateAndSynchronizePrefKey];
-	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[updateHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
-}
-
-- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
-{
-	Hotkey *hotkey = [[Hotkey alloc] initWithKeyCode:[aRecorder keyCombo].code
-										   modifiers:[aRecorder cocoaToCarbonFlags:[aRecorder keyCombo].flags]];
-	NSString *prefKey;
-	if (aRecorder == activatePreviousHotkey) {
-		prefKey = ActivatePreviousFilePrefKey;
-	}
-	else if (aRecorder == activateNextHotkey) {
-		prefKey = ActivateNextFilePrefKey;
-	}
-	else {
-		prefKey = UpdateAndSynchronizePrefKey;
-	}
-	
-	[[[Preferences instance] defaults] setValue:[hotkey plistRepresentation] forKey:prefKey];
+    //compatiability with ShortcutRecorder
+    [[MASShortcutBinder sharedBinder] setBindingOptions:@{NSValueTransformerNameBindingOption:MASDictionaryTransformerName}];
+    
+    [_activatePreviousHotkey setAssociatedUserDefaultsKey:ActivatePreviousFilePrefKey withTransformerName:MASDictionaryTransformerName];
+    [_activateNextHotkey setAssociatedUserDefaultsKey:ActivateNextFilePrefKey withTransformerName:MASDictionaryTransformerName];
+    [_updateHotkey setAssociatedUserDefaultsKey:UpdateAndSynchronizePrefKey withTransformerName:MASDictionaryTransformerName];
+    
+    _activatePreviousHotkey.style = MASShortcutViewStyleTexturedRect;
+    _activateNextHotkey.style = MASShortcutViewStyleTexturedRect;
+    _updateHotkey.style = MASShortcutViewStyleTexturedRect;
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:ActivatePreviousFilePrefKey toAction:^{
+        [nc postNotificationName:ActivatePreviousFileNotification object:nil];
+    }];
+    
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:ActivateNextFilePrefKey toAction:^{
+        [nc postNotificationName:ActivateNextFileNotification object:nil];
+    }];
+    
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:UpdateAndSynchronizePrefKey toAction:^{
+        [nc postNotificationName:UpdateAndSynchronizeNotification object:nil];
+    }];
 }
 
 

@@ -22,9 +22,8 @@
 
 @interface SyncingArrowsBadge : Badge {
 	@private
-	NSArray *images;
 	NSTimer *timer;
-	int index;
+    NSUInteger i;
 }
 
 - (void)start;
