@@ -120,11 +120,11 @@
 	RemoteHosts *hosts = (RemoteHosts*)[downloader hosts];
 	[hosts setEnabled:YES];
 	[hosts setContents:[downloader response]];
-	[hosts setUpdated:[NSDate date]];
+	[hosts setUpdated:[NSDate now]];
 	
 	if ([downloader lastModified]) {
-	 [hosts setLastModified:[downloader lastModified]];
-	 }
+        [hosts setLastModified:[downloader lastModified]];
+    }
 	
 	if ([downloader error]) {
 		if ([[downloader error] type] == FileNotFound && (![hosts error] || [[hosts error] type] != FileNotFound)) {

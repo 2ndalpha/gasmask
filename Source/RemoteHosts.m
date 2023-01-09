@@ -31,6 +31,9 @@
 {
 	self = [super initWithPath:p];
 	editable = NO;
+    updated = [NSDate distantPast];
+    lastModified = @"Never";
+    contents = @"";
 	
 	return self;
 }

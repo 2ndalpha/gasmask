@@ -153,18 +153,22 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)increaseBusyThreadsCount:(NSNotification *)notification
 {
-	busyThreads++;
-	[busyIndicator startAnimation:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self->busyThreads++;
+        [self->busyIndicator startAnimation:self];
+    });
 }
 
 - (void)decreaseBusyThreadsCount:(NSNotification *)notification
 {
-	if (busyThreads > 0) {
-		busyThreads--;
-	}
-	if (busyThreads == 0) {
-		[busyIndicator stopAnimation:self];
-	}
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self->busyThreads > 0) {
+            self->busyThreads--;
+        }
+        if (self->busyThreads == 0) {
+            [self->busyIndicator stopAnimation:self];
+        }
+    });
 }
 
 #pragma mark - Application Delegate

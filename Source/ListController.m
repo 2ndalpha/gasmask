@@ -89,8 +89,10 @@ static ListController *sharedInstance = nil;
 
 - (void)updateItem:(NSNotification *)notification
 {
-	int index = [self indexOfHosts:[notification object]];
-	[list reloadItem:[list itemAtRow:index]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        int index = [self indexOfHosts:[notification object]];
+        [self->list reloadItem:[self->list itemAtRow:index]];
+    });
 }
 
 - (Hosts*) selectedHosts
@@ -120,7 +122,9 @@ static ListController *sharedInstance = nil;
 
 - (void)renameHostsFile:(NSNotification *)notification
 {
-	[list editColumn:0 row:[self indexOfHosts:[notification object]] withEvent:nil select:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->list editColumn:0 row:[self indexOfHosts:[notification object]] withEvent:nil select:YES];
+    });
 }
 
 - (void)selectHostsFile:(NSNotification *)notification
