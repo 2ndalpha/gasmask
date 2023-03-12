@@ -54,8 +54,12 @@
 
 + (BOOL) isDarkMode
 {
-    NSAppearance *appearance = NSAppearance.currentAppearance;
-    return appearance.name == NSAppearanceNameDarkAqua;
+    NSAppearance *currentAppearance = NSAppearance.currentDrawingAppearance;
+    if (@available(macOS 10.14, *)) {
+        return currentAppearance.name == NSAppearanceNameDarkAqua;
+    } else {
+        return [[NSColor controlTextColor] isEqual:[NSColor whiteColor]];
+    }
 }
 
 @end
