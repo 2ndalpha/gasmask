@@ -20,7 +20,6 @@
 
 #import "Badge.h"
 
-@class InfoBubble;
 @class RemoteHosts;
 
 @interface AlertBadge : Badge {
@@ -28,7 +27,6 @@
 	NSImage *icon;
 	NSImage *rolloverIcon;
 	RemoteHosts *hosts;
-    InfoBubble *infoBubble;
 }
 
 - (id) initWithRemoteHosts:(RemoteHosts*)remoteHosts;

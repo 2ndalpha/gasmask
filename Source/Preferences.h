@@ -22,7 +22,6 @@
 #define ActivatePreviousFilePrefKey @"activatePreviousHotkey"
 #define ActivateNextFilePrefKey @"activateNextHotkey"
 #define UpdateAndSynchronizePrefKey @"updateAndSynchronizeHotkey"
-#define UseGrowlPrefKey @"Use Growl"
 #define OverrideExternalModificationsPrefKey @"overrideExternalModifications"
 #define ShowNameInStatusBarKey @"showNameInStatusBar"
 #define ActiveHostsFilePrefKey @"activeHostsFile"
@@ -34,7 +33,6 @@
 }
 
 + (Preferences *)instance;
-+ (BOOL)useGrowl;
 + (BOOL)overrideExternalModifications;
 + (BOOL)showNameInStatusBar;
 + (void)setActiveHostsFile:(NSString *)path;

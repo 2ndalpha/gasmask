@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
+		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
@@ -58,8 +59,6 @@
 		353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 353A80FB10B020B10005CAD1 /* UserDefaults.plist */; };
 		353D18BC1114C0C1005C4E54 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */; };
-		3541CEA910E4B8F800FA00CB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; };
-		3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3541CEA810E4B8F800FA00CB /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3544E2D310E4CCB1009AC525 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3544E2D210E4CCB1009AC525 /* Map.m */; };
 		3545DC7310E38DDE00EBA66D /* Offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3545DC7210E38DDE00EBA66D /* Offline.png */; };
 		3545DCA910E396CF00EBA66D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 3545DCA810E396CF00EBA66D /* Network.m */; };
@@ -86,8 +85,6 @@
 		356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 356218B410E52CD600772473 /* Growl Registration Ticket.growlRegDict */; };
 		3562197910E52E8E00772473 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562197810E52E8E00772473 /* AboutBox.xib */; };
 		35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35621A3010E52F6C00772473 /* AboutBoxController.m */; };
-		3564D78F11480CFC00F7EF4D /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; };
-		3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
 		356712D51132F80600DF30E0 /* URLSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356712D41132F80600DF30E0 /* URLSheet.xib */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
@@ -135,15 +132,12 @@
 		35E32EDC12145CF900B2C631 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32EDB12145CF900B2C631 /* Logger.m */; };
 		35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E33074121490B100B2C631 /* ExtendedNSThread.m */; };
 		35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900891147F42900851A25 /* MAAttachedWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E900B81147FC5D00851A25 /* InfoBubbleView.xib */; };
-		35E900BF1147FCAD00851A25 /* InfoBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900BE1147FCAD00851A25 /* InfoBubble.m */; };
 		35F414F4152E1B7800B99583 /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F414F3152E1B7800B99583 /* VDKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBCA3A1223172300860FDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBCA501223181000860FDA /* libicucore.dylib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		E99AD9A05BDE6D9CFA6F6C05 /* libPods-Gas Mask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7776CE10598E83C9D4BC4202 /* libPods-Gas Mask.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,8 +158,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */,
-				3564D7B511480D2800F7EF4D /* BGHUDAppKit.framework in CopyFiles */,
-				3541CEB110E4B90E00FA00CB /* Growl.framework in CopyFiles */,
 				3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,13 +165,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0762AA8E6B2810F869E1F8DF /* Pods-Gas Mask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gas Mask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gas Mask/Pods-Gas Mask.debug.xcconfig"; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Gas_Mask_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gas_Mask_Prefix.pch; sourceTree = "<group>"; };
-		28C03142AF8FAD829799AF13 /* Pods-Gas Mask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gas Mask.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gas Mask/Pods-Gas Mask.release.xcconfig"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -258,7 +248,6 @@
 		353A80FB10B020B10005CAD1 /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = UserDefaults.plist; path = Resources/UserDefaults.plist; sourceTree = "<group>"; };
 		3541CE0310E4AF9B00FA00CB /* SyncingArrowsBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncingArrowsBadge.h; path = Source/SyncingArrowsBadge.h; sourceTree = "<group>"; };
 		3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncingArrowsBadge.m; path = Source/SyncingArrowsBadge.m; sourceTree = "<group>"; };
-		3541CEA810E4B8F800FA00CB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		3544E2D110E4CCB1009AC525 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map.h; path = Source/Map.h; sourceTree = "<group>"; };
 		3544E2D210E4CCB1009AC525 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map.m; path = Source/Map.m; sourceTree = "<group>"; };
 		3545DC7210E38DDE00EBA66D /* Offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Offline.png; path = Resources/Images/Offline.png; sourceTree = "<group>"; };
@@ -301,7 +290,6 @@
 		3562197810E52E8E00772473 /* AboutBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutBox.xib; sourceTree = "<group>"; };
 		35621A2F10E52F6C00772473 /* AboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutBoxController.h; path = Source/AboutBoxController.h; sourceTree = "<group>"; };
 		35621A3010E52F6C00772473 /* AboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutBoxController.m; path = Source/AboutBoxController.m; sourceTree = "<group>"; };
-		3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = Frameworks/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		3567121E1132E2A700DF30E0 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkStatus.h; path = Source/NetworkStatus.h; sourceTree = "<group>"; };
 		3567121F1132E2A700DF30E0 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkStatus.m; path = Source/NetworkStatus.m; sourceTree = "<group>"; };
 		356712D41132F80600DF30E0 /* URLSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLSheet.xib; sourceTree = "<group>"; };
@@ -369,9 +357,6 @@
 		35E33074121490B100B2C631 /* ExtendedNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSThread.m; path = Source/ExtendedNSThread.m; sourceTree = "<group>"; };
 		35E900881147F42900851A25 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAAttachedWindow.h; path = "Source/3rd Party/MAAttachedWindow.h"; sourceTree = "<group>"; };
 		35E900891147F42900851A25 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAAttachedWindow.m; path = "Source/3rd Party/MAAttachedWindow.m"; sourceTree = "<group>"; };
-		35E900B81147FC5D00851A25 /* InfoBubbleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoBubbleView.xib; sourceTree = "<group>"; };
-		35E900BD1147FCAD00851A25 /* InfoBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoBubble.h; path = Source/InfoBubble.h; sourceTree = "<group>"; };
-		35E900BE1147FCAD00851A25 /* InfoBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoBubble.m; path = Source/InfoBubble.m; sourceTree = "<group>"; };
 		35F414F2152E1B7800B99583 /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VDKQueue.h; path = "Source/3rd Party/VDKQueue.h"; sourceTree = "<group>"; };
 		35F414F3152E1B7800B99583 /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VDKQueue.m; path = "Source/3rd Party/VDKQueue.m"; sourceTree = "<group>"; };
 		35FBCA391223172300860FDA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = "Source/3rd Party/RegexKitLite.h"; sourceTree = "<group>"; };
@@ -379,7 +364,6 @@
 		35FBCA501223181000860FDA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		35FC65991114B12600BD18C3 /* launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = launcher.m; path = Source/launcher.m; sourceTree = "<group>"; };
 		35FC65A71114B29A00BD18C3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		7776CE10598E83C9D4BC4202 /* libPods-Gas Mask.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gas Mask.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Gas Mask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Mask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -397,15 +381,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3564D78F11480CFC00F7EF4D /* BGHUDAppKit.framework in Frameworks */,
+				351416CF28C3A7B80093A452 /* Sparkle in Frameworks */,
 				3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
-				3541CEA910E4B8F800FA00CB /* Growl.framework in Frameworks */,
 				35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */,
 				35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */,
-				E99AD9A05BDE6D9CFA6F6C05 /* libPods-Gas Mask.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */,
-				3564D78E11480CFC00F7EF4D /* BGHUDAppKit.framework */,
 				35C8D5A811144F7000B4242D /* Carbon.framework */,
-				3541CEA810E4B8F800FA00CB /* Growl.framework */,
 				3545DCE310E3997200EBA66D /* SystemConfiguration.framework */,
 				3556CEDF10D6B68C00C7301E /* Sparkle.framework */,
 				3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */,
@@ -482,7 +462,6 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				35FC65A71114B29A00BD18C3 /* Cocoa.framework */,
 				35FBCA501223181000860FDA /* libicucore.dylib */,
-				39AC0F52B80D0197BF0D7C38 /* Pods */,
 			);
 			name = "Gas Mask";
 			sourceTree = "<group>";
@@ -523,7 +502,6 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				7776CE10598E83C9D4BC4202 /* libPods-Gas Mask.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -632,7 +610,6 @@
 			isa = PBXGroup;
 			children = (
 				350E7D3A121093B400D2F5F5 /* Cell Badges */,
-				35E900B71147FC0F00851A25 /* Info Bubble */,
 				352E048B106279F50071E25B /* ListController.h */,
 				352E048C106279F50071E25B /* ListController.m */,
 				35738407110209AB00E8DB54 /* HostsListView.h */,
@@ -857,25 +834,6 @@
 			name = "3rd Party";
 			sourceTree = "<group>";
 		};
-		35E900B71147FC0F00851A25 /* Info Bubble */ = {
-			isa = PBXGroup;
-			children = (
-				35E900B81147FC5D00851A25 /* InfoBubbleView.xib */,
-				35E900BD1147FCAD00851A25 /* InfoBubble.h */,
-				35E900BE1147FCAD00851A25 /* InfoBubble.m */,
-			);
-			name = "Info Bubble";
-			sourceTree = "<group>";
-		};
-		39AC0F52B80D0197BF0D7C38 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0762AA8E6B2810F869E1F8DF /* Pods-Gas Mask.debug.xcconfig */,
-				28C03142AF8FAD829799AF13 /* Pods-Gas Mask.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -900,12 +858,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gas Mask" */;
 			buildPhases = (
-				A18CC7AF681CBFFE75FAFC9C /* [CP] Check Pods Manifest.lock */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				3556CEA010D6B43300C7301E /* CopyFiles */,
-				C0252417B854601DA8668E22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -913,6 +869,9 @@
 				353D18A11114C067005C4E54 /* PBXTargetDependency */,
 			);
 			name = "Gas Mask";
+			packageProductDependencies = (
+				351416CE28C3A7B80093A452 /* Sparkle */,
+			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Gas Mask";
 			productReference = 8D1107320486CEB800E47090 /* Gas Mask.app */;
@@ -924,15 +883,15 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = Clockwise;
 				TargetAttributes = {
 					3579F0CC1114B7B900123416 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = D5473R5948;
 						ProvisioningStyle = Automatic;
 					};
 					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = P92T7G45SR;
+						DevelopmentTeam = D5473R5948;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -946,6 +905,9 @@
 				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
+			packageReferences = (
+				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1016,7 +978,6 @@
 				3530F93D113598A800E591BA /* Alert_rollover.png in Resources */,
 				3530F93E113598A800E591BA /* Alert.png in Resources */,
 				3513A600113908A900AD789D /* Read Only.png in Resources */,
-				35E900B91147FC5D00851A25 /* InfoBubbleView.xib in Resources */,
 				35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */,
 				35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */,
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
@@ -1028,47 +989,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A18CC7AF681CBFFE75FAFC9C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gas Mask-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0252417B854601DA8668E22 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gas Mask/Pods-Gas Mask-frameworks.sh",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gas Mask/Pods-Gas Mask-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3579F0CA1114B7B900123416 /* Sources */ = {
@@ -1124,7 +1044,6 @@
 				35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
-				35E900BF1147FCAD00851A25 /* InfoBubble.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
 				350E7D7E12111B2300D2F5F5 /* Badge.m in Sources */,
 				350E7D941211A7AE00D2F5F5 /* BadgeManager.m in Sources */,
@@ -1185,12 +1104,13 @@
 		3579F0D01114B7BA00123416 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1198,8 +1118,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1209,27 +1128,27 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
+				asd = x86_64;
 			};
 			name = Debug;
 		};
 		3579F0D11114B7BA00123416 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1239,21 +1158,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 				ZERO_LINK = NO;
+				asd = x86_64;
 			};
 			name = Release;
 		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0762AA8E6B2810F869E1F8DF /* Pods-Gas Mask.debug.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1265,25 +1184,23 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28C03142AF8FAD829799AF13 /* Pods-Gas Mask.release.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P92T7G45SR;
+				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1293,12 +1210,10 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -1334,7 +1249,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -1368,7 +1282,6 @@
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -1403,6 +1316,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.27.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		351416CE28C3A7B80093A452 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
