@@ -8,7 +8,7 @@ It allows editing of host files and switching between them.
 Runs on Lion, Mountain Lion, Mavericks, Yosemite, El Capitan, Sierra, High Sierra and Mojave.
 
 ## Download
-[Download latest version (0.8.6)](http://gmask.clockwise.ee/files/gas_mask_0.8.6.zip)
+[Download latest version (0.8.6)](https://github.com/2ndalpha/gasmask/releases/download/0.8.6/gas_mask_0.8.6.zip)
 
 ## Installation
 Drag the application from Downloads into Applications folder. The first time you launch it, it will ask for your password, because it needs escalated privilege to modify your `/etc/hosts` file.
