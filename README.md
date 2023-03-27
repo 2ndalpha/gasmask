@@ -8,7 +8,7 @@ It allows editing of host files and switching between them.
 Runs on macOS Big Sur and above.
 
 ## Download
-[Download latest version (0.8.6)](http://gmask.clockwise.ee/files/gas_mask_0.8.6.zip)
+[Download latest version (0.8.6)](https://github.com/2ndalpha/gasmask/releases/download/0.8.6/gas_mask_0.8.6.zip)
 
 ## Installation
 Drag the application from Downloads into Applications folder. The first time you launch it, it will ask for your password, because it needs escalated privilege to modify your `/etc/hosts` file.
@@ -47,8 +47,3 @@ A great source of curated hosts files can be found at https://github.com/StevenB
 
 ## Building Gas Mask
 Gas Mask can be built with XCode 10.1
-
-## Donating
-If you like Gas Mask, you can show your appreciation by donating via PayPal.
-
-[![Donating via PayPal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=98JFC3MUF5Q44&lc=EE&item_name=Gas%20Mask%20Support&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest )
