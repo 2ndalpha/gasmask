@@ -17,6 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
+#import <Shortcut.h>
 
 @class SRRecorderControl;
 @class LoginItem;
@@ -31,10 +32,12 @@
 	// Remote
 	IBOutlet NSSlider *remoteIntervalSlider;
 	NSDictionary *remoteIntervals;
-	
-	// Hotkeys
-	IBOutlet SRRecorderControl *activatePreviousHotkey, *activateNextHotkey, *updateHotkey;
 }
+
+// Hotkeys
+@property (strong) IBOutlet MASShortcutView *activatePreviousHotkey;
+@property (strong) IBOutlet MASShortcutView *activateNextHotkey;
+@property (strong) IBOutlet MASShortcutView *updateHotkey;
 
 - (void) setPreferenceView:(id)sender;
 

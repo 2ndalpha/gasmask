@@ -57,12 +57,9 @@
 		[PrivilegedActions authorizeWithPrompt:@"Gas Mask needs to convert data from version 0.4.\n"];
 		
 		if (![PrivilegedActions authorized]) {
-			NSAlert *alert = [NSAlert
-				alertWithMessageText:@"Unable to Convert From Version 0.4"
-				defaultButton:nil
-				alternateButton:nil
-				otherButton:nil
-				informativeTextWithFormat:@"Gas Mask is unable to convert data from version 0.4 without root privileges. Gas Mask is closing."];
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setMessageText:@"Unable to Convert From Version 0.4"];
+            [alert setInformativeText:@"Gas Mask is unable to convert data from version 0.4 without root privileges. Gas Mask is closing."];
 			[alert runModal];
 			[[NSApplication sharedApplication] terminate:self];
 		}

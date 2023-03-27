@@ -21,10 +21,6 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 
-    #ifndef NSAppKitVersionNumber10_8
-        #define NSAppKitVersionNumber10_8 1187
-    #endif
-
 	#define ApplicationID @"dmks"
 	#define HostsFileExtension @"hst"
 	#define HostsFileLocation @"/etc/hosts"
@@ -69,8 +65,8 @@
 
 	#import "DebugUtil.h"
 
-	BOOL openedAtLogin();
-	BOOL reopened();
+    BOOL openedAtLogin(void);
+	BOOL reopened(void);
 
     #define SuppressPerformSelectorLeakWarning(Stuff) \
         do { \

@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "masshortcut",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shpakovski/MASShortcut",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a"
+      }
+    },
+    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle.git",
       "state" : {
-        "revision" : "7918c1c8fc68baa37917eeaa67286b077ad5e393",
-        "version" : "1.27.1"
+        "revision" : "dda155c7d3ef38c53d29f8584cb2aad2a1a54dba",
+        "version" : "2.3.2"
       }
     }
   ],

@@ -32,7 +32,7 @@
 {
 	self = [super init];
 	
-	[NSBundle loadNibNamed: @"URLSheet" owner: self];
+    [[NSBundle mainBundle] loadNibNamed:@"URLSheet" owner:self topLevelObjects:nil];
 	
 	[warningLabel bind:@"hidden" toObject:[Network defaultInstance] withKeyPath:@"online" options:nil];
 	[warningImage bind:@"hidden" toObject:[Network defaultInstance] withKeyPath:@"online" options:nil];
@@ -59,12 +59,9 @@
 	NSURL *url = [NSURL URLWithString:[urlField stringValue]];
 	
 	if ([[HostsMainController defaultInstance] hostsFileWithURLExists:url]) {
-		NSAlert *alert = [NSAlert
-						  alertWithMessageText:@"Unable to Add"
-						  defaultButton:nil
-						  alternateButton:nil
-						  otherButton:nil
-						  informativeTextWithFormat:@"Hosts file with specified URL already exists."];
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Unable to Add"];
+        [alert setInformativeText:@"Hosts file with specified URL already exists."];
 		[alert runModal];
 	}
 	else {

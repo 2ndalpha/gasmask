@@ -18,7 +18,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-
 extern void privateLogDebug(NSString *format, const char *method, ...);
 extern void privateLogInfo(NSString *format, const char *method, ...);
 extern void privateLogWarn(NSString *format, const char *method, ...);

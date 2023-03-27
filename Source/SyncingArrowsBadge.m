@@ -19,6 +19,8 @@
  ***************************************************************************/
 
 #import "SyncingArrowsBadge.h"
+#import "NSImage+Additions.h"
+#import "Util.h"
 
 
 @implementation SyncingArrowsBadge
@@ -26,33 +28,29 @@
 - (id)init
 {
 	self = [super init];
-	
-	images = [[NSArray alloc] initWithObjects:
-				 [NSImage imageNamed: @"Syncing_arrows1.png"],
-				 [NSImage imageNamed: @"Syncing_arrows2.png"],
-				 [NSImage imageNamed: @"Syncing_arrows3.png"],
-				 [NSImage imageNamed: @"Syncing_arrows4.png"],
-				 [NSImage imageNamed: @"Syncing_arrows5.png"],
-				 [NSImage imageNamed: @"Syncing_arrows6.png"],
-				 nil];
-	
 	return self;
 }
 
 - (void)start
 {
-	timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval).09 target:self selector:@selector(updateImage) userInfo:nil repeats:YES];
+	timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval).03 target:self selector:@selector(updateImage) userInfo:nil repeats:YES];
 }
 
 - (void)updateImage
 {
-	if (index < 5) {
-		index++;
-	}
-	else {
-		index = 0;
-	}
-	[self setActiveIcon:[images objectAtIndex:index]];
+    NSImage *img = [NSImage imageWithSystemSymbolName:@"arrow.triangle.2.circlepath" accessibilityDescription:@"Syncing Arrow"];
+
+    //rotate clockwise, so we continuously count down from 360 to 0 degrees
+    NSUInteger rotation = 360 - 4*i;
+    if (rotation == 0) {
+        i = 0;
+    }
+    else {
+        i++;
+    }
+    
+    [img rotate:rotation];
+	[self setActiveIcon:img];
 }
 
 @end

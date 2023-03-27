@@ -27,7 +27,7 @@ static NSString *dataDirectory = nil;
 + (NSString*)dataDirectory
 {
 	if (dataDirectory == nil) {
-		NSArray *array = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+		NSArray *array = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 		dataDirectory = [[array objectAtIndex:0] stringByAppendingString:@"/Gas Mask/"];
 	}
 	return dataDirectory;
@@ -50,12 +50,11 @@ static NSString *dataDirectory = nil;
 
 + (BOOL)moveToTrash:(NSString *)path
 {
-	FSRef source;
-	OSErr error;
+    NSError *error;
+    [[NSFileManager defaultManager] trashItemAtURL:[NSURL fileURLWithPath:path] resultingItemURL:nil error:&error];
 	
-	error = FSPathMakeRef((UInt8 *)[path fileSystemRepresentation], &source, NULL);
-	if (error != noErr) {
-		if (error == fnfErr) {
+	if (error != nil) {
+		if (error.code == NSFileNoSuchFileError) {
 			logDebug(@"File not found: \"%@\"", path);
 		}
 		else {
@@ -64,7 +63,6 @@ static NSString *dataDirectory = nil;
 		return NO;
 	}
 	
-	error = FSMoveObjectToTrashSync(&source, NULL, 0);
 	return error == noErr;
 }
 

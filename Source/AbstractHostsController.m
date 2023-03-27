@@ -23,7 +23,6 @@
 #import "PrivilegedActions.h"
 #import "FileUtil.h"
 #import "Util.h"
-#import "NetworkStatus.h"
 
 @interface AbstractHostsController (Private)
 
@@ -139,6 +138,7 @@
 	}
 	
 	[Util flushDirectoryServiceCache];
+    [Util restartDNSResponder];
 	return YES;
 }
 
@@ -322,6 +322,7 @@
 	}
 	
 	[Util flushDirectoryServiceCache];
+    [Util restartDNSResponder];
 	return YES;
 }
 
@@ -336,7 +337,7 @@
 
 - (void)updateGroupOnlineStatus:(NSNotification *)notification
 {
-	BOOL online = [(NetworkStatus*)[notification object] reachable];
+    BOOL online = [[[notification userInfo] objectForKey:@"reachable"] boolValue];
 	[hostsGroup setOnline:online];
 }
 

@@ -74,37 +74,37 @@
           NSURLSession.sharedSession dataTaskWithURL:url
           completionHandler:^(NSData *data, NSURLResponse *urlResponse, NSError *taskError) {
               if (taskError || !data || data.length == 0) {
-                  error = [[Error alloc] initWithType:FailedToDownload];
+                  self->error = [[Error alloc] initWithType:FailedToDownload];
                   NSString *description = @"Failed to download the hosts file";
-                  [error setDescription:description];
-                  [error setUrl:url];
+                  [self->error setDescription:description];
+                  [self->error setUrl:self->url];
                   
                   [self notifyDelegateDownloadFailed];
                   return;
               }
               
               NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
-              lastModified = [[httpResponse allHeaderFields] objectForKey:kHeaderLastModified];
+              self->lastModified = [[httpResponse allHeaderFields] objectForKey:kHeaderLastModified];
               
               // Check If Hosts File Is Up To Date
-              if ([hosts isKindOfClass:[RemoteHosts class]] && [lastModified isEqual:[(RemoteHosts*)hosts lastModified]]) {
-                  upToDate = YES;
+              if ([self->hosts isKindOfClass:[RemoteHosts class]] && [self->lastModified isEqual:[(RemoteHosts*)self->hosts lastModified]]) {
+                  self->upToDate = YES;
                   [self notifyDelegateHostsUpToDate];
                   return;
               }
               
-              contentType = [[httpResponse allHeaderFields] objectForKey:kHeaderContentType];
+              self->contentType = [[httpResponse allHeaderFields] objectForKey:kHeaderContentType];
               
-              if (![contentType hasPrefix:kContentTypeText])
+              if (![self->contentType hasPrefix:kContentTypeText])
               {
-                  if ([contentType hasPrefix:kContentTypeHtml]) {
+                  if ([self->contentType hasPrefix:kContentTypeHtml]) {
                       [self addBadContentTypeError:@"Can't download the hosts file. It contains HTML page."];
                   }
-                  else if ([contentType hasPrefix:kContentTypeImage]) {
+                  else if ([self->contentType hasPrefix:kContentTypeImage]) {
                       [self addBadContentTypeError:@"Can't download the hosts file. It contains image."];
                   }
                   else {
-                      logDebug(@"Content type: %@", contentType);
+                      logDebug(@"Content type: %@", self->contentType);
                       [self addUnknownContentTypeError];
                   }
                   [self notifyDelegateDownloadFailed];
@@ -113,10 +113,10 @@
               
               NSString * output = [[NSString alloc] initWithData:data
                                                         encoding:NSUTF8StringEncoding];
-              response = [NSMutableString string];
-              [response appendString:output];
+              self->response = [NSMutableString string];
+              [self->response appendString:output];
               
-              if ([response isEqual:[hosts contents]]) {
+              if ([self->response isEqual:[self->hosts contents]]) {
                   [self notifyDelegateHostsUpToDate];
               } else {
                   [self notifyDelegateDownloaded];

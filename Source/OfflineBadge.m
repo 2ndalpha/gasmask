@@ -28,8 +28,8 @@
 - (id)initWithHosts:(Hosts*)hostsValue
 {
 	self = [super init];
-	icon = [NSImage imageNamed: @"Offline.png"];
-	rolloverIcon = [NSImage imageNamed: @"Offline_rollover.png"];
+    icon = [NSImage imageWithSystemSymbolName:@"bolt.horizontal.circle" accessibilityDescription:@"Offline"];
+    rolloverIcon = [NSImage imageWithSystemSymbolName:@"bolt.horizontal.circle.fill" accessibilityDescription:@"Offline Rollover"];
 	hosts = hostsValue;
 
 	[self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame]

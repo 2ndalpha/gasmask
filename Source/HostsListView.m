@@ -40,12 +40,12 @@
 
 - (void)awakeFromNib
 {    
-	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSStringPboardType, NSFilenamesPboardType, nil]];
+    [self registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, NSPasteboardTypeFileURL, nil]];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
 
-	[self setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
-	
+    [self setStyle:NSTableViewStyleSourceList];
+
 	NSTableColumn *tableColumn = [self tableColumnWithIdentifier:kColumnIdName];
 	cell = [[Cell alloc] init];
 	[cell setEditable:YES];
@@ -57,7 +57,7 @@
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent
 {
 	NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-    int row = [self rowAtPoint:point];
+    NSUInteger row = [self rowAtPoint:point];
 	
 	if (row == -1) {
 		return nil;
@@ -98,7 +98,7 @@
 #pragma mark -
 #pragma mark NSDraggingSource
 
-- (void)draggedImage:(NSImage *)image endedAt:(NSPoint)screenPoint operation:(NSDragOperation)operation
+- (void)draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
 {
 	// Dragged item ended up in Trash
     if (operation == NSDragOperationDelete) {
@@ -106,7 +106,7 @@
 		[nc postNotificationName:DraggedFileShouldBeRemovedNotification object:nil];
     }
 	else {
-        [super draggedImage:image endedAt:screenPoint operation:operation];
+        [super draggingSession:session endedAtPoint:screenPoint operation:operation];
     }
 }
 

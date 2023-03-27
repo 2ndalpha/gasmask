@@ -38,7 +38,7 @@
 	[[[self instance] defaults] setObject:properties forKey:RemoteHostsFilesPrefKey];
 }
 
-+ (int)remoteHostsUpdateInterval
++ (NSUInteger)remoteHostsUpdateInterval
 {
 	return [[[self instance] defaults] integerForKey:RemoteHostsUpdateIntervalPrefKey];
 }

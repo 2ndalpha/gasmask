@@ -44,16 +44,11 @@
 {
 	self = [super initWithCoder:decoder];
 	
-	ipv4Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.61 alpha:1];
-	ipv6Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.8 alpha:1];
+	ipv4Color = NSColor.systemBlueColor;
+	ipv6Color = NSColor.systemTealColor;
     
-    if (@available(macOS 10_13, *)) {
-        textColor = [NSColor colorNamed:@"TextColor"];
-        commentColor = [NSColor colorNamed:@"CommentColor"];
-    } else {
-        textColor = [NSColor blackColor];
-        commentColor = [NSColor grayColor];
-    }
+    textColor = NSColor.controlTextColor;
+    commentColor = NSColor.secondaryLabelColor;
     
 	nameCharacterSet = [NSCharacterSet characterSetWithCharactersInString: @"abcdefghijklmnopqrstuvwxyz0123456789.-"];
 	
@@ -71,10 +66,10 @@
     [[self textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [[self textContainer] setWidthTracksTextView:NO];
     
-    if (@available(macOS 10_13, *)) {
-        [self setBackgroundColor:[NSColor colorNamed:@"BackgroundColor"]];
-        [self setTextColor:[NSColor colorNamed:@"TextColor"]];
-    }
+    [self setBackgroundColor:NSColor.textBackgroundColor];
+    [self setTextColor:NSColor.controlTextColor];
+    
+    [self setSyntaxHighlighting:syntaxHighlighting];
 }
 
 /*
@@ -87,7 +82,7 @@
                                               granularity:granularity];
     
     NSEvent *event = [NSApp currentEvent];
-	if ([event type] == NSLeftMouseUp && [event clickCount] == 2) {
+    if ([event type] == NSEventTypeLeftMouseUp && [event clickCount] == 2) {
         return [self selectRangeFromDoubleClick:proposedSelRange.location range:range];
     }
     
@@ -203,8 +198,8 @@
 			
 			NSRange nameRange = NSMakeRange(namesRange.location, NSNotFound);
 			
-			int end = NSMaxRange(namesRange);
-			for (int i=namesRange.location; i<end; i++) {
+            NSUInteger end = NSMaxRange(namesRange);
+			for (NSUInteger i=namesRange.location; i<end; i++) {
 				unichar character = [contents characterAtIndex:i];
 				
 				if (nameRange.length == NSNotFound) {
@@ -269,7 +264,7 @@
 {
 	NSNumber *style = [NSNumber numberWithUnsignedInt:NSUnderlineStyleSingle | NSUnderlinePatternDot];
 	[textStorage addAttribute: NSUnderlineStyleAttributeName value:style range: range];
-	[textStorage addAttribute: NSUnderlineColorAttributeName value:[NSColor redColor] range: range];
+	[textStorage addAttribute: NSUnderlineColorAttributeName value:NSColor.systemRedColor range: range];
 }
 
 -(NSRange)changedLinesRange: (NSTextStorage*)textStorage
@@ -292,8 +287,8 @@
 	unichar previousCharacter;
 	unichar character;
 	
-	int length = NSMaxRange(nameRange);
-	for (int i=nameRange.location; i<length; i++) {
+    NSUInteger length = NSMaxRange(nameRange);
+	for (NSUInteger i=nameRange.location; i<length; i++) {
 		character = [contents characterAtIndex:i];
 		
 		// First or last characher of the name
@@ -317,12 +312,11 @@
 }
 
 #pragma mark - NSTextStorageDelegate
-
-- (void)textStorageDidProcessEditing:(NSNotification *)notification
+- (void) textStorage:(NSTextStorage *)textStorage didProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta
 {
-	if (syntaxHighlighting && [[self textStorage] editedMask] != NSTextStorageEditedAttributes) {
-		[self colorText:[notification object]];
-	}
+    if (syntaxHighlighting && [[self textStorage] editedMask] != NSTextStorageEditedAttributes) {
+            [self colorText:[self textStorage]];
+        }
 }
 
 @end
@@ -340,14 +334,14 @@
     NSInteger clickPosition = location - range.location;
     
     NSInteger length = [selectedString length];
-    for (int i=clickPosition; i<length; i++) {
+    for (NSUInteger i=clickPosition; i<length; i++) {
         unichar character = [selectedString characterAtIndex:i];
         if (character == '.') {
             range.length = i;
             break;
         }
     }
-    for (int i=clickPosition; i>0; i--) {
+    for (NSUInteger i=clickPosition; i>0; i--) {
         unichar character = [selectedString characterAtIndex:i];
         if (character == '.') {
             range.location += i + 1;

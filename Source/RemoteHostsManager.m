@@ -22,7 +22,6 @@
 #import "RemoteHosts.h"
 #import "Preferences+Remote.h"
 #import "Network.h"
-#import "NetworkStatus.h"
 #import "Error.h"
 #import "NotificationHelper.h"
 
@@ -121,11 +120,11 @@
 	RemoteHosts *hosts = (RemoteHosts*)[downloader hosts];
 	[hosts setEnabled:YES];
 	[hosts setContents:[downloader response]];
-	[hosts setUpdated:[NSDate date]];
+	[hosts setUpdated:[NSDate now]];
 	
 	if ([downloader lastModified]) {
-	 [hosts setLastModified:[downloader lastModified]];
-	 }
+        [hosts setLastModified:[downloader lastModified]];
+    }
 	
 	if ([downloader error]) {
 		if ([[downloader error] type] == FileNotFound && (![hosts error] || [[hosts error] type] != FileNotFound)) {
@@ -194,7 +193,7 @@
 		return;
 	}
 	
-	int interval = [Preferences remoteHostsUpdateInterval];
+	NSUInteger interval = [Preferences remoteHostsUpdateInterval];
 	logDebug(@"Starting timer for remote hosts files. Interval: %d minutes", interval);
 	
 	timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)60.0*interval target:self selector:@selector(update) userInfo:nil repeats:NO];
@@ -247,8 +246,8 @@
 
 - (void)changeTimerState:(NSNotification *)notification
 {
-	BOOL online = [(NetworkStatus*)[notification object] reachable];
-	
+    BOOL online = [[[notification userInfo] objectForKey:@"reachable"] boolValue];
+    
 	if (online) {
 		if (firstUpdate || [self haveNonExistingHostsFiles]) {
 			[self update];

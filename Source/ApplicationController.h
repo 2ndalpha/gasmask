@@ -25,12 +25,12 @@
 
 @interface ApplicationController : NSObject {
 	@private
+    IBOutlet NSWindow *window;
 	IBOutlet NSProgressIndicator *busyIndicator;
 	IBOutlet HostsMainController *hostsController;
 	IBOutlet NSWindow *URLSheet;
 	int busyThreads;
 	BOOL shouldQuit;
-	BOOL editorWindowOpened;
 	PreferenceController *preferenceController;
     AboutBoxController *aboutBoxController;
 }

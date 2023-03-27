@@ -43,7 +43,7 @@
 
 - (void)awakeFromNib
 {
-    [self bind:@"selectedFile" toObject:[HostsMainController defaultInstance] withKeyPath:@"selection" options:nil];
+    //[self bind:@"selectedFile" toObject:[HostsMainController defaultInstance] withKeyPath:@"selection" options:nil];
     
     [predicateEditor setRowHeight:25];
     
@@ -89,7 +89,7 @@
     NSScrollView *scrollView = [predicateEditor enclosingScrollView];
     
     if ([hosts isMemberOfClass:[CombinedHosts class]]) {
-        int previousRowCount = rowCount;
+        NSUInteger previousRowCount = rowCount;
         [scrollView setHidden:NO];
         [predicateEditor reloadCriteria];
         
@@ -98,8 +98,8 @@
         
         int rowHeight = [predicateEditor rowHeight];
         rowCount = [predicateEditor numberOfRows];
-        int height = rowCount * rowHeight;
-        int difference = (rowCount - previousRowCount) * rowHeight;
+        NSUInteger height = rowCount * rowHeight;
+        NSUInteger difference = (rowCount - previousRowCount) * rowHeight;
         
         NSRect frame = [lowerScrollView frame];
         frame.origin.y = 0;

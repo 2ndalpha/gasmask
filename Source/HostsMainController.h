@@ -20,7 +20,6 @@
 
 #import "Hosts.h"
 #import "HostsGroup.h"
-#import "VDKQueue.h"
 
 #define HostsFileShouldBeRenamedNotification @"HostsFileShouldBeRenamedNotification"
 #define HostsFileWillBeRemovedNotification @"HostsFileWillBeRemovedNotification"
@@ -71,10 +70,11 @@
 
 @end
 
-@interface HostsMainController : NSTreeController<HostsControllerDelegateProtocol, VDKQueueDelegate> {
+@interface HostsMainController : NSTreeController<HostsControllerDelegateProtocol> {
 	@private
 	NSArray *controllers;
 	int filesCount;
+    FSEventStreamRef _hoststream;
 }
 
 + (HostsMainController*)defaultInstance;
@@ -103,7 +103,7 @@
 
 - (BOOL)canRemoveFiles;
 - (void)remove:(id)sender;
-- (void)removeSelectedHostsFile:(id)sender;
+- (IBAction)removeSelectedHostsFile:(id)sender;
 - (void)removeHostsFile:(Hosts*)hosts moveToTrash:(BOOL)moveToTrash;
 
 #pragma mark -

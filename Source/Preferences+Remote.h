@@ -30,7 +30,7 @@
 + (NSDictionary*)remoteHostsFilesProperties;
 + (void)setRemoteHostsFilesProperties:(NSDictionary*)properties;
 
-+ (int)remoteHostsUpdateInterval;
++ (NSUInteger)remoteHostsUpdateInterval;
 + (void)setRemoteHostsUpdateInterval:(int)interval;
 
 @end

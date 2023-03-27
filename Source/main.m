@@ -18,8 +18,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import "Network.h"
-
 BOOL _openedAtLogin = NO;
 BOOL _reopened = NO;
 
@@ -36,12 +34,6 @@ BOOL reopened()
 int main(int argc, char *argv[])
 {	
 	@autoreleasepool {
-        [Logger setup];
-	
-        logDebug(@"Starting Gas Mask %@", [NSApplication version]);
-
-        [[Network defaultInstance] startListeningForChanges];
-	
         for (int i=0; i<argc; i++) {
             if (strcmp(argv[i], "openatlogin") == 0) {
                 _openedAtLogin = YES;

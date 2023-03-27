@@ -59,8 +59,17 @@
 
 @implementation HostsMainController
 
-static VDKQueue* queue = nil;
 static HostsMainController *sharedInstance = nil;
+id thisClass;
+void hostCallback(ConstFSEventStreamRef streamRef,
+                     void *clientCallBackInfo,
+                     size_t numEvents,
+                     void *eventPaths,
+                     const FSEventStreamEventFlags eventFlags[],
+                     const FSEventStreamEventId eventIds[])
+{
+    [thisClass receivedFSEventNotification];
+}
 
 + (HostsMainController*)defaultInstance
 {
@@ -80,8 +89,6 @@ static HostsMainController *sharedInstance = nil;
         [[controllers objectAtIndex:i] setDelegate:self];
     }
 
-    queue = [[VDKQueue alloc] init];
-    [queue setDelegate:self];
     [self startTrackingFileChanges];
 
     filesCount = 0;
@@ -254,14 +261,14 @@ static HostsMainController *sharedInstance = nil;
 	[self removeHostsFile:[sender representedObject] moveToTrash:NO];
 }
 
-- (void)removeSelectedHostsFile:(id)sender
+- (IBAction)removeSelectedHostsFile:(id)sender
 {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"OK"];
     [alert addButtonWithTitle:@"Cancel"];
     [alert setMessageText:@"Remove file?"];
     [alert setInformativeText:@"Are you sure you want to remove the file?\nYou can not undo it."];
-    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert setAlertStyle:NSAlertStyleWarning];
     
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [self removeHostsFile:[self selectedHosts] moveToTrash:NO];
@@ -395,17 +402,37 @@ static HostsMainController *sharedInstance = nil;
 
 - (void)startTrackingFileChanges
 {
-    // Listening for writes only doesn't cover when the file
-    // gets moved and relinked, so we need to listen for
-    // VDKQueueNotifyDefault.  It also doesn't cover when the
-    // file gets replaced by tools like Junos PulseVPN which restores
-    // the file upon VPN connection close.
-    [queue addPath:HostsFileLocation notifyingAbout:(VDKQueueNotifyAboutWrite | VDKQueueNotifyAboutDelete)];
+    FSEventStreamRef stream = _hoststream;
+    if (stream == NULL)
+    {
+        thisClass = self;
+        FSEventStreamEventFlags flags = kFSEventStreamCreateFlagIgnoreSelf|kFSEventStreamCreateFlagFileEvents;
+        FSEventStreamContext context={0,(__bridge void *)self,NULL,NULL,NULL};
+        _hoststream = FSEventStreamCreate(kCFAllocatorDefault,
+                                        hostCallback,
+                                        &context,
+                                        (__bridge CFArrayRef)@[HostsFileLocation],
+                                        kFSEventStreamEventIdSinceNow,
+                                        0.0,
+                                        flags
+                                        );
+        FSEventStreamSetDispatchQueue(_hoststream, dispatch_get_main_queue());
+        FSEventStreamScheduleWithRunLoop(_hoststream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+        FSEventStreamStart(_hoststream);
+    }
 }
 
 - (void)stopTrackingFileChanges
 {
-    [queue removePath:HostsFileLocation];
+    if (_hoststream != NULL)
+    {
+        FSEventStreamStop(_hoststream);
+        NSRunLoop *mainLoop = [NSRunLoop mainRunLoop];
+        FSEventStreamUnscheduleFromRunLoop(_hoststream, [mainLoop getCFRunLoop], kCFRunLoopDefaultMode);
+        FSEventStreamInvalidate(_hoststream);
+        FSEventStreamRelease(_hoststream);
+        _hoststream = NULL;
+    }
 }
 
 #pragma mark -
@@ -431,7 +458,7 @@ static HostsMainController *sharedInstance = nil;
 
 - (NSArray*)allHostsFilesGrouped
 {
-	int nrControllers = [controllers count];
+    NSUInteger nrControllers = [controllers count];
 	
 	NSMutableArray *array = [NSMutableArray arrayWithCapacity:nrControllers];
 	
@@ -514,12 +541,8 @@ static HostsMainController *sharedInstance = nil;
 	return nil;
 }
 
--(void) VDKQueue:(VDKQueue *)queue receivedNotification:(NSString*)noteName forPath:(NSString*)fpath
+-(void) receivedFSEventNotification
 {
-    // VDKQueue is notifying me too often, so filter out what we really want
-    if (!([noteName isEqualToString:VDKQueueDeleteNotification] || ( [noteName isEqualTo:VDKQueueWriteNotification]) )) {
-        return;
-    }
     logDebug(@"External application has changed the hosts file, restoring file");
     
     if (![Preferences overrideExternalModifications]) {
@@ -558,7 +581,7 @@ static HostsMainController *sharedInstance = nil;
 
 - (void)hostsFileRemoved:(Hosts*)hosts controller:(NSObject<HostsControllerProtocol>*)controller
 {
-	int index = [controllers indexOfObject:controller];
+    NSUInteger index = [controllers indexOfObject:controller];
 	NSArray *files = [[[self content] objectAtIndex:index] children];
 	
 	int i;
@@ -584,7 +607,6 @@ static HostsMainController *sharedInstance = nil;
 	for (int i=0; i<[controllers count]; i++) {
 		HostsGroup *hostsGroup = [[controllers objectAtIndex:i] hostsGroup];
 		[self insertObject:hostsGroup atArrangedObjectIndexPath:[NSIndexPath indexPathWithIndex:i]];
-		
 	}
 }
 
@@ -701,7 +723,7 @@ static HostsMainController *sharedInstance = nil;
 
 - (void)addHostsFile:(Hosts*)hosts forController:(NSObject<HostsControllerProtocol>*)controller
 {
-	int index = [controllers indexOfObject:controller];
+    NSUInteger index = [controllers indexOfObject:controller];
 	
 	NSIndexPath *indexPath = [[NSIndexPath indexPathWithIndex:index] indexPathByAddingIndex:[[controller hostsFiles] count]-1];
 	[self insertObject:hosts atArrangedObjectIndexPath:indexPath];
