@@ -151,6 +151,13 @@
 			remoteGlobalIDString = 3579F0CC1114B7B900123416;
 			remoteInfo = Launcher;
 		};
+		CC2B3C4D5E6F000100000050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = "Gas Mask";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -922,6 +929,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CC2B3C4D5E6F000100000051 /* PBXTargetDependency */,
 			);
 			name = "Gas Mask Tests";
 			productName = "Gas Mask Tests";
@@ -1141,6 +1149,11 @@
 			isa = PBXTargetDependency;
 			target = 3579F0CC1114B7B900123416 /* Launcher */;
 			targetProxy = 353D18A01114C067005C4E54 /* PBXContainerItemProxy */;
+		};
+		CC2B3C4D5E6F000100000051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* Gas Mask */;
+			targetProxy = CC2B3C4D5E6F000100000050 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
