@@ -8,5 +8,20 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Resolve package dependencies
+      run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
+
     - name: Build
       run: ./build.sh
+
+  test:
+    name: Test
+    runs-on: macos-15
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Resolve package dependencies
+      run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
+
+    - name: Test
+      run: xcodebuild test -project "Gas Mask.xcodeproj" -scheme "Gas Mask" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO

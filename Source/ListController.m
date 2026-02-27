@@ -36,6 +36,7 @@
 #define kEmptyHostsGroupHeight 0.1
 
 @interface ListController (Private)
+- (void)hostsFilesLoaded:(NSNotification *)notification;
 - (void)selectActiveHostsFile;
 - (void)expandAllItems;
 - (void)showEditError:(NSString*)message;
@@ -70,6 +71,7 @@ static ListController *sharedInstance = nil;
 		[nc addObserver:self selector:@selector(selectHostsFile:) name:HostsFileShouldBeSelectedNotification object:nil];
 		[nc addObserver:self selector:@selector(deleteDraggedHostsFile:) name:DraggedFileShouldBeRemovedNotification object:nil];
 		[nc addObserver:self selector:@selector(handleHostsFileRemoval:) name:HostsFileWillBeRemovedNotification object:nil];
+		[nc addObserver:self selector:@selector(hostsFilesLoaded:) name:AllHostsFilesLoadedFromDiskNotification object:nil];
 		
 		sharedInstance = self;
 	}
@@ -77,9 +79,7 @@ static ListController *sharedInstance = nil;
 }
 
 - (void)awakeFromNib
-{	
-	[self expandAllItems];
-	[self selectActiveHostsFile];
+{
 }
 
 - (void)updateItem:(NSNotification *)notification
@@ -96,6 +96,12 @@ static ListController *sharedInstance = nil;
 @end
 
 @implementation ListController (Private)
+
+- (void)hostsFilesLoaded:(NSNotification *)notification
+{
+	[self expandAllItems];
+	[self selectActiveHostsFile];
+}
 
 - (void)selectActiveHostsFile
 {
@@ -195,7 +201,7 @@ static ListController *sharedInstance = nil;
 		return NO;
 	}
 	
-	[pboard setString:[hosts contents] forType:NSStringPboardType];
+	[pboard setString:[hosts contents] forType:NSPasteboardTypeString];
 	draggedHosts = hosts;
 	
 	return YES;

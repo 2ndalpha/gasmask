@@ -126,7 +126,10 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 }
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView*)controlView
-{	
+{
+	if (!item) {
+		return;
+	}
 	if ([item isGroup]) {
 		HostsGroup *group = (HostsGroup*)item;
         if ([[group children] count] == 0) {
@@ -176,7 +179,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	}
 	
 	NSRect frame = [self fileIconFrame:cellFrame icon:image];
-	[image drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+	[image drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 	
 	[super drawWithFrame:[self textFrame:cellFrame] inView:controlView];
 	
@@ -259,7 +262,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 	frame.origin.x -= imageSize.width + 1;
 	frame.origin.y += ceil((cellFrame.size.height - imageSize.height) / 2);
 	
-	[activeIcon drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+	[activeIcon drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 }
 
 - (void)drawUnsavedIconWithFrame:(NSRect)cellFrame
@@ -270,7 +273,7 @@ CGFloat const kWidthOfProgressIndicator = 16.0f;
 - (void)drawIconRight:(NSImage*)icon withFrame:(NSRect)cellFrame
 {
 	NSRect frame = [self rightIconFrame:cellFrame];
-	[icon drawInRect:frame fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+	[icon drawInRect:frame fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 }
 
 - (NSRect)textFrame:(NSRect)cellFrame

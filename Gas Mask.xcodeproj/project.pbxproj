@@ -137,6 +137,10 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CC2B3C4D5E6F000100000040 /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000010 /* NodeTests.m */; };
+		CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000011 /* HostsTests.m */; };
+		CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */; };
+		CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,6 +365,11 @@
 		35FC65A71114B29A00BD18C3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Gas Mask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Mask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC2B3C4D5E6F000100000010 /* NodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeTests.m; sourceTree = "<group>"; };
+		CC2B3C4D5E6F000100000011 /* HostsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsTests.m; sourceTree = "<group>"; };
+		CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsGroupTests.m; sourceTree = "<group>"; };
+		CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractHostsControllerTests.m; sourceTree = "<group>"; };
+		CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas Mask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +393,13 @@
 				35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */,
 				BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */,
 				35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC2B3C4D5E6F000100000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +445,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */,
 				8D1107320486CEB800E47090 /* Gas Mask.app */,
 				3579F0CD1114B7B900123416 /* Launcher.app */,
 			);
@@ -453,6 +470,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				CC2B3C4D5E6F000100000030 /* Tests */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				35FC65A71114B29A00BD18C3 /* Cocoa.framework */,
 				35FBCA501223181000860FDA /* libicucore.dylib */,
@@ -828,6 +846,27 @@
 			name = "3rd Party";
 			sourceTree = "<group>";
 		};
+		CC2B3C4D5E6F000100000031 /* GasMaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
+				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
+				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
+				CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */,
+			);
+			name = GasMaskTests;
+			path = GasMaskTests;
+			sourceTree = "<group>";
+		};
+		CC2B3C4D5E6F000100000030 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B3C4D5E6F000100000031 /* GasMaskTests */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -872,6 +911,23 @@
 			productReference = 8D1107320486CEB800E47090 /* Gas Mask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CC2B3C4D5E6F000100000001 /* Gas Mask Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Gas Mask Tests" */;
+			buildPhases = (
+				CC2B3C4D5E6F000100000005 /* Sources */,
+				CC2B3C4D5E6F000100000006 /* Frameworks */,
+				CC2B3C4D5E6F000100000007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gas Mask Tests";
+			productName = "Gas Mask Tests";
+			productReference = CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -901,6 +957,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Gas Mask */,
+				CC2B3C4D5E6F000100000001 /* Gas Mask Tests */,
 				3579F0CC1114B7B900123416 /* Launcher */,
 			);
 		};
@@ -973,6 +1030,13 @@
 				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
 				35B049951A46234100EB89CA /* Update.png in Resources */,
 				358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC2B3C4D5E6F000100000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1120,17 @@
 				3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */,
 				3522BEE31533552200035B90 /* ExtendedNSPredicate.m in Sources */,
 				359967541656B52500BCF16D /* NotificationHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC2B3C4D5E6F000100000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC2B3C4D5E6F000100000040 /* NodeTests.m in Sources */,
+				CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */,
+				CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */,
+				CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,6 +1367,48 @@
 			};
 			name = Release;
 		};
+		CC2B3C4D5E6F000100000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
+				PRODUCT_NAME = "Gas Mask Tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
+			};
+			name = Debug;
+		};
+		CC2B3C4D5E6F000100000003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
+				PRODUCT_NAME = "Gas Mask Tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1318,6 +1435,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Gas Mask Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC2B3C4D5E6F000100000002 /* Debug */,
+				CC2B3C4D5E6F000100000003 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

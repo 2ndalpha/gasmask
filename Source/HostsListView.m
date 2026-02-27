@@ -40,7 +40,7 @@
 
 - (void)awakeFromNib
 {    
-	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSStringPboardType, NSFilenamesPboardType, nil]];
+	[self registerForDraggedTypes:@[NSPasteboardTypeString, NSPasteboardTypeFileURL]];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
 	[self setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
 

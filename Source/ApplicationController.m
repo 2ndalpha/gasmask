@@ -234,7 +234,7 @@ static ApplicationController *sharedInstance = nil;
 -(void)createNewHostsFile:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error
 {
 	logDebug(@"Creating new hosts file from dropped data");
-    NSString * data = [pboard stringForType:NSStringPboardType];
+    NSString * data = [pboard stringForType:NSPasteboardTypeString];
     
 	NSURL *url = [NSURL URLWithString:data];
 	if (url == nil) {
