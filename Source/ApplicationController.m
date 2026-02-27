@@ -31,6 +31,7 @@
 @interface ApplicationController ()
 {
 	__weak NSWindow *_editorWindow;
+	NSArray *_editorNibTopLevelObjects; // retains top-level NIB objects (e.g. EditorController)
 }
 @end
 
@@ -270,16 +271,18 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)initEditorWindow
 {
-    logDebug(@"Initializing editor window");
-	[NSBundle loadNibNamed:@"Editor" owner:self];
+	logDebug(@"Initializing editor window");
+	NSArray *topLevelObjects = nil;
+	[[NSBundle mainBundle] loadNibNamed:@"Editor" owner:self topLevelObjects:&topLevelObjects];
+	_editorNibTopLevelObjects = topLevelObjects;
 	editorWindowOpened = YES;
-	for (NSWindow *window in [NSApp windows]) {
-		if ([[window frameAutosaveName] isEqualToString:@"editor_window"]) {
-			_editorWindow = window;
+	for (id obj in topLevelObjects) {
+		if ([obj isKindOfClass:[NSWindow class]]) {
+			_editorWindow = obj;
 			[[NSNotificationCenter defaultCenter] addObserver:self
 													 selector:@selector(editorWindowWillClose:)
 														 name:NSWindowWillCloseNotification
-													   object:window];
+													   object:obj];
 			break;
 		}
 	}
@@ -311,7 +314,11 @@ static ApplicationController *sharedInstance = nil;
 - (void)showApplicationInDock
 {
 	[NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-	[NSApp activateIgnoringOtherApps:YES];
+	if (@available(macOS 14.0, *)) {
+		[NSApp activate];
+	} else {
+		[NSApp activateIgnoringOtherApps:YES];
+	}
 }
 
 - (void)hideApplicationFromDock
@@ -325,6 +332,7 @@ static ApplicationController *sharedInstance = nil;
 													name:NSWindowWillCloseNotification
 												  object:_editorWindow];
 	_editorWindow = nil;
+	_editorNibTopLevelObjects = nil;
 	editorWindowOpened = NO;
 }
 
