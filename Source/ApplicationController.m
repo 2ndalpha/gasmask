@@ -113,7 +113,6 @@ static ApplicationController *sharedInstance = nil;
 {
 	if (!editorWindowOpened) {
 		if (_editorNibTopLevelObjects) {
-			/* NIB already loaded; window was hidden — just reuse it */
 			editorWindowOpened = YES;
 			[[NSNotificationCenter defaultCenter] addObserver:self
 													 selector:@selector(editorWindowWillClose:)
@@ -340,11 +339,6 @@ static ApplicationController *sharedInstance = nil;
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 													name:NSWindowWillCloseNotification
 												  object:_editorWindow];
-	/* Hide the window without destroying NIB objects: re-loading Editor.xib a second
-	   time triggers crashes because singleton IBOutlets (ListController.list etc.) still
-	   hold their old view references while the new NIB load tries to reconnect them.
-	   We keep _editorNibTopLevelObjects alive and just hide the window; the next
-	   openEditorWindow: reuses the existing window rather than re-loading the NIB. */
 	[_editorWindow orderOut:nil];
 	editorWindowOpened = NO;
 }

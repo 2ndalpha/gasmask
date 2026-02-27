@@ -1,18 +1,7 @@
-/*
- * Tests for ApplicationController editor window behaviour.
- *
- * The editor window (Editor.xib) is loaded once and kept alive; openEditorWindow:/
- * closeEditorWindow: merely show/hide it.  We test this NIB-loading and flag
- * logic directly via a (Testing) category rather than calling openEditorWindow:
- * (which also calls showApplicationInDock, changing NSApp's activation policy and
- * breaking the XCTest host context).
- */
-
 #import <XCTest/XCTest.h>
 #import <Cocoa/Cocoa.h>
 #import "ApplicationController.h"
 
-/* Expose private internals for testing only */
 @interface ApplicationController (Testing)
 - (void)loadEditorNibForTesting;
 - (void)closeEditorWindowForTesting;
@@ -21,36 +10,19 @@
 
 @implementation ApplicationController (Testing)
 
-/**
- * Opens the editor window for testing without calling showApplicationInDock.
- *
- * If the NIB was already loaded (window exists but is hidden), we just set the
- * flag and return — exactly what openEditorWindow: does with the new design.
- * If the NIB has never been loaded, we load it now (first load only).
- *
- * NOTE: _editorWindow is __weak and KVC on __weak ivars is unreliable.
- * We check _editorNibTopLevelObjects (strong NSArray) instead.
- */
 - (void)loadEditorNibForTesting
 {
     id objects = [self valueForKey:@"_editorNibTopLevelObjects"];
     if (objects) {
-        /* NIB already loaded; window may be hidden — just re-mark as opened */
         [self setValue:@YES forKey:@"editorWindowOpened"];
         return;
     }
-    /* First-ever load */
     NSArray *topLevelObjects = nil;
     [[NSBundle mainBundle] loadNibNamed:@"Editor" owner:self topLevelObjects:&topLevelObjects];
     [self setValue:topLevelObjects forKey:@"_editorNibTopLevelObjects"];
     [self setValue:@YES forKey:@"editorWindowOpened"];
 }
 
-/**
- * Closes the editor window for testing WITHOUT calling setActivationPolicy:.
- * Calling setActivationPolicy: from inside XCTest disrupts the test runner
- * communication channel and causes silent test failures.
- */
 - (void)closeEditorWindowForTesting
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self
@@ -66,8 +38,6 @@
 
 - (NSWindow *)editorWindowForTesting
 {
-    /* _editorWindow stays non-nil while _editorNibTopLevelObjects retains the array.
-       KVC on __weak ivars is unreliable so we fall back to searching NSApp windows. */
     for (NSWindow *w in [NSApp windows]) {
         if ([[w frameAutosaveName] isEqualToString:@"editor_window"]) {
             return w;
@@ -78,7 +48,6 @@
 
 @end
 
-/* ---- helper ---- */
 static void runLoopDrain(NSTimeInterval seconds)
 {
     [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:seconds]];
@@ -95,10 +64,6 @@ static void runLoopDrain(NSTimeInterval seconds)
     [super setUp];
     self.controller = [ApplicationController defaultInstance];
     XCTAssertNotNil(self.controller, @"ApplicationController singleton must exist (loaded from MainMenu.xib)");
-
-    /* Ensure editor is closed before each test.  closeEditorWindowForTesting
-       hides the window without calling setActivationPolicy:, which would
-       disrupt the XCTest runner communication channel. */
     if ([self.controller editorWindowOpened]) {
         [self.controller closeEditorWindowForTesting];
         runLoopDrain(0.05);
@@ -128,15 +93,14 @@ static void runLoopDrain(NSTimeInterval seconds)
 {
     XCTAssertFalse([self.controller editorWindowOpened], @"precondition");
     [self.controller loadEditorNibForTesting];
-    XCTAssertTrue([self.controller editorWindowOpened],
-                  @"editorWindowOpened must be YES after NIB is loaded/window is opened");
+    XCTAssertTrue([self.controller editorWindowOpened]);
 }
 
 - (void)testLoadEditorNib_windowExistsAfterOpen
 {
     [self.controller loadEditorNibForTesting];
     NSWindow *w = [self.controller editorWindowForTesting];
-    XCTAssertNotNil(w, @"editorWindowForTesting must return a window after NIB is loaded");
+    XCTAssertNotNil(w);
     XCTAssertEqualObjects([w frameAutosaveName], @"editor_window");
 }
 
@@ -151,9 +115,7 @@ static void runLoopDrain(NSTimeInterval seconds)
             break;
         }
     }
-    XCTAssertNotNil(found,
-                    @"An NSWindow with frameAutosaveName 'editor_window' "
-                    @"must be in [NSApp windows] after the NIB is loaded");
+    XCTAssertNotNil(found);
 }
 
 #pragma mark - close clears state
@@ -162,24 +124,18 @@ static void runLoopDrain(NSTimeInterval seconds)
 {
     [self.controller loadEditorNibForTesting];
     XCTAssertTrue([self.controller editorWindowOpened], @"precondition");
-
     [self.controller closeEditorWindowForTesting];
-
-    XCTAssertFalse([self.controller editorWindowOpened],
-                   @"editorWindowOpened must be NO after close");
+    XCTAssertFalse([self.controller editorWindowOpened]);
 }
 
 - (void)testCloseEditorWindow_windowStillAccessibleAfterClose
 {
-    /* With the new design the NIB is NOT destroyed on close — the window
-       stays alive (hidden) so it can be reused on the next open. */
     [self.controller loadEditorNibForTesting];
     [self.controller closeEditorWindowForTesting];
     runLoopDrain(0.05);
 
-    XCTAssertFalse([self.controller editorWindowOpened], @"flag must be NO");
-    NSWindow *w = [self.controller editorWindowForTesting];
-    XCTAssertNotNil(w, @"window must still be accessible (hidden, not deallocated)");
+    XCTAssertFalse([self.controller editorWindowOpened]);
+    XCTAssertNotNil([self.controller editorWindowForTesting]);
 }
 
 #pragma mark - re-open after close
@@ -192,7 +148,7 @@ static void runLoopDrain(NSTimeInterval seconds)
     XCTAssertFalse([self.controller editorWindowOpened], @"precondition: closed");
 
     [self.controller loadEditorNibForTesting];
-    XCTAssertTrue([self.controller editorWindowOpened], @"editorWindowOpened must be YES after re-open");
+    XCTAssertTrue([self.controller editorWindowOpened]);
 }
 
 - (void)testReopenAfterClose_windowAccessible
@@ -202,8 +158,7 @@ static void runLoopDrain(NSTimeInterval seconds)
     runLoopDrain(0.05);
 
     [self.controller loadEditorNibForTesting];
-    NSWindow *w = [self.controller editorWindowForTesting];
-    XCTAssertNotNil(w, @"Re-opening the editor must provide a window");
+    XCTAssertNotNil([self.controller editorWindowForTesting]);
 }
 
 @end
