@@ -99,7 +99,7 @@ static HostsMainController *sharedInstance = nil;
     if (sharedInstance && sharedInstance != self) {
         return sharedInstance;
     }
-    return self;
+    return [super awakeAfterUsingCoder:decoder];
 }
 
 - (void)load
