@@ -69,13 +69,16 @@ static HostsMainController *sharedInstance = nil;
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
+    if (sharedInstance) {
+        return sharedInstance;
+    }
     self = [super initWithCoder:decoder];
     controllers = [NSArray arrayWithObjects:
                    [LocalHostsController new],
                    [RemoteHostsController new],
                    [CombinedHostsController new],
                    nil];
-    
+
     for (int i=0; i<[controllers count]; i++) {
         [[controllers objectAtIndex:i] setDelegate:self];
     }
@@ -87,8 +90,8 @@ static HostsMainController *sharedInstance = nil;
     filesCount = 0;
 
     sharedInstance = self;
-	
-    return sharedInstance;	
+
+    return sharedInstance;
 }
 
 - (void)load

@@ -80,6 +80,8 @@ static ListController *sharedInstance = nil;
 
 - (void)awakeFromNib
 {
+	[self expandAllItems];
+	[self selectActiveHostsFile];
 }
 
 - (void)updateItem:(NSNotification *)notification
