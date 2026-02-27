@@ -27,6 +27,7 @@
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
 		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
+		AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* ShortcutRecorder */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
@@ -68,7 +69,6 @@
 		35498EDB12187F5D00E46952 /* Offline_rollover.png in Resources */ = {isa = PBXBuildFile; fileRef = 35498EDA12187F5D00E46952 /* Offline_rollover.png */; };
 		354C0BC510E782A5005B9A33 /* hosts.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354C0BC410E782A5005B9A33 /* hosts.icns */; };
 		354CCF811117285300EB6948 /* HostsListViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 354CCF801117285300EB6948 /* HostsListViewMenu.m */; };
-		354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		354E7E4010AEB09D00FC4757 /* HostsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7E3F10AEB09D00FC4757 /* HostsMainController.m */; };
 		354E7E7410AEB25100FC4757 /* Hosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7E7310AEB25100FC4757 /* Hosts.m */; };
 		354E7EB110AEEF3D00FC4757 /* StructureConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7EB010AEEF3D00FC4757 /* StructureConverter.m */; };
@@ -76,8 +76,6 @@
 		354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354E7F8010AEFBC500FC4757 /* Security.framework */; };
 		354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		354E80B510AF383C00FC4757 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E80B410AF383C00FC4757 /* FileUtil.m */; };
-		3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */; };
-		3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */; };
 		355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5C5A12244B67006C2884 /* LocalHostsController.m */; };
 		355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CA412244F28006C2884 /* RemoteHostsController.m */; };
@@ -120,6 +118,7 @@
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
 		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
+		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
 		35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2C252113507A6007C8037 /* RemoteHostsManager.m */; };
 		35D3328E152F5A87001DA824 /* CombinedHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D3328D152F5A87001DA824 /* CombinedHosts.m */; };
 		35D33291152F5B7B001DA824 /* CombinedHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D33290152F5B7B001DA824 /* CombinedHostsController.m */; };
@@ -157,8 +156,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				354DDD0E114EBC9700DB76D7 /* CrashReportSender.framework in CopyFiles */,
-				3556CEA110D6B44A00C7301E /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +260,6 @@
 		354CCF7F1117285300EB6948 /* HostsListViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsListViewMenu.h; path = Source/HostsListViewMenu.h; sourceTree = "<group>"; };
 		354CCF801117285300EB6948 /* HostsListViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsListViewMenu.m; path = Source/HostsListViewMenu.m; sourceTree = "<group>"; };
 		354DDCED114EAC5000DB76D7 /* NSToolbarPoofAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSToolbarPoofAnimator.h; path = Source/NSToolbarPoofAnimator.h; sourceTree = "<group>"; };
-		354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReportSender.framework; path = Frameworks/CrashReportSender.framework; sourceTree = "<group>"; };
 		354E7E3E10AEB09D00FC4757 /* HostsMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsMainController.h; path = Source/HostsMainController.h; sourceTree = "<group>"; };
 		354E7E3F10AEB09D00FC4757 /* HostsMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsMainController.m; path = Source/HostsMainController.m; sourceTree = "<group>"; };
 		354E7E7210AEB25100FC4757 /* Hosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hosts.h; path = Source/Hosts.h; sourceTree = "<group>"; };
@@ -276,8 +272,6 @@
 		354E80A010AF33C100FC4757 /* applicationIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = applicationIcon.icns; path = Resources/applicationIcon.icns; sourceTree = "<group>"; };
 		354E80B310AF383C00FC4757 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtil.h; path = Source/FileUtil.h; sourceTree = "<group>"; };
 		354E80B410AF383C00FC4757 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUtil.m; path = Source/FileUtil.m; sourceTree = "<group>"; };
-		3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = Frameworks/ShortcutRecorder.framework; sourceTree = "<group>"; };
-		3556CEDF10D6B68C00C7301E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateDateTransformer.h; path = Source/UpdateDateTransformer.h; sourceTree = "<group>"; };
 		3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateDateTransformer.m; path = Source/UpdateDateTransformer.m; sourceTree = "<group>"; };
 		355F5C5912244B67006C2884 /* LocalHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHostsController.h; path = Source/LocalHostsController.h; sourceTree = "<group>"; };
@@ -336,6 +330,7 @@
 		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
 		35C8D58511144E9C00B4242D /* GlobalHotkeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalHotkeys.m; path = Source/GlobalHotkeys.m; sourceTree = "<group>"; };
 		35C8D5A811144F7000B4242D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		35D2C251113507A6007C8037 /* RemoteHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsManager.h; path = Source/RemoteHostsManager.h; sourceTree = "<group>"; };
 		35D2C252113507A6007C8037 /* RemoteHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteHostsManager.m; path = Source/RemoteHostsManager.m; sourceTree = "<group>"; };
 		35D3328C152F5A87001DA824 /* CombinedHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CombinedHosts.h; path = Source/CombinedHosts.h; sourceTree = "<group>"; };
@@ -382,11 +377,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				351416CF28C3A7B80093A452 /* Sparkle in Frameworks */,
-				3556CE8410D6B3CF00C7301E /* ShortcutRecorder.framework in Frameworks */,
+				AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
 				35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */,
+				BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */,
 				35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,13 +407,11 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				354DDD08114EBC8000DB76D7 /* CrashReportSender.framework */,
 				35C8D5A811144F7000B4242D /* Carbon.framework */,
 				3545DCE310E3997200EBA66D /* SystemConfiguration.framework */,
-				3556CEDF10D6B68C00C7301E /* Sparkle.framework */,
-				3556CE8310D6B3CF00C7301E /* ShortcutRecorder.framework */,
 				354E7F8010AEFBC500FC4757 /* Security.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -871,6 +865,7 @@
 			name = "Gas Mask";
 			packageProductDependencies = (
 				351416CE28C3A7B80093A452 /* Sparkle */,
+				AA1B2C3D4E5F000200000001 /* ShortcutRecorder */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Gas Mask";
@@ -886,14 +881,6 @@
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = Clockwise;
 				TargetAttributes = {
-					3579F0CC1114B7B900123416 = {
-						DevelopmentTeam = D5473R5948;
-						ProvisioningStyle = Automatic;
-					};
-					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = D5473R5948;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gas Mask" */;
@@ -907,6 +894,7 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
 			packageReferences = (
 				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
@@ -1107,10 +1095,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1118,7 +1107,11 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1138,17 +1131,22 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = D5473R5948;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "Launcher-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1169,10 +1167,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1184,7 +1183,11 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
@@ -1197,10 +1200,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = D5473R5948;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -1210,7 +1214,11 @@
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
@@ -1280,7 +1288,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1326,6 +1333,14 @@
 				version = 1.27.1;
 			};
 		};
+		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1333,6 +1348,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
+		};
+		AA1B2C3D4E5F000200000001 /* ShortcutRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			productName = ShortcutRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

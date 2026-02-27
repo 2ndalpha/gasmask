@@ -19,9 +19,10 @@
  ***************************************************************************/
 
 @class SRRecorderControl;
+@protocol SRRecorderControlDelegate;
 @class LoginItem;
 
-@interface PreferenceController : NSWindowController<NSToolbarDelegate> {
+@interface PreferenceController : NSWindowController<NSToolbarDelegate, SRRecorderControlDelegate> {
 	@private
 	IBOutlet NSView *generalView, *editorView, *hotkeysView, *updateView, *remoteView;
     LoginItem *loginItem;

@@ -18,7 +18,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import <ShortcutRecorder/SRRecorderControl.h>
+#import <ShortcutRecorder/ShortcutRecorder.h>
 
 #import "PreferenceController.h"
 #import "Preferences.h"
@@ -32,6 +32,7 @@
 #define TOOLBAR_REMOTE @"TOOLBAR_REMOTE"
 #define TOOLBAR_HOTKEYS @"TOOLBAR_HOTKEYS"
 #define TOOLBAR_UPDATE @"TOOLBAR_UPDATE"
+
 
 @interface PreferenceController (Remote)
 - (void)initRemote;
@@ -231,32 +232,54 @@
 {
 	id plist = [[[Preferences instance] defaults] valueForKey:ActivatePreviousFilePrefKey];
 	Hotkey *hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[activatePreviousHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activatePreviousHotkey carbonToCocoaFlags:[hotkey modifiers]])];
-	
+	if (hotkey.keyCode > 0) {
+		[activatePreviousHotkey setObjectValue:[SRShortcut shortcutWithCode:(SRKeyCode)hotkey.keyCode
+		                                                      modifierFlags:SRCarbonToCocoaFlags((UInt32)hotkey.modifiers)
+		                                                         characters:nil
+		                                      charactersIgnoringModifiers:nil]];
+	}
+
 	plist = [[[Preferences instance] defaults] valueForKey:ActivateNextFilePrefKey];
 	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[activateNextHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
-	
+	if (hotkey.keyCode > 0) {
+		[activateNextHotkey setObjectValue:[SRShortcut shortcutWithCode:(SRKeyCode)hotkey.keyCode
+		                                                  modifierFlags:SRCarbonToCocoaFlags((UInt32)hotkey.modifiers)
+		                                                     characters:nil
+		                                  charactersIgnoringModifiers:nil]];
+	}
+
 	plist = [[[Preferences instance] defaults] valueForKey:UpdateAndSynchronizePrefKey];
 	hotkey = [[Hotkey alloc] initWithPlistRepresentation:plist];
-	[updateHotkey setKeyCombo:SRMakeKeyCombo([hotkey keyCode], [activateNextHotkey carbonToCocoaFlags:[hotkey modifiers]])];
+	if (hotkey.keyCode > 0) {
+		[updateHotkey setObjectValue:[SRShortcut shortcutWithCode:(SRKeyCode)hotkey.keyCode
+		                                            modifierFlags:SRCarbonToCocoaFlags((UInt32)hotkey.modifiers)
+		                                               characters:nil
+		                              charactersIgnoringModifiers:nil]];
+	}
 }
 
-- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
+- (void)recorderControlDidEndRecording:(SRRecorderControl *)aControl
 {
-	Hotkey *hotkey = [[Hotkey alloc] initWithKeyCode:[aRecorder keyCombo].code
-										   modifiers:[aRecorder cocoaToCarbonFlags:[aRecorder keyCombo].flags]];
+	SRShortcut *shortcut = aControl.objectValue;
+	Hotkey *hotkey;
+	if (shortcut) {
+		hotkey = [[Hotkey alloc] initWithKeyCode:(int)shortcut.carbonKeyCode
+		                               modifiers:(int)shortcut.carbonModifierFlags];
+	} else {
+		hotkey = [[Hotkey alloc] initWithKeyCode:-1 modifiers:-1];
+	}
+
 	NSString *prefKey;
-	if (aRecorder == activatePreviousHotkey) {
+	if (aControl == activatePreviousHotkey) {
 		prefKey = ActivatePreviousFilePrefKey;
 	}
-	else if (aRecorder == activateNextHotkey) {
+	else if (aControl == activateNextHotkey) {
 		prefKey = ActivateNextFilePrefKey;
 	}
 	else {
 		prefKey = UpdateAndSynchronizePrefKey;
 	}
-	
+
 	[[[Preferences instance] defaults] setValue:[hotkey plistRepresentation] forKey:prefKey];
 }
 

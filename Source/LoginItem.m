@@ -20,87 +20,29 @@
 
 #import "LoginItem.h"
 
-
-@interface LoginItem (Private)
--(void) enable;
--(void) disable;
--(LSSharedFileListRef) loginItems;
--(CFURLRef) url;
--(LSSharedFileListItemRef) itemRef;
-@end 
+#import <ServiceManagement/ServiceManagement.h>
 
 @implementation LoginItem
 
 -(BOOL) enabled
 {
-	return [self itemRef] != nil;
+	return [SMAppService mainAppService].status == SMAppServiceStatusEnabled;
 }
 
 -(void) setEnabled:(BOOL)enable
 {
+	NSError *error = nil;
 	if (enable) {
-		[self enable];
-	}
-	else {
-		[self disable];
-	}
-}
-
-@end
-
-@implementation LoginItem (Private)
-
--(void) enable
-{
-	logDebug(@"URL: %@", [self url]);
-	LSSharedFileListInsertItemURL([self loginItems],
-								  kLSSharedFileListItemLast,
-								  (CFStringRef)@"Gas Mask",
-								  NULL,
-								  [self url],
-								  NULL,
-								  NULL);
-}
-
--(void) disable
-{
-	LSSharedFileListItemRef itemRef = [self itemRef];
-	if (itemRef != nil) {
-		LSSharedFileListItemRemove([self loginItems], itemRef);
-	}
-}
-
--(LSSharedFileListRef) loginItems
-{
-	return LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-}
-
--(CFURLRef) url
-{
-	NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/Contents/Resources/Launcher.app"];
-	return (__bridge CFURLRef)[NSURL fileURLWithPath:path];
-}
-
--(LSSharedFileListItemRef) itemRef
-{
-	UInt32 seedValue;
-	NSArray *loginItemsArray = (__bridge NSArray *)LSSharedFileListCopySnapshot([self loginItems], &seedValue);
-	NSURL *bundleUrl = (NSURL *)[self url];
-	LSSharedFileListItemRef result = nil;
-	
-	for (id item in loginItemsArray) {
-		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
-		CFURLRef url;
-		
-		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &url, NULL) == noErr) {
-			if ([[(__bridge NSURL *)url path] isEqualToString: [bundleUrl path]]) {
-				result = itemRef;
-				break;
-			}
+		[[SMAppService mainAppService] registerAndReturnError:&error];
+		if (error) {
+			logDebug(@"Failed to register login item: %@", error);
+		}
+	} else {
+		[[SMAppService mainAppService] unregisterAndReturnError:&error];
+		if (error) {
+			logDebug(@"Failed to unregister login item: %@", error);
 		}
 	}
-	
-	return result;
 }
 
 @end
