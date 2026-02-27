@@ -69,10 +69,16 @@ static HostsMainController *sharedInstance = nil;
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if (sharedInstance) {
-        return sharedInstance;
-    }
+    /* NSClassSwapper requires initWithCoder: to return self (not a different object).
+       Singleton substitution must happen in awakeAfterUsingCoder: instead.
+       When the singleton already exists (Editor.xib loaded after MainMenu.xib),
+       we call [super initWithCoder:decoder] to produce a properly initialised but
+       otherwise unused temporary object; awakeAfterUsingCoder: then swaps it for
+       the real singleton so no duplicate state is created. */
     self = [super initWithCoder:decoder];
+    if (!self || sharedInstance) {
+        return self;
+    }
     controllers = [NSArray arrayWithObjects:
                    [LocalHostsController new],
                    [RemoteHostsController new],
@@ -91,7 +97,19 @@ static HostsMainController *sharedInstance = nil;
 
     sharedInstance = self;
 
-    return sharedInstance;
+    return self;
+}
+
+- (id)awakeAfterUsingCoder:(NSCoder *)decoder
+{
+    /* If a real singleton already exists this object is a temporary duplicate
+       created during a second NIB load (e.g. Editor.xib after MainMenu.xib).
+       Return the singleton so the NIB replaces all its internal references
+       before this temporary object is released. */
+    if (sharedInstance && sharedInstance != self) {
+        return sharedInstance;
+    }
+    return self;
 }
 
 - (void)load

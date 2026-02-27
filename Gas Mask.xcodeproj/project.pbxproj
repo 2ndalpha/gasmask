@@ -141,6 +141,8 @@
 		CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000011 /* HostsTests.m */; };
 		CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */; };
 		CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */; };
+		CC2B3C4D5E6F000100000045 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -376,6 +378,7 @@
 		CC2B3C4D5E6F000100000011 /* HostsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsGroupTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractHostsControllerTests.m; sourceTree = "<group>"; };
+		CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationControllerTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas Mask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -407,6 +410,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2B3C4D5E6F000100000045 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +864,7 @@
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
 				CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */,
+				CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */,
 			);
 			name = GasMaskTests;
 			path = GasMaskTests;
@@ -1139,6 +1144,7 @@
 				CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */,
 				CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */,
 				CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */,
+				CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
