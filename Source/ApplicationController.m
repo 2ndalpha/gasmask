@@ -23,7 +23,7 @@
 #import "Preferences.h"
 #import "AboutBoxController.h"
 #import "HostsMenu.h"
-#import "URLWindowController.h"
+#import "Gas_Mask-Swift.h"
 #import "LocalHostsController.h"
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
@@ -134,12 +134,7 @@ static ApplicationController *sharedInstance = nil;
 
 - (IBAction)addFromURL:(id)sender
 {
-	URLWindowController * controller = [URLWindowController new];
-	[NSApp beginSheet: [controller window]
-	   modalForWindow: [NSApp mainWindow]
-		modalDelegate: self
-	   didEndSelector: nil
-		  contextInfo: nil];
+	[URLSheetPresenter presentInWindow:nil];
 }
 
 - (IBAction)openHostsFile:(id)sender

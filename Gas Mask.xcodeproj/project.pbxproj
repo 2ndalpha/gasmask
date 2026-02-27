@@ -84,7 +84,6 @@
 		3562197910E52E8E00772473 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562197810E52E8E00772473 /* AboutBox.xib */; };
 		35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35621A3010E52F6C00772473 /* AboutBoxController.m */; };
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
-		356712D51132F80600DF30E0 /* URLSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356712D41132F80600DF30E0 /* URLSheet.xib */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
 		356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */; };
 		35730FCF113424C100066B68 /* RemoteHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35730FCE113424C100066B68 /* RemoteHosts.m */; };
@@ -106,7 +105,6 @@
 		359289AB1659222E00492494 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 359289AA1659222E00492494 /* CHANGELOG.txt */; };
 		3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597135C110DED0F00C7ECAF /* HostsMenu.m */; };
 		359967541656B52500BCF16D /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359967531656B52500BCF16D /* NotificationHelper.m */; };
-		35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A053AA113AE1F4004FE36F /* URLWindowController.m */; };
 		35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */; };
 		35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */; };
 		35B049921A46234100EB89CA /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498E1A46234100EB89CA /* Editor.png */; };
@@ -145,6 +143,12 @@
 		CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */; };
 /* End PBXBuildFile section */
 
+		AA000004000000000000AAAA /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003000000000000AAAA /* URLValidator.swift */; };
+		AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005000000000000AAAA /* NetworkStatusObserver.swift */; };
+		AA000008000000000000AAAA /* URLSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007000000000000AAAA /* URLSheetView.swift */; };
+		AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009000000000000AAAA /* URLSheetPresenter.swift */; };
+		AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000AAAA /* URLValidatorTests.swift */; };
+		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -299,7 +303,6 @@
 		35621A3010E52F6C00772473 /* AboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutBoxController.m; path = Source/AboutBoxController.m; sourceTree = "<group>"; };
 		3567121E1132E2A700DF30E0 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkStatus.h; path = Source/NetworkStatus.h; sourceTree = "<group>"; };
 		3567121F1132E2A700DF30E0 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkStatus.m; path = Source/NetworkStatus.m; sourceTree = "<group>"; };
-		356712D41132F80600DF30E0 /* URLSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLSheet.xib; sourceTree = "<group>"; };
 		3569AEBD12303479007DF95F /* Preferences+Remote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Preferences+Remote.h"; path = "Source/Preferences+Remote.h"; sourceTree = "<group>"; };
 		3569AEBE12303479007DF95F /* Preferences+Remote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Preferences+Remote.m"; path = "Source/Preferences+Remote.m"; sourceTree = "<group>"; };
 		356DB7681824EAFD0020CEA0 /* ExtendedNSSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSSplitView.h; path = Source/ExtendedNSSplitView.h; sourceTree = "<group>"; };
@@ -328,8 +331,13 @@
 		3597135C110DED0F00C7ECAF /* HostsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsMenu.m; path = Source/HostsMenu.m; sourceTree = "<group>"; };
 		359967521656B52500BCF16D /* NotificationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationHelper.h; path = Source/NotificationHelper.h; sourceTree = "<group>"; };
 		359967531656B52500BCF16D /* NotificationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationHelper.m; path = Source/NotificationHelper.m; sourceTree = "<group>"; };
-		35A053A9113AE1F4004FE36F /* URLWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLWindowController.h; path = Source/URLWindowController.h; sourceTree = "<group>"; };
-		35A053AA113AE1F4004FE36F /* URLWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLWindowController.m; path = Source/URLWindowController.m; sourceTree = "<group>"; };
+		AA000002000000000000AAAA /* GasMask-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GasMask-Bridging-Header.h"; path = "Source/Swift/GasMask-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA000003000000000000AAAA /* URLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLValidator.swift; path = "Source/Swift/URLValidator.swift"; sourceTree = "<group>"; };
+		AA000005000000000000AAAA /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatusObserver.swift; path = "Source/Swift/NetworkStatusObserver.swift"; sourceTree = "<group>"; };
+		AA000007000000000000AAAA /* URLSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetView.swift; path = "Source/Swift/URLSheetView.swift"; sourceTree = "<group>"; };
+		AA000009000000000000AAAA /* URLSheetPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetPresenter.swift; path = "Source/Swift/URLSheetPresenter.swift"; sourceTree = "<group>"; };
+		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
+		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
@@ -467,7 +475,6 @@
 			isa = PBXGroup;
 			children = (
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
-				35A05392113AE146004FE36F /* URL Sheet */,
 				3562196F10E52E5D00772473 /* About Box */,
 				35116A9610D6AD2C00A5FAA1 /* Preferences */,
 				35C8D58011144E8300B4242D /* Hotkeys */,
@@ -478,6 +485,7 @@
 				3513F32111514AEB0046FFF7 /* Core */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				35E900841147F38C00851A25 /* 3rd Party */,
+				AA000001000000000000AAAA /* Swift */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -766,14 +774,16 @@
 			name = "Remote Hosts";
 			sourceTree = "<group>";
 		};
-		35A05392113AE146004FE36F /* URL Sheet */ = {
+		AA000001000000000000AAAA /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				356712D41132F80600DF30E0 /* URLSheet.xib */,
-				35A053A9113AE1F4004FE36F /* URLWindowController.h */,
-				35A053AA113AE1F4004FE36F /* URLWindowController.m */,
+				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
+				AA000003000000000000AAAA /* URLValidator.swift */,
+				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
+				AA000007000000000000AAAA /* URLSheetView.swift */,
+				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
 			);
-			name = "URL Sheet";
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		35B0498D1A46233600EB89CA /* Preferences */ = {
@@ -860,6 +870,8 @@
 		CC2B3C4D5E6F000100000031 /* GasMaskTests */ = {
 			isa = PBXGroup;
 			children = (
+								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
+				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -1029,7 +1041,6 @@
 				358C36E51A0D6F2E00161C98 /* Combined_File_yosemite.tiff in Resources */,
 				351D904510E76F7100CA6B5E /* Help in Resources */,
 				354C0BC510E782A5005B9A33 /* hosts.icns in Resources */,
-				356712D51132F80600DF30E0 /* URLSheet.xib in Resources */,
 				35730FDD1134291300066B68 /* Remote old.png in Resources */,
 				35730FE911342C6E00066B68 /* Remote_disabled.png in Resources */,
 				3530F7EB1135536100E591BA /* Warning.png in Resources */,
@@ -1106,7 +1117,10 @@
 				35730FCF113424C100066B68 /* RemoteHosts.m in Sources */,
 				35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */,
 				3513A61C11390B7900AD789D /* Error.m in Sources */,
-				35A053AB113AE1F4004FE36F /* URLWindowController.m in Sources */,
+				AA000004000000000000AAAA /* URLValidator.swift in Sources */,
+				AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */,
+				AA000008000000000000AAAA /* URLSheetView.swift in Sources */,
+				AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
@@ -1145,6 +1159,8 @@
 				CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */,
 				CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */,
 				CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */,
+				AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */,
+				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,6 +1301,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/GasMask-Bridging-Header.h";
+				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
 		};
@@ -1316,6 +1334,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
 				PRODUCT_NAME = "Gas Mask";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/GasMask-Bridging-Header.h";
+				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
 		};
@@ -1403,6 +1423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
 				PRODUCT_NAME = "Gas Mask Tests";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
 			};
 			name = Debug;
@@ -1424,6 +1445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
 				PRODUCT_NAME = "Gas Mask Tests";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
 			};
 			name = Release;
