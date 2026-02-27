@@ -4,9 +4,9 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macos-12
+    runs-on: macos-15
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
 
     - name: Build
       run: ./build.sh
