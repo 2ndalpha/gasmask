@@ -28,12 +28,20 @@
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
 
+@interface ApplicationController ()
+{
+	__weak NSWindow *_editorWindow;
+}
+@end
+
 @interface ApplicationController(Private)
 - (void)initStructure;
 - (void)initEditorWindow;
 - (void)notifyHostsChange:(Hosts*)hosts;
 - (void)showApplicationInDock;
 - (void)hideApplicationFromDock;
+- (void)orderEditorWindowFront;
+- (void)editorWindowWillClose:(NSNotification *)notification;
 - (void)createHostsFileFromLocalURL:(NSURL*)url;
 @end
 
@@ -105,8 +113,9 @@ static ApplicationController *sharedInstance = nil;
 	if (!editorWindowOpened) {
 		[self initEditorWindow];
 	}
-	
+
 	[self showApplicationInDock];
+	[self performSelector:@selector(orderEditorWindowFront) withObject:nil afterDelay:0.1];
 }
 
 - (IBAction)closeEditorWindow:(id)sender
@@ -264,6 +273,16 @@ static ApplicationController *sharedInstance = nil;
     logDebug(@"Initializing editor window");
 	[NSBundle loadNibNamed:@"Editor" owner:self];
 	editorWindowOpened = YES;
+	for (NSWindow *window in [NSApp windows]) {
+		if ([[window frameAutosaveName] isEqualToString:@"editor_window"]) {
+			_editorWindow = window;
+			[[NSNotificationCenter defaultCenter] addObserver:self
+													 selector:@selector(editorWindowWillClose:)
+														 name:NSWindowWillCloseNotification
+													   object:window];
+			break;
+		}
+	}
 }
 
 - (void)activatePreviousFile:(NSNotification *)note
@@ -289,44 +308,39 @@ static ApplicationController *sharedInstance = nil;
     [NotificationHelper notify:@"Hosts File Activated" message:[hosts name]];
 }
 
-BOOL tranformAppToState(ProcessApplicationTransformState newState)
-{
-	ProcessSerialNumber psn = { 0, kCurrentProcess };
-	OSStatus transformStatus = TransformProcessType(&psn, newState);
-	if((transformStatus != 0))
-	{
-		NSError *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:transformStatus userInfo:nil];
-		NSLog(@"TranformAppToState: Unable to transform App state. Error - %@",error);
-	}
-
-	return (transformStatus == 0);
-}
-
 - (void)showApplicationInDock
 {
-	BOOL bSuccess = tranformAppToState(kProcessTransformToForegroundApplication);
-	if(bSuccess)
-	{
-		[NSApp activateIgnoringOtherApps:YES];
-		ProcessSerialNumber psnx = {0, kNoProcess};
-		GetNextProcess(&psnx);
-		SetFrontProcess(&psnx);
-		[self performSelector:@selector(setFront) withObject:nil afterDelay:0.5];
-	}
-
+	[NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+	[NSApp activateIgnoringOtherApps:YES];
 }
 
 - (void)hideApplicationFromDock
 {
-	tranformAppToState(kProcessTransformToBackgroundApplication);
+	[NSObject cancelPreviousPerformRequestsWithTarget:self
+											 selector:@selector(orderEditorWindowFront)
+											   object:nil];
+	[NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
 	[Preferences setShowEditorWindow:NO];
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:NSWindowWillCloseNotification
+												  object:_editorWindow];
+	_editorWindow = nil;
 	editorWindowOpened = NO;
 }
 
-- (void)setFront
+- (void)orderEditorWindowFront
 {
-	ProcessSerialNumber psn = {0, kCurrentProcess};
-	SetFrontProcess(&psn);	
+	[_editorWindow makeKeyAndOrderFront:nil];
+}
+
+- (void)editorWindowWillClose:(NSNotification *)notification
+{
+	if (editorWindowOpened) {
+		[[NSNotificationCenter defaultCenter] removeObserver:self
+														name:NSWindowWillCloseNotification
+													  object:[notification object]];
+		[self hideApplicationFromDock];
+	}
 }
 
 - (void)createHostsFileFromLocalURL:(NSURL*)url
