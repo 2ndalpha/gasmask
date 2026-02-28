@@ -19,7 +19,6 @@
 		351167C010D6346000A5FAA1 /* HostsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 351167BF10D6346000A5FAA1 /* HostsGroup.m */; };
 		3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */; };
 		35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116A6F10D6AAD200A5FAA1 /* Menulet.m */; };
-		35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */; };
 		35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116ABF10D6AF0500A5FAA1 /* LoginItem.m */; };
 		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
@@ -206,7 +205,6 @@
 		3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilesCountTransformer.m; path = Source/FilesCountTransformer.m; sourceTree = "<group>"; };
 		35116A6E10D6AAD200A5FAA1 /* Menulet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menulet.h; path = Source/Menulet.h; sourceTree = "<group>"; };
 		35116A6F10D6AAD200A5FAA1 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menulet.m; path = Source/Menulet.m; sourceTree = "<group>"; };
-		35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = menuIcon.tiff; path = Resources/Images/menuIcon.tiff; sourceTree = "<group>"; };
 		35116ABE10D6AF0500A5FAA1 /* LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItem.h; path = Source/LoginItem.h; sourceTree = "<group>"; };
 		35116ABF10D6AF0500A5FAA1 /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItem.m; path = Source/LoginItem.m; sourceTree = "<group>"; };
 		35116AD810D6B00200A5FAA1 /* Hotkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hotkey.h; path = Source/Hotkey.h; sourceTree = "<group>"; };
@@ -341,7 +339,6 @@
 		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
 		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
 		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
-		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
@@ -1009,7 +1006,6 @@
 				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
-				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
 				35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
