@@ -55,9 +55,9 @@ All rights reserved.</string>
                         </textFieldCell>
                     </textField>
                     <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                        <rect key="frame" x="62" y="131" width="85" height="109"/>
+                        <rect key="frame" x="62" y="131" width="115" height="109"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="About Box Image" id="14"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AboutIcon" id="14"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                         <rect key="frame" x="73" y="74" width="68" height="14"/>
@@ -167,6 +167,6 @@ All rights reserved.</string>
         </window>
     </objects>
     <resources>
-        <image name="About Box Image" width="256" height="256"/>
+        <image name="AboutIcon" width="128" height="128"/>
     </resources>
 </document>
