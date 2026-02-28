@@ -141,6 +141,10 @@
 		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
 		AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000017000000000000AAAA /* SidebarInstaller.swift */; };
 		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
+		AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */; };
+		AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */; };
+		AA000020000000000000AAAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001F000000000000AAAA /* ContentView.swift */; };
+		AA000022000000000000AAAA /* ContentInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000021000000000000AAAA /* ContentInstaller.swift */; };
 		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
 		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
 		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
@@ -339,6 +343,10 @@
 		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = "Source/Swift/SidebarView.swift"; sourceTree = "<group>"; };
 		AA000017000000000000AAAA /* SidebarInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarInstaller.swift; path = "Source/Swift/SidebarInstaller.swift"; sourceTree = "<group>"; };
 		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
+		AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsTextViewRepresentable.swift; path = "Source/Swift/HostsTextViewRepresentable.swift"; sourceTree = "<group>"; };
+		AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedHostsPickerView.swift; path = "Source/Swift/CombinedHostsPickerView.swift"; sourceTree = "<group>"; };
+		AA00001F000000000000AAAA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "Source/Swift/ContentView.swift"; sourceTree = "<group>"; };
+		AA000021000000000000AAAA /* ContentInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentInstaller.swift; path = "Source/Swift/ContentInstaller.swift"; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
 		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
@@ -782,6 +790,10 @@
 				AA000013000000000000AAAA /* HostsRowView.swift */,
 				AA000015000000000000AAAA /* SidebarView.swift */,
 				AA000017000000000000AAAA /* SidebarInstaller.swift */,
+				AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */,
+				AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */,
+				AA00001F000000000000AAAA /* ContentView.swift */,
+				AA000021000000000000AAAA /* ContentInstaller.swift */,
 				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
@@ -1110,6 +1122,10 @@
 				AA000014000000000000AAAA /* HostsRowView.swift in Sources */,
 				AA000016000000000000AAAA /* SidebarView.swift in Sources */,
 				AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */,
+				AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */,
+				AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */,
+				AA000020000000000000AAAA /* ContentView.swift in Sources */,
+				AA000022000000000000AAAA /* ContentInstaller.swift in Sources */,
 				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
 				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
 				CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */,

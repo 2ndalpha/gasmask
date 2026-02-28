@@ -44,6 +44,7 @@
     }
 
     [SidebarInstaller installIn:splitView];
+    [ContentInstaller installIn:splitView];
 }
 
 #pragma mark - Split View Delegate
