@@ -95,6 +95,8 @@
 	<string>http://gmask.clockwise.ee/check_update/</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>sparkle_dsa_pub.pem</string>
+	<key>SUPublicEDKey</key>
+	<string>REPLACE_WITH_EDDSA_PUBLIC_KEY</string>
 	<key>SUScheduledCheckInterval</key>
 	<string>86400</string>
 	<key>UTExportedTypeDeclarations</key>

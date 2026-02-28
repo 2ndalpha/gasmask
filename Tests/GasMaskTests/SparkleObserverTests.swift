@@ -4,13 +4,20 @@ import XCTest
 final class SparkleObserverTests: XCTestCase {
 
     func testLastCheckDateFormatted_nil_returnsNever() {
-        let observer = SparkleObserver()
+        let observer = SparkleObserver(updater: nil)
         observer.lastCheckDate = nil
         XCTAssertEqual(observer.lastCheckDateFormatted, "Last Checked: Never")
     }
 
+    func testNilUpdater_defaultState() {
+        let observer = SparkleObserver(updater: nil)
+        XCTAssertNil(observer.lastCheckDate)
+        XCTAssertFalse(observer.automaticChecksEnabled)
+        XCTAssertFalse(observer.canCheckForUpdates)
+    }
+
     func testLastCheckDateFormatted_date_returnsFormattedString() {
-        let observer = SparkleObserver()
+        let observer = SparkleObserver(updater: nil)
         // Use a fixed date: 2026-02-28 15:45:00 UTC
         var components = DateComponents()
         components.year = 2026
