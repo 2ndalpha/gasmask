@@ -11,6 +11,7 @@ struct CombinedHostsPickerView: View {
 
     // MARK: - Picker Content
 
+    @ViewBuilder
     private func pickerContent(for combined: CombinedHosts) -> some View {
         let allFiles = allNonCombinedHosts()
         let includedFiles = (combined.hostsFiles() as? [Hosts]) ?? []

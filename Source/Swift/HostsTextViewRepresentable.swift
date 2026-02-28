@@ -5,7 +5,9 @@ struct HostsTextViewRepresentable: NSViewRepresentable {
     @AppStorage("syntaxHighlighting") private var syntaxHighlighting = true
 
     func makeNSView(context: Context) -> NSScrollView {
-        let textView = HostsTextView.createForProgrammaticUse()
+        guard let textView = HostsTextView.createForProgrammaticUse() else {
+            return NSScrollView()
+        }
         textView.delegate = context.coordinator
         textView.setSyntaxHighlighting(syntaxHighlighting)
 
