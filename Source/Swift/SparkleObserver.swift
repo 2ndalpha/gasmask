@@ -8,7 +8,6 @@ final class SparkleObserver: ObservableObject {
     @Published var automaticChecksEnabled: Bool
     @Published var canCheckForUpdates = false
 
-    private var cancellables: Set<AnyCancellable> = []
     private let updater: SPUUpdater?
 
     private static let dateFormatter: DateFormatter = {
@@ -41,17 +40,21 @@ final class SparkleObserver: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$canCheckForUpdates)
 
+        updater.publisher(for: \.automaticallyChecksForUpdates)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$automaticChecksEnabled)
+
         updater.publisher(for: \.lastUpdateCheckDate)
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] date in
-                self?.lastCheckDate = date
-            }
-            .store(in: &cancellables)
+            .assign(to: &$lastCheckDate)
     }
 
     func setAutomaticChecks(_ enabled: Bool) {
-        automaticChecksEnabled = enabled
-        updater?.automaticallyChecksForUpdates = enabled
+        if let updater {
+            updater.automaticallyChecksForUpdates = enabled
+        } else {
+            automaticChecksEnabled = enabled
+        }
     }
 
     func checkForUpdates() {
