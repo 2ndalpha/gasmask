@@ -146,6 +146,8 @@
 		BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */; };
 		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
 		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
+		DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001000000000000DD01 /* GlobalShortcutsTests.swift */; };
+		DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -337,6 +339,8 @@
 		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
 		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
 		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
+		DD000001000000000000DD01 /* GlobalShortcutsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalShortcutsTests.swift; sourceTree = "<group>"; };
+		DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorderViewTests.swift; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
@@ -849,6 +853,8 @@
 								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
 								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
 								BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
+								DD000001000000000000DD01 /* GlobalShortcutsTests.swift */,
+								DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -1135,6 +1141,8 @@
 				BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */,
 				BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */,
 				BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */,
+				DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */,
+				DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
