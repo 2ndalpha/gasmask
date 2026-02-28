@@ -150,6 +150,11 @@
 		AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000AAAA /* URLValidatorTests.swift */; };
 		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
 		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
+		AA000012000000000000AAAA /* HostsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000011000000000000AAAA /* HostsDataStore.swift */; };
+		AA000014000000000000AAAA /* HostsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013000000000000AAAA /* HostsRowView.swift */; };
+		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
+		AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000017000000000000AAAA /* SidebarInstaller.swift */; };
+		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -340,6 +345,11 @@
 		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
 		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
 		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
+		AA000011000000000000AAAA /* HostsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsDataStore.swift; path = "Source/Swift/HostsDataStore.swift"; sourceTree = "<group>"; };
+		AA000013000000000000AAAA /* HostsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsRowView.swift; path = "Source/Swift/HostsRowView.swift"; sourceTree = "<group>"; };
+		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = "Source/Swift/SidebarView.swift"; sourceTree = "<group>"; };
+		AA000017000000000000AAAA /* SidebarInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarInstaller.swift; path = "Source/Swift/SidebarInstaller.swift"; sourceTree = "<group>"; };
+		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
@@ -784,6 +794,10 @@
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
 				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
+				AA000011000000000000AAAA /* HostsDataStore.swift */,
+				AA000013000000000000AAAA /* HostsRowView.swift */,
+				AA000015000000000000AAAA /* SidebarView.swift */,
+				AA000017000000000000AAAA /* SidebarInstaller.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -875,6 +889,7 @@
 								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
+				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -1124,6 +1139,10 @@
 				AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */,
 				AA000008000000000000AAAA /* URLSheetView.swift in Sources */,
 				AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */,
+				AA000012000000000000AAAA /* HostsDataStore.swift in Sources */,
+				AA000014000000000000AAAA /* HostsRowView.swift in Sources */,
+				AA000016000000000000AAAA /* SidebarView.swift in Sources */,
+				AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
@@ -1165,6 +1184,7 @@
 				AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */,
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
+				AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -441,6 +441,16 @@ static HostsMainController *sharedInstance = nil;
 	return [[self selectedObjects] lastObject];
 }
 
+- (void)selectHosts:(Hosts *)hosts
+{
+	NSIndexPath *path = [self hostsIndexPath:hosts];
+	if (path) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self setSelectionIndexPath:path];
+		});
+	}
+}
+
 - (NSArray*)allHostsFilesGrouped
 {
 	int nrControllers = [controllers count];
