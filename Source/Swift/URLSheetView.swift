@@ -18,6 +18,9 @@ struct URLSheetView: View {
         URLValidator.isValid(urlText)
     }
 
+    /// Exposed for testing: reflects the enabled state of the Add button.
+    var isAddButtonEnabled: Bool { isValidURL }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -50,7 +53,7 @@ struct URLSheetView: View {
                 .keyboardShortcut(.cancelAction)
 
                 Button("Add") {
-                    if let url = URL(string: urlText) {
+                    if isValidURL, let url = URL(string: urlText) {
                         onAdd(url)
                     }
                 }

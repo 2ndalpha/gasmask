@@ -57,6 +57,41 @@ final class URLSheetViewTests: XCTestCase {
         window.sendEvent(event)
     }
 
+    // MARK: - Add button enabled state
+    //
+    // SwiftUI on macOS 14+ renders Button as a private framework view, so we
+    // cannot walk the NSView hierarchy to check isEnabled.  URLSheetView
+    // exposes isAddButtonEnabled (which mirrors the .disabled modifier) as a
+    // plain computed property, making it testable without AppKit involvement.
+
+    func testAddButton_isEnabled_forHTTPSURL() {
+        let view = URLSheetView(urlText: "https://example.com/hosts",
+                                onAdd: { _ in }, onCancel: {})
+        XCTAssertTrue(view.isAddButtonEnabled)
+    }
+
+    func testAddButton_isEnabled_forHTTPURL() {
+        let view = URLSheetView(urlText: "http://example.com/hosts",
+                                onAdd: { _ in }, onCancel: {})
+        XCTAssertTrue(view.isAddButtonEnabled)
+    }
+
+    func testAddButton_isDisabled_forEmptyURL() {
+        let view = URLSheetView(urlText: "", onAdd: { _ in }, onCancel: {})
+        XCTAssertFalse(view.isAddButtonEnabled)
+    }
+
+    func testAddButton_isDisabled_forFTPURL() {
+        let view = URLSheetView(urlText: "ftp://example.com",
+                                onAdd: { _ in }, onCancel: {})
+        XCTAssertFalse(view.isAddButtonEnabled)
+    }
+
+    func testAddButton_isDisabled_forNoScheme() {
+        let view = URLSheetView(urlText: "example.com", onAdd: { _ in }, onCancel: {})
+        XCTAssertFalse(view.isAddButtonEnabled)
+    }
+
     // MARK: - Cancel callback
 
     /// Invoking onCancel (what the Cancel button does) calls the provided closure.
