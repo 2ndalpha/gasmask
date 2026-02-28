@@ -22,7 +22,7 @@ struct URLSheetView: View {
     var isAddButtonEnabled: Bool { isValidURL }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack {
                 Text("URL:")
                 TextField("https://example.com/hosts", text: $urlText)
@@ -61,8 +61,8 @@ struct URLSheetView: View {
                 .disabled(!isValidURL)
             }
         }
-        .padding()
-        .frame(minWidth: 400)
+        .padding(20)
+        .frame(minWidth: 420)
         .onAppear {
             urlFieldFocused = true
         }
