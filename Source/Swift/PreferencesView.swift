@@ -66,28 +66,24 @@ struct RemoteTab: View {
 
 struct HotkeysTab: View {
     var body: some View {
-        // Keys match ObjC #define constants in Preferences.h:
-        //   ActivatePreviousFilePrefKey = @"activatePreviousHotkey"
-        //   ActivateNextFilePrefKey     = @"activateNextHotkey"
-        //   UpdateAndSynchronizePrefKey = @"updateAndSynchronizeHotkey"
         Form {
             HStack {
                 Text("Activate Previous File:")
                     .frame(width: 160, alignment: .trailing)
-                ShortcutRecorderView(prefsKey: "activatePreviousHotkey")
-                    .frame(width: 150, height: 22)
+                ShortcutRecorderView(prefsKey: ActivatePreviousFilePrefKey)
+                    .frame(width: 150, height: 25)
             }
             HStack {
                 Text("Activate Next File:")
                     .frame(width: 160, alignment: .trailing)
-                ShortcutRecorderView(prefsKey: "activateNextHotkey")
-                    .frame(width: 150, height: 22)
+                ShortcutRecorderView(prefsKey: ActivateNextFilePrefKey)
+                    .frame(width: 150, height: 25)
             }
             HStack {
                 Text("Update Remote Files:")
                     .frame(width: 160, alignment: .trailing)
-                ShortcutRecorderView(prefsKey: "updateAndSynchronizeHotkey")
-                    .frame(width: 150, height: 22)
+                ShortcutRecorderView(prefsKey: UpdateAndSynchronizePrefKey)
+                    .frame(width: 150, height: 25)
             }
         }
         .padding(20)

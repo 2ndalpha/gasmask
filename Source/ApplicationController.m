@@ -177,8 +177,10 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+	(void)[GlobalShortcuts shared]; // Register global hotkeys
+
 	[NSApp setServicesProvider:self];
-	
+
 	[self initStructure];
 	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];

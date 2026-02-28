@@ -20,11 +20,10 @@
 		3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */; };
 		35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116A6F10D6AAD200A5FAA1 /* Menulet.m */; };
 		35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116ABF10D6AF0500A5FAA1 /* LoginItem.m */; };
-		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
 		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
-		AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* ShortcutRecorder */; };
+		AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* MASShortcut */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
@@ -103,7 +102,6 @@
 		35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499A1A462AE900EB89CA /* Activated@2x.png */; };
 		35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
-		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
 		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
 		35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2C252113507A6007C8037 /* RemoteHostsManager.m */; };
@@ -140,6 +138,7 @@
 		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
 		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
 		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
+		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
 		BB000006000000000000BBBB /* SparkleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000005000000000000BBBB /* SparkleObserver.swift */; };
 		BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000007000000000000BBBB /* LoginItemObserver.swift */; };
 		BB00000A000000000000BBBB /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000009000000000000BBBB /* PreferencesView.swift */; };
@@ -207,8 +206,6 @@
 		35116A6F10D6AAD200A5FAA1 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menulet.m; path = Source/Menulet.m; sourceTree = "<group>"; };
 		35116ABE10D6AF0500A5FAA1 /* LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItem.h; path = Source/LoginItem.h; sourceTree = "<group>"; };
 		35116ABF10D6AF0500A5FAA1 /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItem.m; path = Source/LoginItem.m; sourceTree = "<group>"; };
-		35116AD810D6B00200A5FAA1 /* Hotkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hotkey.h; path = Source/Hotkey.h; sourceTree = "<group>"; };
-		35116AD910D6B00200A5FAA1 /* Hotkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hotkey.m; path = Source/Hotkey.m; sourceTree = "<group>"; };
 		3513A5FF113908A900AD789D /* Read Only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Read Only.png"; path = "Resources/Images/Read Only.png"; sourceTree = "<group>"; };
 		3513A61A11390B7900AD789D /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Error.h; path = Source/Error.h; sourceTree = "<group>"; };
 		3513A61B11390B7900AD789D /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Error.m; path = Source/Error.m; sourceTree = "<group>"; };
@@ -332,6 +329,7 @@
 		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
 		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
 		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
+		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = "Source/Swift/GlobalShortcuts.swift"; sourceTree = "<group>"; };
 		BB000005000000000000BBBB /* SparkleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkleObserver.swift; path = "Source/Swift/SparkleObserver.swift"; sourceTree = "<group>"; };
 		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = "Source/Swift/LoginItemObserver.swift"; sourceTree = "<group>"; };
 		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = "Source/Swift/PreferencesView.swift"; sourceTree = "<group>"; };
@@ -344,8 +342,6 @@
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
-		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
-		35C8D58511144E9C00B4242D /* GlobalHotkeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalHotkeys.m; path = Source/GlobalHotkeys.m; sourceTree = "<group>"; };
 		35C8D5A811144F7000B4242D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		35D2C251113507A6007C8037 /* RemoteHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsManager.h; path = Source/RemoteHostsManager.h; sourceTree = "<group>"; };
@@ -399,7 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				351416CF28C3A7B80093A452 /* Sparkle in Frameworks */,
-				AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */,
+				AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
@@ -472,7 +468,6 @@
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
 				3562196F10E52E5D00772473 /* About Box */,
 				35116A9610D6AD2C00A5FAA1 /* Preferences */,
-				35C8D58011144E8300B4242D /* Hotkeys */,
 				355F5C4C12244AF5006C2884 /* Local Hosts */,
 				35D3328B152F5A45001DA824 /* Combined Hosts */,
 				35730FCA113424A500066B68 /* Remote Hosts */,
@@ -763,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
+				CC000001000000000000CC01 /* GlobalShortcuts.swift */,
 				AA000003000000000000AAAA /* URLValidator.swift */,
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
@@ -783,17 +779,6 @@
 				BB000007000000000000BBBB /* LoginItemObserver.swift */,
 			);
 			name = Preferences;
-			sourceTree = "<group>";
-		};
-		35C8D58011144E8300B4242D /* Hotkeys */ = {
-			isa = PBXGroup;
-			children = (
-				35116AD810D6B00200A5FAA1 /* Hotkey.h */,
-				35116AD910D6B00200A5FAA1 /* Hotkey.m */,
-				35C8D58411144E9C00B4242D /* GlobalHotkeys.h */,
-				35C8D58511144E9C00B4242D /* GlobalHotkeys.m */,
-			);
-			name = Hotkeys;
 			sourceTree = "<group>";
 		};
 		35D3328B152F5A45001DA824 /* Combined Hosts */ = {
@@ -920,7 +905,7 @@
 			name = "Gas Mask";
 			packageProductDependencies = (
 				351416CE28C3A7B80093A452 /* Sparkle */,
-				AA1B2C3D4E5F000200000001 /* ShortcutRecorder */,
+				AA1B2C3D4E5F000200000001 /* MASShortcut */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Gas Mask";
@@ -967,7 +952,7 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
 			packageReferences = (
 				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
@@ -1080,7 +1065,6 @@
 				3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */,
 				35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */,
 				35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */,
-				35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */,
 				358448B310DFE283002E6A9B /* Util.m in Sources */,
 				3545DCA910E396CF00EBA66D /* Network.m in Sources */,
 				3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */,
@@ -1090,7 +1074,6 @@
 				35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */,
 				35738409110209AB00E8DB54 /* HostsListView.m in Sources */,
 				3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */,
-				35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */,
 				354CCF811117285300EB6948 /* HostsListViewMenu.m in Sources */,
 				3516864B11187EDE00314609 /* HostsTextController.m in Sources */,
 				356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */,
@@ -1103,6 +1086,7 @@
 				AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */,
 				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
 				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
+				CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */,
 				BB000006000000000000BBBB /* SparkleObserver.swift in Sources */,
 				BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */,
 				BB00000A000000000000BBBB /* PreferencesView.swift in Sources */,
@@ -1492,12 +1476,12 @@
 				version = 1.27.1;
 			};
 		};
-		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
+			repositoryURL = "https://github.com/shpakovski/MASShortcut";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.4.0;
+				kind = branch;
+				branch = master;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1508,10 +1492,10 @@
 			package = 351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
 		};
-		AA1B2C3D4E5F000200000001 /* ShortcutRecorder */ = {
+		AA1B2C3D4E5F000200000001 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
-			productName = ShortcutRecorder;
+			package = AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
