@@ -5,6 +5,10 @@ import SwiftUI
     private static var activePanel: NSPanel?
 
     @objc static func presentInWindow(_ externalWindow: NSWindow?) {
+        guard activePanel == nil else {
+            NSLog("[URLSheetPresenter] Sheet already presented — ignoring")
+            return
+        }
         guard let parent = externalWindow ?? NSApp.keyWindow ?? NSApp.mainWindow else {
             NSLog("[URLSheetPresenter] No parent window — cannot present sheet")
             return

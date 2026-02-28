@@ -40,7 +40,7 @@ final class URLSheetViewTests: XCTestCase {
         let view = URLSheetView(urlText: urlText, onAdd: onAdd, onCancel: onCancel)
         let hc = NSHostingController(rootView: view)
         let p = NSPanel(contentViewController: hc)
-        p.makeKeyAndOrderFront(nil as AnyObject?)
+        p.makeKeyAndOrderFront(nil)
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
         panel = p
         return hc

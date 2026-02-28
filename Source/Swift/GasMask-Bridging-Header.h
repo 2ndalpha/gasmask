@@ -2,4 +2,3 @@
 #import "Network.h"
 #import "HostsMainController.h"
 #import "RemoteHostsController.h"
-#import "RemoteHosts.h"
