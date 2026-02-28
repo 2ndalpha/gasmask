@@ -19,6 +19,10 @@ final class URLSheetPresenterTests: XCTestCase {
     }
 
     override func tearDown() {
+        if let sheet = window?.attachedSheet {
+            window?.endSheet(sheet)
+            RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.2))
+        }
         window.close()
         window = nil
         super.tearDown()
