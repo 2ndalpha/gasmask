@@ -3,10 +3,34 @@ on:
   - push
 jobs:
   build:
-    name: Build
-    runs-on: macos-15
+    name: Build (${{ matrix.runner }}, Xcode ${{ matrix.xcode }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            xcode: "16.4"
+          - runner: macos-15-intel
+            xcode: "16.4"
+          - runner: macos-26
+            xcode: "26.2"
+          - runner: macos-26-intel
+            xcode: "26.2"
+          - runner: macos-14
+            xcode: "15.4"
+          - runner: macos-15
+            xcode: "16.0"
+          - runner: macos-15
+            xcode: "26.0.1"
+          - runner: macos-26
+            xcode: "26.3"
     steps:
     - uses: actions/checkout@v4
+
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ matrix.xcode }}
 
     - name: Resolve package dependencies
       run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
@@ -15,10 +39,34 @@ jobs:
       run: ./build.sh
 
   test:
-    name: Test
-    runs-on: macos-15
+    name: Test (${{ matrix.runner }}, Xcode ${{ matrix.xcode }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            xcode: "16.4"
+          - runner: macos-15-intel
+            xcode: "16.4"
+          - runner: macos-26
+            xcode: "26.2"
+          - runner: macos-26-intel
+            xcode: "26.2"
+          - runner: macos-14
+            xcode: "15.4"
+          - runner: macos-15
+            xcode: "16.0"
+          - runner: macos-15
+            xcode: "26.0.1"
+          - runner: macos-26
+            xcode: "26.3"
     steps:
     - uses: actions/checkout@v4
+
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ matrix.xcode }}
 
     - name: Resolve package dependencies
       run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
