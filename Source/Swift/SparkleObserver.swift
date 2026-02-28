@@ -32,7 +32,7 @@ final class SparkleObserver: ObservableObject {
             return
         }
         self.lastCheckDate = updater.lastUpdateCheckDate
-        self.automaticChecksEnabled = UserDefaults.standard.bool(forKey: "SUEnableAutomaticChecks")
+        self.automaticChecksEnabled = updater.automaticallyChecksForUpdates
 
         // Observe lastUpdateCheckDate via KVO
         dateObservation = updater.observe(\.lastUpdateCheckDate, options: [.new]) { [weak self] _, change in

@@ -71,6 +71,7 @@ final class PreferencesPresenterTests: XCTestCase {
 
     /// Captures a screenshot of a specific tab and saves to /tmp/preferences-<tab>.png.
     private func captureTab(index: Int, name: String) throws {
+        try XCTSkipIf(NSScreen.main == nil, "No display available")
         PreferencesPresenter.showPreferences()
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
         let w = try XCTUnwrap(preferencesWindow())
@@ -79,7 +80,7 @@ final class PreferencesPresenterTests: XCTestCase {
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
 
         let frame = w.frame
-        let screenFrame = w.screen?.frame ?? NSScreen.main!.frame
+        let screenFrame = w.screen?.frame ?? NSScreen.main?.frame ?? .zero
         let cgRect = CGRect(
             x: frame.origin.x,
             y: screenFrame.height - frame.origin.y - frame.height,
