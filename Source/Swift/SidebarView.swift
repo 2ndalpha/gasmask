@@ -7,23 +7,22 @@ struct SidebarView: View {
     @State private var editingName: String = ""
     @State private var isEditing = false
     @State private var renameError: String?
+    @State private var hostsToRemove: Hosts?
 
     var body: some View {
         List(selection: $store.selectedHosts) {
             ForEach(store.hostsGroups, id: \.self) { group in
                 let children = (group.children as? [Hosts]) ?? []
-                if !children.isEmpty {
-                    Section(header: HostsRowView(hosts: group, isGroup: true)) {
-                        ForEach(children, id: \.self) { hosts in
-                            rowContent(for: hosts)
-                                .tag(hosts)
-                        }
+                Section(header: HostsRowView(hosts: group, isGroup: true)) {
+                    ForEach(children, id: \.self) { hosts in
+                        rowContent(for: hosts)
+                            .tag(hosts)
                     }
                 }
+                .onDrop(of: [.fileURL, .url], delegate: SidebarDropDelegate(group: group))
             }
         }
         .listStyle(.sidebar)
-        .onDrop(of: [.fileURL, .url, .utf8PlainText], delegate: SidebarDropDelegate(store: store))
         .onChange(of: store.renamingHosts) { newValue in
             if let hosts = newValue {
                 beginRename(hosts)
@@ -36,6 +35,20 @@ struct SidebarView: View {
             Button("OK") { renameError = nil }
         } message: {
             Text(renameError ?? "")
+        }
+        .alert("Remove Hosts File", isPresented: Binding(
+            get: { hostsToRemove != nil },
+            set: { if !$0 { hostsToRemove = nil } }
+        )) {
+            Button("Cancel", role: .cancel) { hostsToRemove = nil }
+            Button("Remove", role: .destructive) {
+                if let hosts = hostsToRemove {
+                    HostsMainController.defaultInstance()?.removeHostsFile(hosts, moveToTrash: false)
+                }
+                hostsToRemove = nil
+            }
+        } message: {
+            Text("Are you sure you want to remove \"\(hostsToRemove?.name() ?? "")\"?")
         }
     }
 
@@ -57,11 +70,12 @@ struct SidebarView: View {
     // MARK: - Inline Rename
 
     private func renameField(for hosts: Hosts) -> some View {
-        TextField("Name", text: $editingName, onCommit: {
-            commitRename(hosts)
-        })
+        TextField("Name", text: $editingName)
         .textFieldStyle(.plain)
         .font(.system(size: NSFont.smallSystemFontSize))
+        .onSubmit {
+            commitRename(hosts)
+        }
         .onExitCommand {
             cancelRename()
         }
@@ -149,7 +163,7 @@ struct SidebarView: View {
 
         if store.canRemoveFiles {
             Button("Remove") {
-                HostsMainController.defaultInstance()?.removeHostsFile(hosts, moveToTrash: false)
+                hostsToRemove = hosts
             }
         }
     }
@@ -160,19 +174,21 @@ struct SidebarView: View {
 extension SidebarView {
 
     struct SidebarDropDelegate: DropDelegate {
-        let store: HostsDataStore
+        let group: HostsGroup
 
         func validateDrop(info: DropInfo) -> Bool {
-            info.hasItemsConforming(to: [.fileURL, .url, .utf8PlainText])
+            info.hasItemsConforming(to: [.fileURL, .url])
         }
 
         func performDrop(info: DropInfo) -> Bool {
             guard let controller = HostsMainController.defaultInstance() else { return false }
 
-            let providers = info.itemProviders(for: [.fileURL, .url, .utf8PlainText])
+            let providers = info.itemProviders(for: [.fileURL, .url])
+            var handled = false
             for provider in providers {
                 if provider.canLoadObject(ofClass: URL.self) {
-                    provider.loadObject(ofClass: URL.self) { url, error in
+                    handled = true
+                    _ = provider.loadObject(ofClass: URL.self) { url, error in
                         if let error {
                             NSLog("Drop URL load failed: %@", error.localizedDescription)
                             return
@@ -180,20 +196,15 @@ extension SidebarView {
                         guard let url else { return }
                         DispatchQueue.main.async {
                             if url.isFileURL {
-                                _ = controller.createHosts(fromLocalURL: url, to: defaultGroup())
+                                _ = controller.createHosts(fromLocalURL: url, to: group)
                             } else {
-                                _ = controller.createHosts(from: url, to: defaultGroup())
+                                _ = controller.createHosts(from: url, to: group)
                             }
                         }
                     }
-                    return true
                 }
             }
-            return false
-        }
-
-        private func defaultGroup() -> HostsGroup? {
-            store.hostsGroups.first
+            return handled
         }
     }
 }
