@@ -78,12 +78,8 @@ static ApplicationController *sharedInstance = nil;
 
 -(IBAction)openPreferencesWindow:(id)sender
 {
-	if (!preferenceController) {
-		preferenceController = [[PreferenceController alloc] init];
-	}
-	
     [self showApplicationInDock];
-	[preferenceController showWindow:self];
+	[PreferencesPresenter showPreferences];
 }
 
 - (IBAction)displayAboutBox:(id)sender

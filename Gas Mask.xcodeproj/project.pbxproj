@@ -19,8 +19,7 @@
 		351167C010D6346000A5FAA1 /* HostsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 351167BF10D6346000A5FAA1 /* HostsGroup.m */; };
 		3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */; };
 		35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116A6F10D6AAD200A5FAA1 /* Menulet.m */; };
-		35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35116A9F10D6ADF000A5FAA1 /* Preferences.xib */; };
-		35116AAD10D6AE5600A5FAA1 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */; };
+		35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */; };
 		35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116ABF10D6AF0500A5FAA1 /* LoginItem.m */; };
 		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
@@ -73,7 +72,6 @@
 		354E7F5E10AEFA9D00FC4757 /* PrivilegedActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7F5D10AEFA9D00FC4757 /* PrivilegedActions.m */; };
 		354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354E7F8010AEFBC500FC4757 /* Security.framework */; };
 		354E80B510AF383C00FC4757 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E80B410AF383C00FC4757 /* FileUtil.m */; };
-		3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */; };
 		355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5C5A12244B67006C2884 /* LocalHostsController.m */; };
 		355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CA412244F28006C2884 /* RemoteHostsController.m */; };
 		355F5CDF122452BE006C2884 /* AbstractHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CDE122452BE006C2884 /* AbstractHostsController.m */; };
@@ -103,10 +101,6 @@
 		3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597135C110DED0F00C7ECAF /* HostsMenu.m */; };
 		359967541656B52500BCF16D /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359967531656B52500BCF16D /* NotificationHelper.m */; };
 		35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */; };
-		35B049921A46234100EB89CA /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498E1A46234100EB89CA /* Editor.png */; };
-		35B049931A46234100EB89CA /* Hotkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498F1A46234100EB89CA /* Hotkeys.png */; };
-		35B049941A46234100EB89CA /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049901A46234100EB89CA /* Remote.png */; };
-		35B049951A46234100EB89CA /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049911A46234100EB89CA /* Update.png */; };
 		35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499A1A462AE900EB89CA /* Activated@2x.png */; };
 		35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
@@ -145,6 +139,15 @@
 		AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000AAAA /* URLValidatorTests.swift */; };
 		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
 		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
+		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
+		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
+		BB000006000000000000BBBB /* SparkleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000005000000000000BBBB /* SparkleObserver.swift */; };
+		BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000007000000000000BBBB /* LoginItemObserver.swift */; };
+		BB00000A000000000000BBBB /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000009000000000000BBBB /* PreferencesView.swift */; };
+		BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000B000000000000BBBB /* PreferencesPresenter.swift */; };
+		BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */; };
+		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
+		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -203,9 +206,7 @@
 		3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilesCountTransformer.m; path = Source/FilesCountTransformer.m; sourceTree = "<group>"; };
 		35116A6E10D6AAD200A5FAA1 /* Menulet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menulet.h; path = Source/Menulet.h; sourceTree = "<group>"; };
 		35116A6F10D6AAD200A5FAA1 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menulet.m; path = Source/Menulet.m; sourceTree = "<group>"; };
-		35116A9F10D6ADF000A5FAA1 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-		35116AAB10D6AE5600A5FAA1 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferenceController.h; path = Source/PreferenceController.h; sourceTree = "<group>"; };
-		35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferenceController.m; path = Source/PreferenceController.m; sourceTree = "<group>"; };
+		35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = menuIcon.tiff; path = Resources/Images/menuIcon.tiff; sourceTree = "<group>"; };
 		35116ABE10D6AF0500A5FAA1 /* LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItem.h; path = Source/LoginItem.h; sourceTree = "<group>"; };
 		35116ABF10D6AF0500A5FAA1 /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItem.m; path = Source/LoginItem.m; sourceTree = "<group>"; };
 		35116AD810D6B00200A5FAA1 /* Hotkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hotkey.h; path = Source/Hotkey.h; sourceTree = "<group>"; };
@@ -283,8 +284,6 @@
 		354E7F8010AEFBC500FC4757 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		354E80B310AF383C00FC4757 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtil.h; path = Source/FileUtil.h; sourceTree = "<group>"; };
 		354E80B410AF383C00FC4757 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUtil.m; path = Source/FileUtil.m; sourceTree = "<group>"; };
-		3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateDateTransformer.h; path = Source/UpdateDateTransformer.h; sourceTree = "<group>"; };
-		3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateDateTransformer.m; path = Source/UpdateDateTransformer.m; sourceTree = "<group>"; };
 		355F5C5912244B67006C2884 /* LocalHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHostsController.h; path = Source/LocalHostsController.h; sourceTree = "<group>"; };
 		355F5C5A12244B67006C2884 /* LocalHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalHostsController.m; path = Source/LocalHostsController.m; sourceTree = "<group>"; };
 		355F5CA312244F28006C2884 /* RemoteHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsController.h; path = Source/RemoteHostsController.h; sourceTree = "<group>"; };
@@ -333,11 +332,17 @@
 		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
 		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
 		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
+		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
+		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
+		BB000005000000000000BBBB /* SparkleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkleObserver.swift; path = "Source/Swift/SparkleObserver.swift"; sourceTree = "<group>"; };
+		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = "Source/Swift/LoginItemObserver.swift"; sourceTree = "<group>"; };
+		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = "Source/Swift/PreferencesView.swift"; sourceTree = "<group>"; };
+		BB00000B000000000000BBBB /* PreferencesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPresenter.swift; path = "Source/Swift/PreferencesPresenter.swift"; sourceTree = "<group>"; };
+		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
+		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
+		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
+		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
-		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
-		35B0498F1A46234100EB89CA /* Hotkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hotkeys.png; path = Resources/Images/Preferences/Hotkeys.png; sourceTree = "<group>"; };
-		35B049901A46234100EB89CA /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Preferences/Remote.png; sourceTree = "<group>"; };
-		35B049911A46234100EB89CA /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Preferences/Update.png; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
@@ -562,8 +567,6 @@
 				3556CEF410D6B6F300C7301E /* GUI */,
 				353A80B910B01C050005CAD1 /* Preferences.h */,
 				353A80BA10B01C050005CAD1 /* Preferences.m */,
-				35116AAB10D6AE5600A5FAA1 /* PreferenceController.h */,
-				35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -668,7 +671,6 @@
 		3545DC8E10E38F1800EBA66D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				35B0498D1A46233600EB89CA /* Preferences */,
 				35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */,
 				358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */,
 				358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */,
@@ -707,9 +709,6 @@
 		3556CEF410D6B6F300C7301E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				35116A9F10D6ADF000A5FAA1 /* Preferences.xib */,
-				3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */,
-				3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -771,17 +770,20 @@
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
 				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
+				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
 		};
-		35B0498D1A46233600EB89CA /* Preferences */ = {
+		BB000020000000000000BBBB /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				35B0498E1A46234100EB89CA /* Editor.png */,
-				35B0498F1A46234100EB89CA /* Hotkeys.png */,
-				35B049901A46234100EB89CA /* Remote.png */,
-				35B049911A46234100EB89CA /* Update.png */,
+				BB000009000000000000BBBB /* PreferencesView.swift */,
+				BB00000B000000000000BBBB /* PreferencesPresenter.swift */,
+				BB000001000000000000BBBB /* RemoteIntervalMapper.swift */,
+				BB000003000000000000BBBB /* ShortcutRecorderView.swift */,
+				BB000005000000000000BBBB /* SparkleObserver.swift */,
+				BB000007000000000000BBBB /* LoginItemObserver.swift */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -862,6 +864,9 @@
 								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
+								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
+								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
+								BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -990,8 +995,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B049921A46234100EB89CA /* Editor.png in Resources */,
-				35B049931A46234100EB89CA /* Hotkeys.png in Resources */,
 				3579F1181114B95300123416 /* Launcher.app in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
@@ -999,7 +1002,6 @@
 				352E04FD106281940071E25B /* Create.png in Resources */,
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
-				35B049941A46234100EB89CA /* Remote.png in Resources */,
 				352E05B610628D790071E25B /* Activated.png in Resources */,
 				350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
@@ -1007,7 +1009,7 @@
 				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
-				35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */,
+				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
 				35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
@@ -1037,7 +1039,6 @@
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
 				359289AB1659222E00492494 /* CHANGELOG.txt in Resources */,
 				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
-				35B049951A46234100EB89CA /* Update.png in Resources */,
 				358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1082,10 +1083,8 @@
 				351167C010D6346000A5FAA1 /* HostsGroup.m in Sources */,
 				3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */,
 				35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */,
-				35116AAD10D6AE5600A5FAA1 /* PreferenceController.m in Sources */,
 				35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */,
 				35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */,
-				3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */,
 				358448B310DFE283002E6A9B /* Util.m in Sources */,
 				3545DCA910E396CF00EBA66D /* Network.m in Sources */,
 				3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */,
@@ -1106,6 +1105,12 @@
 				AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */,
 				AA000008000000000000AAAA /* URLSheetView.swift in Sources */,
 				AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */,
+				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
+				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
+				BB000006000000000000BBBB /* SparkleObserver.swift in Sources */,
+				BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */,
+				BB00000A000000000000BBBB /* PreferencesView.swift in Sources */,
+				BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
@@ -1147,6 +1152,9 @@
 				AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */,
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
+				BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */,
+				BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */,
+				BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
