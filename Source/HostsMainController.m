@@ -445,6 +445,8 @@ static HostsMainController *sharedInstance = nil;
 {
 	NSIndexPath *path = [self hostsIndexPath:hosts];
 	if (path) {
+		// Defer to next run loop iteration so the tree controller
+		// finishes any in-flight insert/remove before we change selection.
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[self setSelectionIndexPath:path];
 		});

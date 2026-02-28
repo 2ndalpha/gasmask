@@ -43,12 +43,12 @@ struct SidebarView: View {
             Button("Cancel", role: .cancel) { hostsToRemove = nil }
             Button("Remove", role: .destructive) {
                 if let hosts = hostsToRemove {
-                    HostsMainController.defaultInstance()?.removeHostsFile(hosts, moveToTrash: false)
+                    HostsMainController.defaultInstance()?.removeHostsFile(hosts, moveToTrash: true)
                 }
                 hostsToRemove = nil
             }
         } message: {
-            Text("Are you sure you want to remove \"\(hostsToRemove?.name() ?? "")\"?")
+            Text("Are you sure you want to remove \"\(hostsToRemove?.name() ?? "")\"? The file will be moved to Trash.")
         }
     }
 

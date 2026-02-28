@@ -51,10 +51,6 @@ final class HostsDataStore: ObservableObject {
         observeNotifications()
     }
 
-    deinit {
-        notificationObservers.forEach { NotificationCenter.default.removeObserver($0) }
-    }
-
     // MARK: Refresh
 
     func refreshGroups() {
@@ -90,8 +86,7 @@ final class HostsDataStore: ObservableObject {
         let refreshNames: [NSNotification.Name] = [
             .hostsFileCreated,
             .hostsFileRemoved,
-            .hostsFileRenamed,
-            .allHostsFilesLoadedFromDisk
+            .hostsFileRenamed
         ]
 
         for name in refreshNames {
@@ -102,7 +97,18 @@ final class HostsDataStore: ObservableObject {
             notificationObservers.append(observer)
         }
 
-        // Single-row refresh notifications
+        // All files loaded — refresh data then select the active file
+        let loadedObserver = nc.addObserver(
+            forName: .allHostsFilesLoadedFromDisk, object: nil, queue: .main
+        ) { [weak self] _ in
+            self?.refreshGroups()
+            self?.refreshFilesCount()
+            let active = HostsMainController.defaultInstance()?.activeHostsFile()
+            self?.syncSelectionFromModel(active)
+        }
+        notificationObservers.append(loadedObserver)
+
+        // Single-row refresh notifications — reassign hostsGroups to force SwiftUI diffing
         let rowRefreshNames: [NSNotification.Name] = [
             .hostsFileSaved,
             .hostsNodeNeedsUpdate,
@@ -111,8 +117,8 @@ final class HostsDataStore: ObservableObject {
 
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
-                // Trigger a refresh by reassigning hostsGroups to force SwiftUI update
-                self?.objectWillChange.send()
+                guard let self else { return }
+                self.hostsGroups = self.hostsGroups
             }
             notificationObservers.append(observer)
         }
@@ -133,15 +139,6 @@ final class HostsDataStore: ObservableObject {
             }
         }
         notificationObservers.append(selectObserver)
-
-        // After all files loaded, select the active one
-        let loadedObserver = nc.addObserver(
-            forName: .allHostsFilesLoadedFromDisk, object: nil, queue: .main
-        ) { [weak self] _ in
-            let active = HostsMainController.defaultInstance()?.activeHostsFile()
-            self?.syncSelectionFromModel(active)
-        }
-        notificationObservers.append(loadedObserver)
     }
 
 }
