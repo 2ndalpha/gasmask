@@ -78,12 +78,8 @@ static ApplicationController *sharedInstance = nil;
 
 -(IBAction)openPreferencesWindow:(id)sender
 {
-	if (!preferenceController) {
-		preferenceController = [[PreferenceController alloc] init];
-	}
-	
     [self showApplicationInDock];
-	[preferenceController showWindow:self];
+	[PreferencesPresenter showPreferences];
 }
 
 - (IBAction)displayAboutBox:(id)sender
@@ -181,8 +177,10 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+	(void)[GlobalShortcuts shared]; // Register global hotkeys
+
 	[NSApp setServicesProvider:self];
-	
+
 	[self initStructure];
 	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];

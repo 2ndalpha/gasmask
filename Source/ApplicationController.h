@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #import "HostsMainController.h"
-#import "PreferenceController.h"
 
 @class AboutBoxController;
 
@@ -30,7 +29,6 @@
 	int busyThreads;
 	BOOL shouldQuit;
 	BOOL editorWindowOpened;
-	PreferenceController *preferenceController;
     AboutBoxController *aboutBoxController;
 }
 

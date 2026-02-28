@@ -19,15 +19,11 @@
 		351167C010D6346000A5FAA1 /* HostsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 351167BF10D6346000A5FAA1 /* HostsGroup.m */; };
 		3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */; };
 		35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116A6F10D6AAD200A5FAA1 /* Menulet.m */; };
-		35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */; };
-		35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35116A9F10D6ADF000A5FAA1 /* Preferences.xib */; };
-		35116AAD10D6AE5600A5FAA1 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */; };
 		35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116ABF10D6AF0500A5FAA1 /* LoginItem.m */; };
-		35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 35116AD910D6B00200A5FAA1 /* Hotkey.m */; };
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
 		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
-		AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* ShortcutRecorder */; };
+		AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* MASShortcut */; };
 		3516864B11187EDE00314609 /* HostsTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3516864A11187EDE00314609 /* HostsTextController.m */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
@@ -58,7 +54,6 @@
 		353A80BB10B01C050005CAD1 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A80BA10B01C050005CAD1 /* Preferences.m */; };
 		353A80CA10B01F320005CAD1 /* ExtendedNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A80C910B01F320005CAD1 /* ExtendedNSString.m */; };
 		353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 353A80FB10B020B10005CAD1 /* UserDefaults.plist */; };
-		353D18BC1114C0C1005C4E54 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541CE0410E4AF9B00FA00CB /* SyncingArrowsBadge.m */; };
 		3544E2D310E4CCB1009AC525 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3544E2D210E4CCB1009AC525 /* Map.m */; };
 		3545DC7310E38DDE00EBA66D /* Offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3545DC7210E38DDE00EBA66D /* Offline.png */; };
@@ -74,9 +69,7 @@
 		354E7EB110AEEF3D00FC4757 /* StructureConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7EB010AEEF3D00FC4757 /* StructureConverter.m */; };
 		354E7F5E10AEFA9D00FC4757 /* PrivilegedActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E7F5D10AEFA9D00FC4757 /* PrivilegedActions.m */; };
 		354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354E7F8010AEFBC500FC4757 /* Security.framework */; };
-		354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 354E80A010AF33C100FC4757 /* applicationIcon.icns */; };
 		354E80B510AF383C00FC4757 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E80B410AF383C00FC4757 /* FileUtil.m */; };
-		3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */; };
 		355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5C5A12244B67006C2884 /* LocalHostsController.m */; };
 		355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CA412244F28006C2884 /* RemoteHostsController.m */; };
 		355F5CDF122452BE006C2884 /* AbstractHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CDE122452BE006C2884 /* AbstractHostsController.m */; };
@@ -105,23 +98,16 @@
 		359289AB1659222E00492494 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 359289AA1659222E00492494 /* CHANGELOG.txt */; };
 		3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597135C110DED0F00C7ECAF /* HostsMenu.m */; };
 		359967541656B52500BCF16D /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359967531656B52500BCF16D /* NotificationHelper.m */; };
-		35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */; };
 		35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */; };
-		35B049921A46234100EB89CA /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498E1A46234100EB89CA /* Editor.png */; };
-		35B049931A46234100EB89CA /* Hotkeys.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0498F1A46234100EB89CA /* Hotkeys.png */; };
-		35B049941A46234100EB89CA /* Remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049901A46234100EB89CA /* Remote.png */; };
-		35B049951A46234100EB89CA /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B049911A46234100EB89CA /* Update.png */; };
 		35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499A1A462AE900EB89CA /* Activated@2x.png */; };
 		35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
-		35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8D58511144E9C00B4242D /* GlobalHotkeys.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
 		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
 		35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2C252113507A6007C8037 /* RemoteHostsManager.m */; };
 		35D3328E152F5A87001DA824 /* CombinedHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D3328D152F5A87001DA824 /* CombinedHosts.m */; };
 		35D33291152F5B7B001DA824 /* CombinedHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D33290152F5B7B001DA824 /* CombinedHostsController.m */; };
 		35D4CACB10E64DDD00B9F63A /* ExtendedNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */; };
-		35D4CB0D10E651CD00B9F63A /* About Box Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D4CB0C10E651CD00B9F63A /* About Box Image.png */; };
 		35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */; };
 		35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D83BEE20DD97CF00169358 /* Assets.xcassets */; };
 		35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */; };
@@ -155,6 +141,18 @@
 		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
 		AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000017000000000000AAAA /* SidebarInstaller.swift */; };
 		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
+		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
+		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
+		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
+		BB000006000000000000BBBB /* SparkleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000005000000000000BBBB /* SparkleObserver.swift */; };
+		BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000007000000000000BBBB /* LoginItemObserver.swift */; };
+		BB00000A000000000000BBBB /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000009000000000000BBBB /* PreferencesView.swift */; };
+		BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000B000000000000BBBB /* PreferencesPresenter.swift */; };
+		BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */; };
+		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
+		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
+		DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001000000000000DD01 /* GlobalShortcutsTests.swift */; };
+		DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -213,14 +211,8 @@
 		3511697710D68B1000A5FAA1 /* FilesCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilesCountTransformer.m; path = Source/FilesCountTransformer.m; sourceTree = "<group>"; };
 		35116A6E10D6AAD200A5FAA1 /* Menulet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menulet.h; path = Source/Menulet.h; sourceTree = "<group>"; };
 		35116A6F10D6AAD200A5FAA1 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menulet.m; path = Source/Menulet.m; sourceTree = "<group>"; };
-		35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = menuIcon.tiff; path = Resources/Images/menuIcon.tiff; sourceTree = "<group>"; };
-		35116A9F10D6ADF000A5FAA1 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-		35116AAB10D6AE5600A5FAA1 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferenceController.h; path = Source/PreferenceController.h; sourceTree = "<group>"; };
-		35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferenceController.m; path = Source/PreferenceController.m; sourceTree = "<group>"; };
 		35116ABE10D6AF0500A5FAA1 /* LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItem.h; path = Source/LoginItem.h; sourceTree = "<group>"; };
 		35116ABF10D6AF0500A5FAA1 /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItem.m; path = Source/LoginItem.m; sourceTree = "<group>"; };
-		35116AD810D6B00200A5FAA1 /* Hotkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hotkey.h; path = Source/Hotkey.h; sourceTree = "<group>"; };
-		35116AD910D6B00200A5FAA1 /* Hotkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hotkey.m; path = Source/Hotkey.m; sourceTree = "<group>"; };
 		3513A5FF113908A900AD789D /* Read Only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Read Only.png"; path = "Resources/Images/Read Only.png"; sourceTree = "<group>"; };
 		3513A61A11390B7900AD789D /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Error.h; path = Source/Error.h; sourceTree = "<group>"; };
 		3513A61B11390B7900AD789D /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Error.m; path = Source/Error.m; sourceTree = "<group>"; };
@@ -292,11 +284,8 @@
 		354E7F5C10AEFA9D00FC4757 /* PrivilegedActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivilegedActions.h; path = Source/PrivilegedActions.h; sourceTree = "<group>"; };
 		354E7F5D10AEFA9D00FC4757 /* PrivilegedActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrivilegedActions.m; path = Source/PrivilegedActions.m; sourceTree = "<group>"; };
 		354E7F8010AEFBC500FC4757 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		354E80A010AF33C100FC4757 /* applicationIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = applicationIcon.icns; path = Resources/applicationIcon.icns; sourceTree = "<group>"; };
 		354E80B310AF383C00FC4757 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtil.h; path = Source/FileUtil.h; sourceTree = "<group>"; };
 		354E80B410AF383C00FC4757 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUtil.m; path = Source/FileUtil.m; sourceTree = "<group>"; };
-		3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateDateTransformer.h; path = Source/UpdateDateTransformer.h; sourceTree = "<group>"; };
-		3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateDateTransformer.m; path = Source/UpdateDateTransformer.m; sourceTree = "<group>"; };
 		355F5C5912244B67006C2884 /* LocalHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHostsController.h; path = Source/LocalHostsController.h; sourceTree = "<group>"; };
 		355F5C5A12244B67006C2884 /* LocalHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalHostsController.m; path = Source/LocalHostsController.m; sourceTree = "<group>"; };
 		355F5CA312244F28006C2884 /* RemoteHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsController.h; path = Source/RemoteHostsController.h; sourceTree = "<group>"; };
@@ -351,17 +340,23 @@
 		AA000017000000000000AAAA /* SidebarInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarInstaller.swift; path = "Source/Swift/SidebarInstaller.swift"; sourceTree = "<group>"; };
 		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
+		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
+		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
+		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = "Source/Swift/GlobalShortcuts.swift"; sourceTree = "<group>"; };
+		BB000005000000000000BBBB /* SparkleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkleObserver.swift; path = "Source/Swift/SparkleObserver.swift"; sourceTree = "<group>"; };
+		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = "Source/Swift/LoginItemObserver.swift"; sourceTree = "<group>"; };
+		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = "Source/Swift/PreferencesView.swift"; sourceTree = "<group>"; };
+		BB00000B000000000000BBBB /* PreferencesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPresenter.swift; path = "Source/Swift/PreferencesPresenter.swift"; sourceTree = "<group>"; };
+		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
+		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
+		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
+		DD000001000000000000DD01 /* GlobalShortcutsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalShortcutsTests.swift; sourceTree = "<group>"; };
+		DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorderViewTests.swift; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
-		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
-		35B0498F1A46234100EB89CA /* Hotkeys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hotkeys.png; path = Resources/Images/Preferences/Hotkeys.png; sourceTree = "<group>"; };
-		35B049901A46234100EB89CA /* Remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Remote.png; path = Resources/Images/Preferences/Remote.png; sourceTree = "<group>"; };
-		35B049911A46234100EB89CA /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Update.png; path = Resources/Images/Preferences/Update.png; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
-		35C8D58411144E9C00B4242D /* GlobalHotkeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeys.h; path = Source/GlobalHotkeys.h; sourceTree = "<group>"; };
-		35C8D58511144E9C00B4242D /* GlobalHotkeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalHotkeys.m; path = Source/GlobalHotkeys.m; sourceTree = "<group>"; };
 		35C8D5A811144F7000B4242D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		35D2C251113507A6007C8037 /* RemoteHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsManager.h; path = Source/RemoteHostsManager.h; sourceTree = "<group>"; };
@@ -372,7 +367,6 @@
 		35D33290152F5B7B001DA824 /* CombinedHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CombinedHostsController.m; path = Source/CombinedHostsController.m; sourceTree = "<group>"; };
 		35D4CAC910E64DDD00B9F63A /* ExtendedNSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSApplication.h; path = Source/ExtendedNSApplication.h; sourceTree = "<group>"; };
 		35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSApplication.m; path = Source/ExtendedNSApplication.m; sourceTree = "<group>"; };
-		35D4CB0C10E651CD00B9F63A /* About Box Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "About Box Image.png"; path = "Resources/Images/About Box Image.png"; sourceTree = "<group>"; };
 		35D4CBF910E6934700B9F63A /* ExtendedNSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSTextView.h; path = Source/ExtendedNSTextView.h; sourceTree = "<group>"; };
 		35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSTextView.m; path = Source/ExtendedNSTextView.m; sourceTree = "<group>"; };
 		35D83BEE20DD97CF00169358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -416,7 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				351416CF28C3A7B80093A452 /* Sparkle in Frameworks */,
-				AA1B2C3D4E5F000100000001 /* ShortcutRecorder in Frameworks */,
+				AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				354E7F8110AEFBC500FC4757 /* Security.framework in Frameworks */,
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
@@ -489,7 +483,6 @@
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
 				3562196F10E52E5D00772473 /* About Box */,
 				35116A9610D6AD2C00A5FAA1 /* Preferences */,
-				35C8D58011144E8300B4242D /* Hotkeys */,
 				355F5C4C12244AF5006C2884 /* Local Hosts */,
 				35D3328B152F5A45001DA824 /* Combined Hosts */,
 				35730FCA113424A500066B68 /* Remote Hosts */,
@@ -581,8 +574,6 @@
 				3556CEF410D6B6F300C7301E /* GUI */,
 				353A80B910B01C050005CAD1 /* Preferences.h */,
 				353A80BA10B01C050005CAD1 /* Preferences.m */,
-				35116AAB10D6AE5600A5FAA1 /* PreferenceController.h */,
-				35116AAC10D6AE5600A5FAA1 /* PreferenceController.m */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -687,7 +678,6 @@
 		3545DC8E10E38F1800EBA66D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				35B0498D1A46233600EB89CA /* Preferences */,
 				35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */,
 				358C36E31A0D6F2E00161C98 /* Combined_File_yosemite.tiff */,
 				358C36E71A0D6FCC00161C98 /* Combined_File_yosemite@2x.tiff */,
@@ -719,9 +709,6 @@
 				352E04F9106281940071E25B /* Create.png */,
 				350C7F381A3C55B000B46B09 /* Create@2x.png */,
 				352E04FB106281940071E25B /* Save.png */,
-				354E80A010AF33C100FC4757 /* applicationIcon.icns */,
-				35116A8410D6ABA000A5FAA1 /* menuIcon.tiff */,
-				35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -729,9 +716,6 @@
 		3556CEF410D6B6F300C7301E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				35116A9F10D6ADF000A5FAA1 /* Preferences.xib */,
-				3556CEF710D6B70100C7301E /* UpdateDateTransformer.h */,
-				3556CEF810D6B70100C7301E /* UpdateDateTransformer.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -753,7 +737,6 @@
 			isa = PBXGroup;
 			children = (
 				3562197810E52E8E00772473 /* AboutBox.xib */,
-				35D4CB0C10E651CD00B9F63A /* About Box Image.png */,
 				35621A2F10E52F6C00772473 /* AboutBoxController.h */,
 				35621A3010E52F6C00772473 /* AboutBoxController.m */,
 			);
@@ -790,6 +773,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
+				CC000001000000000000CC01 /* GlobalShortcuts.swift */,
 				AA000003000000000000AAAA /* URLValidator.swift */,
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
@@ -798,30 +782,22 @@
 				AA000013000000000000AAAA /* HostsRowView.swift */,
 				AA000015000000000000AAAA /* SidebarView.swift */,
 				AA000017000000000000AAAA /* SidebarInstaller.swift */,
+				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
 		};
-		35B0498D1A46233600EB89CA /* Preferences */ = {
+		BB000020000000000000BBBB /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				35B0498E1A46234100EB89CA /* Editor.png */,
-				35B0498F1A46234100EB89CA /* Hotkeys.png */,
-				35B049901A46234100EB89CA /* Remote.png */,
-				35B049911A46234100EB89CA /* Update.png */,
+				BB000009000000000000BBBB /* PreferencesView.swift */,
+				BB00000B000000000000BBBB /* PreferencesPresenter.swift */,
+				BB000001000000000000BBBB /* RemoteIntervalMapper.swift */,
+				BB000003000000000000BBBB /* ShortcutRecorderView.swift */,
+				BB000005000000000000BBBB /* SparkleObserver.swift */,
+				BB000007000000000000BBBB /* LoginItemObserver.swift */,
 			);
 			name = Preferences;
-			sourceTree = "<group>";
-		};
-		35C8D58011144E8300B4242D /* Hotkeys */ = {
-			isa = PBXGroup;
-			children = (
-				35116AD810D6B00200A5FAA1 /* Hotkey.h */,
-				35116AD910D6B00200A5FAA1 /* Hotkey.m */,
-				35C8D58411144E9C00B4242D /* GlobalHotkeys.h */,
-				35C8D58511144E9C00B4242D /* GlobalHotkeys.m */,
-			);
-			name = Hotkeys;
 			sourceTree = "<group>";
 		};
 		35D3328B152F5A45001DA824 /* Combined Hosts */ = {
@@ -890,6 +866,11 @@
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
 				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
+								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
+								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
+								BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
+								DD000001000000000000DD01 /* GlobalShortcutsTests.swift */,
+								DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -946,7 +927,7 @@
 			name = "Gas Mask";
 			packageProductDependencies = (
 				351416CE28C3A7B80093A452 /* Sparkle */,
-				AA1B2C3D4E5F000200000001 /* ShortcutRecorder */,
+				AA1B2C3D4E5F000200000001 /* MASShortcut */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Gas Mask";
@@ -993,7 +974,7 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
 			packageReferences = (
 				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
@@ -1011,7 +992,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				353D18BC1114C0C1005C4E54 /* applicationIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,8 +999,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B049921A46234100EB89CA /* Editor.png in Resources */,
-				35B049931A46234100EB89CA /* Hotkeys.png in Resources */,
 				3579F1181114B95300123416 /* Launcher.app in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
@@ -1028,17 +1006,13 @@
 				352E04FD106281940071E25B /* Create.png in Resources */,
 				352E04FF106281940071E25B /* Save.png in Resources */,
 				358E0A891A3A1E1A004521D1 /* Remote yosemite@2x.tiff in Resources */,
-				35B049941A46234100EB89CA /* Remote.png in Resources */,
 				352E05B610628D790071E25B /* Activated.png in Resources */,
 				350C7F3B1A3C56BB00B46B09 /* Read Only@2x.png in Resources */,
 				352E05B710628D790071E25B /* Blue Dot.png in Resources */,
 				352E05DA10628E400071E25B /* Local File.png in Resources */,
 				350C7F391A3C55B000B46B09 /* Create@2x.png in Resources */,
-				354E80A110AF33C100FC4757 /* applicationIcon.icns in Resources */,
 				353A80FC10B020B10005CAD1 /* UserDefaults.plist in Resources */,
 				358E0A881A3A1E1A004521D1 /* Remote yosemite.tiff in Resources */,
-				35116A8510D6ABA000A5FAA1 /* menuIcon.tiff in Resources */,
-				35116AA010D6ADF000A5FAA1 /* Preferences.xib in Resources */,
 				35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */,
 				352F48D210DA90FE000003BE /* default.hst in Resources */,
 				3545DC7310E38DDE00EBA66D /* Offline.png in Resources */,
@@ -1051,11 +1025,9 @@
 				3528ECEC10E3F87E003C8CB9 /* Syncing_arrows4.png in Resources */,
 				3528ECED10E3F87E003C8CB9 /* Syncing_arrows5.png in Resources */,
 				3528ECEE10E3F87E003C8CB9 /* Syncing_arrows6.png in Resources */,
-				35A183A81A0ACF37002D6289 /* menuIcon@2x.tiff in Resources */,
 				35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */,
 				356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */,
 				3562197910E52E8E00772473 /* AboutBox.xib in Resources */,
-				35D4CB0D10E651CD00B9F63A /* About Box Image.png in Resources */,
 				358C36E51A0D6F2E00161C98 /* Combined_File_yosemite.tiff in Resources */,
 				351D904510E76F7100CA6B5E /* Help in Resources */,
 				354C0BC510E782A5005B9A33 /* hosts.icns in Resources */,
@@ -1070,7 +1042,6 @@
 				35A4CD301534927F005176BD /* Combined Hosts Hint.png in Resources */,
 				359289AB1659222E00492494 /* CHANGELOG.txt in Resources */,
 				358E0A841A3A1C54004521D1 /* Local File yosemite.tiff in Resources */,
-				35B049951A46234100EB89CA /* Update.png in Resources */,
 				358C36E61A0D6F2E00161C98 /* Combined_File.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,10 +1086,7 @@
 				351167C010D6346000A5FAA1 /* HostsGroup.m in Sources */,
 				3511697810D68B1000A5FAA1 /* FilesCountTransformer.m in Sources */,
 				35116A7010D6AAD200A5FAA1 /* Menulet.m in Sources */,
-				35116AAD10D6AE5600A5FAA1 /* PreferenceController.m in Sources */,
 				35116AC010D6AF0500A5FAA1 /* LoginItem.m in Sources */,
-				35116ADA10D6B00200A5FAA1 /* Hotkey.m in Sources */,
-				3556CEF910D6B70100C7301E /* UpdateDateTransformer.m in Sources */,
 				358448B310DFE283002E6A9B /* Util.m in Sources */,
 				3545DCA910E396CF00EBA66D /* Network.m in Sources */,
 				3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */,
@@ -1128,7 +1096,6 @@
 				35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */,
 				35738409110209AB00E8DB54 /* HostsListView.m in Sources */,
 				3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */,
-				35C8D58611144E9C00B4242D /* GlobalHotkeys.m in Sources */,
 				354CCF811117285300EB6948 /* HostsListViewMenu.m in Sources */,
 				3516864B11187EDE00314609 /* HostsTextController.m in Sources */,
 				356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */,
@@ -1143,6 +1110,13 @@
 				AA000014000000000000AAAA /* HostsRowView.swift in Sources */,
 				AA000016000000000000AAAA /* SidebarView.swift in Sources */,
 				AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */,
+				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
+				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
+				CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */,
+				BB000006000000000000BBBB /* SparkleObserver.swift in Sources */,
+				BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */,
+				BB00000A000000000000BBBB /* PreferencesView.swift in Sources */,
+				BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
@@ -1185,6 +1159,11 @@
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
 				AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */,
+				BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */,
+				BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */,
+				BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */,
+				DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */,
+				DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,6 +1283,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1339,6 +1319,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1524,12 +1505,12 @@
 				version = 1.27.1;
 			};
 		};
-		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
+			repositoryURL = "https://github.com/shpakovski/MASShortcut";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.4.0;
+				kind = revision;
+				revision = 6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1540,10 +1521,10 @@
 			package = 351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
 		};
-		AA1B2C3D4E5F000200000001 /* ShortcutRecorder */ = {
+		AA1B2C3D4E5F000200000001 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
-			productName = ShortcutRecorder;
+			package = AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

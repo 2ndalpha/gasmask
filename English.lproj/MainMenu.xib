@@ -768,9 +768,6 @@
 			<object class="NSCustomObject" id="82089617">
 				<string key="NSClassName">ApplicationController</string>
 			</object>
-			<object class="NSCustomObject" id="411804446">
-				<string key="NSClassName">GlobalHotkeys</string>
-			</object>
 			<object class="NSCustomObject" id="269446200">
 				<string key="NSClassName">RemoteHostsManager</string>
 			</object>
@@ -1767,11 +1764,6 @@
 						<int key="objectID">558</int>
 						<reference key="object" ref="72836876"/>
 						<reference key="parent" ref="110575045"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">586</int>
-						<reference key="object" ref="411804446"/>
-						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">589</int>

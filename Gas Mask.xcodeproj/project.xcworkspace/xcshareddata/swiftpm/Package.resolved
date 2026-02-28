@@ -2,12 +2,12 @@
   "originHash" : "74784ff33407b9ca71d04ea3acb135980046aa512ad6ef909abb7da8127b1333",
   "pins" : [
     {
-      "identity" : "shortcutrecorder",
+      "identity" : "masshortcut",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Kentzo/ShortcutRecorder.git",
+      "location" : "https://github.com/shpakovski/MASShortcut",
       "state" : {
-        "revision" : "c86ce0f9be5353ba998966121c7631602a9a36f7",
-        "version" : "3.4.0"
+        "branch" : "master",
+        "revision" : "6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a"
       }
     },
     {
