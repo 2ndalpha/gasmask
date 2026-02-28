@@ -29,7 +29,6 @@
 - (void)awakeFromNib
 {
     NSImage *icon = [NSImage imageNamed:@"menuIcon"];
-    [icon setTemplate:YES];
 
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     [[statusItem button] setEnabled:true];
