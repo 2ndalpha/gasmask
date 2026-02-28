@@ -84,6 +84,11 @@ static ListController *sharedInstance = nil;
 	[self selectActiveHostsFile];
 }
 
+- (void)deactivate
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)updateItem:(NSNotification *)notification
 {
 	int index = [self indexOfHosts:[notification object]];

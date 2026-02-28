@@ -21,6 +21,7 @@
 #import "EditorController.h"
 #import "Preferences.h"
 #import "ExtendedNSSplitView.h"
+#import "Gas_Mask-Swift.h"
 
 #define SplitViewMinWidth 140
 #define SplitViewMaxWidth 300
@@ -41,6 +42,8 @@
     if (position > SplitViewMaxWidth) {
         [splitView setPosition:SplitViewDefaultWidth ofDividerAtIndex:dividerIndex];
     }
+
+    [SidebarInstaller installIn:splitView];
 }
 
 #pragma mark - Split View Delegate

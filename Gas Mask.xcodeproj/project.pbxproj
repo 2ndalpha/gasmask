@@ -136,6 +136,11 @@
 		AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000AAAA /* URLValidatorTests.swift */; };
 		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
 		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
+		AA000012000000000000AAAA /* HostsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000011000000000000AAAA /* HostsDataStore.swift */; };
+		AA000014000000000000AAAA /* HostsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013000000000000AAAA /* HostsRowView.swift */; };
+		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
+		AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000017000000000000AAAA /* SidebarInstaller.swift */; };
+		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
 		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
 		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
 		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
@@ -329,6 +334,12 @@
 		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
 		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
 		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
+		AA000011000000000000AAAA /* HostsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsDataStore.swift; path = "Source/Swift/HostsDataStore.swift"; sourceTree = "<group>"; };
+		AA000013000000000000AAAA /* HostsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsRowView.swift; path = "Source/Swift/HostsRowView.swift"; sourceTree = "<group>"; };
+		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = "Source/Swift/SidebarView.swift"; sourceTree = "<group>"; };
+		AA000017000000000000AAAA /* SidebarInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarInstaller.swift; path = "Source/Swift/SidebarInstaller.swift"; sourceTree = "<group>"; };
+		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
+		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
 		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
 		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = "Source/Swift/GlobalShortcuts.swift"; sourceTree = "<group>"; };
@@ -767,6 +778,10 @@
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
 				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
+				AA000011000000000000AAAA /* HostsDataStore.swift */,
+				AA000013000000000000AAAA /* HostsRowView.swift */,
+				AA000015000000000000AAAA /* SidebarView.swift */,
+				AA000017000000000000AAAA /* SidebarInstaller.swift */,
 				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
@@ -850,6 +865,7 @@
 								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
+				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
 								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
 								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
 								BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
@@ -1090,6 +1106,10 @@
 				AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */,
 				AA000008000000000000AAAA /* URLSheetView.swift in Sources */,
 				AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */,
+				AA000012000000000000AAAA /* HostsDataStore.swift in Sources */,
+				AA000014000000000000AAAA /* HostsRowView.swift in Sources */,
+				AA000016000000000000AAAA /* SidebarView.swift in Sources */,
+				AA000018000000000000AAAA /* SidebarInstaller.swift in Sources */,
 				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
 				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
 				CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */,
@@ -1138,6 +1158,7 @@
 				AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */,
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
+				AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */,
 				BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */,
 				BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */,
 				BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */,
