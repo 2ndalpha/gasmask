@@ -149,6 +149,7 @@
 		AA00000A000000000000AAAA /* URLSheetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009000000000000AAAA /* URLSheetPresenter.swift */; };
 		AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000AAAA /* URLValidatorTests.swift */; };
 		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
+		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -338,6 +339,7 @@
 		AA000009000000000000AAAA /* URLSheetPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetPresenter.swift; path = "Source/Swift/URLSheetPresenter.swift"; sourceTree = "<group>"; };
 		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
 		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
+		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0498E1A46234100EB89CA /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Editor.png; path = Resources/Images/Preferences/Editor.png; sourceTree = "<group>"; };
@@ -872,6 +874,7 @@
 			children = (
 								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
+				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -1161,6 +1164,7 @@
 				CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */,
 				AA00000C000000000000AAAA /* URLValidatorTests.swift in Sources */,
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
+				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

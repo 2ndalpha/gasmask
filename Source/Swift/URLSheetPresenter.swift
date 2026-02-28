@@ -10,12 +10,11 @@ import SwiftUI
             return
         }
 
-        // panel is set after creation; closures capture it weakly to avoid a retain cycle
-        var panel: NSPanel?
-
+        // Closures reference activePanel at runtime (not via [weak panel] capture,
+        // which would capture nil because the local var is nil when the view is built).
         let view = URLSheetView(
-            onAdd: { [weak panel] url in
-                guard let panel else { return }
+            onAdd: { url in
+                guard let panel = URLSheetPresenter.activePanel else { return }
                 parent.endSheet(panel)
                 URLSheetPresenter.activePanel = nil
 
@@ -31,8 +30,8 @@ import SwiftUI
                     )
                 }
             },
-            onCancel: { [weak panel] in
-                guard let panel else { return }
+            onCancel: {
+                guard let panel = URLSheetPresenter.activePanel else { return }
                 parent.endSheet(panel)
                 URLSheetPresenter.activePanel = nil
             }
@@ -42,7 +41,7 @@ import SwiftUI
         let p = NSPanel(contentViewController: hostingController)
         p.styleMask = NSWindow.StyleMask([.titled, .fullSizeContentView])
 
-        panel = p
+        // Set activePanel before beginSheet so the closures can resolve it.
         URLSheetPresenter.activePanel = p
 
         parent.beginSheet(p) { _ in

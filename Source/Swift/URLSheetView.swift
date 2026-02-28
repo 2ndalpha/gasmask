@@ -1,12 +1,18 @@
 import SwiftUI
 
 struct URLSheetView: View {
-    @State private var urlText = ""
+    @State private var urlText: String
     @StateObject private var networkStatus = NetworkStatusObserver()
     @FocusState private var urlFieldFocused: Bool
 
     var onAdd: (URL) -> Void
     var onCancel: () -> Void
+
+    init(urlText: String = "", onAdd: @escaping (URL) -> Void, onCancel: @escaping () -> Void) {
+        self._urlText = State(initialValue: urlText)
+        self.onAdd = onAdd
+        self.onCancel = onCancel
+    }
 
     private var isValidURL: Bool {
         URLValidator.isValid(urlText)
