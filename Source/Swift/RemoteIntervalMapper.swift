@@ -3,7 +3,7 @@ import Foundation
 /// Maps slider positions (1–9) to remote update intervals in minutes.
 ///
 /// Extracted from the ObjC `PreferenceController (Remote)` category for testability.
-/// The same minute values are stored in UserDefaults and read by `GlobalHotkeys`.
+/// The same minute values are stored in UserDefaults and used by Preferences.
 enum RemoteIntervalMapper {
     static let intervals: [(position: Int, minutes: Int)] = [
         (1, 5),

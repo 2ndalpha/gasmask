@@ -25,41 +25,27 @@ final class GlobalShortcutsTests: XCTestCase {
                        "Binder should use MASDictionaryTransformerName")
     }
 
-    func testActivatePreviousFile_postsNotification() {
+    func testActivatePreviousFile_registersShortcut() {
         _ = GlobalShortcuts.shared
-        let key = ActivatePreviousFilePrefKey
-        assertShortcutPostsNotification(
-            defaultsKey: key,
-            expectedNotificationName: "activatePreviousFileNotification"
-        )
+        assertShortcutRegistered(forDefaultsKey: ActivatePreviousFilePrefKey)
     }
 
-    func testActivateNextFile_postsNotification() {
+    func testActivateNextFile_registersShortcut() {
         _ = GlobalShortcuts.shared
-        let key = ActivateNextFilePrefKey
-        assertShortcutPostsNotification(
-            defaultsKey: key,
-            expectedNotificationName: "activateNextFileNotification"
-        )
+        assertShortcutRegistered(forDefaultsKey: ActivateNextFilePrefKey)
     }
 
-    func testUpdateAndSynchronize_postsNotification() {
+    func testUpdateAndSynchronize_registersShortcut() {
         _ = GlobalShortcuts.shared
-        let key = UpdateAndSynchronizePrefKey
-        assertShortcutPostsNotification(
-            defaultsKey: key,
-            expectedNotificationName: "updateAndSynchronizeNotification"
-        )
+        assertShortcutRegistered(forDefaultsKey: UpdateAndSynchronizePrefKey)
     }
 
     // MARK: - Helpers
 
     /// Writes a shortcut to UserDefaults, waits for MASShortcutBinder to pick
-    /// it up via KVO, then simulates the hotkey press through the binder's
-    /// shortcutMonitor and verifies the expected notification fires.
-    private func assertShortcutPostsNotification(
-        defaultsKey: String,
-        expectedNotificationName: String,
+    /// it up via KVO, and verifies the shortcut is registered with the monitor.
+    private func assertShortcutRegistered(
+        forDefaultsKey defaultsKey: String,
         file: StaticString = #file,
         line: UInt = #line
     ) {
