@@ -32,7 +32,6 @@
 @interface ApplicationController ()
 {
 	__weak NSWindow *_editorWindow;
-	NSArray *_editorNibTopLevelObjects; // retains top-level NIB objects (e.g. EditorController)
 }
 @end
 
@@ -63,7 +62,6 @@ static ApplicationController *sharedInstance = nil;
         return sharedInstance;
     }
 	if (self = [super init]) {
-		busyThreads = 0;
 		shouldQuit = YES;
 
 		BOOL isTesting = NSClassFromString(@"XCTestCase") != nil;
@@ -122,7 +120,7 @@ static ApplicationController *sharedInstance = nil;
 - (IBAction)openEditorWindow:(id)sender
 {
 	if (!editorWindowOpened) {
-		if (_editorNibTopLevelObjects) {
+		if (_editorWindow) {
 			editorWindowOpened = YES;
 			[[NSNotificationCenter defaultCenter] addObserver:self
 													 selector:@selector(editorWindowWillClose:)
@@ -171,22 +169,6 @@ static ApplicationController *sharedInstance = nil;
 	return editorWindowOpened;
 }
 
-- (void)increaseBusyThreadsCount:(NSNotification *)notification
-{
-	busyThreads++;
-	[busyIndicator startAnimation:self];
-}
-
-- (void)decreaseBusyThreadsCount:(NSNotification *)notification
-{
-	if (busyThreads > 0) {
-		busyThreads--;
-	}
-	if (busyThreads == 0) {
-		[busyIndicator stopAnimation:self];
-	}
-}
-
 #pragma mark - Application Delegate
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -199,11 +181,7 @@ static ApplicationController *sharedInstance = nil;
 	[NSApp setServicesProvider:self];
 
 	[self initStructure];
-	
-	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	[nc addObserver:self selector:@selector(increaseBusyThreadsCount:) name:ThreadBusyNotification object:nil];
-	[nc addObserver:self selector:@selector(decreaseBusyThreadsCount:) name:ThreadNotBusyNotification object:nil];
-	
+
 	[hostsController load];
 
 	if (!openedAtLogin() && [Preferences showEditorWindow]) {
@@ -290,20 +268,12 @@ static ApplicationController *sharedInstance = nil;
 - (void)initEditorWindow
 {
 	logDebug(@"Initializing editor window");
-	NSArray *topLevelObjects = nil;
-	[[NSBundle mainBundle] loadNibNamed:@"Editor" owner:self topLevelObjects:&topLevelObjects];
-	_editorNibTopLevelObjects = topLevelObjects;
+	_editorWindow = [EditorWindowPresenter createEditorWindow];
 	editorWindowOpened = YES;
-	for (id obj in topLevelObjects) {
-		if ([obj isKindOfClass:[NSWindow class]]) {
-			_editorWindow = obj;
-			[[NSNotificationCenter defaultCenter] addObserver:self
-													 selector:@selector(editorWindowWillClose:)
-														 name:NSWindowWillCloseNotification
-													   object:obj];
-			break;
-		}
-	}
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(editorWindowWillClose:)
+												 name:NSWindowWillCloseNotification
+											   object:_editorWindow];
 }
 
 - (void)activatePreviousFile:(NSNotification *)note

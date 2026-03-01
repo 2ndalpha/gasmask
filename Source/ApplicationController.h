@@ -26,10 +26,8 @@
 
 @interface ApplicationController : NSObject {
 	@private
-	IBOutlet NSProgressIndicator *busyIndicator;
 	IBOutlet HostsMainController *hostsController;
 	IBOutlet NSMenuItem *checkForUpdatesMenuItem;
-	int busyThreads;
 	BOOL shouldQuit;
 	BOOL editorWindowOpened;
     AboutBoxController *aboutBoxController;
