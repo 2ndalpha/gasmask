@@ -21,7 +21,6 @@
 #import "ApplicationController.h"
 #import "StructureConverter.h"
 #import "Preferences.h"
-#import "AboutBoxController.h"
 #import "HostsMenu.h"
 #import "Gas_Mask-Swift.h"
 #import "LocalHostsController.h"
@@ -96,10 +95,7 @@ static ApplicationController *sharedInstance = nil;
 
 - (IBAction)displayAboutBox:(id)sender
 {
-    if (!aboutBoxController) {
-        aboutBoxController = [AboutBoxController new];
-    }
-	[aboutBoxController showWindow:self];
+	[AboutBoxPresenter show];
 }
 
 - (IBAction)reportBugs:(id)sender

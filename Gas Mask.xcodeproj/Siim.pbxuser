@@ -862,20 +862,6 @@
 			sepNavVisRange = "{0, 435}";
 		};
 	};
-	35621A2F10E52F6C00772473 /* AboutBoxController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1473, 0}";
-			sepNavVisRange = "{0, 1548}";
-		};
-	};
-	35621A3010E52F6C00772473 /* AboutBoxController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1626, 0}";
-			sepNavVisRange = "{0, 1982}";
-		};
-	};
 	3567121E1132E2A700DF30E0 /* NetworkStatus.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
@@ -1123,34 +1109,6 @@
 			sepNavSelRange = "{1545, 0}";
 			sepNavVisRange = "{0, 2636}";
 			sepNavWindowFrame = "{{80, 0}, {1136, 778}}";
-		};
-	};
-	35D4CAC910E64DDD00B9F63A /* ExtendedNSApplication.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1415, 0}";
-			sepNavVisRange = "{0, 1481}";
-		};
-	};
-	35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1237, 0}";
-			sepNavVisRange = "{0, 1594}";
-		};
-	};
-	35D4CBF910E6934700B9F63A /* ExtendedNSTextView.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1472, 0}";
-			sepNavVisRange = "{0, 1478}";
-		};
-	};
-	35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 973}}";
-			sepNavSelRange = "{1653, 0}";
-			sepNavVisRange = "{0, 1659}";
 		};
 	};
 	35E32D821211D52F00B2C631 /* OfflineBadge.h */ = {
