@@ -3,24 +3,25 @@
 #import "ApplicationController.h"
 
 @interface ApplicationController (Testing)
-- (void)loadEditorNibForTesting;
+- (void)loadEditorWindowForTesting;
 - (void)closeEditorWindowForTesting;
 - (NSWindow *)editorWindowForTesting;
 @end
 
 @implementation ApplicationController (Testing)
 
-- (void)loadEditorNibForTesting
+- (void)loadEditorWindowForTesting
 {
-    id objects = [self valueForKey:@"_editorNibTopLevelObjects"];
-    if (objects) {
+    NSWindow *existing = [self editorWindowForTesting];
+    if (existing) {
         [self setValue:@YES forKey:@"editorWindowOpened"];
         return;
     }
-    NSArray *topLevelObjects = nil;
-    [[NSBundle mainBundle] loadNibNamed:@"Editor" owner:self topLevelObjects:&topLevelObjects];
-    [self setValue:topLevelObjects forKey:@"_editorNibTopLevelObjects"];
-    [self setValue:@YES forKey:@"editorWindowOpened"];
+    // Call the private initEditorWindow method which uses EditorWindowPresenter internally
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self performSelector:NSSelectorFromString(@"initEditorWindow")];
+#pragma clang diagnostic pop
 }
 
 - (void)closeEditorWindowForTesting
@@ -87,26 +88,26 @@ static void runLoopDrain(NSTimeInterval seconds)
     XCTAssertEqual([ApplicationController defaultInstance], self.controller);
 }
 
-#pragma mark - NIB loading / open
+#pragma mark - Window creation / open
 
-- (void)testLoadEditorNib_setsEditorWindowOpenedFlag
+- (void)testLoadEditorWindow_setsEditorWindowOpenedFlag
 {
     XCTAssertFalse([self.controller editorWindowOpened], @"precondition");
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     XCTAssertTrue([self.controller editorWindowOpened]);
 }
 
-- (void)testLoadEditorNib_windowExistsAfterOpen
+- (void)testLoadEditorWindow_windowExistsAfterOpen
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     NSWindow *w = [self.controller editorWindowForTesting];
     XCTAssertNotNil(w);
     XCTAssertEqualObjects([w frameAutosaveName], @"editor_window");
 }
 
-- (void)testLoadEditorNib_windowAppearsInNSAppWindows
+- (void)testLoadEditorWindow_windowAppearsInNSAppWindows
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
 
     NSWindow *found = nil;
     for (NSWindow *w in [NSApp windows]) {
@@ -122,7 +123,7 @@ static void runLoopDrain(NSTimeInterval seconds)
 
 - (void)testCloseEditorWindow_clearsEditorWindowOpenedFlag
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     XCTAssertTrue([self.controller editorWindowOpened], @"precondition");
     [self.controller closeEditorWindowForTesting];
     XCTAssertFalse([self.controller editorWindowOpened]);
@@ -130,7 +131,7 @@ static void runLoopDrain(NSTimeInterval seconds)
 
 - (void)testCloseEditorWindow_windowStillAccessibleAfterClose
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     [self.controller closeEditorWindowForTesting];
     runLoopDrain(0.05);
 
@@ -142,22 +143,22 @@ static void runLoopDrain(NSTimeInterval seconds)
 
 - (void)testReopenAfterClose_flagIsYes
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     [self.controller closeEditorWindowForTesting];
     runLoopDrain(0.05);
     XCTAssertFalse([self.controller editorWindowOpened], @"precondition: closed");
 
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     XCTAssertTrue([self.controller editorWindowOpened]);
 }
 
 - (void)testReopenAfterClose_windowAccessible
 {
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     [self.controller closeEditorWindowForTesting];
     runLoopDrain(0.05);
 
-    [self.controller loadEditorNibForTesting];
+    [self.controller loadEditorWindowForTesting];
     XCTAssertNotNil([self.controller editorWindowForTesting]);
 }
 

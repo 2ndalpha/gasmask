@@ -15,13 +15,13 @@ extension NSNotification.Name {
     static let hostsFileShouldBeSelected = NSNotification.Name("HostsFileShouldBeSelectedNotification")
     static let synchronizingStatusChanged = NSNotification.Name("SynchronizingStatusChangedNotification")
     static let allHostsFilesLoadedFromDisk = NSNotification.Name("AllHostsFilesLoadedFromDiskNotification")
+    static let threadBusy = NSNotification.Name("ThreadBusyNotification")
+    static let threadNotBusy = NSNotification.Name("ThreadNotBusyNotification")
 }
 
 // MARK: - HostsDataStore
 
 final class HostsDataStore: ObservableObject {
-
-    static let shared = HostsDataStore()
 
     // MARK: Published Properties
 
@@ -37,18 +37,26 @@ final class HostsDataStore: ObservableObject {
     @Published var filesCount: Int = 0
     @Published var canRemoveFiles: Bool = false
     @Published var renamingHosts: Hosts?
+    @Published var isBusy: Bool = false
 
     // MARK: Private
 
     private var notificationObservers: [NSObjectProtocol] = []
     private var isSyncingSelection = false
+    private var busyCount = 0
 
     // MARK: Init
 
-    private init() {
+    init() {
         refreshGroups()
         refreshFilesCount()
         observeNotifications()
+    }
+
+    deinit {
+        for observer in notificationObservers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     // MARK: Refresh
@@ -118,6 +126,8 @@ final class HostsDataStore: ObservableObject {
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
                 guard let self else { return }
+                // Re-assign to trigger @Published willSet — HostsGroup objects are reference types,
+                // so SwiftUI won't detect their property changes without this.
                 self.hostsGroups = self.hostsGroups
             }
             notificationObservers.append(observer)
@@ -139,6 +149,29 @@ final class HostsDataStore: ObservableObject {
             }
         }
         notificationObservers.append(selectObserver)
+
+        // Busy state notifications — posted from background threads, so use queue: .main
+        let busyObserver = nc.addObserver(
+            forName: .threadBusy, object: nil, queue: .main
+        ) { [weak self] _ in
+            guard let self else { return }
+            self.busyCount += 1
+            self.isBusy = true
+        }
+        notificationObservers.append(busyObserver)
+
+        let notBusyObserver = nc.addObserver(
+            forName: .threadNotBusy, object: nil, queue: .main
+        ) { [weak self] _ in
+            guard let self else { return }
+            if self.busyCount > 0 {
+                self.busyCount -= 1
+            }
+            if self.busyCount == 0 {
+                self.isBusy = false
+            }
+        }
+        notificationObservers.append(notBusyObserver)
     }
 
 }

@@ -18,19 +18,18 @@ final class HostsDataStoreTests: XCTestCase {
         XCTAssertEqual(NSNotification.Name.allHostsFilesLoadedFromDisk.rawValue, "AllHostsFilesLoadedFromDiskNotification")
     }
 
-    // MARK: - Singleton
+    // MARK: - Instance Creation
 
-    func testShared_returnsSameInstance() {
-        let a = HostsDataStore.shared
-        let b = HostsDataStore.shared
-        XCTAssertTrue(a === b)
+    func testInit_returnsDistinctInstances() {
+        let a = HostsDataStore()
+        let b = HostsDataStore()
+        XCTAssertFalse(a === b)
     }
 
     // MARK: - Notification Response
 
     func testRenameNotification_setsRenamingHosts() {
-        let store = HostsDataStore.shared
-        addTeardownBlock { store.renamingHosts = nil }
+        let store = HostsDataStore()
 
         let hosts = Hosts(path: "/tmp/test.hst")!
         store.renamingHosts = nil
@@ -42,8 +41,7 @@ final class HostsDataStoreTests: XCTestCase {
     }
 
     func testSelectNotification_updatesSelectedHosts() {
-        let store = HostsDataStore.shared
-        addTeardownBlock { store.selectedHosts = nil }
+        let store = HostsDataStore()
 
         let hosts = Hosts(path: "/tmp/test.hst")!
         store.selectedHosts = nil
@@ -52,5 +50,30 @@ final class HostsDataStoreTests: XCTestCase {
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
 
         XCTAssertTrue(store.selectedHosts === hosts)
+    }
+
+    // MARK: - Busy State
+
+    func testBusyNotification_setsIsBusy() {
+        let store = HostsDataStore()
+        XCTAssertFalse(store.isBusy, "precondition")
+
+        NotificationCenter.default.post(name: .threadBusy, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertTrue(store.isBusy)
+    }
+
+    func testNotBusyNotification_clearsIsBusy() {
+        let store = HostsDataStore()
+
+        NotificationCenter.default.post(name: .threadBusy, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        XCTAssertTrue(store.isBusy, "precondition")
+
+        NotificationCenter.default.post(name: .threadNotBusy, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertFalse(store.isBusy)
     }
 }
