@@ -11,8 +11,6 @@ import SwiftUI
         }
 
         let hc = NSHostingController(rootView: AboutBoxView())
-        hc.preferredContentSize = NSSize(width: 335, height: 220)
-
         let w = NSWindow(contentViewController: hc)
         w.styleMask = [.titled, .closable]
         w.title = ""
