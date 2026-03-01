@@ -4,6 +4,9 @@ struct HostsRowView: View {
     let hosts: Hosts
     let isGroup: Bool
 
+    @State private var showingErrorPopover = false
+    @State private var showingOfflinePopover = false
+
     var body: some View {
         if isGroup {
             groupRow
@@ -27,10 +30,22 @@ struct HostsRowView: View {
     private var groupBadges: some View {
         if let group = hosts as? HostsGroup {
             if !group.online() {
-                Image(systemName: "wifi.slash")
-                    .font(.system(size: 10))
-                    .foregroundStyle(.secondary)
-                    .help("Offline")
+                Button {
+                    showingOfflinePopover = true
+                } label: {
+                    Image(systemName: "wifi.slash")
+                        .font(.system(size: 10))
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+                .help("Offline")
+                .accessibilityLabel("Show offline details")
+                .popover(isPresented: $showingOfflinePopover) {
+                    ErrorPopoverView(
+                        title: "No Internet Connection",
+                        description: "Can't update hosts files because you are not connected to the Internet."
+                    )
+                }
             }
             if group.synchronizing() {
                 ProgressView()
@@ -39,10 +54,7 @@ struct HostsRowView: View {
             }
         }
         if let error = hosts.error() {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.system(size: 10))
-                .foregroundStyle(.yellow)
-                .help(error.description ?? "Error")
+            errorBadgeButton(for: error)
         }
     }
 
@@ -90,16 +102,50 @@ struct HostsRowView: View {
     @ViewBuilder
     private var trailingBadges: some View {
         if let error = hosts.error() {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.system(size: 10))
-                .foregroundStyle(.yellow)
-                .help(error.description ?? "Error")
+            errorBadgeButton(for: error)
         }
         if !hosts.saved() {
             Circle()
                 .fill(.blue)
                 .frame(width: 6, height: 6)
                 .accessibilityLabel("Unsaved")
+        }
+    }
+
+    // MARK: - Error Badge
+
+    // Note: `Error` here is the ObjC Error class from Error.h, not Swift.Error
+    private func errorBadgeButton(for error: Error) -> some View {
+        Button {
+            showingErrorPopover = true
+        } label: {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.system(size: 10))
+                .foregroundStyle(.yellow)
+        }
+        .buttonStyle(.plain)
+        .help(error.description ?? "Error")
+        .accessibilityLabel("Show error details")
+        .popover(isPresented: $showingErrorPopover) {
+            ErrorPopoverView(
+                title: errorTitle(for: error.type),
+                description: error.description,
+                url: error.url
+            )
+        }
+    }
+
+    // MARK: - Helpers
+
+    private func errorTitle(for type: UInt) -> String {
+        switch type {
+        case UInt(NetworkOffline): return "No Internet Connection"
+        case UInt(ServerNotFound): return "Server Not Found"
+        case UInt(FileNotFound): return "Hosts File Not Found"
+        case UInt(FailedToDownload): return "Download Failed"
+        case UInt(BadContentType): return "Bad Content"
+        case UInt(InvalidMobileMeAccount): return "Invalid Account"
+        default: return "Error"
         }
     }
 

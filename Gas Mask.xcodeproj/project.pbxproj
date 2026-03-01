@@ -94,7 +94,6 @@
 		35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */; };
 		35E32EDC12145CF900B2C631 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32EDB12145CF900B2C631 /* Logger.m */; };
 		35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E33074121490B100B2C631 /* ExtendedNSThread.m */; };
-		35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900891147F42900851A25 /* MAAttachedWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35F414F4152E1B7800B99583 /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F414F3152E1B7800B99583 /* VDKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBCA3A1223172300860FDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBCA501223181000860FDA /* libicucore.dylib */; };
@@ -128,6 +127,7 @@
 		AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */; };
 		AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */; };
 		AA000020000000000000AAAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001F000000000000AAAA /* ContentView.swift */; };
+		AA000024000000000000AAAA /* ErrorPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000023000000000000AAAA /* ErrorPopoverView.swift */; };
 		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
 		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
 		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
@@ -303,6 +303,7 @@
 		AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsTextViewRepresentable.swift; path = "Source/Swift/HostsTextViewRepresentable.swift"; sourceTree = "<group>"; };
 		AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedHostsPickerView.swift; path = "Source/Swift/CombinedHostsPickerView.swift"; sourceTree = "<group>"; };
 		AA00001F000000000000AAAA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "Source/Swift/ContentView.swift"; sourceTree = "<group>"; };
+		AA000023000000000000AAAA /* ErrorPopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorPopoverView.swift; path = "Source/Swift/ErrorPopoverView.swift"; sourceTree = "<group>"; };
 		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
 		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
 		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
@@ -338,8 +339,6 @@
 		35E32EDB12145CF900B2C631 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logger.m; path = Source/Logger.m; sourceTree = "<group>"; };
 		35E33073121490B100B2C631 /* ExtendedNSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSThread.h; path = Source/ExtendedNSThread.h; sourceTree = "<group>"; };
 		35E33074121490B100B2C631 /* ExtendedNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSThread.m; path = Source/ExtendedNSThread.m; sourceTree = "<group>"; };
-		35E900881147F42900851A25 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAAttachedWindow.h; path = "Source/3rd Party/MAAttachedWindow.h"; sourceTree = "<group>"; };
-		35E900891147F42900851A25 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAAttachedWindow.m; path = "Source/3rd Party/MAAttachedWindow.m"; sourceTree = "<group>"; };
 		35F414F2152E1B7800B99583 /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VDKQueue.h; path = "Source/3rd Party/VDKQueue.h"; sourceTree = "<group>"; };
 		35F414F3152E1B7800B99583 /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VDKQueue.m; path = "Source/3rd Party/VDKQueue.m"; sourceTree = "<group>"; };
 		35FBCA391223172300860FDA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = "Source/3rd Party/RegexKitLite.h"; sourceTree = "<group>"; };
@@ -715,6 +714,7 @@
 				AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */,
 				AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */,
 				AA00001F000000000000AAAA /* ContentView.swift */,
+				AA000023000000000000AAAA /* ErrorPopoverView.swift */,
 				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
@@ -775,8 +775,6 @@
 				35F414F3152E1B7800B99583 /* VDKQueue.m */,
 				35FBCA391223172300860FDA /* RegexKitLite.h */,
 				35FBCA3A1223172300860FDA /* RegexKitLite.m */,
-				35E900881147F42900851A25 /* MAAttachedWindow.h */,
-				35E900891147F42900851A25 /* MAAttachedWindow.m */,
 			);
 			name = "3rd Party";
 			sourceTree = "<group>";
@@ -1027,6 +1025,7 @@
 				AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */,
 				AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */,
 				AA000020000000000000AAAA /* ContentView.swift in Sources */,
+				AA000024000000000000AAAA /* ErrorPopoverView.swift in Sources */,
 				BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */,
 				BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */,
 				CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */,
@@ -1036,7 +1035,6 @@
 				BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */,
 				FF000002000000000000FF01 /* AboutBoxView.swift in Sources */,
 				FF000004000000000000FF01 /* AboutBoxPresenter.swift in Sources */,
-				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				35E32EDC12145CF900B2C631 /* Logger.m in Sources */,
 				35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */,
 				35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */,
