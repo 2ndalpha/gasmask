@@ -126,6 +126,8 @@ final class HostsDataStore: ObservableObject {
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
                 guard let self else { return }
+                // Re-assign to trigger @Published willSet — HostsGroup objects are reference types,
+                // so SwiftUI won't detect their property changes without this.
                 self.hostsGroups = self.hostsGroups
             }
             notificationObservers.append(observer)
