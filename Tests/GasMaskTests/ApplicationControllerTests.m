@@ -26,9 +26,6 @@
 
 - (void)closeEditorWindowForTesting
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self
-                                             selector:@selector(orderEditorWindowFront)
-                                               object:nil];
     NSWindow *w = [self editorWindowForTesting];
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                      name:NSWindowWillCloseNotification
