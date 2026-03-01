@@ -18,8 +18,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#import "NSToolbarPoofAnimator.h"
-
 #import "ListController.h"
 #import "HostsListView.h"
 #import "Node.h"
@@ -39,13 +37,9 @@
 - (void)hostsFilesLoaded:(NSNotification *)notification;
 - (void)selectActiveHostsFile;
 - (void)expandAllItems;
-- (void)showEditError:(NSString*)message;
 - (NSString*)urlFromPasteBoard:(NSPasteboard*)pasteboard;
 - (BOOL)allowToDropTo:(Hosts*)target;
 - (int)indexOfHosts:(Hosts*)hosts;
-- (NSPoint)locationOfHosts:(Hosts*)hosts;
-- (NSPoint)rightCenterLocationOfHosts:(Hosts*)hosts;
-- (NSPoint)centerLocationOfHostsOnScreen:(Hosts*)hosts;
 @end
 
 @implementation ListController
@@ -70,7 +64,6 @@ static ListController *sharedInstance = nil;
 		[nc addObserver:self selector:@selector(renameHostsFile:) name:HostsFileShouldBeRenamedNotification object:nil];
 		[nc addObserver:self selector:@selector(selectHostsFile:) name:HostsFileShouldBeSelectedNotification object:nil];
 		[nc addObserver:self selector:@selector(deleteDraggedHostsFile:) name:DraggedFileShouldBeRemovedNotification object:nil];
-		[nc addObserver:self selector:@selector(handleHostsFileRemoval:) name:HostsFileWillBeRemovedNotification object:nil];
 		[nc addObserver:self selector:@selector(hostsFilesLoaded:) name:AllHostsFilesLoadedFromDiskNotification object:nil];
 		
 		sharedInstance = self;
@@ -145,16 +138,6 @@ static ListController *sharedInstance = nil;
 		draggedHosts = nil;
 	}
 }
-
-- (void)handleHostsFileRemoval:(NSNotification *)notification
-{
-	[list removeBadgesFromGroups];
-	
-	// Let's have some fun :)
-	NSPoint point = [self centerLocationOfHostsOnScreen:[notification object]];
-	[NSToolbarPoofAnimator runPoofAtPoint:point];
-}
-
 
 - (void)expandAllItems
 {
@@ -362,76 +345,6 @@ static ListController *sharedInstance = nil;
 	}
 	
 	return -1;
-}
-
-- (NSPoint)locationOfHosts:(Hosts*)hosts
-{
-	NSRect frame = [list rectOfRow:[self indexOfHosts:hosts]];
-	
-	NSPoint widgetOrigin = frame.origin;
-	NSPoint point = [list convertPoint:widgetOrigin toView:nil];
-	
-	return point;
-}
-
-- (NSPoint)rightCenterLocationOfHosts:(Hosts*)hosts
-{
-	NSPoint point = [self locationOfHosts:hosts];
-	NSRect frame = [list rectOfRow:[list selectedRow]];
-	
-	point.x += frame.size.width;
-	point.y -= frame.size.height / 2;
-	
-	return point;
-}
-
-- (NSPoint)centerLocationOfHostsOnScreen:(Hosts*)hosts
-{
-	NSPoint hostsPoint = [self locationOfHosts:hosts];
-	
-	NSRect frame = [list rectOfRow:[list selectedRow]];
-	
-	hostsPoint.x += frame.size.width / 2;
-	hostsPoint.y -= frame.size.height / 2;
-	
-	NSPoint point = [[NSApp mainWindow] frame].origin;
-	point.x += hostsPoint.x;
-	point.y += hostsPoint.y;
-	
-	return point;
-}
-
-#pragma mark -
-#pragma mark NSControlTextEditingDelegate
-
-- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
-{
-	Hosts *selectedHosts = [self selectedHosts];
-	
-	// Nothing changed
-	if ([[selectedHosts name] isEqualToString:[fieldEditor string]]) {
-		return YES;
-	}
-	
-	NSRange range = [[fieldEditor string] rangeOfString:@"/"];
-	if (range.location != NSNotFound) {
-		[self showEditError:@"File Name Can Not Contain Forward Slash."];
-		[fieldEditor setString:[selectedHosts name]];
-		return YES;		
-	}
-	
-	BOOL renamed = [hostsController rename:selectedHosts to:[fieldEditor string]];
-	if (renamed) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc postNotificationName:HostsFileRenamedNotification object:selectedHosts];
-    }
-    else {
-		[self showEditError:@"File With Specified Name Already Exists."];
-		[fieldEditor setString:[selectedHosts name]];
-		return YES;
-	}
-	
-	return YES;
 }
 
 @end
