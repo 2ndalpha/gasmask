@@ -14,6 +14,7 @@ import SwiftUI
         let w = NSWindow(contentViewController: hc)
         w.styleMask = [.titled, .closable]
         w.title = ""
+        // Keep the window alive after close so it can be reopened
         w.isReleasedWhenClosed = false
 
         window = w

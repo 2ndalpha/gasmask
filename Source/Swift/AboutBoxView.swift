@@ -11,6 +11,7 @@ struct AboutBoxView: View {
                 Image("AboutIcon")
                     .resizable()
                     .frame(width: 96, height: 96)
+                    .accessibilityLabel("Gas Mask application icon")
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Gas Mask")
