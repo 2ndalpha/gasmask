@@ -1518,7 +1518,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.27.1;
+				version = 2.9.0;
 			};
 		};
 		AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
