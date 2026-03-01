@@ -160,7 +160,10 @@
 		NSUInteger length = [[self string] length];
 		if (length > kAsyncHighlightThreshold) {
 			_highlightGeneration++;
-			[self highlightAsyncFrom:0 generation:_highlightGeneration];
+			NSUInteger generation = _highlightGeneration;
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self highlightAsyncFrom:0 generation:generation];
+			});
 		} else if (length > 0) {
 			NSTextStorage *ts = [self textStorage];
 			[ts beginEditing];

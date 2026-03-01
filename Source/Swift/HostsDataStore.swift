@@ -126,8 +126,7 @@ final class HostsDataStore: ObservableObject {
 
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
-                guard let self else { return }
-                self.rowRefreshToken &+= 1
+                self?.rowRefreshToken &+= 1
             }
             notificationObservers.append(observer)
         }

@@ -117,38 +117,38 @@
 {
 	logDebug(@"Remote hosts downloaded");
 	[self decreaseActiveDownloadsCount];
-	
+
 	RemoteHosts *hosts = (RemoteHosts*)[downloader hosts];
 	[hosts setEnabled:YES];
 	[hosts setContents:[downloader response]];
 	[hosts setUpdated:[NSDate date]];
-	
+
 	if ([downloader lastModified]) {
 	 [hosts setLastModified:[downloader lastModified]];
 	 }
-	
+
 	if ([downloader error]) {
 		if ([[downloader error] type] == FileNotFound && (![hosts error] || [[hosts error] type] != FileNotFound)) {
             [NotificationHelper notify:@"Failed to Download"
                                message:[NSString stringWithFormat:@"Remote hosts file \"%@\" not found on the remote server.", [hosts name]]];
 		}
-		
+
 		[hosts setError:[downloader error]];
 	}
 	else {
 		[hosts setError:nil];
 	}
-	
+
 	[hostsController saveHosts:hosts];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:HostsFileSavedNotification object:hosts];
-	
+
 	if (![downloader initialLoad] && ![downloader error]) {
         [NotificationHelper notify:@"Hosts File Updated"  message:[hosts name]];
 	}
-	
+
 	[self removeDownloader:downloader];
-	
+
 	[self saveRemoteHostsProperties];
 }
 
