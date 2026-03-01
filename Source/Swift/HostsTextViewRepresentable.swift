@@ -29,7 +29,7 @@ struct HostsTextViewRepresentable: NSViewRepresentable {
         let newLength = (contents as NSString).length
         if currentLength != newLength || textView.string != contents {
             context.coordinator.isUpdatingFromModel = true
-            textView.string = contents
+            textView.replaceContent(with: contents)
             context.coordinator.isUpdatingFromModel = false
         }
 

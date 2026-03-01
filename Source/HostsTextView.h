@@ -19,6 +19,8 @@
  ***************************************************************************/
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface HostsTextView : NSTextView<NSTextStorageDelegate> {
 	@private
 	BOOL syntaxHighlighting;
@@ -28,12 +30,16 @@
     NSColor *commentColor;
 	NSCharacterSet *nameCharacterSet;
 	NSUInteger _highlightGeneration;
+	BOOL _replacingContent;
 }
 
 - (void)setSyntaxHighlighting:(BOOL)value;
 - (BOOL)syntaxHighlighting;
 - (void)cancelPendingHighlighting;
+- (void)replaceContentWith:(NSString *)newContent;
 
-+ (instancetype)createForProgrammaticUse;
++ (nullable instancetype)createForProgrammaticUse;
 
 @end
+
+NS_ASSUME_NONNULL_END

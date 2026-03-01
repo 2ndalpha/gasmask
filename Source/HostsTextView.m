@@ -127,7 +127,10 @@
 			_highlightGeneration++;
 			[self highlightAsyncFrom:0 generation:_highlightGeneration];
 		} else if (length > 0) {
+			NSTextStorage *ts = [self textStorage];
+			[ts beginEditing];
 			[self colorTextInRange:NSMakeRange(0, length)];
+			[ts endEditing];
 		}
 	}
 	else {
@@ -143,6 +146,28 @@
 -(void)cancelPendingHighlighting
 {
 	_highlightGeneration++;
+}
+
+-(void)replaceContentWith:(NSString *)newContent
+{
+	// Cancel any pending async highlighting from a previous call
+	_highlightGeneration++;
+	_replacingContent = YES;
+	[self setString:newContent];
+	_replacingContent = NO;
+
+	if (syntaxHighlighting) {
+		NSUInteger length = [[self string] length];
+		if (length > kAsyncHighlightThreshold) {
+			_highlightGeneration++;
+			[self highlightAsyncFrom:0 generation:_highlightGeneration];
+		} else if (length > 0) {
+			NSTextStorage *ts = [self textStorage];
+			[ts beginEditing];
+			[self colorTextInRange:NSMakeRange(0, length)];
+			[ts endEditing];
+		}
+	}
 }
 
 @end
@@ -388,6 +413,7 @@
 
 - (void)textStorageDidProcessEditing:(NSNotification *)notification
 {
+	if (_replacingContent) return;
 	if (!syntaxHighlighting) return;
 	if ([[self textStorage] editedMask] == NSTextStorageEditedAttributes) return;
 
