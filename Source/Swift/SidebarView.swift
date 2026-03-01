@@ -60,7 +60,18 @@ struct SidebarView: View {
             renameField(for: hosts)
         } else {
             HostsRowView(hosts: hosts, isGroup: false)
-                .draggable(hosts.contents() ?? "") {
+                .onDrag {
+                    let provider = NSItemProvider()
+                    provider.registerDataRepresentation(
+                        forTypeIdentifier: UTType.utf8PlainText.identifier,
+                        visibility: .all
+                    ) { completion in
+                        let data = (hosts.contents() ?? "").data(using: .utf8) ?? Data()
+                        completion(data, nil)
+                        return nil
+                    }
+                    return provider
+                } preview: {
                     Text(hosts.name() ?? "")
                 }
                 .contextMenu { contextMenuItems(for: hosts) }

@@ -27,10 +27,12 @@
     NSColor *textColor;
     NSColor *commentColor;
 	NSCharacterSet *nameCharacterSet;
+	NSUInteger _highlightGeneration;
 }
 
 - (void)setSyntaxHighlighting:(BOOL)value;
 - (BOOL)syntaxHighlighting;
+- (void)cancelPendingHighlighting;
 
 + (instancetype)createForProgrammaticUse;
 

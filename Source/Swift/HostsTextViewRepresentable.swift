@@ -25,7 +25,9 @@ struct HostsTextViewRepresentable: NSViewRepresentable {
         guard let textView = context.coordinator.textView else { return }
 
         let contents = store.selectedHosts?.contents() ?? ""
-        if textView.string != contents {
+        let currentLength = (textView.string as NSString).length
+        let newLength = (contents as NSString).length
+        if currentLength != newLength || textView.string != contents {
             context.coordinator.isUpdatingFromModel = true
             textView.string = contents
             context.coordinator.isUpdatingFromModel = false

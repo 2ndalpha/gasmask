@@ -133,40 +133,48 @@
 
 - (void)notifyDelegateHostsUpToDate
 {
-	SEL selector = @selector(hostsUpToDate:);
-	if (delegate && [delegate respondsToSelector:selector]) {
-		SuppressPerformSelectorLeakWarning(
-            [delegate performSelector:selector withObject:self]);
-	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		SEL selector = @selector(hostsUpToDate:);
+		if (delegate && [delegate respondsToSelector:selector]) {
+			SuppressPerformSelectorLeakWarning(
+				[delegate performSelector:selector withObject:self]);
+		}
+	});
 }
 
 - (void)notifyDelegateDownloadingStarted
 {
-	SEL selector = @selector(hostsDownloadingStarted:);
-	if (delegate && [delegate respondsToSelector:selector]) {
-        SuppressPerformSelectorLeakWarning(
-            [delegate performSelector:selector withObject:self]);
-	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		SEL selector = @selector(hostsDownloadingStarted:);
+		if (delegate && [delegate respondsToSelector:selector]) {
+			SuppressPerformSelectorLeakWarning(
+				[delegate performSelector:selector withObject:self]);
+		}
+	});
 }
 
 - (void)notifyDelegateDownloaded
 {
-	logDebug(@"Downloading complete: %@", url);
-	
-	SEL selector = @selector(hostsDownloaded:);
-	if (delegate && [delegate respondsToSelector:selector]) {
-        SuppressPerformSelectorLeakWarning(
-            [delegate performSelector:selector withObject:self]);
-	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		logDebug(@"Downloading complete: %@", url);
+
+		SEL selector = @selector(hostsDownloaded:);
+		if (delegate && [delegate respondsToSelector:selector]) {
+			SuppressPerformSelectorLeakWarning(
+				[delegate performSelector:selector withObject:self]);
+		}
+	});
 }
 
 - (void)notifyDelegateDownloadFailed
 {
-	SEL selector = @selector(hostsDownloadFailed:);
-	if (delegate && [delegate respondsToSelector:selector]) {
-        SuppressPerformSelectorLeakWarning(
-            [delegate performSelector:selector withObject:self]);
-	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		SEL selector = @selector(hostsDownloadFailed:);
+		if (delegate && [delegate respondsToSelector:selector]) {
+			SuppressPerformSelectorLeakWarning(
+				[delegate performSelector:selector withObject:self]);
+		}
+	});
 }
 
 #pragma mark -
