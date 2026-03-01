@@ -19,7 +19,6 @@
 		3513A600113908A900AD789D /* Read Only.png in Resources */ = {isa = PBXBuildFile; fileRef = 3513A5FF113908A900AD789D /* Read Only.png */; };
 		3513A61C11390B7900AD789D /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3513A61B11390B7900AD789D /* Error.m */; };
 		351416CF28C3A7B80093A452 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 351416CE28C3A7B80093A452 /* Sparkle */; };
-		AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* MASShortcut */; };
 		351D904510E76F7100CA6B5E /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 351D904110E76F7100CA6B5E /* Help */; };
 		3522BEE0153316AA00035B90 /* ExtendedNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEDF153316AA00035B90 /* ExtendedNSArray.m */; };
 		3522BEE31533552200035B90 /* ExtendedNSPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3522BEE21533552200035B90 /* ExtendedNSPredicate.m */; };
@@ -86,7 +85,6 @@
 		35B0499D1A462BC500EB89CA /* Blue Dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */; };
 		35B36A641263B25A005F6A66 /* DebugUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B36A631263B25A005F6A66 /* DebugUtil.m */; };
 		35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C8D5A811144F7000B4242D /* Carbon.framework */; };
-		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
 		35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2C252113507A6007C8037 /* RemoteHostsManager.m */; };
 		35D3328E152F5A87001DA824 /* CombinedHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D3328D152F5A87001DA824 /* CombinedHosts.m */; };
 		35D33291152F5B7B001DA824 /* CombinedHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D33290152F5B7B001DA824 /* CombinedHostsController.m */; };
@@ -98,17 +96,12 @@
 		35F414F4152E1B7800B99583 /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F414F3152E1B7800B99583 /* VDKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBCA3A1223172300860FDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBCA501223181000860FDA /* libicucore.dylib */; };
+		3CC80FFF3B4950D6CB6B71D1 /* EditorWindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */; };
+		4367D8248BF62656D4AC86D1 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */; };
+		7189711AD9756F2CBD4BCF22 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CC2B3C4D5E6F000100000040 /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000010 /* NodeTests.m */; };
-		CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000011 /* HostsTests.m */; };
-		CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */; };
-		CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */; };
-		CC2B3C4D5E6F000100000045 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */; };
-/* End PBXBuildFile section */
-
 		AA000004000000000000AAAA /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003000000000000AAAA /* URLValidator.swift */; };
 		AA000006000000000000AAAA /* NetworkStatusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005000000000000AAAA /* NetworkStatusObserver.swift */; };
 		AA000008000000000000AAAA /* URLSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007000000000000AAAA /* URLSheetView.swift */; };
@@ -117,34 +110,42 @@
 		AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */; };
 		AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000F000000000000AAAA /* URLSheetViewTests.swift */; };
 		AA000012000000000000AAAA /* HostsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000011000000000000AAAA /* HostsDataStore.swift */; };
-		4367D8248BF62656D4AC86D1 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */; };
-		DD2A255B82569B83ED993DC2 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D979CFF69FCB07AB746051E /* StatusBarView.swift */; };
-		7189711AD9756F2CBD4BCF22 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */; };
-		3CC80FFF3B4950D6CB6B71D1 /* EditorWindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */; };
 		AA000014000000000000AAAA /* HostsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013000000000000AAAA /* HostsRowView.swift */; };
 		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
 		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
-		AA000024000000000000AAAA /* HostsTextViewPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */; };
-		AA000022000000000000AAAA /* HostsRowViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000021000000000000AAAA /* HostsRowViewTests.swift */; };
-		EE000002000000000000EE01 /* EditorWindowPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */; };
 		AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */; };
 		AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */; };
 		AA000020000000000000AAAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001F000000000000AAAA /* ContentView.swift */; };
+		AA000022000000000000AAAA /* HostsRowViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000021000000000000AAAA /* HostsRowViewTests.swift */; };
+		AA000024000000000000AAAA /* HostsTextViewPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */; };
+		AA1B2C3D4E5F000100000001 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = AA1B2C3D4E5F000200000001 /* MASShortcut */; };
+		B09499173A8244AF5AE97A23 /* HostsDataStoreNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D8BA99EC0C9F97C402B58 /* HostsDataStoreNotificationTests.swift */; };
 		BB000002000000000000BBBB /* RemoteIntervalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000BBBB /* RemoteIntervalMapper.swift */; };
 		BB000004000000000000BBBB /* ShortcutRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000003000000000000BBBB /* ShortcutRecorderView.swift */; };
-		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
 		BB000006000000000000BBBB /* SparkleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000005000000000000BBBB /* SparkleObserver.swift */; };
 		BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000007000000000000BBBB /* LoginItemObserver.swift */; };
 		BB00000A000000000000BBBB /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000009000000000000BBBB /* PreferencesView.swift */; };
 		BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000B000000000000BBBB /* PreferencesPresenter.swift */; };
-		FF000002000000000000FF01 /* AboutBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000001000000000000FF01 /* AboutBoxView.swift */; };
-		FF000004000000000000FF01 /* AboutBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000003000000000000FF01 /* AboutBoxPresenter.swift */; };
 		BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */; };
 		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
 		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
+		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
+		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
+		CC2B3C4D5E6F000100000040 /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000010 /* NodeTests.m */; };
+		CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000011 /* HostsTests.m */; };
+		CC2B3C4D5E6F000100000042 /* HostsGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */; };
+		CC2B3C4D5E6F000100000043 /* AbstractHostsControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */; };
+		CC2B3C4D5E6F000100000044 /* ApplicationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */; };
+		CC2B3C4D5E6F000100000045 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001000000000000DD01 /* GlobalShortcutsTests.swift */; };
 		DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */; };
+		DD2A255B82569B83ED993DC2 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D979CFF69FCB07AB746051E /* StatusBarView.swift */; };
+		EE000002000000000000EE01 /* EditorWindowPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */; };
+		FF000002000000000000FF01 /* AboutBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000001000000000000FF01 /* AboutBoxView.swift */; };
+		FF000004000000000000FF01 /* AboutBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000003000000000000FF01 /* AboutBoxPresenter.swift */; };
 		FF000006000000000000FF01 /* AboutBoxPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		353D18A01114C067005C4E54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -183,6 +184,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		313D8BA99EC0C9F97C402B58 /* HostsDataStoreNotificationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HostsDataStoreNotificationTests.swift; sourceTree = "<group>"; };
 		350920B31226EB9F00ACA0F4 /* HostsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostsDownloader.h; path = Source/HostsDownloader.h; sourceTree = "<group>"; };
 		350920B41226EB9F00ACA0F4 /* HostsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsDownloader.m; path = Source/HostsDownloader.m; sourceTree = "<group>"; };
 		350920BF1226ED5100ACA0F4 /* LocalHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalHostsManager.h; path = Source/LocalHostsManager.h; sourceTree = "<group>"; };
@@ -285,51 +287,12 @@
 		3597135C110DED0F00C7ECAF /* HostsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostsMenu.m; path = Source/HostsMenu.m; sourceTree = "<group>"; };
 		359967521656B52500BCF16D /* NotificationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationHelper.h; path = Source/NotificationHelper.h; sourceTree = "<group>"; };
 		359967531656B52500BCF16D /* NotificationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationHelper.m; path = Source/NotificationHelper.m; sourceTree = "<group>"; };
-		AA000002000000000000AAAA /* GasMask-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GasMask-Bridging-Header.h"; path = "Source/Swift/GasMask-Bridging-Header.h"; sourceTree = "<group>"; };
-		AA000003000000000000AAAA /* URLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLValidator.swift; path = "Source/Swift/URLValidator.swift"; sourceTree = "<group>"; };
-		AA000005000000000000AAAA /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatusObserver.swift; path = "Source/Swift/NetworkStatusObserver.swift"; sourceTree = "<group>"; };
-		AA000007000000000000AAAA /* URLSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetView.swift; path = "Source/Swift/URLSheetView.swift"; sourceTree = "<group>"; };
-		AA000009000000000000AAAA /* URLSheetPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetPresenter.swift; path = "Source/Swift/URLSheetPresenter.swift"; sourceTree = "<group>"; };
-		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
-		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
-		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
-		AA000011000000000000AAAA /* HostsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsDataStore.swift; path = "Source/Swift/HostsDataStore.swift"; sourceTree = "<group>"; };
-		CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorToolbar.swift; path = "Source/Swift/EditorToolbar.swift"; sourceTree = "<group>"; };
-		3D979CFF69FCB07AB746051E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarView.swift; path = "Source/Swift/StatusBarView.swift"; sourceTree = "<group>"; };
-		7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = "Source/Swift/EditorView.swift"; sourceTree = "<group>"; };
-		682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorWindowPresenter.swift; path = "Source/Swift/EditorWindowPresenter.swift"; sourceTree = "<group>"; };
-		AA000013000000000000AAAA /* HostsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsRowView.swift; path = "Source/Swift/HostsRowView.swift"; sourceTree = "<group>"; };
-		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = "Source/Swift/SidebarView.swift"; sourceTree = "<group>"; };
-		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
-		AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsTextViewPerformanceTests.swift; sourceTree = "<group>"; };
-		AA000021000000000000AAAA /* HostsRowViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsRowViewTests.swift; sourceTree = "<group>"; };
-		EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorWindowPresenterTests.swift; sourceTree = "<group>"; };
-		AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsTextViewRepresentable.swift; path = "Source/Swift/HostsTextViewRepresentable.swift"; sourceTree = "<group>"; };
-		AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedHostsPickerView.swift; path = "Source/Swift/CombinedHostsPickerView.swift"; sourceTree = "<group>"; };
-		AA00001F000000000000AAAA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "Source/Swift/ContentView.swift"; sourceTree = "<group>"; };
-		35A183A71A0ACF37002D6289 /* menuIcon@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "menuIcon@2x.tiff"; path = "Resources/Images/menuIcon@2x.tiff"; sourceTree = "<group>"; };
-		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = "Source/Swift/RemoteIntervalMapper.swift"; sourceTree = "<group>"; };
-		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = "Source/Swift/ShortcutRecorderView.swift"; sourceTree = "<group>"; };
-		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = "Source/Swift/GlobalShortcuts.swift"; sourceTree = "<group>"; };
-		BB000005000000000000BBBB /* SparkleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkleObserver.swift; path = "Source/Swift/SparkleObserver.swift"; sourceTree = "<group>"; };
-		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = "Source/Swift/LoginItemObserver.swift"; sourceTree = "<group>"; };
-		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = "Source/Swift/PreferencesView.swift"; sourceTree = "<group>"; };
-		BB00000B000000000000BBBB /* PreferencesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPresenter.swift; path = "Source/Swift/PreferencesPresenter.swift"; sourceTree = "<group>"; };
-		FF000001000000000000FF01 /* AboutBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxView.swift; path = "Source/Swift/AboutBoxView.swift"; sourceTree = "<group>"; };
-		FF000003000000000000FF01 /* AboutBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxPresenter.swift; path = "Source/Swift/AboutBoxPresenter.swift"; sourceTree = "<group>"; };
-		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
-		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
-		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
-		DD000001000000000000DD01 /* GlobalShortcutsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalShortcutsTests.swift; sourceTree = "<group>"; };
-		DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorderViewTests.swift; sourceTree = "<group>"; };
-		FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBoxPresenterTests.swift; sourceTree = "<group>"; };
 		35A4CD2F1534927F005176BD /* Combined Hosts Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Combined Hosts Hint.png"; path = "Resources/Images/Combined Hosts Hint.png"; sourceTree = "<group>"; };
 		35B0499A1A462AE900EB89CA /* Activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activated@2x.png"; path = "Resources/Images/Activated@2x.png"; sourceTree = "<group>"; };
 		35B0499C1A462BC500EB89CA /* Blue Dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Dot@2x.png"; path = "Resources/Images/Blue Dot@2x.png"; sourceTree = "<group>"; };
 		35B36A621263B25A005F6A66 /* DebugUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUtil.h; path = Source/DebugUtil.h; sourceTree = "<group>"; };
 		35B36A631263B25A005F6A66 /* DebugUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugUtil.m; path = Source/DebugUtil.m; sourceTree = "<group>"; };
 		35C8D5A811144F7000B4242D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		35D2C251113507A6007C8037 /* RemoteHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHostsManager.h; path = Source/RemoteHostsManager.h; sourceTree = "<group>"; };
 		35D2C252113507A6007C8037 /* RemoteHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteHostsManager.m; path = Source/RemoteHostsManager.m; sourceTree = "<group>"; };
 		35D3328C152F5A87001DA824 /* CombinedHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CombinedHosts.h; path = Source/CombinedHosts.h; sourceTree = "<group>"; };
@@ -351,14 +314,52 @@
 		35FBCA501223181000860FDA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		35FC65991114B12600BD18C3 /* launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = launcher.m; path = Source/launcher.m; sourceTree = "<group>"; };
 		35FC65A71114B29A00BD18C3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3D979CFF69FCB07AB746051E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarView.swift; path = Source/Swift/StatusBarView.swift; sourceTree = "<group>"; };
+		682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorWindowPresenter.swift; path = Source/Swift/EditorWindowPresenter.swift; sourceTree = "<group>"; };
+		7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = Source/Swift/EditorView.swift; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Gas Mask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Mask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000002000000000000AAAA /* GasMask-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GasMask-Bridging-Header.h"; path = "Source/Swift/GasMask-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA000003000000000000AAAA /* URLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLValidator.swift; path = Source/Swift/URLValidator.swift; sourceTree = "<group>"; };
+		AA000005000000000000AAAA /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatusObserver.swift; path = Source/Swift/NetworkStatusObserver.swift; sourceTree = "<group>"; };
+		AA000007000000000000AAAA /* URLSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetView.swift; path = Source/Swift/URLSheetView.swift; sourceTree = "<group>"; };
+		AA000009000000000000AAAA /* URLSheetPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetPresenter.swift; path = Source/Swift/URLSheetPresenter.swift; sourceTree = "<group>"; };
+		AA00000B000000000000AAAA /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
+		AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetPresenterTests.swift; sourceTree = "<group>"; };
+		AA00000F000000000000AAAA /* URLSheetViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSheetViewTests.swift; sourceTree = "<group>"; };
+		AA000011000000000000AAAA /* HostsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsDataStore.swift; path = Source/Swift/HostsDataStore.swift; sourceTree = "<group>"; };
+		AA000013000000000000AAAA /* HostsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsRowView.swift; path = Source/Swift/HostsRowView.swift; sourceTree = "<group>"; };
+		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = Source/Swift/SidebarView.swift; sourceTree = "<group>"; };
+		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
+		AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsTextViewRepresentable.swift; path = Source/Swift/HostsTextViewRepresentable.swift; sourceTree = "<group>"; };
+		AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedHostsPickerView.swift; path = Source/Swift/CombinedHostsPickerView.swift; sourceTree = "<group>"; };
+		AA00001F000000000000AAAA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Source/Swift/ContentView.swift; sourceTree = "<group>"; };
+		AA000021000000000000AAAA /* HostsRowViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsRowViewTests.swift; sourceTree = "<group>"; };
+		AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsTextViewPerformanceTests.swift; sourceTree = "<group>"; };
+		BB000001000000000000BBBB /* RemoteIntervalMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteIntervalMapper.swift; path = Source/Swift/RemoteIntervalMapper.swift; sourceTree = "<group>"; };
+		BB000003000000000000BBBB /* ShortcutRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutRecorderView.swift; path = Source/Swift/ShortcutRecorderView.swift; sourceTree = "<group>"; };
+		BB000005000000000000BBBB /* SparkleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkleObserver.swift; path = Source/Swift/SparkleObserver.swift; sourceTree = "<group>"; };
+		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = Source/Swift/LoginItemObserver.swift; sourceTree = "<group>"; };
+		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = Source/Swift/PreferencesView.swift; sourceTree = "<group>"; };
+		BB00000B000000000000BBBB /* PreferencesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPresenter.swift; path = Source/Swift/PreferencesPresenter.swift; sourceTree = "<group>"; };
+		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
+		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
+		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
+		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = Source/Swift/GlobalShortcuts.swift; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000010 /* NodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000011 /* HostsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsGroupTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractHostsControllerTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationControllerTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas Mask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorToolbar.swift; path = Source/Swift/EditorToolbar.swift; sourceTree = "<group>"; };
+		DD000001000000000000DD01 /* GlobalShortcutsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalShortcutsTests.swift; sourceTree = "<group>"; };
+		DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorderViewTests.swift; sourceTree = "<group>"; };
+		EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorWindowPresenterTests.swift; sourceTree = "<group>"; };
+		FF000001000000000000FF01 /* AboutBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxView.swift; path = Source/Swift/AboutBoxView.swift; sourceTree = "<group>"; };
+		FF000003000000000000FF01 /* AboutBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxPresenter.swift; path = Source/Swift/AboutBoxPresenter.swift; sourceTree = "<group>"; };
+		FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBoxPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,7 +441,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Gas Mask */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
@@ -698,45 +699,6 @@
 			name = "Remote Hosts";
 			sourceTree = "<group>";
 		};
-		AA000001000000000000AAAA /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
-				CC000001000000000000CC01 /* GlobalShortcuts.swift */,
-				AA000003000000000000AAAA /* URLValidator.swift */,
-				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
-				AA000007000000000000AAAA /* URLSheetView.swift */,
-				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
-				FF000001000000000000FF01 /* AboutBoxView.swift */,
-				FF000003000000000000FF01 /* AboutBoxPresenter.swift */,
-				AA000011000000000000AAAA /* HostsDataStore.swift */,
-				CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */,
-				3D979CFF69FCB07AB746051E /* StatusBarView.swift */,
-				7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */,
-				682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */,
-				AA000013000000000000AAAA /* HostsRowView.swift */,
-				AA000015000000000000AAAA /* SidebarView.swift */,
-				AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */,
-				AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */,
-				AA00001F000000000000AAAA /* ContentView.swift */,
-				BB000020000000000000BBBB /* Preferences */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		BB000020000000000000BBBB /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				BB000009000000000000BBBB /* PreferencesView.swift */,
-				BB00000B000000000000BBBB /* PreferencesPresenter.swift */,
-				BB000001000000000000BBBB /* RemoteIntervalMapper.swift */,
-				BB000003000000000000BBBB /* ShortcutRecorderView.swift */,
-				BB000005000000000000BBBB /* SparkleObserver.swift */,
-				BB000007000000000000BBBB /* LoginItemObserver.swift */,
-			);
-			name = Preferences;
-			sourceTree = "<group>";
-		};
 		35D3328B152F5A45001DA824 /* Combined Hosts */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,30 +747,43 @@
 			name = "3rd Party";
 			sourceTree = "<group>";
 		};
-		CC2B3C4D5E6F000100000031 /* GasMaskTests */ = {
+		AA000001000000000000AAAA /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-								AA00000B000000000000AAAA /* URLValidatorTests.swift */,
-				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
-				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
-				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
-				AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */,
-				AA000021000000000000AAAA /* HostsRowViewTests.swift */,
-				EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */,
-								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
-								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
-								BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
-								DD000001000000000000DD01 /* GlobalShortcutsTests.swift */,
-								DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */,
-								FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */,
-				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
-				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
-				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
-				CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */,
-				CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */,
+				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
+				CC000001000000000000CC01 /* GlobalShortcuts.swift */,
+				AA000003000000000000AAAA /* URLValidator.swift */,
+				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
+				AA000007000000000000AAAA /* URLSheetView.swift */,
+				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
+				FF000001000000000000FF01 /* AboutBoxView.swift */,
+				FF000003000000000000FF01 /* AboutBoxPresenter.swift */,
+				AA000011000000000000AAAA /* HostsDataStore.swift */,
+				CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */,
+				3D979CFF69FCB07AB746051E /* StatusBarView.swift */,
+				7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */,
+				682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */,
+				AA000013000000000000AAAA /* HostsRowView.swift */,
+				AA000015000000000000AAAA /* SidebarView.swift */,
+				AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */,
+				AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */,
+				AA00001F000000000000AAAA /* ContentView.swift */,
+				BB000020000000000000BBBB /* Preferences */,
 			);
-			name = GasMaskTests;
-			path = GasMaskTests;
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		BB000020000000000000BBBB /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				BB000009000000000000BBBB /* PreferencesView.swift */,
+				BB00000B000000000000BBBB /* PreferencesPresenter.swift */,
+				BB000001000000000000BBBB /* RemoteIntervalMapper.swift */,
+				BB000003000000000000BBBB /* ShortcutRecorderView.swift */,
+				BB000005000000000000BBBB /* SparkleObserver.swift */,
+				BB000007000000000000BBBB /* LoginItemObserver.swift */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		CC2B3C4D5E6F000100000030 /* Tests */ = {
@@ -818,6 +793,33 @@
 			);
 			name = Tests;
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CC2B3C4D5E6F000100000031 /* GasMaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000B000000000000AAAA /* URLValidatorTests.swift */,
+				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
+				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
+				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
+				AA000023000000000000AAAA /* HostsTextViewPerformanceTests.swift */,
+				AA000021000000000000AAAA /* HostsRowViewTests.swift */,
+				EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */,
+				BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
+				BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
+				BB000011000000000000BBBB /* PreferencesPresenterTests.swift */,
+				DD000001000000000000DD01 /* GlobalShortcutsTests.swift */,
+				DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */,
+				FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */,
+				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
+				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
+				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
+				CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */,
+				CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */,
+				313D8BA99EC0C9F97C402B58 /* HostsDataStoreNotificationTests.swift */,
+			);
+			name = GasMaskTests;
+			path = GasMaskTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -901,7 +903,7 @@
 				English,
 				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Gas Mask */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			packageReferences = (
 				351416CD28C3A7B80093A452 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				AA1B2C3D4E5F000300000001 /* XCRemoteSwiftPackageReference "MASShortcut" */,
@@ -1086,6 +1088,7 @@
 				DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */,
 				DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */,
 				FF000006000000000000FF01 /* AboutBoxPresenterTests.swift in Sources */,
+				B09499173A8244AF5AE97A23 /* HostsDataStoreNotificationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1130,9 +1133,9 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1166,9 +1169,9 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1201,11 +1204,11 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1237,11 +1240,11 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1337,9 +1340,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -1347,7 +1350,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.tests;
 				PRODUCT_NAME = "Gas Mask Tests";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
@@ -1359,9 +1362,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -1369,7 +1372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ee.clockwise.gmask.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.tests;
 				PRODUCT_NAME = "Gas Mask Tests";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;

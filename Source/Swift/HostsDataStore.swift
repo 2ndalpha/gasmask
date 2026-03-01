@@ -45,6 +45,7 @@ final class HostsDataStore: ObservableObject {
     private var notificationObservers: [NSObjectProtocol] = []
     private var isSyncingSelection = false
     private var busyCount = 0
+    private var pendingRowRefresh = false
 
     // MARK: Init
 
@@ -84,6 +85,24 @@ final class HostsDataStore: ObservableObject {
         isSyncingSelection = true
         selectedHosts = hosts
         isSyncingSelection = false
+    }
+
+    // MARK: Row Refresh Coalescing
+
+    /// Coalesces multiple rapid row-refresh notifications (e.g. from a download
+    /// lifecycle that posts 9-12 notifications) into a single `objectWillChange`
+    /// signal, so SwiftUI performs one re-render instead of many.
+    /// Thread safety: Both the observer callbacks (queue: .main) and the
+    /// DispatchQueue.main.async block execute on the main thread, so
+    /// `pendingRowRefresh` access is serialized without explicit locking.
+    private func scheduleRowRefresh() {
+        guard !pendingRowRefresh else { return }
+        pendingRowRefresh = true
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.pendingRowRefresh = false
+            self.rowRefreshToken &+= 1
+        }
     }
 
     // MARK: Notification Observers
@@ -126,7 +145,7 @@ final class HostsDataStore: ObservableObject {
 
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
-                self?.rowRefreshToken &+= 1
+                self?.scheduleRowRefresh()
             }
             notificationObservers.append(observer)
         }

@@ -140,8 +140,6 @@
 	}
 
 	[hostsController saveHosts:hosts];
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:HostsFileSavedNotification object:hosts];
 
 	if (![downloader initialLoad] && ![downloader error]) {
         [NotificationHelper notify:@"Hosts File Updated"  message:[hosts name]];

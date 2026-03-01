@@ -20,7 +20,7 @@
 
 @interface Util : NSObject
 
-+ (BOOL) flushDirectoryServiceCache;
++ (void) flushDirectoryServiceCache;
 /**
  * OS X 10.10 and later support the NSStatusItemBar button which is what the
  * "Show Host File Name in Status Bar" feature is built upon.  This method
