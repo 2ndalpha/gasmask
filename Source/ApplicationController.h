@@ -20,8 +20,6 @@
 
 #import "HostsMainController.h"
 
-@class AboutBoxController;
-
 @interface ApplicationController : NSObject {
 	@private
 	IBOutlet NSProgressIndicator *busyIndicator;
@@ -29,7 +27,6 @@
 	int busyThreads;
 	BOOL shouldQuit;
 	BOOL editorWindowOpened;
-    AboutBoxController *aboutBoxController;
 }
 
 + (ApplicationController*)defaultInstance;

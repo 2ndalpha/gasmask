@@ -74,8 +74,6 @@
 		355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CA412244F28006C2884 /* RemoteHostsController.m */; };
 		355F5CDF122452BE006C2884 /* AbstractHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F5CDE122452BE006C2884 /* AbstractHostsController.m */; };
 		356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 356218B410E52CD600772473 /* Growl Registration Ticket.growlRegDict */; };
-		3562197910E52E8E00772473 /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562197810E52E8E00772473 /* AboutBox.xib */; };
-		35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35621A3010E52F6C00772473 /* AboutBoxController.m */; };
 		356712201132E2A700DF30E0 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3567121F1132E2A700DF30E0 /* NetworkStatus.m */; };
 		3569AEBF12303479007DF95F /* Preferences+Remote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569AEBE12303479007DF95F /* Preferences+Remote.m */; };
 		356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DB7691824EAFD0020CEA0 /* ExtendedNSSplitView.m */; };
@@ -107,8 +105,6 @@
 		35D2C253113507A6007C8037 /* RemoteHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2C252113507A6007C8037 /* RemoteHostsManager.m */; };
 		35D3328E152F5A87001DA824 /* CombinedHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D3328D152F5A87001DA824 /* CombinedHosts.m */; };
 		35D33291152F5B7B001DA824 /* CombinedHostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D33290152F5B7B001DA824 /* CombinedHostsController.m */; };
-		35D4CACB10E64DDD00B9F63A /* ExtendedNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */; };
-		35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */; };
 		35D83BEF20DD97CF00169358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D83BEE20DD97CF00169358 /* Assets.xcassets */; };
 		35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */; };
 		35E32D841211D52F00B2C631 /* OfflineBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32D831211D52F00B2C631 /* OfflineBadge.m */; };
@@ -143,6 +139,8 @@
 		BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000007000000000000BBBB /* LoginItemObserver.swift */; };
 		BB00000A000000000000BBBB /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000009000000000000BBBB /* PreferencesView.swift */; };
 		BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000B000000000000BBBB /* PreferencesPresenter.swift */; };
+		EE000002000000000000EE01 /* AboutBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000001000000000000EE01 /* AboutBoxView.swift */; };
+		EE000004000000000000EE01 /* AboutBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000003000000000000EE01 /* AboutBoxPresenter.swift */; };
 		BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */; };
 		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
 		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
@@ -288,9 +286,6 @@
 		355F5CDD122452BE006C2884 /* AbstractHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractHostsController.h; path = Source/AbstractHostsController.h; sourceTree = "<group>"; };
 		355F5CDE122452BE006C2884 /* AbstractHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractHostsController.m; path = Source/AbstractHostsController.m; sourceTree = "<group>"; };
 		356218B410E52CD600772473 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Growl Registration Ticket.growlRegDict"; path = "Resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		3562197810E52E8E00772473 /* AboutBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutBox.xib; sourceTree = "<group>"; };
-		35621A2F10E52F6C00772473 /* AboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutBoxController.h; path = Source/AboutBoxController.h; sourceTree = "<group>"; };
-		35621A3010E52F6C00772473 /* AboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutBoxController.m; path = Source/AboutBoxController.m; sourceTree = "<group>"; };
 		3567121E1132E2A700DF30E0 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkStatus.h; path = Source/NetworkStatus.h; sourceTree = "<group>"; };
 		3567121F1132E2A700DF30E0 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkStatus.m; path = Source/NetworkStatus.m; sourceTree = "<group>"; };
 		3569AEBD12303479007DF95F /* Preferences+Remote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Preferences+Remote.h"; path = "Source/Preferences+Remote.h"; sourceTree = "<group>"; };
@@ -336,6 +331,8 @@
 		BB000007000000000000BBBB /* LoginItemObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginItemObserver.swift; path = "Source/Swift/LoginItemObserver.swift"; sourceTree = "<group>"; };
 		BB000009000000000000BBBB /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = "Source/Swift/PreferencesView.swift"; sourceTree = "<group>"; };
 		BB00000B000000000000BBBB /* PreferencesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPresenter.swift; path = "Source/Swift/PreferencesPresenter.swift"; sourceTree = "<group>"; };
+		EE000001000000000000EE01 /* AboutBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxView.swift; path = "Source/Swift/AboutBoxView.swift"; sourceTree = "<group>"; };
+		EE000003000000000000EE01 /* AboutBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxPresenter.swift; path = "Source/Swift/AboutBoxPresenter.swift"; sourceTree = "<group>"; };
 		BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteIntervalMapperTests.swift; sourceTree = "<group>"; };
 		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
 		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
@@ -354,10 +351,6 @@
 		35D3328D152F5A87001DA824 /* CombinedHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CombinedHosts.m; path = Source/CombinedHosts.m; sourceTree = "<group>"; };
 		35D3328F152F5B7B001DA824 /* CombinedHostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CombinedHostsController.h; path = Source/CombinedHostsController.h; sourceTree = "<group>"; };
 		35D33290152F5B7B001DA824 /* CombinedHostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CombinedHostsController.m; path = Source/CombinedHostsController.m; sourceTree = "<group>"; };
-		35D4CAC910E64DDD00B9F63A /* ExtendedNSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSApplication.h; path = Source/ExtendedNSApplication.h; sourceTree = "<group>"; };
-		35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSApplication.m; path = Source/ExtendedNSApplication.m; sourceTree = "<group>"; };
-		35D4CBF910E6934700B9F63A /* ExtendedNSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSTextView.h; path = Source/ExtendedNSTextView.h; sourceTree = "<group>"; };
-		35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSTextView.m; path = Source/ExtendedNSTextView.m; sourceTree = "<group>"; };
 		35D83BEE20DD97CF00169358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sparkle_dsa_pub.pem; path = Resources/sparkle_dsa_pub.pem; sourceTree = "<group>"; };
 		35E32D821211D52F00B2C631 /* OfflineBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfflineBadge.h; path = Source/OfflineBadge.h; sourceTree = "<group>"; };
@@ -470,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				35D4C98210E64D8800B9F63A /* Extended Next Step */,
-				3562196F10E52E5D00772473 /* About Box */,
 				35116A9610D6AD2C00A5FAA1 /* Preferences */,
 				355F5C4C12244AF5006C2884 /* Local Hosts */,
 				35D3328B152F5A45001DA824 /* Combined Hosts */,
@@ -722,16 +714,6 @@
 			name = "Local Hosts";
 			sourceTree = "<group>";
 		};
-		3562196F10E52E5D00772473 /* About Box */ = {
-			isa = PBXGroup;
-			children = (
-				3562197810E52E8E00772473 /* AboutBox.xib */,
-				35621A2F10E52F6C00772473 /* AboutBoxController.h */,
-				35621A3010E52F6C00772473 /* AboutBoxController.m */,
-			);
-			name = "About Box";
-			sourceTree = "<group>";
-		};
 		3567121B1132E28C00DF30E0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +749,8 @@
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
 				AA000007000000000000AAAA /* URLSheetView.swift */,
 				AA000009000000000000AAAA /* URLSheetPresenter.swift */,
+				EE000001000000000000EE01 /* AboutBoxView.swift */,
+				EE000003000000000000EE01 /* AboutBoxPresenter.swift */,
 				BB000020000000000000BBBB /* Preferences */,
 			);
 			name = Swift;
@@ -804,12 +788,8 @@
 			isa = PBXGroup;
 			children = (
 				354DDCED114EAC5000DB76D7 /* NSToolbarPoofAnimator.h */,
-				35D4CBF910E6934700B9F63A /* ExtendedNSTextView.h */,
-				35D4CBFA10E6934700B9F63A /* ExtendedNSTextView.m */,
 				353A80C810B01F320005CAD1 /* ExtendedNSString.h */,
 				353A80C910B01F320005CAD1 /* ExtendedNSString.m */,
-				35D4CAC910E64DDD00B9F63A /* ExtendedNSApplication.h */,
-				35D4CACA10E64DDD00B9F63A /* ExtendedNSApplication.m */,
 				35E33073121490B100B2C631 /* ExtendedNSThread.h */,
 				35E33074121490B100B2C631 /* ExtendedNSThread.m */,
 				3522BEDE153316AA00035B90 /* ExtendedNSArray.h */,
@@ -1011,7 +991,6 @@
 				3528ECEE10E3F87E003C8CB9 /* Syncing_arrows6.png in Resources */,
 				35B0499B1A462AE900EB89CA /* Activated@2x.png in Resources */,
 				356218B510E52CD600772473 /* Growl Registration Ticket.growlRegDict in Resources */,
-				3562197910E52E8E00772473 /* AboutBox.xib in Resources */,
 				358C36E51A0D6F2E00161C98 /* Combined_File_yosemite.tiff in Resources */,
 				351D904510E76F7100CA6B5E /* Help in Resources */,
 				354C0BC510E782A5005B9A33 /* hosts.icns in Resources */,
@@ -1075,9 +1054,6 @@
 				3545DCA910E396CF00EBA66D /* Network.m in Sources */,
 				3541CE0510E4AF9B00FA00CB /* SyncingArrowsBadge.m in Sources */,
 				3544E2D310E4CCB1009AC525 /* Map.m in Sources */,
-				35621A3110E52F6C00772473 /* AboutBoxController.m in Sources */,
-				35D4CACB10E64DDD00B9F63A /* ExtendedNSApplication.m in Sources */,
-				35D4CBFB10E6934700B9F63A /* ExtendedNSTextView.m in Sources */,
 				35738409110209AB00E8DB54 /* HostsListView.m in Sources */,
 				3597135D110DED0F00C7ECAF /* HostsMenu.m in Sources */,
 				354CCF811117285300EB6948 /* HostsListViewMenu.m in Sources */,
@@ -1097,6 +1073,8 @@
 				BB000008000000000000BBBB /* LoginItemObserver.swift in Sources */,
 				BB00000A000000000000BBBB /* PreferencesView.swift in Sources */,
 				BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */,
+				EE000002000000000000EE01 /* AboutBoxView.swift in Sources */,
+				EE000004000000000000EE01 /* AboutBoxPresenter.swift in Sources */,
 				356DB76A1824EAFD0020CEA0 /* ExtendedNSSplitView.m in Sources */,
 				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				350E7D3E121093E400D2F5F5 /* AlertBadge.m in Sources */,
