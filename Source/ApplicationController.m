@@ -128,7 +128,7 @@ static ApplicationController *sharedInstance = nil;
 	}
 
 	[self showApplicationInDock];
-	[self performSelector:@selector(orderEditorWindowFront) withObject:nil afterDelay:0.1];
+	[self orderEditorWindowFront];
 }
 
 - (IBAction)closeEditorWindow:(id)sender
@@ -205,7 +205,9 @@ static ApplicationController *sharedInstance = nil;
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
 	shouldQuit = YES;
-	[self hideApplicationFromDock];
+	if (!editorWindowOpened) {
+		[self hideApplicationFromDock];
+	}
 	return NO;
 }
 
@@ -307,9 +309,6 @@ static ApplicationController *sharedInstance = nil;
 
 - (void)hideApplicationFromDock
 {
-	[NSObject cancelPreviousPerformRequestsWithTarget:self
-											 selector:@selector(orderEditorWindowFront)
-											   object:nil];
 	[NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
 	[Preferences setShowEditorWindow:NO];
 	[[NSNotificationCenter defaultCenter] removeObserver:self
