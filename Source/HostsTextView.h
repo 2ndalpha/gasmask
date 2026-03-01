@@ -32,4 +32,6 @@
 - (void)setSyntaxHighlighting:(BOOL)value;
 - (BOOL)syntaxHighlighting;
 
++ (instancetype)createForProgrammaticUse;
+
 @end

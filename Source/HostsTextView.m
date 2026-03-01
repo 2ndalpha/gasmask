@@ -40,24 +40,44 @@
 
 @implementation HostsTextView
 
+- (void)setupColors
+{
+	ipv4Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.61 alpha:1];
+	ipv6Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.8 alpha:1];
+    textColor = [NSColor colorNamed:@"TextColor"];
+    commentColor = [NSColor colorNamed:@"CommentColor"];
+	nameCharacterSet = [NSCharacterSet characterSetWithCharactersInString: @"abcdefghijklmnopqrstuvwxyz0123456789.-"];
+}
+
 - (id)initWithCoder:(NSCoder *)decoder
 {
 	self = [super initWithCoder:decoder];
-	
-	ipv4Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.61 alpha:1];
-	ipv6Color = [NSColor colorWithCalibratedRed:0.27 green:0.36 blue:0.8 alpha:1];
-    
-    if (@available(macOS 10_13, *)) {
-        textColor = [NSColor colorNamed:@"TextColor"];
-        commentColor = [NSColor colorNamed:@"CommentColor"];
-    } else {
-        textColor = [NSColor blackColor];
-        commentColor = [NSColor grayColor];
-    }
-    
-	nameCharacterSet = [NSCharacterSet characterSetWithCharactersInString: @"abcdefghijklmnopqrstuvwxyz0123456789.-"];
-	
+	[self setupColors];
 	return self;
+}
+
++ (instancetype)createForProgrammaticUse
+{
+    NSTextContainer *container = [[NSTextContainer alloc] initWithContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
+    [container setWidthTracksTextView:NO];
+
+    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
+    [layoutManager addTextContainer:container];
+
+    NSTextStorage *textStorage = [[NSTextStorage alloc] init];
+    [textStorage addLayoutManager:layoutManager];
+
+    HostsTextView *textView = [[HostsTextView alloc] initWithFrame:NSZeroRect textContainer:container];
+    [textView setupColors];
+
+    [textStorage setDelegate:textView];
+    [textView setHorizontallyResizable:YES];
+    [textView setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
+    [textView setFont:[NSFont monospacedSystemFontOfSize:12 weight:NSFontWeightMedium]];
+    [textView setBackgroundColor:[NSColor colorNamed:@"BackgroundColor"]];
+    [textView setTextColor:[NSColor colorNamed:@"TextColor"]];
+
+    return textView;
 }
 
 - (void)awakeFromNib

@@ -26,6 +26,7 @@
 #import "LocalHostsController.h"
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
+#import <Sparkle/Sparkle.h>
 
 @interface ApplicationController ()
 {
@@ -63,16 +64,29 @@ static ApplicationController *sharedInstance = nil;
 	if (self = [super init]) {
 		busyThreads = 0;
 		shouldQuit = YES;
-		
+
+		BOOL isTesting = NSClassFromString(@"XCTestCase") != nil;
+		if (!isTesting) {
+			_updaterController = [[SPUStandardUpdaterController alloc]
+								  initWithStartingUpdater:YES
+								  updaterDelegate:nil
+								  userDriverDelegate:nil];
+		}
+
 		NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 		[nc addObserver:self selector:@selector(activatePreviousFile:) name:ActivatePreviousFileNotification object:nil];
 		[nc addObserver:self selector:@selector(activateNextFile:) name:ActivateNextFileNotification object:nil];
         [nc addObserver:self selector:@selector(notifyOfFileRestored:) name:RestoredHostsFileNotification object:nil];
-		
+
 		sharedInstance = self;
 		return self;
 	}
     return sharedInstance;
+}
+
+- (SPUUpdater *)updater
+{
+	return _updaterController.updater;
 }
 
 -(IBAction)openPreferencesWindow:(id)sender
@@ -174,6 +188,9 @@ static ApplicationController *sharedInstance = nil;
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
 	(void)[GlobalShortcuts shared]; // Register global hotkeys
+
+	checkForUpdatesMenuItem.target = _updaterController;
+	checkForUpdatesMenuItem.action = @selector(checkForUpdates:);
 
 	[NSApp setServicesProvider:self];
 

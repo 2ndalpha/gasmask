@@ -1,14 +1,14 @@
+import Combine
 import Foundation
 import Sparkle
 
-/// Wraps `SUUpdater.shared()` as an `ObservableObject` for SwiftUI.
-///
-/// Replaces the XIB-instantiated `SUUpdater` object and `UpdateDateTransformer`.
+/// Wraps `SPUUpdater` as an `ObservableObject` for SwiftUI.
 final class SparkleObserver: ObservableObject {
     @Published var lastCheckDate: Date?
     @Published var automaticChecksEnabled: Bool
+    @Published var canCheckForUpdates = false
 
-    private var dateObservation: NSKeyValueObservation?
+    private let updater: SPUUpdater?
 
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -25,30 +25,40 @@ final class SparkleObserver: ObservableObject {
         return "Last Checked: \(Self.dateFormatter.string(from: date))"
     }
 
-    init() {
-        guard let updater = SUUpdater.shared() else {
-            self.lastCheckDate = nil
-            self.automaticChecksEnabled = false
-            return
-        }
-        self.lastCheckDate = updater.lastUpdateCheckDate
-        self.automaticChecksEnabled = updater.automaticallyChecksForUpdates
-
-        // Observe lastUpdateCheckDate via KVO
-        dateObservation = updater.observe(\.lastUpdateCheckDate, options: [.new]) { [weak self] _, change in
-            DispatchQueue.main.async {
-                self?.lastCheckDate = change.newValue ?? nil
-            }
-        }
+    convenience init() {
+        self.init(updater: ApplicationController.defaultInstance()?.updater)
     }
 
-    /// Writes only to UserDefaults — SUUpdater observes this key via its own KVO.
+    init(updater: SPUUpdater?) {
+        self.updater = updater
+        self.lastCheckDate = updater?.lastUpdateCheckDate
+        self.automaticChecksEnabled = updater?.automaticallyChecksForUpdates ?? false
+
+        guard let updater else { return }
+
+        updater.publisher(for: \.canCheckForUpdates)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$canCheckForUpdates)
+
+        updater.publisher(for: \.automaticallyChecksForUpdates)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$automaticChecksEnabled)
+
+        updater.publisher(for: \.lastUpdateCheckDate)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$lastCheckDate)
+    }
+
     func setAutomaticChecks(_ enabled: Bool) {
-        automaticChecksEnabled = enabled
-        UserDefaults.standard.set(enabled, forKey: "SUEnableAutomaticChecks")
+        if let updater {
+            updater.automaticallyChecksForUpdates = enabled
+        } else {
+            automaticChecksEnabled = enabled
+        }
     }
 
     func checkForUpdates() {
-        SUUpdater.shared()?.checkForUpdates(nil)
+        guard let updater, updater.canCheckForUpdates else { return }
+        updater.checkForUpdates()
     }
 }

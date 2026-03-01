@@ -20,16 +20,24 @@
 
 #import "HostsMainController.h"
 
+@class SPUStandardUpdaterController;
+@class SPUUpdater;
+
+
 @interface ApplicationController : NSObject {
 	@private
 	IBOutlet NSProgressIndicator *busyIndicator;
 	IBOutlet HostsMainController *hostsController;
+	IBOutlet NSMenuItem *checkForUpdatesMenuItem;
 	int busyThreads;
 	BOOL shouldQuit;
 	BOOL editorWindowOpened;
+	SPUStandardUpdaterController *_updaterController;
 }
 
 + (ApplicationController*)defaultInstance;
+
+@property (nonatomic, readonly) SPUUpdater *updater;
 
 - (IBAction)openPreferencesWindow:(id)sender;
 - (IBAction)displayAboutBox:(id)sender;

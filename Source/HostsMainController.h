@@ -132,6 +132,7 @@
 
 - (Hosts*)activeHostsFile;
 - (Hosts*)selectedHosts;
+- (void)selectHosts:(Hosts*)hosts;
 - (NSArray*)allHostsFilesGrouped;
 - (NSArray*)allHostsFiles;
 - (int)filesCount;

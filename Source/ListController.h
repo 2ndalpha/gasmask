@@ -31,5 +31,6 @@
 + (ListController*)defaultInstance;
 
 - (Hosts*)selectedHosts;
+- (void)deactivate;
 
 @end

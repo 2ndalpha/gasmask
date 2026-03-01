@@ -441,6 +441,18 @@ static HostsMainController *sharedInstance = nil;
 	return [[self selectedObjects] lastObject];
 }
 
+- (void)selectHosts:(Hosts *)hosts
+{
+	NSIndexPath *path = [self hostsIndexPath:hosts];
+	if (path) {
+		// Defer to next run loop iteration so the tree controller
+		// finishes any in-flight insert/remove before we change selection.
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self setSelectionIndexPath:path];
+		});
+	}
+}
+
 - (NSArray*)allHostsFilesGrouped
 {
 	int nrControllers = [controllers count];

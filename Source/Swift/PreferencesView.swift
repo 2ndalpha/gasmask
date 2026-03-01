@@ -108,7 +108,7 @@ struct UpdateTab: View {
             Button("Check Now") {
                 sparkleObserver.checkForUpdates()
             }
-            .disabled(!sparkleObserver.automaticChecksEnabled)
+            .disabled(!sparkleObserver.canCheckForUpdates)
         }
         .padding(20)
     }
