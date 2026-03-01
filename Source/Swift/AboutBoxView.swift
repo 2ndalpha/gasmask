@@ -44,7 +44,7 @@ struct AboutBoxView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 4)
         }
-        .frame(width: 295)
+        .fixedSize()
         .padding(20)
     }
 }

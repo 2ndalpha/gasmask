@@ -60,4 +60,27 @@ final class AboutBoxPresenterTests: XCTestCase {
         XCTAssertNotNil(w)
         XCTAssertFalse(w?.isReleasedWhenClosed ?? true)
     }
+
+    func testScreenshot_aboutBox() throws {
+        try XCTSkipIf(NSScreen.main == nil, "No display available")
+        AboutBoxPresenter.show()
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        let w = try XCTUnwrap(aboutWindow())
+
+        let frame = w.frame
+        let screenFrame = w.screen?.frame ?? NSScreen.main?.frame ?? .zero
+        let cgRect = CGRect(
+            x: frame.origin.x,
+            y: screenFrame.height - frame.origin.y - frame.height,
+            width: frame.width,
+            height: frame.height
+        )
+        if let displayID = w.screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID,
+           let image = CGDisplayCreateImage(displayID, rect: cgRect) {
+            let bitmap = NSBitmapImageRep(cgImage: image)
+            if let png = bitmap.representation(using: .png, properties: [:]) {
+                try png.write(to: URL(fileURLWithPath: "/tmp/about-box.png"))
+            }
+        }
+    }
 }
