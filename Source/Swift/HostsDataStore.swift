@@ -38,6 +38,7 @@ final class HostsDataStore: ObservableObject {
     @Published var canRemoveFiles: Bool = false
     @Published var renamingHosts: Hosts?
     @Published var isBusy: Bool = false
+    @Published private(set) var rowRefreshToken: UInt64 = 0
 
     // MARK: Private
 
@@ -116,7 +117,7 @@ final class HostsDataStore: ObservableObject {
         }
         notificationObservers.append(loadedObserver)
 
-        // Single-row refresh notifications — reassign hostsGroups to force SwiftUI diffing
+        // Single-row refresh notifications — increment token to invalidate SwiftUI row views
         let rowRefreshNames: [NSNotification.Name] = [
             .hostsFileSaved,
             .hostsNodeNeedsUpdate,
@@ -126,9 +127,7 @@ final class HostsDataStore: ObservableObject {
         for name in rowRefreshNames {
             let observer = nc.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
                 guard let self else { return }
-                // Re-assign to trigger @Published willSet — HostsGroup objects are reference types,
-                // so SwiftUI won't detect their property changes without this.
-                self.hostsGroups = self.hostsGroups
+                self.rowRefreshToken &+= 1
             }
             notificationObservers.append(observer)
         }

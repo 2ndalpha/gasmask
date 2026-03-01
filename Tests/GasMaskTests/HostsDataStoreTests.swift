@@ -76,4 +76,46 @@ final class HostsDataStoreTests: XCTestCase {
 
         XCTAssertFalse(store.isBusy)
     }
+
+    // MARK: - Row Refresh Token
+
+    func testRowRefreshToken_incrementsOnHostsNodeNeedsUpdate() {
+        let store = HostsDataStore()
+        let before = store.rowRefreshToken
+
+        NotificationCenter.default.post(name: .hostsNodeNeedsUpdate, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertEqual(store.rowRefreshToken, before &+ 1)
+    }
+
+    func testRowRefreshToken_incrementsOnHostsFileSaved() {
+        let store = HostsDataStore()
+        let before = store.rowRefreshToken
+
+        NotificationCenter.default.post(name: .hostsFileSaved, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertEqual(store.rowRefreshToken, before &+ 1)
+    }
+
+    func testRowRefreshToken_incrementsOnSynchronizingStatusChanged() {
+        let store = HostsDataStore()
+        let before = store.rowRefreshToken
+
+        NotificationCenter.default.post(name: .synchronizingStatusChanged, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertEqual(store.rowRefreshToken, before &+ 1)
+    }
+
+    func testRowRefreshToken_doesNotChangeOnUnrelatedNotification() {
+        let store = HostsDataStore()
+        let before = store.rowRefreshToken
+
+        NotificationCenter.default.post(name: .hostsFileCreated, object: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        XCTAssertEqual(store.rowRefreshToken, before)
+    }
 }

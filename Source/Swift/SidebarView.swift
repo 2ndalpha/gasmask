@@ -13,7 +13,7 @@ struct SidebarView: View {
         List(selection: $store.selectedHosts) {
             ForEach(store.hostsGroups, id: \.self) { group in
                 let children = (group.children as? [Hosts]) ?? []
-                Section(header: HostsRowView(hosts: group, isGroup: true)) {
+                Section(header: HostsRowView(hosts: group, isGroup: true, refreshToken: store.rowRefreshToken)) {
                     ForEach(children, id: \.self) { hosts in
                         rowContent(for: hosts)
                             .tag(hosts)
@@ -59,7 +59,7 @@ struct SidebarView: View {
         if isEditing, store.renamingHosts === hosts {
             renameField(for: hosts)
         } else {
-            HostsRowView(hosts: hosts, isGroup: false)
+            HostsRowView(hosts: hosts, isGroup: false, refreshToken: store.rowRefreshToken)
                 .draggable(hosts.contents() ?? "") {
                     Text(hosts.name() ?? "")
                 }
