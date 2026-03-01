@@ -717,7 +717,10 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         local2.setSaved(true)
 
         let remote = Hosts(path: "/tmp/fullEdRemote.hst")!
-        let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+        // Use 5K lines (not 30K) — this test measures re-render cost per notification,
+        // not large file highlighting. Keeping it lighter avoids timeouts on slow CI
+        // Intel runners where async highlighting during RunLoop drains is expensive.
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         remote.setContents(largeContent)
         remote.setSaved(true)
         remote.exists = true
@@ -731,7 +734,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         testWindow.orderBack(nil)
 
         // Wait for initial render
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.5))
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
 
         // Simulate download cascade on the store
         // Note: EditorView creates its own @StateObject store, so we can't easily
