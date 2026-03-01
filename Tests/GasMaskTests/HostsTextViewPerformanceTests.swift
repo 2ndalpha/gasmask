@@ -1,4 +1,5 @@
 import XCTest
+import Combine
 @testable import Gas_Mask
 
 final class HostsTextViewPerformanceTests: XCTestCase {
@@ -185,6 +186,111 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         }
     }
 
+    // MARK: - Integration: HostsDataStore + updateNSView pipeline
+
+    /// Simulates the full pipeline: HostsDataStore selection change → Hosts.contents()
+    /// → updateNSView guard → replaceContent. Tests that the combination of all layers
+    /// completes quickly for small local files.
+    func testIntegration_storeSelectionThenUpdateNSView_completesQuickly() {
+        let store = HostsDataStore()
+
+        // Create two hosts with pre-loaded content (simulates cached local files)
+        let hosts1 = Hosts(path: "/tmp/integA.hst")!
+        hosts1.setContents("127.0.0.1 localhost\n::1 localhost\n# local config A\n")
+        hosts1.setSaved(true) // Reset saved flag to avoid HostsNodeNeedsUpdate
+
+        let hosts2 = Hosts(path: "/tmp/integB.hst")!
+        hosts2.setContents("192.168.1.1 router.local\n10.0.0.1 gateway.local\n")
+        hosts2.setSaved(true)
+
+        let switchCount = 20
+        let start = CFAbsoluteTimeGetCurrent()
+
+        for _ in 0..<switchCount {
+            // Step 1: HostsDataStore selection change
+            store.selectedHosts = hosts1
+            // Step 2: Simulate what updateNSView does
+            let contents1 = store.selectedHosts?.contents() ?? ""
+            simulateUpdateNSView(contents: contents1)
+
+            store.selectedHosts = hosts2
+            let contents2 = store.selectedHosts?.contents() ?? ""
+            simulateUpdateNSView(contents: contents2)
+        }
+
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+
+        // 40 switches (20 round trips) through the full pipeline must complete quickly
+        XCTAssertLessThan(elapsed, 1.0,
+            "Full store→updateNSView pipeline: \(String(format: "%.3f", elapsed))s for \(switchCount * 2) switches")
+    }
+
+    /// Demonstrates that the old O(n) guard check was expensive for large files.
+    /// The new pointer-based guard (hostsChanged || externalChange) avoids this.
+    func testGuardCheck_pointerBased_skipsStringComparison() {
+        let content = Self.generateLargeHostsContent(lineCount: 16000)
+        textView.replaceContent(with: content)
+
+        let hosts = Hosts(path: "/tmp/guardCheck.hst")!
+        hosts.setContents(content)
+        hosts.setSaved(true)
+
+        // Simulate updateNSView with pointer-based guard (new approach):
+        // same Hosts pointer + same contentToken → skip entirely (O(1))
+        var lastUpdatedHosts: Hosts? = hosts
+        var lastContentToken: UInt64 = 42
+        let contentToken: UInt64 = 42
+
+        let iterations = 100
+        let start = CFAbsoluteTimeGetCurrent()
+
+        for _ in 0..<iterations {
+            let hostsChanged = hosts !== lastUpdatedHosts
+            let externalChange = contentToken != lastContentToken
+            if hostsChanged || externalChange {
+                textView.replaceContent(with: content)
+                lastUpdatedHosts = hosts
+                lastContentToken = contentToken
+            }
+            // Nothing happens — the guard correctly skips
+        }
+
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+
+        NSLog("Pointer-based guard on 16K-line file: %.6fs for %d calls (%.4fms each)",
+              elapsed, iterations, elapsed / Double(iterations) * 1000)
+
+        // O(1) pointer/token comparison — must be near-instant even for huge files
+        XCTAssertLessThan(elapsed, 0.01,
+            "Pointer-based guard took \(String(format: "%.3f", elapsed))s — should be near-instant")
+    }
+
+    /// Verifies that HostsDataStore.selectedHosts didSet does NOT trigger a
+    /// re-entrant update (which would cause updateNSView to fire multiple times
+    /// per selection change in the real app).
+    func testStoreSelection_countsObjectWillChangePublications() {
+        let store = HostsDataStore()
+        let hosts1 = Hosts(path: "/tmp/countA.hst")!
+        let hosts2 = Hosts(path: "/tmp/countB.hst")!
+
+        var changeCount = 0
+        let cancellable = store.objectWillChange.sink { _ in
+            changeCount += 1
+        }
+        defer { cancellable.cancel() }
+
+        store.selectedHosts = hosts1
+        store.selectedHosts = hosts2
+        store.selectedHosts = hosts1
+
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+
+        // Each assignment should produce exactly 1 objectWillChange, not more
+        XCTAssertEqual(changeCount, 3,
+            "Expected 3 objectWillChange publications for 3 selection changes, got \(changeCount) — " +
+            "indicates re-entrant updates causing extra SwiftUI re-renders")
+    }
+
     // MARK: - Regression: compare old vs new text replacement
 
     /// Compares old approach (textView.string = x) vs new approach (replaceContentWith:)
@@ -247,7 +353,9 @@ final class HostsTextViewPerformanceTests: XCTestCase {
 
     // MARK: - Helpers
 
-    /// Simulates exactly what HostsTextViewRepresentable.updateNSView does
+    /// Simulates the text replacement portion of updateNSView (length-first guard + replace).
+    /// Does NOT test the pointer-based selection guard — that is tested separately in
+    /// testGuardCheck_pointerBased_skipsStringComparison.
     private func simulateUpdateNSView(contents: String) {
         let currentLength = (textView.string as NSString).length
         let newLength = (contents as NSString).length

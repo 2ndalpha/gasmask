@@ -9,7 +9,13 @@ struct ContentView: View {
                 CombinedHostsPickerView(store: store)
                 Divider()
             }
-            HostsTextViewRepresentable(store: store)
+            HostsTextViewRepresentable(
+                selectedHosts: store.selectedHosts,
+                contentToken: store.rowRefreshToken,
+                onTextChange: { [weak store] newText in
+                    store?.selectedHosts?.setContents(newText)
+                }
+            )
         }
     }
 }
