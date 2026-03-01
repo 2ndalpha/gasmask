@@ -124,6 +124,7 @@
 		AA000014000000000000AAAA /* HostsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013000000000000AAAA /* HostsRowView.swift */; };
 		AA000016000000000000AAAA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015000000000000AAAA /* SidebarView.swift */; };
 		AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019000000000000AAAA /* HostsDataStoreTests.swift */; };
+		AA000022000000000000AAAA /* HostsRowViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000021000000000000AAAA /* HostsRowViewTests.swift */; };
 		EE000002000000000000EE01 /* EditorWindowPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */; };
 		AA00001C000000000000AAAA /* HostsTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */; };
 		AA00001E000000000000AAAA /* CombinedHostsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */; };
@@ -299,6 +300,7 @@
 		AA000013000000000000AAAA /* HostsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsRowView.swift; path = "Source/Swift/HostsRowView.swift"; sourceTree = "<group>"; };
 		AA000015000000000000AAAA /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarView.swift; path = "Source/Swift/SidebarView.swift"; sourceTree = "<group>"; };
 		AA000019000000000000AAAA /* HostsDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsDataStoreTests.swift; sourceTree = "<group>"; };
+		AA000021000000000000AAAA /* HostsRowViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsRowViewTests.swift; sourceTree = "<group>"; };
 		EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorWindowPresenterTests.swift; sourceTree = "<group>"; };
 		AA00001B000000000000AAAA /* HostsTextViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HostsTextViewRepresentable.swift; path = "Source/Swift/HostsTextViewRepresentable.swift"; sourceTree = "<group>"; };
 		AA00001D000000000000AAAA /* CombinedHostsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedHostsPickerView.swift; path = "Source/Swift/CombinedHostsPickerView.swift"; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				AA00000D000000000000AAAA /* URLSheetPresenterTests.swift */,
 				AA00000F000000000000AAAA /* URLSheetViewTests.swift */,
 				AA000019000000000000AAAA /* HostsDataStoreTests.swift */,
+				AA000021000000000000AAAA /* HostsRowViewTests.swift */,
 				EE000001000000000000EE01 /* EditorWindowPresenterTests.swift */,
 								BB00000D000000000000BBBB /* RemoteIntervalMapperTests.swift */,
 								BB00000F000000000000BBBB /* SparkleObserverTests.swift */,
@@ -1071,6 +1074,7 @@
 				AA00000E000000000000AAAA /* URLSheetPresenterTests.swift in Sources */,
 				AA000010000000000000AAAA /* URLSheetViewTests.swift in Sources */,
 				AA00001A000000000000AAAA /* HostsDataStoreTests.swift in Sources */,
+				AA000022000000000000AAAA /* HostsRowViewTests.swift in Sources */,
 				EE000002000000000000EE01 /* EditorWindowPresenterTests.swift in Sources */,
 				BB00000E000000000000BBBB /* RemoteIntervalMapperTests.swift in Sources */,
 				BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */,

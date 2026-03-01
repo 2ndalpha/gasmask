@@ -3,6 +3,8 @@ import SwiftUI
 struct HostsRowView: View {
     let hosts: Hosts
     let isGroup: Bool
+    // Unused in body; exists to invalidate SwiftUI's byte-comparison cache when Hosts properties change.
+    let refreshToken: UInt64
 
     var body: some View {
         if isGroup {
@@ -106,6 +108,10 @@ struct HostsRowView: View {
     // MARK: - Accessibility
 
     private var accessibilityDescription: String {
+        Self.accessibilityDescription(for: hosts)
+    }
+
+    static func accessibilityDescription(for hosts: Hosts) -> String {
         var parts: [String] = []
         parts.append(hosts.name() ?? "")
         if hosts.active() { parts.append("active") }
