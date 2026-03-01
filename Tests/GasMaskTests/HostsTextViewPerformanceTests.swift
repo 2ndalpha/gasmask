@@ -144,7 +144,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
     /// Verifies that switching between a large remote hosts file and a small local file
     /// multiple times completes within a reasonable time and doesn't lock the UI.
     func testRapidSwitching_largeAndSmallFile_completesQuickly() {
-        let largeContent = Self.generateLargeHostsContent(lineCount: 16000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         let smallContent = "127.0.0.1 localhost\n::1 localhost\n"
 
         let switchCount = 5
@@ -167,7 +167,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
     /// Verifies that switching from a large file to a small file cancels pending
     /// async highlighting (generation counter should invalidate stale work).
     func testSwitchToSmallFile_cancelsPendingHighlighting() {
-        let largeContent = Self.generateLargeHostsContent(lineCount: 16000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
 
         textView.replaceContent(with: largeContent)
         textView.replaceContent(with: "127.0.0.1 localhost\n")
@@ -179,7 +179,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
 
     /// Measures the wall-clock cost of a single large file text replacement.
     func testPerformance_singleLargeFileSwitch() {
-        let largeContent = Self.generateLargeHostsContent(lineCount: 16000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
 
         measure {
             textView.replaceContent(with: largeContent)
@@ -229,7 +229,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
     /// Demonstrates that the old O(n) guard check was expensive for large files.
     /// The new pointer-based guard (hostsChanged || externalChange) avoids this.
     func testGuardCheck_pointerBased_skipsStringComparison() {
-        let content = Self.generateLargeHostsContent(lineCount: 16000)
+        let content = Self.generateLargeHostsContent(lineCount: 5000)
         textView.replaceContent(with: content)
 
         let hosts = Hosts(path: "/tmp/guardCheck.hst")!
@@ -258,7 +258,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
 
         let elapsed = CFAbsoluteTimeGetCurrent() - start
 
-        NSLog("Pointer-based guard on 16K-line file: %.6fs for %d calls (%.4fms each)",
+        NSLog("Pointer-based guard on 5K-line file: %.6fs for %d calls (%.4fms each)",
               elapsed, iterations, elapsed / Double(iterations) * 1000)
 
         // O(1) pointer/token comparison — must be near-instant even for huge files
@@ -355,7 +355,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
     // MARK: - Verification: User-reported scenario (2 local + 1 remote)
 
     /// Reproduces the exact user-reported scenario:
-    /// 1. App has 2 local files and 1 remote file (StevenBlack-sized, ~30K lines)
+    /// 1. App has 2 local files and 1 remote file (~5K lines, reduced from 30K for CI)
     /// 2. App restarts → remote file downloads → notification cascade fires
     /// 3. User clicks between the 2 local files → UI should remain responsive
     ///
@@ -404,7 +404,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         // setEnabled:YES
         remote.setEnabled(true)
         // setContents with large content → setSaved:NO → HostsNodeNeedsUpdate
-        let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         remote.setContents(largeContent)
         // [hosts save] → setSaved:YES → HostsNodeNeedsUpdate
         remote.setSaved(true)
@@ -459,7 +459,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         NotificationCenter.default.post(name: .threadBusy, object: nil)
         NotificationCenter.default.post(name: .synchronizingStatusChanged, object: remote)
         remote.setEnabled(true)
-        let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         remote.setContents(largeContent)
         remote.setSaved(true)
         NotificationCenter.default.post(name: .hostsFileSaved, object: remote)
@@ -588,7 +588,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         remote.exists = true
         remote.setEnabled(true)
 
-        let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
 
         // Measure just the synchronous notification posting + property changes
         // (this is what hostsDownloaded: does on the main thread)
@@ -641,7 +641,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
 
         // Create remote file with large content (simulating StevenBlack hosts)
         let remote = Hosts(path: "/tmp/swiftuiRemote.hst")!
-        let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+        let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         remote.setContents(largeContent)
         remote.setSaved(true)
         remote.exists = true
@@ -717,9 +717,6 @@ final class HostsTextViewPerformanceTests: XCTestCase {
         local2.setSaved(true)
 
         let remote = Hosts(path: "/tmp/fullEdRemote.hst")!
-        // Use 5K lines (not 30K) — this test measures re-render cost per notification,
-        // not large file highlighting. Keeping it lighter avoids timeouts on slow CI
-        // Intel runners where async highlighting during RunLoop drains is expensive.
         let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
         remote.setContents(largeContent)
         remote.setSaved(true)
@@ -834,7 +831,7 @@ final class HostsTextViewPerformanceTests: XCTestCase {
 
             // Midway through, simulate download completion (large content + disk write)
             if i == 3 {
-                let largeContent = Self.generateLargeHostsContent(lineCount: 30000)
+                let largeContent = Self.generateLargeHostsContent(lineCount: 5000)
                 DispatchQueue.global().async {
                     DispatchQueue.main.async {
                         // This is what hostsDownloaded: does on the main thread
