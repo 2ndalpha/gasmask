@@ -27,7 +27,7 @@ static NSString *dataDirectory = nil;
 + (NSString*)dataDirectory
 {
 	if (dataDirectory == nil) {
-		NSArray *array = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+		NSArray *array = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 		dataDirectory = [[array objectAtIndex:0] stringByAppendingString:@"/Gas Mask/"];
 	}
 	return dataDirectory;
